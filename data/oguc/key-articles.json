@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "source": "OGUC — Ordenanza General de Urbanismo y Construcciones",
+    "version": "DS 22, D.O. 16.04.2024",
+    "publisher": "MINVU Chile",
+    "url": "https://www.minvu.gob.cl/wp-content/uploads/2019/05/OGUC-Abril-2024-D.S.-22-D.O.-16.04.2024.pdf",
+    "note": "Key articles relevant to ZHR2 residential permit review. Excerpted and summarized for compliance checking. Full document available at MINVU website.",
+    "articles_included": 18
+  },
+  "chunks": [
+    {
+      "id": "oguc-1-4-4",
+      "source": "OGUC",
+      "article": "1.4.4",
+      "title": "Certificado de Informaciones Previas (CIP) — Contenido",
+      "content": "El Certificado de Informaciones Previas (CIP) es emitido por la Dirección de Obras Municipales y debe contener las condiciones urbanísticas aplicables al predio según los instrumentos de planificación territorial. El CIP debe informar: número municipal, líneas oficiales, afectaciones a utilidad pública, requisitos de urbanización, usos de suelo permitidos, sistemas de agrupamiento, coeficientes de constructibilidad y ocupación de suelo, alturas máximas, adosamientos, distanciamientos, antejardines, densidades, alturas de cierros, exigencias de estacionamientos para cada uso, áreas de riesgo y zonas de protección. El plazo de emisión es de 7 días corridos desde la solicitud.",
+      "parameter_types": ["cip", "general"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-4-1",
+      "source": "OGUC",
+      "article": "2.4.1",
+      "title": "Estacionamientos — Generalidades",
+      "content": "Las edificaciones deberán contemplar estacionamientos en la cantidad mínima que fije el Plan Regulador Comunal o, en su defecto, la OGUC. Los estacionamientos mínimos exigidos no podrán ser eliminados ni transformados en otros usos sin contar con los permisos correspondientes. Los estacionamientos de visitas, cuando sean exigibles, son de uso público y no pueden ser asignados a unidades específicas.",
+      "parameter_types": ["estacionamientos"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-4-2",
+      "source": "OGUC",
+      "article": "2.4.2",
+      "title": "Estacionamientos — Dotación mínima por uso",
+      "content": "La dotación mínima de estacionamientos para uso habitacional, cuando no la fije el Plan Regulador Comunal, será de 1 estacionamiento por vivienda de más de 140 m² de superficie útil, y según tabla para viviendas menores. Para viviendas de hasta 140 m², el PRC fija la cantidad mínima. En ausencia de PRC, se aplica la tabla del artículo 2.4.2. Los estacionamientos de visitas se exigen a razón de 0,1 por unidad de vivienda en conjuntos de más de 20 unidades.",
+      "parameter_types": ["estacionamientos"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-5-1",
+      "source": "OGUC",
+      "article": "2.5.1",
+      "title": "Distanciamientos — Definición y aplicación",
+      "content": "Los distanciamientos son las distancias mínimas que deben mantenerse entre la edificación y los deslindes del predio o entre edificaciones en un mismo predio. Se miden en forma perpendicular desde el plano exterior de la fachada más saliente (excluidos aleros de hasta 0,80 m) hasta el deslinde del predio. Las exigencias de distanciamiento se aplican a todos los pisos de la edificación.",
+      "parameter_types": ["distanciamiento"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-5-3",
+      "source": "OGUC",
+      "article": "2.5.3",
+      "title": "Distanciamientos — Edificaciones aisladas",
+      "content": "Las edificaciones en sistema aislado deben cumplir los distanciamientos mínimos a todos los deslindes del predio que fije el Plan Regulador Comunal. A falta de norma en el PRC, el distanciamiento mínimo será equivalente a 1/4 de la altura de la edificación, con un mínimo de 3,00 metros. Los distanciamientos deben mantenerse en toda la extensión del deslinde que enfrenta la fachada.",
+      "parameter_types": ["distanciamiento"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-5-6",
+      "source": "OGUC",
+      "article": "2.5.6",
+      "title": "Rasantes — Definición y aplicación",
+      "content": "La rasante es el ángulo de 70° medido desde el punto más alto de la edificación hasta el deslinde del predio o la línea de edificación, según corresponda. Las edificaciones no pueden sobrepasar el plano de rasante que se proyecta desde los deslindes del predio. La verificación de rasantes debe graficarse en los planos de corte de la solicitud de permiso, con indicación de ángulos y cotas.",
+      "parameter_types": ["rasante"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-6-1",
+      "source": "OGUC",
+      "article": "2.6.1",
+      "title": "Constructibilidad y Ocupación de Suelo — Definiciones",
+      "content": "El coeficiente de constructibilidad es la cifra que, multiplicada por la superficie total del predio, fija la superficie máxima edificable en todos los pisos de la construcción. El coeficiente de ocupación de suelo es la cifra que, multiplicada por la superficie total del predio, fija la superficie máxima del piso que puede estar en contacto con el terreno (proyección horizontal de la huella de la edificación). Ambos coeficientes son fijados por el Plan Regulador Comunal para cada zona.",
+      "parameter_types": ["constructibilidad", "ocupacion_suelo"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-6-3",
+      "source": "OGUC",
+      "article": "2.6.3",
+      "title": "Ocupación de Suelo — Excepciones por salientes",
+      "content": "No se computarán dentro del coeficiente de ocupación de suelo los cuerpos salientes (balcones, terrazas cubiertas, aleros) cuya proyección horizontal no exceda de 0,80 m medidos desde el plano de fachada. Tampoco se computarán los elementos técnicos (cajas de ascensor, sala de máquinas) que no superen el 5% de la superficie edificada total. La excepción aplica únicamente a las porciones que no superan los límites indicados; el exceso sí se computa.",
+      "parameter_types": ["ocupacion_suelo"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-6-4",
+      "source": "OGUC",
+      "article": "2.6.4",
+      "title": "Constructibilidad — Superficies no computables",
+      "content": "No se computarán dentro del coeficiente de constructibilidad: las superficies destinadas a estacionamientos y sus accesos en subterráneo, los pisos mecánicos (cuando sean exclusivamente para instalaciones), los espacios bajo cubierta no habitables, y las circulaciones de uso público a nivel de suelo. Sí se computan todas las superficies habitables o utilizables en cualquier nivel, incluyendo subterráneos con uso distinto de estacionamientos.",
+      "parameter_types": ["constructibilidad"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-2-1-28",
+      "source": "OGUC",
+      "article": "2.1.28",
+      "title": "Altura de Edificación — Definición y medición",
+      "content": "La altura de la edificación se mide verticalmente desde la cota de terreno natural o rasante de la vía, la que resulte más desfavorable, hasta la cara superior del último piso habitable o cielo del último nivel. No se incluyen en la medición los elementos técnicos (cajas de ascensor, chimeneas, antenas) cuando no superen el 10% de la superficie de cubierta y tengan una altura máxima de 3,00 m sobre el último piso habitable. La altura máxima es fijada por el Plan Regulador Comunal.",
+      "parameter_types": ["altura"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-5-1-6",
+      "source": "OGUC",
+      "article": "5.1.6",
+      "title": "Expediente de Permiso de Edificación — Contenido mínimo",
+      "content": "La solicitud de permiso de edificación de obra nueva debe contener: (1) Solicitud firmada por propietario y arquitecto proyectista con lista de documentos numerados; (2) Declaración simple de dominio del predio; (3) Certificado de Informaciones Previas vigente; (4) Formulario Único de Estadísticas de Edificación (FUE); (5) Informe del arquitecto certificando cumplimiento normativo; (6) Plano de emplazamiento; (7) Plantas de todos los niveles acotadas; (8) Cortes y elevaciones con alturas, rasantes y distanciamientos; (9) Plano de cubiertas; (10) Cuadro de superficies; (11) Proyecto estructural y memoria de cálculo; (12) Certificado de factibilidad sanitaria; (13) Especificaciones técnicas; (14) Informe de Revisor Independiente cuando corresponda.",
+      "parameter_types": ["expediente", "documentacion"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-5-1-7",
+      "source": "OGUC",
+      "article": "5.1.7",
+      "title": "Proyecto Estructural — Requisitos",
+      "content": "El proyecto de cálculo estructural es obligatorio para toda edificación de uso público o de más de 2 pisos, y en cualquier caso cuando la normativa técnica lo exija. El proyecto debe incluir memoria de cálculo, planos estructurales y, para edificaciones de más de 4 pisos o en zonas sísmicas de alta intensidad, un estudio de mecánica de suelos. El ingeniero calculista estructural debe estar registrado ante el DOM y su patente debe estar vigente al momento del ingreso del expediente.",
+      "parameter_types": ["estructura", "documentacion"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-4-1-10",
+      "source": "OGUC",
+      "article": "4.1.10",
+      "title": "Acondicionamiento Térmico",
+      "content": "Toda edificación habitacional nueva debe cumplir con las exigencias de acondicionamiento térmico establecidas en el Reglamento Térmico vigente (DS 80 o el que lo reemplace). La declaración de cumplimiento del acondicionamiento térmico debe ser firmada por el arquitecto proyectante e incluida en el expediente de permiso. En la recepción definitiva se exige la Declaración 4.1.10 OGUC suscrita por el arquitecto, confirmando la ejecución conforme al proyecto térmico aprobado.",
+      "parameter_types": ["acondicionamiento_termico", "documentacion"],
+      "zone_applicability": ["habitacional"]
+    },
+    {
+      "id": "oguc-5-2-5",
+      "source": "OGUC",
+      "article": "5.2.5",
+      "title": "Recepción Definitiva — Procedimiento",
+      "content": "Terminada la obra o una parte habilitable, el propietario debe solicitar la recepción definitiva a la DOM. La solicitud debe acompañar: (1) Informe del arquitecto patrocinante que certifique ejecución conforme al permiso y normas técnicas; (2) Informe del Revisor Independiente si lo hubiere; (3) Informe del ITO cuando corresponda; (4) Certificados de recepción de instalaciones (eléctricas, sanitarias, gas); (5) Libro de Obras; (6) Declaración del constructor sobre gestión de calidad. La DOM tiene 30 días (15 con RI) para pronunciarse sobre la recepción.",
+      "parameter_types": ["recepcion_definitiva", "documentacion"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-5-2-6",
+      "source": "OGUC",
+      "article": "5.2.6",
+      "title": "Recepción Definitiva — Conformidad de la Obra",
+      "content": "No puede solicitarse recepción definitiva si la obra no está totalmente terminada conforme al permiso de edificación y sus modificaciones. La DOM verificará que lo construido concuerda con los planos y especificaciones aprobadas. Las diferencias entre lo proyectado y lo ejecutado deben regularizarse mediante modificaciones de permiso antes de la recepción. El certificado de recepción definitiva es requisito para la plena habilitación legal de la edificación.",
+      "parameter_types": ["recepcion_definitiva"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "oguc-1-4-9",
+      "source": "OGUC",
+      "article": "1.4.9",
+      "title": "Actas de Observaciones — Procedimiento",
+      "content": "Cuando la DOM detecta incumplimientos normativos o deficiencias documentales durante la revisión técnica, emite un Acta de Observaciones en lugar de rechazar el proyecto. El Acta debe indicar: número correlativo de cada observación, descripción del incumplimiento, artículo o norma infringida, y lo que se exige para subsanar. El solicitante dispone de 60 días corridos para subsanar las observaciones. Si vence el plazo sin subsanación, la DOM puede rechazar la solicitud. Las Actas se comunican mediante el sistema DOM en Línea o en la oficina de partes.",
+      "parameter_types": ["acta_observaciones", "procedimiento"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "lguc-ley21718-plazos",
+      "source": "LEY_21718",
+      "article": "Ley 21.718",
+      "title": "Plazos de Revisión DOM — Ley 21.718",
+      "content": "La Ley 21.718 (2024) modificó la LGUC estableciendo plazos máximos vinculantes para la DOM: 30 días corridos para proyectos estándar y 60 días para proyectos con carga de ocupación igual o superior a 1.000 personas (grandes proyectos habitacionales o de equipamiento). Cuando el expediente incluye informe favorable de Revisor Independiente, los plazos se reducen a la mitad (15 y 30 días respectivamente). El plazo se cuenta desde la admisión a trámite del expediente completo.",
+      "parameter_types": ["plazos", "procedimiento"],
+      "zone_applicability": ["all"]
+    },
+    {
+      "id": "lguc-ley21718-silencio",
+      "source": "LEY_21718",
+      "article": "Ley 21.718",
+      "title": "Silencio Administrativo Negativo — Ley 21.718",
+      "content": "Si la DOM no se pronuncia dentro de los plazos legales, la Ley 21.718 introduce el silencio administrativo negativo: el solicitante puede presentar un escrito haciendo valer que su solicitud se entiende rechazada, lo que habilita el recurso ante la SEREMI MINVU y posteriormente ante la Corte de Apelaciones. El silencio no opera de pleno derecho; requiere presentación expresa del solicitante. Esta regla aplica tanto a permisos de edificación como a solicitudes de recepción definitiva.",
+      "parameter_types": ["silencio_administrativo", "procedimiento"],
+      "zone_applicability": ["all"]
+    }
+  ]
+}

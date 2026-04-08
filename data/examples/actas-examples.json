@@ -1,0 +1,147 @@
+{
+  "_meta": {
+    "note": "Synthetic Actas de Observaciones examples for few-shot prompting of the Report Generator. Created based on patterns documented in regulatory research. Must be replaced with real anonymized Actas before production use.",
+    "count": 5,
+    "municipality": "Las Condes",
+    "project_types": ["obra_nueva_residencial"]
+  },
+  "examples": [
+    {
+      "id": "acta-example-001",
+      "expedient_ref": "EJEMPLO-001",
+      "project_type": "Obra Nueva Residencial",
+      "zone": "ZHR2",
+      "round": 1,
+      "num_observations": 3,
+      "full_text": "MUNICIPALIDAD DE LAS CONDES\nDIRECCIÓN DE OBRAS MUNICIPALES\n\nACTA DE OBSERVACIONES\nExpediente N° 2024-EJEMPLO-001\nFecha: 15 de enero de 2024\n\nProyecto: Edificio Habitacional — Av. Las Condes 8520\nPropietario: Ejemplo S.A.\nArquitecto patrocinante: Arq. Juan Pérez\nTipo de permiso: Permiso de Edificación — Obra Nueva\nZona: ZHR2\n\nEn revisión del expediente ingresado con fecha 02 de enero de 2024, se constatan las siguientes observaciones:\n\nOBSERVACIÓN 1 — ALTURA DE EDIFICACIÓN\nLa altura proyectada de 18,50 m excede la altura máxima de 15,00 m (4 pisos) establecida para la zona ZHR2 del PRC de Las Condes, Tabla de Normas Urbanísticas. Debe ajustarse la altura de la edificación a 15,00 m como máximo.\nNorma infringida: PRC Las Condes, Tabla ZHR2; OGUC art. 2.1.28.\n\nOBSERVACIÓN 2 — COEFICIENTE DE OCUPACIÓN DE SUELO\nEl coeficiente de ocupación de suelo declarado es de 0,61, lo que excede el máximo permitido de 0,50 para la zona ZHR2. Debe reducirse la huella de la edificación a efectos de cumplir el coeficiente máximo de 0,50.\nNorma infringida: PRC Las Condes, Tabla ZHR2; OGUC art. 2.6.1.\n\nOBSERVACIÓN 3 — ESTACIONAMIENTOS DE VISITAS\nEl proyecto no considera estacionamientos de visitas. Para conjuntos habitacionales, el PRC de Las Condes exige 0,25 estacionamientos de visitas por unidad de vivienda, en addition a los estacionamientos propios. Debe incorporarse la dotación de visitas en los planos y cuadros.\nNorma infringida: PRC Las Condes, Tabla ZHR2, Estacionamientos; OGUC art. 2.4.1.\n\nSe otorga plazo de 60 días corridos para subsanar las observaciones precedentes, contados desde la notificación de la presente acta.\n\nLas Condes, 15 de enero de 2024\n[Firma]\nRevisor Técnico\nDirección de Obras Municipales",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "altura",
+          "verdict": "VIOLATION",
+          "declared_value": "18.50 m",
+          "allowed_value": "15.00 m",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.1.28",
+          "text": "La altura proyectada de 18,50 m excede la altura máxima de 15,00 m (4 pisos) establecida para la zona ZHR2 del PRC de Las Condes, Tabla de Normas Urbanísticas. Debe ajustarse la altura de la edificación a 15,00 m como máximo."
+        },
+        {
+          "number": 2,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": "0.61",
+          "allowed_value": "0.50",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.6.1",
+          "text": "El coeficiente de ocupación de suelo declarado es de 0,61, lo que excede el máximo permitido de 0,50 para la zona ZHR2. Debe reducirse la huella de la edificación a efectos de cumplir el coeficiente máximo de 0,50."
+        },
+        {
+          "number": 3,
+          "parameter": "estacionamientos_visitas",
+          "verdict": "VIOLATION",
+          "declared_value": "0",
+          "allowed_value": "0.25 por unidad",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.4.1",
+          "text": "El proyecto no considera estacionamientos de visitas. Para conjuntos habitacionales, el PRC de Las Condes exige 0,25 estacionamientos de visitas por unidad de vivienda. Debe incorporarse la dotación de visitas en los planos y cuadros."
+        }
+      ]
+    },
+    {
+      "id": "acta-example-002",
+      "expedient_ref": "EJEMPLO-002",
+      "project_type": "Obra Nueva Residencial",
+      "zone": "ZHR2",
+      "round": 1,
+      "num_observations": 2,
+      "full_text": "MUNICIPALIDAD DE LAS CONDES\nDIRECCIÓN DE OBRAS MUNICIPALES\n\nACTA DE OBSERVACIONES\nExpediente N° 2024-EJEMPLO-002\nFecha: 22 de febrero de 2024\n\nProyecto: Edificio Habitacional — Lo Barnechea 1200\nPropietario: Inversiones XYZ Ltda.\nArquitecto patrocinante: Arq. María González\nTipo de permiso: Permiso de Edificación — Obra Nueva\nZona: ZHR2\n\nEn revisión del expediente ingresado con fecha 10 de febrero de 2024, se constatan las siguientes observaciones:\n\nOBSERVACIÓN 1 — DISTANCIAMIENTO A DESLINDE LATERAL\nEl distanciamiento al deslinde lateral norte declarado en el plano de emplazamiento es de 2,10 m, inferior al mínimo de 3,00 m exigido para la zona ZHR2 en sistema aislado. Debe corregirse el plano de emplazamiento y los planos de planta para reflejar el distanciamiento mínimo de 3,00 m al deslinde norte.\nNorma infringida: PRC Las Condes, Tabla ZHR2, Distanciamientos; OGUC art. 2.5.3.\n\nOBSERVACIÓN 2 — FALTA CERTIFICADO DE FACTIBILIDAD SANITARIA\nEl expediente no incluye el certificado de factibilidad de agua potable y alcantarillado emitido por la empresa sanitaria competente (Aguas Andinas S.A.), el cual es antecedente obligatorio conforme al art. 5.1.6 OGUC. Debe adjuntarse dicho certificado vigente.\nNorma infringida: OGUC art. 5.1.6, literal correspondiente a estudios de factibilidad.\n\nSe otorga plazo de 60 días corridos para subsanar las observaciones precedentes.\n\nLas Condes, 22 de febrero de 2024\n[Firma]\nRevisor Técnico\nDirección de Obras Municipales",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "distanciamiento_lateral",
+          "verdict": "VIOLATION",
+          "declared_value": "2.10 m (deslinde norte)",
+          "allowed_value": "3.00 m mínimo",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.5.3",
+          "text": "El distanciamiento al deslinde lateral norte declarado en el plano de emplazamiento es de 2,10 m, inferior al mínimo de 3,00 m exigido para la zona ZHR2 en sistema aislado. Debe corregirse el plano de emplazamiento y los planos de planta para reflejar el distanciamiento mínimo de 3,00 m al deslinde norte."
+        },
+        {
+          "number": 2,
+          "parameter": "certificado_factibilidad_sanitaria",
+          "verdict": "VIOLATION",
+          "declared_value": "No presentado",
+          "allowed_value": "Requerido",
+          "article": "OGUC art. 5.1.6",
+          "text": "El expediente no incluye el certificado de factibilidad de agua potable y alcantarillado emitido por la empresa sanitaria competente (Aguas Andinas S.A.), el cual es antecedente obligatorio conforme al art. 5.1.6 OGUC. Debe adjuntarse dicho certificado vigente."
+        }
+      ]
+    },
+    {
+      "id": "acta-example-003",
+      "expedient_ref": "EJEMPLO-003",
+      "project_type": "Obra Nueva Residencial",
+      "zone": "ZHR2",
+      "round": 2,
+      "num_observations": 1,
+      "full_text": "MUNICIPALIDAD DE LAS CONDES\nDIRECCIÓN DE OBRAS MUNICIPALES\n\nACTA DE OBSERVACIONES — SEGUNDA RONDA\nExpediente N° 2024-EJEMPLO-003\nFecha: 15 de abril de 2024\n\nProyecto: Casa Habitación — El Golf 120\nPropietario: Pedro Martínez\nArquitecto patrocinante: Arq. Carmen López\nTipo de permiso: Permiso de Edificación — Obra Nueva\nZona: ZHR2\n\nEn revisión de la subsanación ingresada con fecha 01 de abril de 2024, correspondiente al expediente con Acta de Observaciones N° 2024-EJEMPLO-003-R1 de fecha 28 de febrero de 2024:\n\nOBSERVACIÓN PENDIENTE 1 (RONDA 1) — COEFICIENTE DE CONSTRUCTIBILIDAD\nLa observación referida al coeficiente de constructibilidad se mantiene sin subsanar. En la subsanación presentada, el cuadro de superficies indica una superficie total edificada de 1.845 m² para un predio de 980 m², resultando en un coeficiente de 1,88 que sigue excediendo el máximo de 1,80. Se exige reducir la superficie edificada total a un máximo de 1.764 m² (1,80 × 980 m²).\nNorma infringida: PRC Las Condes, Tabla ZHR2; OGUC art. 2.6.1.\n\nLas restantes observaciones de la Ronda 1 han sido correctamente subsanadas.\n\nSe otorga plazo de 60 días corridos para subsanar la observación precedente.\n\nLas Condes, 15 de abril de 2024\n[Firma]\nRevisor Técnico\nDirección de Obras Municipales",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "constructibilidad",
+          "verdict": "VIOLATION",
+          "round_status": "PENDIENTE",
+          "declared_value": "1.88 (1.845 m² / 980 m²)",
+          "allowed_value": "1.80 máximo (1.764 m²)",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.6.1",
+          "text": "La observación referida al coeficiente de constructibilidad se mantiene sin subsanar. En la subsanación presentada, el cuadro de superficies indica una superficie total edificada de 1.845 m² para un predio de 980 m², resultando en un coeficiente de 1,88 que sigue excediendo el máximo de 1,80. Se exige reducir la superficie edificada total a un máximo de 1.764 m² (1,80 × 980 m²)."
+        }
+      ]
+    },
+    {
+      "id": "acta-example-004",
+      "expedient_ref": "EJEMPLO-004",
+      "project_type": "Obra Nueva Residencial",
+      "zone": "ZHR2",
+      "round": 1,
+      "num_observations": 2,
+      "full_text": "MUNICIPALIDAD DE LAS CONDES\nDIRECCIÓN DE OBRAS MUNICIPALES\n\nACTA DE OBSERVACIONES\nExpediente N° 2024-EJEMPLO-004\nFecha: 10 de marzo de 2024\n\nProyecto: Edificio Habitacional — Presidente Riesco 5440\nPropietario: Inmobiliaria Norte S.A.\nArquitecto patrocinante: Arq. Roberto Soto\nTipo de permiso: Permiso de Edificación — Obra Nueva\nZona: ZHR2\n\nEn revisión del expediente ingresado con fecha 25 de febrero de 2024:\n\nOBSERVACIÓN 1 — DENSIDAD HABITACIONAL\nLa densidad habitacional resultante del proyecto es de 520 hab/há, calculada sobre la base de 78 unidades de vivienda en un predio de 4.500 m² (0,45 há), excediendo la densidad máxima de 400 hab/há establecida para la zona ZHR2. Debe reducirse el número de unidades de vivienda de manera que la densidad no supere 400 hab/há. Para el predio indicado, ello equivale a un máximo de 60 unidades.\nNorma infringida: PRC Las Condes, Tabla ZHR2; OGUC art. 2.6.1.\n\nOBSERVACIÓN 2 — ANTEJARDÍN\nEl plano de emplazamiento muestra una distancia de 3,50 m entre la línea oficial y el plano de fachada del primer piso, inferior al antejardín mínimo de 5,00 m exigido para la zona ZHR2. Debe corregirse el emplazamiento retrasando la edificación hasta cumplir el antejardín mínimo de 5,00 m.\nNorma infringida: PRC Las Condes, Tabla ZHR2, Antejardín; OGUC art. 2.5.1.\n\nSe otorga plazo de 60 días corridos para subsanar las observaciones precedentes.\n\nLas Condes, 10 de marzo de 2024\n[Firma]\nRevisor Técnico\nDirección de Obras Municipales",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "densidad",
+          "verdict": "VIOLATION",
+          "declared_value": "520 hab/há (78 unidades / 0.45 há)",
+          "allowed_value": "400 hab/há máximo (60 unidades para este predio)",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.6.1",
+          "text": "La densidad habitacional resultante del proyecto es de 520 hab/há, calculada sobre la base de 78 unidades de vivienda en un predio de 4.500 m² (0,45 há), excediendo la densidad máxima de 400 hab/há. Para el predio indicado, ello equivale a un máximo de 60 unidades."
+        },
+        {
+          "number": 2,
+          "parameter": "antejardin",
+          "verdict": "VIOLATION",
+          "declared_value": "3.50 m",
+          "allowed_value": "5.00 m mínimo",
+          "article": "PRC Las Condes Tabla ZHR2; OGUC art. 2.5.1",
+          "text": "El plano de emplazamiento muestra una distancia de 3,50 m entre la línea oficial y el plano de fachada del primer piso, inferior al antejardín mínimo de 5,00 m exigido para la zona ZHR2. Debe corregirse el emplazamiento retrasando la edificación hasta cumplir el antejardín mínimo de 5,00 m."
+        }
+      ]
+    },
+    {
+      "id": "acta-example-005",
+      "expedient_ref": "EJEMPLO-005",
+      "project_type": "Obra Nueva Residencial",
+      "zone": "ZHR2",
+      "round": 1,
+      "num_observations": 1,
+      "full_text": "MUNICIPALIDAD DE LAS CONDES\nDIRECCIÓN DE OBRAS MUNICIPALES\n\nACTA DE OBSERVACIONES\nExpediente N° 2024-EJEMPLO-005\nFecha: 05 de abril de 2024\n\nProyecto: Edificio Habitacional — Américo Vespucio Norte 2000\nPropietario: Constructora del Valle Ltda.\nArquitecto patrocinante: Arq. Ana Fernández\nTipo de permiso: Permiso de Edificación — Obra Nueva\nZona: ZHR2\n\nEn revisión del expediente ingresado con fecha 22 de marzo de 2024:\n\nOBSERVACIÓN 1 — VERIFICACIÓN DE RASANTES\nLos planos de corte del expediente no incluyen la verificación gráfica de rasantes exigida por la OGUC. El corte A-A muestra la altura de la edificación pero no grafica el ángulo de rasante de 70° desde el punto más alto de la edificación hasta el deslinde, ni incluye la cota del terreno natural en el punto de medición. Debe rehacer el corte A-A y el corte B-B incorporando el trazado del plano de rasante con su ángulo (70°), cotas de terreno y punto de medición, de acuerdo con lo establecido en la OGUC.\nNorma infringida: OGUC art. 2.5.6.\n\nSe otorga plazo de 60 días corridos para subsanar la observación precedente.\n\nLas Condes, 05 de abril de 2024\n[Firma]\nRevisor Técnico\nDirección de Obras Municipales",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "rasante",
+          "verdict": "VIOLATION",
+          "declared_value": "No graficada en planos",
+          "allowed_value": "Verificación gráfica obligatoria (ángulo 70°)",
+          "article": "OGUC art. 2.5.6",
+          "text": "Los planos de corte del expediente no incluyen la verificación gráfica de rasantes. El corte A-A muestra la altura pero no grafica el ángulo de rasante de 70° desde el punto más alto hasta el deslinde, ni incluye la cota del terreno natural. Debe rehacer los cortes incorporando el trazado del plano de rasante con ángulo (70°), cotas de terreno y punto de medición."
+        }
+      ]
+    }
+  ]
+}

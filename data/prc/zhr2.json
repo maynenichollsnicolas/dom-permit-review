@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "source": "PRC Las Condes — Tabla de Normas Urbanísticas",
+    "zone": "ZHR2",
+    "zone_name": "Zona Habitacional Residencial 2",
+    "municipality": "Las Condes",
+    "status": "seed_data",
+    "note": "Values derived from research documentation. Must be validated against the official PRC Las Condes document before production use. File a Ley de Transparencia request to obtain the official document.",
+    "last_updated": "2024-04"
+  },
+  "zone_params": {
+    "uso_suelo_permitido": ["habitacional", "equipamiento_menor"],
+    "sistema_agrupamiento": ["aislado"],
+    "constructibilidad_max": {
+      "value": 1.8,
+      "units": "coeficiente",
+      "note": "Coeficiente de constructibilidad máximo para ZHR2"
+    },
+    "ocupacion_suelo_max": {
+      "value": 0.5,
+      "units": "coeficiente",
+      "note": "Coeficiente de ocupación de suelo máximo"
+    },
+    "altura_maxima": {
+      "value": 15.0,
+      "units": "metros",
+      "pisos_max": 4,
+      "note": "Altura máxima de edificación en ZHR2"
+    },
+    "densidad_maxima": {
+      "value": 400,
+      "units": "hab/ha",
+      "note": "Densidad habitacional máxima"
+    },
+    "distanciamiento_deslinde_lateral": {
+      "value": 3.0,
+      "units": "metros",
+      "note": "Distanciamiento mínimo a deslindes laterales"
+    },
+    "distanciamiento_deslinde_fondo": {
+      "value": 3.0,
+      "units": "metros",
+      "note": "Distanciamiento mínimo a deslinde de fondo"
+    },
+    "antejardín": {
+      "value": 5.0,
+      "units": "metros",
+      "note": "Antejardín mínimo desde línea oficial"
+    },
+    "superficie_predial_minima": {
+      "value": 500,
+      "units": "m2",
+      "note": "Superficie mínima del predio"
+    },
+    "estacionamientos": {
+      "habitacional": {
+        "min_per_unidad": 1.0,
+        "visitas_per_unidad": 0.25,
+        "note": "1 estacionamiento por vivienda + 0.25 de visitas"
+      }
+    },
+    "cierros": {
+      "altura_maxima_frente": {
+        "value": 1.5,
+        "units": "metros",
+        "note": "Altura máxima de cierro en frente a espacio público"
+      }
+    }
+  },
+  "chunks": [
+    {
+      "id": "prc-lc-zhr2-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "constructibilidad",
+      "title": "ZHR2 — Coeficiente de Constructibilidad",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Coeficiente de constructibilidad máximo: 1,80. El coeficiente de constructibilidad es la cifra que, multiplicada por la superficie del predio, determina la superficie máxima edificable en todos los pisos de la edificación.",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2"
+    },
+    {
+      "id": "prc-lc-zhr2-ocupacion",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "ocupacion_suelo",
+      "title": "ZHR2 — Coeficiente de Ocupación de Suelo",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Coeficiente de ocupación de suelo máximo: 0,50. El coeficiente de ocupación de suelo es la cifra que, multiplicada por la superficie del predio, determina la superficie máxima del piso en contacto con el terreno (proyección horizontal).",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2"
+    },
+    {
+      "id": "prc-lc-zhr2-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "altura",
+      "title": "ZHR2 — Altura Máxima de Edificación",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Altura máxima de edificación: 15,00 metros (4 pisos). La altura se mide desde el nivel de la rasante oficial o terreno natural, según corresponda, hasta la cara superior del último forjado habitable.",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2"
+    },
+    {
+      "id": "prc-lc-zhr2-densidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "densidad",
+      "title": "ZHR2 — Densidad Máxima",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Densidad habitacional máxima: 400 habitantes por hectárea. Para el cálculo se asume una tasa de 3 habitantes por vivienda cuando no se especifique otra.",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2"
+    },
+    {
+      "id": "prc-lc-zhr2-estacionamientos",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "estacionamientos",
+      "title": "ZHR2 — Estacionamientos Mínimos (Uso Habitacional)",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Uso habitacional: mínimo 1,0 estacionamiento por unidad de vivienda más 0,25 estacionamiento de visitas por unidad. Los estacionamientos de visitas pueden ubicarse en superficie o en el primer subterráneo.",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2; OGUC art. 2.4.2"
+    },
+    {
+      "id": "prc-lc-zhr2-distanciamientos",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "distanciamiento",
+      "title": "ZHR2 — Distanciamientos Mínimos a Deslindes",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Sistema de agrupamiento: aislado. Distanciamiento mínimo a deslindes laterales y de fondo: 3,00 metros. Antejardín mínimo desde línea oficial: 5,00 metros. Los distanciamientos se miden en forma perpendicular desde el plano de fachada al deslinde del predio.",
+      "article_reference": "PRC Las Condes, Tabla de Normas Urbanísticas, Zona ZHR2; OGUC art. 2.5.3"
+    },
+    {
+      "id": "prc-lc-zhr2-uso-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "ZHR2",
+      "parameter_type": "uso_suelo",
+      "title": "ZHR2 — Usos de Suelo Permitidos",
+      "content": "Zona ZHR2 (Zona Habitacional Residencial 2), Las Condes. Usos de suelo permitidos: habitacional (vivienda unifamiliar y multifamiliar) y equipamiento menor. Se prohíbe el uso industrial, de bodegaje y equipamiento de escala mayor o regional.",
+      "article_reference": "PRC Las Condes, Tabla de Usos de Suelo, Zona ZHR2"
+    }
+  ]
+}
