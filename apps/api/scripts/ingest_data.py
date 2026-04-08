@@ -1,8 +1,14 @@
 """
 Data ingestion script — embeds normative chunks and stores them in Supabase pgvector.
 
-Run once to seed the regulatory_chunks table:
+Run once (or re-run after adding new documents):
   python3 scripts/ingest_data.py
+
+Source priority (uses processed/ over seed/ when available):
+  1. data/processed/oguc-chunks.json    (from parse_oguc.py)
+  2. data/processed/prc-chunks.json     (from parse_prc.py)
+  3. data/oguc/key-articles.json        (seed fallback)
+  4. data/prc/zhr2.json                 (seed fallback)
 
 Requires .env with OPENAI_API_KEY and SUPABASE_* vars set.
 """
@@ -33,20 +39,34 @@ def embed_text(text: str) -> list[float]:
 
 
 def load_chunks() -> list[dict]:
-    """Load all chunks from data/ JSON files."""
+    """
+    Load all chunks. Uses processed/ files when available, falls back to seed data.
+    This means you can re-run ingest_data.py after adding new documents and it will
+    automatically use the richer parsed data.
+    """
     all_chunks = []
 
-    sources = [
-        DATA_DIR / "oguc" / "key-articles.json",
-        DATA_DIR / "prc" / "zhr2.json",
-    ]
+    # OGUC: prefer processed, fall back to seed
+    oguc_processed = DATA_DIR / "processed" / "oguc-chunks.json"
+    oguc_seed = DATA_DIR / "oguc" / "key-articles.json"
+    oguc_path = oguc_processed if oguc_processed.exists() else oguc_seed
+    with open(oguc_path) as f:
+        data = json.load(f)
+    chunks = data.get("chunks", [])
+    all_chunks.extend(chunks)
+    source_label = "processed (full OGUC)" if oguc_processed.exists() else "seed (key articles only)"
+    print(f"OGUC: {len(chunks)} chunks from {source_label}")
 
-    for path in sources:
-        with open(path) as f:
-            data = json.load(f)
-        chunks = data.get("chunks", [])
-        all_chunks.extend(chunks)
-        print(f"Loaded {len(chunks)} chunks from {path.name}")
+    # PRC: prefer processed, fall back to seed
+    prc_processed = DATA_DIR / "processed" / "prc-chunks.json"
+    prc_seed = DATA_DIR / "prc" / "zhr2.json"
+    prc_path = prc_processed if prc_processed.exists() else prc_seed
+    with open(prc_path) as f:
+        data = json.load(f)
+    chunks = data.get("chunks", [])
+    all_chunks.extend(chunks)
+    source_label = "processed (full PRC)" if prc_processed.exists() else "seed (ZHR2 only)"
+    print(f"PRC: {len(chunks)} chunks from {source_label}")
 
     return all_chunks
 

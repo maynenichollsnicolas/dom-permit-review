@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sandbox/DSAIL Project - Complete Specification.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DSAIL Project - Complete Specification"
+              "title": "README"
             }
           }
         ]
@@ -185,17 +185,19 @@
   },
   "active": "b897c9b76c8b4d4e",
   "lastOpenFiles": [
+    "apps/api/scripts/parse_actas.py",
+    "apps/api/scripts/parse_prc.py",
+    "apps/api/scripts/parse_oguc.py",
+    "data/processed",
+    "data/raw/oguc",
+    "data/raw/prc",
+    "data/raw/actas",
+    "data/raw",
+    "apps/api/rag/__pycache__/retriever.cpython-311.pyc",
+    "apps/api/rag/__pycache__/__init__.cpython-311.pyc",
+    "apps/api/rag/__pycache__",
+    "Sandbox/DSAIL Project - Complete Specification.md",
     "README.md",
-    "apps/web/components/acta-panel.tsx",
-    "apps/web/components/observation-card.tsx",
-    "apps/web/app/expedients/[id]/page.tsx",
-    "apps/web/app/expedients/[id]",
-    "apps/web/app/expedients",
-    "apps/web/lib/api.ts",
-    "apps/web/lib/utils.ts",
-    "apps/web/lib",
-    "apps/web/components/ui/textarea.tsx",
-    "apps/web/components/ui/tabs.tsx",
     "apps/web/node_modules/string-width/node_modules/emoji-regex/README.md",
     "apps/web/node_modules/string-width/readme.md",
     "apps/web/node_modules/router/node_modules/path-to-regexp/Readme.md",
@@ -219,8 +221,6 @@
     "apps/web/node_modules/@ts-morph/common/node_modules/minimatch/LICENSE.md",
     "apps/web/node_modules/@ts-morph/common/node_modules/fast-glob/README.md",
     "apps/web/node_modules/@ts-morph/common/node_modules/brace-expansion/README.md",
-    "apps/web/node_modules/@ts-morph/common/node_modules/balanced-match/README.md",
-    "apps/web/node_modules/@ts-morph/common/node_modules/balanced-match/LICENSE.md",
     "apps/web/public/window.svg",
     "apps/web/public/vercel.svg",
     "apps/web/public/next.svg",
