@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS actas (
 -- ============================================================
 CREATE TABLE IF NOT EXISTS regulatory_chunks (
   id TEXT PRIMARY KEY,
-  source TEXT NOT NULL CHECK (source IN ('OGUC', 'PRC_LAS_CONDES', 'LEY_21718')),
+  source TEXT NOT NULL CHECK (source IN ('OGUC', 'LGUC', 'PRC_LAS_CONDES', 'LEY_21718')),
   article TEXT,
   zone TEXT,
   parameter_types TEXT[],

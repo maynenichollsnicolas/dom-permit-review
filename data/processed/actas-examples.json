@@ -1,0 +1,3038 @@
+{
+  "_meta": {
+    "source": "Real Actas de Observaciones — Multiple Chilean Municipalities",
+    "note": "Processed with Claude. Sensitive data anonymized.",
+    "count": 41,
+    "vision_count": 32
+  },
+  "examples": [
+    {
+      "municipality": "Cabildo",
+      "expedient_ref": "45/2024",
+      "date": "21/10/2025",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "La Secretaria Regional Ministerial de Vivienda y Urbanismo de la región de Valparaíso informa haber recibido presentación de reclamación respecto al rechazo del expediente N° 45/2024 de la Dirección de Obras Municipales (DOM) de Cabildo, correspondiente a la solicitud de Permiso de Obra Nueva en la propiedad ubicada en Ruta E-317 s/n, sitio N° 3, Los Molinos, con Rol de Avalúo N° 350-80 de la comuna de Cabildo, informada desfavorable mediante la Resolución N° 20, de fecha 28.04.2025. El rechazo se sustenta en la no subsanación de observaciones emitidas con fecha 27.01.2025. El acta de observaciones contiene 9 observaciones, dentro de las cuales lo más relevante hace referencia a la existencia de 5 edificaciones existentes en el predio con Rol N° 350-80 que no cuentan con antecedentes de permiso de edificación o recepción en la DOM. La SEREMI MINVU ratifica la validez del rechazo del expediente contenido en la Resolución DOM N° 20/2025, toda vez que las observaciones no fueron respondidas ni subsanadas dentro del plazo de 60 días establecido en el art. 1.4.9 OGUC. Sin perjuicio de lo anterior, la SEREMI indica que no existe disposición normativa que haga vinculante la regularización de construcciones existentes de terceros a la emisión del permiso de edificación solicitado, y que la DOM debe realizar en forma paralela todas las exigencias necesarias para regularizar las edificaciones existentes. Se hace referencia al art. 55° LGUC respecto a construcciones en área rural y al Art. 17° de la Ley 21.450 (Plan de Emergencia Habitacional) respecto a viviendas nuevas financiadas con subsidio.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "edificaciones_sin_permiso",
+          "verdict": "VIOLATION",
+          "declared_value": "5 edificaciones existentes en el predio sin permiso de edificación ni recepción definitiva",
+          "allowed_value": "Toda construcción debe contar con permiso de edificación y recepción definitiva conforme art. 116° LGUC y art. 1.3.2 OGUC",
+          "article": "Art. 116° LGUC; Art. 116° bis LGUC; Art. 1.3.2 OGUC; Art. 133° LGUC",
+          "text": "El acta de observaciones referida contiene 9 observaciones, dentro de las cuales lo más relevante hace referencia a la existencia de 5 edificaciones existentes en el predio con Rol N° 350-80 de la comuna de Cabildo, las cuales no cuentan con antecedentes de permiso de edificación o recepción en la DOM. En acta de observaciones se solicita aclarar la situación referida a estas edificaciones sin autorización."
+        },
+        {
+          "number": 2,
+          "parameter": "no_subsanacion_observaciones",
+          "verdict": "VIOLATION",
+          "declared_value": "Observaciones emitidas el 27.01.2025 no subsanadas dentro del plazo de 60 días",
+          "allowed_value": "Subsanación dentro de 60 días contados desde la comunicación formal del Director de Obras Municipales, conforme art. 1.4.9 OGUC",
+          "article": "Art. 1.4.9 OGUC",
+          "text": "El rechazo a la solicitud de permiso de obra nueva N° 45/2024, informado mediante Resolución DOM N° 20 de fecha 28.04.2025, se sustenta en la no subsanación de observaciones emitidas con fecha 27.01.2025. Toda vez que el acta de observaciones referidas al expediente N° 45/2024, emitidas con fecha 27.01.2025, no habrían sido respondidas ni subsanadas por el particular interesado dentro del plazo de 60 días que el citado artículo de la OGUC explicita, corresponde por parte de esta SEREMI MINVU ratificar la validez del rechazo del expediente contenido en la Resolución DOM N° 20/2025."
+        },
+        {
+          "number": 3,
+          "parameter": "informe_factibilidad_construccion_area_rural",
+          "verdict": "VIOLATION",
+          "declared_value": "Sin Informe de Factibilidad de Construcción en el Área Rural (IFC)",
+          "allowed_value": "Requerimiento de IFC para construcciones en área rural conforme normativa vigente",
+          "article": "Art. 55° LGUC",
+          "text": "La DOM de Cabildo solicita pronunciamiento respecto a la procedencia de que una vivienda con subsidio se tramite en un predio que cuenta con construcciones no declaradas, sin Informe de Factibilidad de Construcción en el Área Rural (IFC), permisos ni recepciones."
+        }
+      ],
+      "id": "acta-cabildo-minvu",
+      "source_file": "cabildo_minvu",
+      "num_observations": 3,
+      "vision_used": true
+    },
+    {
+      "municipality": "Cabildo",
+      "expedient_ref": null,
+      "date": null,
+      "project_type": "Vivienda nueva financiada con subsidio",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Respecto de las viviendas nuevas que se financien mediante subsidio para construcción en sitio propio, densificación predial o pequeño condominio, el permiso de edificación se otorgará previa verificación del cumplimiento de las normas urbanísticas aplicables a la nueva vivienda, mientras que la recepción definitiva de obras se otorgará previa verificación de la concordancia entre las obras ejecutadas y el permiso otorgado, sin que se requiera, para la obtención de dichos actos administrativos, la regularización previa o la demolición, total o parcial, de cualquier otra edificación existente en el terreno, salvo que dicha demolición sea necesaria para garantizar la seguridad de sus habitantes o para habilitar el terreno en que se emplazará la nueva vivienda. Lo anterior tiene por objeto viabilizar la ejecución de las obras y no retrasar ni entorpecer la entrega de las nuevas viviendas, pero no exime al propietario del predio de las posteriores obligaciones que le correspondan respecto de dichas edificaciones previas existentes.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "regularizacion_edificaciones_existentes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "No se requiere regularización previa ni demolición de edificaciones existentes para obtener permiso de edificación ni recepción definitiva, salvo que sea necesario por seguridad o habilitación del terreno",
+          "article": "Art. 17° Capítulo II Ley 21.450 (Plan de Emergencia Habitacional)",
+          "text": "Respecto de las viviendas nuevas que se financien mediante subsidio para construcción en sitio propio, densificación predial o pequeño condominio, el permiso de edificación se otorgará previa verificación del cumplimiento de las normas urbanísticas aplicables a la nueva vivienda, mientras que la recepción definitiva de obras se otorgará previa verificación de la concordancia entre las obras ejecutadas y el permiso otorgado, sin que se requiera, para la obtención de dichos actos administrativos, la regularización previa o la demolición, total o parcial, de cualquier otra edificación existente en el terreno, salvo que dicha demolición sea necesaria para garantizar la seguridad de sus habitantes o para habilitar el terreno en que se emplazará la nueva vivienda."
+        }
+      ],
+      "id": "acta-cabildo-page4",
+      "source_file": "cabildo_page4",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Ilustre Municipalidad de Cabildo",
+      "expedient_ref": "Solicitud de permiso de edificación 04/2024 / Rol N°350-80",
+      "date": "22/09/2025",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Junto con saludar y en atención al reclamo interpuesto ante SEREMI MINVU Valparaíso de fecha 16/05/2025 y en virtud de la normativa vigente hago ingreso de lo solicitado en función de expediente Rol N°350-80 para su revisión: Solicitud de permiso de edificación 04/2024 de fecha 05/12/2024. Acta de observaciones emitida por DOM. Resolución DOM N°20/2025 y Oficio DOM que informa rechazo y devolución de antecedentes por no respuesta de observaciones. Planimetría expediente. Especificaciones técnicas. Informe técnico en conformidad a artículo 12° y 118° LGUC, respecto al rechazo a permiso de edificación de obra nueva Rol Avalúo N°350-80 de la Comuna de Cabildo. En relación a todos los antecedentes adjuntos, solicita a MINVU pronunciamiento formal para determinar la viabilidad de este tipo de ingresos, considerando el marco normativo vigente y los lineamientos del Plan de Emergencia Habitacional.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 12° y 118° LGUC",
+          "text": "Rechazo y devolución de antecedentes por no respuesta de observaciones emitidas por DOM, según Resolución DOM N°20/2025 y Oficio DOM correspondiente, en conformidad a los artículos 12° y 118° de la Ley General de Urbanismo y Construcciones (LGUC), respecto al permiso de edificación de obra nueva Rol Avalúo N°350-80 de la Comuna de Cabildo."
+        }
+      ],
+      "id": "acta-cabildo-page7",
+      "source_file": "cabildo_page7",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Municipio de Cabildo",
+      "expedient_ref": "Oficio DOM 110-2025 / ORD. N°1630 / Rol N°350-80",
+      "date": "22/09/2025",
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Estimada SEREMI MINVU Valparaiso: Junto con saludar, vengo a hacer ingreso de Oficio DOM 110-2025 que viene a dar respuesta a ud al ORD. N°1630 que solicita elaboración informe DOM en conformidad a artículo 12° y 118° LGUC según predio Rol N°350-80. Quedo atenta ante cualquier duda o consulta.",
+      "observations": [],
+      "id": "acta-cabildo-page8",
+      "source_file": "cabildo_page8",
+      "num_observations": 0,
+      "vision_used": true
+    },
+    {
+      "municipality": "Cabildo",
+      "expedient_ref": "045/2024",
+      "date": "27/01/2025",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 045/2024 correspondiente a la solicitud de PERMISO DE OBRA NUEVA, ubicada en RUTA E - 317 S/N SITIO N° 3, LOS MOLINOS comunicó al solicitante las siguientes observaciones: 1. ANTECEDENTES: 1.1. No Ingresa listado de antecedentes y planos enumerados que confirman el expediente, firmada por el arquitecto proyectista, aclarar. 1.2. En Certificado de Avalúo Fiscal Detallado (SII) indica 5.025 m2 de terreno, sin embargo, en planos y solicitud indica otra superficie, aclarar en: Planos, solicitud y total terreno en Oficio SEIM Adjunto. 2. SOLICITUD: 2.1 Debe aclarar superficies propuestas y terreno para revisar normas urbanísticas cálculos normativos y aporte al espacio público. 3. PLANIMETRÍA: 3.1 Polígono de superficie es acotado de forma distinta al plano de arquitectura, corregir Dimensiones. 3.2 Existen edificaciones existentes Sin Antecedentes en esta DOM, se solicita aclarar. Toda vez que en las zonas rurales aplica el artículo N°55. 3.3 En cortes y elevaciones deben indicar altura y distanciamientos que concuerden con plano de emplazamiento, corregir. 3.4 Acotar planta techumbre y señalar bajada de aguas lluvias, también en elevaciones. 3.5 No presenta detalle cálculo al aporte al espacio público (Planos y Cálculos), Aclarar. 3.6 Una vez especificada los metros cuadrados del terreno y superficies propuestas, se procederá a revisar cálculos normativos, urbanísticos y aporte al espacio público, todo esto en solicitud, planos y anexos.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "No Ingresa listado de antecedentes y planos enumerados que confirman el expediente, firmada por el arquitecto proyectista, aclarar."
+        },
+        {
+          "number": 2,
+          "parameter": "superficie_terreno",
+          "verdict": "VIOLATION",
+          "declared_value": "5.025 m2 según Certificado de Avalúo Fiscal Detallado (SII)",
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "En Certificado de Avalúo Fiscal Detallado (SII) indica 5.025 m2 de terreno, sin embargo, en planos y solicitud indica otra superficie, aclarar en: Planos, solicitud y total terreno en Oficio SEIM Adjunto."
+        },
+        {
+          "number": 3,
+          "parameter": "superficie_propuesta",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC, Art. 1.1.6 LGUC, Art. 70° LGUC",
+          "text": "Debe aclarar superficies propuestas y terreno para revisar normas urbanísticas cálculos normativos y aporte al espacio público."
+        },
+        {
+          "number": 4,
+          "parameter": "documentacion_planimetria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Polígono de superficie es acotado de forma distinta al plano de arquitectura, corregir Dimensiones."
+        },
+        {
+          "number": 5,
+          "parameter": "uso_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC, Art. 55, Art. 116 LGUC",
+          "text": "Existen edificaciones existentes Sin Antecedentes en esta DOM, se solicita aclarar. Toda vez que en las zonas rurales aplica el artículo N°55."
+        },
+        {
+          "number": 6,
+          "parameter": "altura_distanciamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "En cortes y elevaciones deben indicar altura y distanciamientos que concuerden con plano de emplazamiento, corregir."
+        },
+        {
+          "number": 7,
+          "parameter": "documentacion_techumbre",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Acotar planta techumbre y señalar bajada de aguas lluvias, también en elevaciones."
+        },
+        {
+          "number": 8,
+          "parameter": "aporte_espacio_publico",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC, Ley 20.958",
+          "text": "No presenta detalle cálculo al aporte al espacio público (Planos y Cálculos), Aclarar."
+        },
+        {
+          "number": 9,
+          "parameter": "calculos_normativos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC, Art. 70°, Ley 20.958",
+          "text": "Una vez especificada los metros cuadrados del terreno y superficies propuestas, se procederá a revisar cálculos normativos, urbanísticos y aporte al espacio público, todo esto en solicitud, planos y anexos."
+        }
+      ],
+      "id": "acta-cabildo-page9",
+      "source_file": "cabildo_page9",
+      "num_observations": 9,
+      "vision_used": true
+    },
+    {
+      "municipality": "Municipalidad de Conchalí",
+      "expedient_ref": "297/2023",
+      "date": "11/03/2024",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "checklist",
+      "full_text": "Acta de Observaciones SPE 5.1.6 Obra Nueva. Dirección de Obras Municipales, Departamento de Edificación. Propiedad: La Palmilla N°3964, Rol 2380-22, fecha ingreso 19.10.2023. Propietario: Josias Huaya Montalvan. Arquitecto: Francisco Romero Constanzo (arquidisociados@gmail.com). Revisión de cumplimiento Art. 5.1.6 OGUC con los siguientes resultados: Ítem 1 (Solicitud firmada) NC; Ítem 2 (CIP) C - CIP N°357/2023 de fecha 07.08.2023; Ítem 3 (Formulario estadísticas) NC; Ítem 4 (Revisor Independiente) NA; Ítem 5 (Revisor Cálculo Estructural) NA; Ítem 6 (Factibilidad sanitaria) C; Ítem 7 (Plano Ubicación) C; Ítem 8 (Plano Emplazamiento) NC; Ítem 9 (Plantas) NC; Ítem 10 (Cortes y elevaciones) NC; Ítem 11 (Cuadro y esquema polígonos) NC.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Solicitud firmada por el propietario y el arquitecto proyectista - No Cumple."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Formulario único de estadísticas de edificación. Actualizar en caso de existir modificaciones a presentación inicial."
+        },
+        {
+          "number": 3,
+          "parameter": "adosamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Plano de Emplazamiento: Indicar el porcentaje de adosamiento de todos los elementos adosados."
+        },
+        {
+          "number": 4,
+          "parameter": "accesibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.3 OGUC",
+          "text": "Planta de todos los pisos: Aclarar como recinto 'Baño' en segundo nivel da cumplimiento a las normas de habitabilidad respecto a la renovación de aire."
+        },
+        {
+          "number": 5,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Planta de todos los pisos: Graficar porcentaje de adosamiento en planimetría, correspondiente a los elementos adosados en el primer nivel e indicar la resistencia al fuego de sus muros."
+        },
+        {
+          "number": 6,
+          "parameter": "rasante",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.3 OGUC",
+          "text": "Cortes y elevaciones: Graficar todas las rasantes atingentes al proyecto, indicar la correspondiente al eje de calle La Palmilla."
+        },
+        {
+          "number": 7,
+          "parameter": "normas_urbanisticas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Cuadro y esquema de polígonos de superficies: Incluir cuadro resumen en el cual detalle el cumplimiento de la totalidad de las normas urbanísticas aplicables al proyecto."
+        },
+        {
+          "number": 8,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": "100%",
+          "allowed_value": "50% y 100% según corresponda",
+          "article": "DDDU 110 de fecha 14.08.2002 fig. 3.b",
+          "text": "Cuadro y esquema de polígonos de superficies: Corregir m2 en cuadro de superficies en polígonos 'A', ya que de acuerdo a planta de primer nivel, no correspondería considerar dicho polígono en su totalidad a un 100%, sino a un 50% y 100%. Verificar DDDU 110 de fecha 14.08.2002 fig. 3.b."
+        },
+        {
+          "number": 9,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Cuadro y esquema de polígonos de superficies: Actualizar m2 y cumplimiento de normas urbanísticas una vez revisado lo indicado en la presente acta de observaciones."
+        }
+      ],
+      "id": "acta-conchali2-page2",
+      "source_file": "conchali2_page2",
+      "num_observations": 9,
+      "vision_used": true
+    },
+    {
+      "municipality": null,
+      "expedient_ref": "IDOC: 781863",
+      "date": null,
+      "project_type": null,
+      "zone": "ZR-2",
+      "round": 1,
+      "format": "checklist",
+      "full_text": "N°12 - Planta de cubiertas: Graficar puntos de bajadas de aguas lluvias de acuerdo a lo indicado en el Art° 4.1.16 OGUC.\nN°13 - Plano de cierro: Aclarar como proyecto da cumplimiento a la altura máxima de cierro y porcentaje de transparencia establecida en la zona ZR-2 del plan regulador comunal.\nN°15 - Proyecto de cálculo estructural: Actualizar proyecto de cálculo estructural, en caso de surgir modificaciones al proyecto presentado inicialmente y declarada partida de escalera en especificaciones técnicas Art. 5.1.7. OGUC.\nN°16 - Especificaciones técnicas: 1) Indicar materialidad de partida correspondiente a escalera. 2) Existe discordancia en partida de muros de primer nivel ya que señala resistencia al fuego F-120, sin embargo código Minvu se indica f-90. Aclarar.\nN°25 - Informe calidad del subsuelo: Incluir informe de calidad del subsuelo, de acuerdo a lo indicado en el Art. 5.1.15. OGUC.\nN°26 - Informe de Mitigación Vial (IMIV): Corregir de acuerdo a aclaración de la presente acta de observaciones, si corresponde.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "planta_cubiertas_aguas_lluvias",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.16 OGUC",
+          "text": "Graficar puntos de bajadas de aguas lluvias de acuerdo a lo indicado en el Art° 4.1.16 OGUC."
+        },
+        {
+          "number": 2,
+          "parameter": "cierro_altura_transparencia",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Aclarar como proyecto da cumplimiento a la altura máxima de cierro y porcentaje de transparencia establecida en la zona ZR-2 del plan regulador comunal."
+        },
+        {
+          "number": 3,
+          "parameter": "estructura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "Actualizar proyecto de cálculo estructural, en caso de surgir modificaciones al proyecto presentado inicialmente y declarada partida de escalera en especificaciones técnicas Art. 5.1.7. OGUC."
+        },
+        {
+          "number": 4,
+          "parameter": "especificaciones_tecnicas_escalera",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Indicar materialidad de partida correspondiente a escalera."
+        },
+        {
+          "number": 5,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": "F-120",
+          "allowed_value": "F-90",
+          "article": null,
+          "text": "Existe discordancia en partida de muros de primer nivel ya que señala resistencia al fuego F-120, sin embargo código Minvu se indica f-90. Aclarar."
+        },
+        {
+          "number": 6,
+          "parameter": "informe_calidad_subsuelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "Incluir informe de calidad del subsuelo, de acuerdo a lo indicado en el Art. 5.1.15. OGUC."
+        },
+        {
+          "number": 7,
+          "parameter": "informe_mitigacion_vial",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Corregir de acuerdo a aclaración de la presente acta de observaciones, si corresponde."
+        }
+      ],
+      "id": "acta-conchali2-page3",
+      "source_file": "conchali2_page3",
+      "num_observations": 7,
+      "vision_used": true
+    },
+    {
+      "municipality": "Municipalidad de Conchalí",
+      "expedient_ref": "ING. DOM N° 297/2023",
+      "date": "11/03/2024",
+      "project_type": "Obra Nueva",
+      "zone": "ZR-2",
+      "round": 1,
+      "format": "checklist",
+      "full_text": "A través del ING. DOM N° 297/2023 de fecha 19.10.2023 se ha solicitado la aprobación de Permiso de edificación- Obra nueva para la propiedad ubicada LA PALMILLA N°3964, con destino VIVIENDA. Con fecha 14.02.2024 se revisó el expediente acorde a lo señalado en el artículo 116°, inciso 6° de la L.G.U.C., emitiendo acta de observaciones de la cual se adjunta una copia. En virtud de lo dispuesto en el artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, se otorga un plazo de 60 días corridos para subsanar las observaciones pendientes, en tanto que de acuerdo a lo establecido en ORD N°4499 de fecha 29.09.2014 de la SEREMI Metropolitana de Vivienda y Urbanismo, la respuesta de las observaciones deberá efectuarse en UN SOLO ACTO ADMINISTRATIVO. Concluido el plazo señalado y/o manteniéndose pendiente alguna de las observaciones, se rechazara dicha solicitud de PERMISO DE EDIFICACIÓN-OBRA NUEVA.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Solicitud firmada por el propietario y el arquitecto proyectista - No Cumple."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_estadisticas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Formulario único de estadísticas de edificación. 1) Actualizar en caso de existir modificaciones a presentación inicial."
+        },
+        {
+          "number": 3,
+          "parameter": "adosamiento_porcentaje",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Plano de Emplazamiento: 1) Indicar el porcentaje de adosamiento de todos los elementos adosados. Art. 2.6.2. OGUC."
+        },
+        {
+          "number": 4,
+          "parameter": "habitabilidad_ventilacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.3 OGUC",
+          "text": "Planta de todos los pisos: 1) Aclarar como recinto 'Baño' en segundo nivel, da cumplimiento a las normas de habitabilidad respecto a la renovación de aire. Art. 4.1.3. OGUC."
+        },
+        {
+          "number": 5,
+          "parameter": "adosamiento_planimetria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Planta de todos los pisos: 2) Graficar porcentaje de adosamiento en planimetría, correspondiente a los elementos adosados en el primer nivel e indicar la resistencia al fuego de sus muros."
+        },
+        {
+          "number": 6,
+          "parameter": "rasante",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.3 OGUC",
+          "text": "Cortes y elevaciones: 1) Graficar todas las rasantes atingentes al proyecto, indicar la correspondiente al eje de calle La Palmilla. Art° 2.6.3 OGUC."
+        },
+        {
+          "number": 7,
+          "parameter": "cuadro_normas_urbanisticas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Cuadro y esquema de polígonos de superficies: 1) Incluir cuadro resumen en el cual detalle el cumplimiento de la totalidad de las normas urbanísticas aplicables al proyecto."
+        },
+        {
+          "number": 8,
+          "parameter": "superficie_poligonos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "50% y 100% según DDDU 110 fig. 3b",
+          "article": "DDDU 110 de fecha 14.08.2002 fig. 3 b",
+          "text": "Cuadro y esquema de polígonos de superficies: 2) Corregir m2 en cuadro de superficies en polígonos 'A', ya que de acuerdo a planta de primer nivel, no correspondería considerar dicho polígono en su totalidad a un 100%, sino a un 50% y 100%. Verificar DDDU 110 de fecha 14.08.2002 fig. 3 b."
+        },
+        {
+          "number": 9,
+          "parameter": "cuadro_superficies_actualizacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Cuadro y esquema de polígonos de superficies: 3) Actualizar m2 y cumplimiento de normas urbanísticas una vez revisado lo indicado en la presente acta de observaciones."
+        },
+        {
+          "number": 10,
+          "parameter": "aguas_lluvias",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.16 OGUC",
+          "text": "Planta de cubiertas: 1) Graficar puntos de bajadas de aguas lluvias de acuerdo a lo indicado en el Art° 4.1.16 OGUC."
+        },
+        {
+          "number": 11,
+          "parameter": "cierro_altura_transparencia",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Plan Regulador Comunal ZR-2",
+          "text": "Plano de cierro: 1) Aclarar como proyecto da cumplimiento a la altura máxima de cierro y porcentaje de transparencia establecida en la zona ZR-2 del plan regulador comunal."
+        },
+        {
+          "number": 12,
+          "parameter": "estructura_calculo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "Proyecto de cálculo estructural: 1) Actualizar proyecto de cálculo estructural, en caso de surgir modificaciones al proyecto presentado inicialmente y declarada partida de escalera en especificaciones técnicas Art. 5.1.7. OGUC."
+        },
+        {
+          "number": 13,
+          "parameter": "especificaciones_tecnicas_escalera",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Especificaciones técnicas: 1) Indicar materialidad de partida correspondiente a escalera."
+        },
+        {
+          "number": 14,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": "F-120",
+          "allowed_value": "F-90",
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Especificaciones técnicas: 2) Existe discordancia en partida de muros de primer nivel ya que señala resistencia al fuego f-120, sin embargo código Minvu se indica f-90. Aclarar."
+        },
+        {
+          "number": 15,
+          "parameter": "calidad_subsuelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "Informe calidad del subsuelo: 1) Incluir informe de calidad del subsuelo, de acuerdo a lo indicado en el Art. 5.1.15. OGUC."
+        },
+        {
+          "number": 16,
+          "parameter": "mitigacion_vial",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Informe de Mitigación Vial (IMIV): 1) Corregir de acuerdo a aclaración de la presente acta de observaciones, si corresponde."
+        },
+        {
+          "number": 17,
+          "parameter": "constructibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 16 P.R.C. ZR-2",
+          "text": "Coeficiente de Constructibilidad: 1) Evaluar valor señalado, de acuerdo a aclaración de superficies. En consecuencia, aclarar como proyecto da cumplimiento al Coeficiente de constructibilidad permitido en la zona ZR-2 del Plan Regulador Comunal."
+        },
+        {
+          "number": 18,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 16 P.R.C. ZR-2",
+          "text": "Coeficiente de Ocupación de Suelo: 1) Evaluar valor señalado, de acuerdo a aclaración de superficies. En consecuencia, aclarar como proyecto da cumplimiento al Coeficiente de Ocupación de Suelo permitido en la zona ZR-2 del Plan Regulador Comunal."
+        }
+      ],
+      "id": "acta-conchali-acta2",
+      "source_file": "conchali_acta2",
+      "num_observations": 18,
+      "vision_used": true
+    },
+    {
+      "municipality": "Municipalidad de Conchalí",
+      "expedient_ref": "115/2023",
+      "date": "14/09/2023",
+      "project_type": "Modificación de Proyecto - Alteración",
+      "zone": null,
+      "round": 1,
+      "format": "checklist",
+      "full_text": "ACTA DE OBSERVACIONES S.P.E. 1.3.4 OGUC | MODIFICACIÓN DE PROYECTO. Dirección: PRINCIPAL DEL CAPITAN IGNACIO CARRERA PINTO N°1133, ROL 3728-1, Fecha Ingreso 06.03.2023. Propietario: EVARISTO DEL CARMEN MORAGA MORAGA. Arquitecto: FRESIA ANDREA POCH ERNST (piedemonte@piedemonte.cl), N° IDPME: 202313104MPE000001. VISTOS: Permiso de Edificación N° 83/1975 de fecha 27.10.1975 - Superficie edificada: 9,65 m2 | Recepción Final S/N° de fecha 11.04.1977. Permiso de Obra Menor N° 78/1987 de fecha 09.02.1987 - Superficie edificada: 24,00 m2 | Destino: Comercio. Permiso de Edificación N° 51/1987 de fecha 09.02.1987 - Superficie edificada: 133,85 m2 - Terreno: 162 m2 - Destino: Vivienda y Comercio | Recepción Parcial N° 32/1988 de fecha 26.02.1988 - Superficie: 78,33 m2 perteneciente a Local Comercial.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": "Solicitud: Modificación de edificación-Alteración",
+          "allowed_value": null,
+          "article": "Art. 1.1.2 OGUC, Art. 1.2.2 OGUC, Art. 5.1.20 OGUC",
+          "text": "1) Verificar correspondencia de solicitud ingresada 'Solicitud: Modificación de edificación-Alteración', ya que proyecto presentado no cumple con condiciones de la definición de alteración del Art. 1.1.2. OGUC. 2) Indicar en cuadro 1 el nombre de vía correctamente de acuerdo en lo señalado en CIP N° 485/2021 de fecha 06.09.2021. Verificar en la totalidad de la presentación. 3) Aclarar en cuadro 2 los datos indicados en 'fojas, N° y año', de acuerdo a verificación en Conservador de Bienes Raíces de Santiago, lo señalado en correspondiente a otra propiedad. Art. 1.2.2. OGUC. 4) En cuadro 4, aclarar si 'mantiene profesionales de la solicitud de permiso de edificación' o 'adjunta comunicación del propietario en que señale el cabo de profesionales'. Art. 5.1.20. OGUC. 5) En cuadro 6, señalar densidad de ocupación correspondiente. 6) Aclarar lo señalado en cuadro 6.2. En columna 'permitido' indicar de acuerdo a lo señalado en CIP N° 485/2021 de fecha 06.09.2021. Además, debe rectificar lo indicado en filas de 'distanciamiento, sistema de agrupamiento, adosamiento, antejardín, altura en metro y/o pisos y estacionamientos'. 7) Aclarar lo indicado en cuadro 6.3 en 'actividad' en columna 'equipamiento', debido a que no tiene relación con actividad de edificación. Art. 2.1.33. OGUC. 8) Rectificar lo señalado en cuadro 6.5 a 6.9 asociado a cálculo de monto de aporte al espacio público, según ley 20.958. Se sugiere incluir documento en el cual explicite procedimiento."
+        },
+        {
+          "number": 2,
+          "parameter": "certificado_informaciones_previas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "CIP N° 485/2021 de fecha 06.09.2021 — Homologación de vías ORD. N° 1602/119/2023 de fecha 07.02.2023"
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion_estadisticas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "1) Corregir lo indicado en superficie, debe aproximar a entero más cercano la superficie."
+        },
+        {
+          "number": 4,
+          "parameter": "informe_revisor_independiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "No Aplica."
+        },
+        {
+          "number": 5,
+          "parameter": "informe_revisor_calculo_estructural",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "No Aplica."
+        },
+        {
+          "number": 6,
+          "parameter": "certificado_factibilidad_sanitaria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.17 OGUC, Art. 5.1.6 OGUC",
+          "text": "1) Incluir Certificado de factibilidad de dación de servicios de agua potable y alcantarillado, emitido por la empresa dotadora de servicio sanitario. Art. 5.1.17. - 5.1.6. OGUC."
+        },
+        {
+          "number": 7,
+          "parameter": "plano_ubicacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Cumple. Sin observaciones."
+        },
+        {
+          "number": 8,
+          "parameter": "plano_emplazamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "1) Considerar dimensiones indicadas en Homologación de vías ORD. N° 1602/119/2023 de fecha 07.02.2023 para 'superficie de espacio público adyacente'."
+        },
+        {
+          "number": 9,
+          "parameter": "planta_arquitectura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 OGUC",
+          "text": "1) Graficar la totalidad de los ejes estructurales. 2) Verificar línea de edificación graficada, ya que se emplaza sobre muro y eje 2. 3) Aclarar muro graficado en deslinde norte y poniente, ya que representa muro medianero en ambos deslindes. En deslinde norte proyecta nuevo muro, con características de medianería, el proyecto no cumple con las condiciones indicadas en el Art. 1.1.2. OGUC cito: '...muro medianero: el que pertenece en común a los dueños de los predios colindantes...' Y, en deslinde poniente grafica muro medianero, pero en Permiso de Edificación N° 51/1987 de fecha 09.02.1987 se grafica como muro de adosamiento. 4) Verificar correlación de cotas graficadas con lo aprobado en Permiso de Edificación N° 51/1987 de fecha 09.02.1987. De existir modificaciones debe expresarlo y representar claramente."
+        },
+        {
+          "number": 10,
+          "parameter": "cortes_elevaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "1) Ídem observación 9.3. del presente acta de observaciones."
+        }
+      ],
+      "id": "acta-conchali-page2",
+      "source_file": "conchali_page2",
+      "num_observations": 10,
+      "vision_used": true
+    },
+    {
+      "municipality": null,
+      "expedient_ref": "759022",
+      "date": null,
+      "project_type": null,
+      "zone": "ZM-4",
+      "round": 1,
+      "format": "checklist",
+      "full_text": "ACTA DE OBSERVACIONES DOM. Ítem 12: Plano de cierre, cuando el proyecto lo consulte. Observación: 1) Aclarar de que forma da cumplimiento a la transparencia permitida en la zona ZM-4 del PRC. Ítem 13: Cuadro de superficies, indicando las superficies parciales necesarias según el tipo de proyecto y cálculo de carga de ocupación de acuerdo a estas superficies y a los destinos contemplados en el proyecto. Observaciones: 1) Dividir esquema de superficies en polígonos regulares. 2) Aclarar lo indicado en cuadro de esquema de superficies, debido a que indica en 'total 1° P. 79,43 m2', superficie que no concuerda con la aprobada en Permiso de Edificación N° 51/1987 de fecha 09.02.1987. 3) Evaluar los metros cuadrados declarados en Permiso de Edificación N° 51/1987 de fecha 09.02.1987, ya que de acuerdo a lo verificado el total señalado (133,85 m2) se encuentra erróneo y faltan metros cuadrados que no fueron evidenciados. Por lo cual debe declarar en presentación actual superficies faltantes. Ítem 15: Proyecto de cálculo estructural de acuerdo con el artículo 5.1.7. OGUC. Observaciones: 1) Aclarar cumplimiento de Art. 5.1.7. OGUC por superficie ampliada. 2) Verificar que memoria de proyecto de cálculo estructural cumpla con el contenido indicado en el Art. 5.1.7. OGUC. Además, organizar como informe y dejar espacio en donde firme profesional competente. 3) Clarificar como escalera proyectada da cumplimiento al Art. 5.1.7. OGUC. Ya que, según especificaciones técnicas en punto '1.4. Aceros - Estructura metálica en perfiles de acero' señala que escalera proyectada se considera materialidad de acero (clase A). Ítem 17: Autorización de Uso de Medianería y/o Adosamiento Art. 2.6.2 O.G.U.C. Observaciones: 1) Aclarar lo indicado en 'autorización de adosamiento' de propietario de predio vecino de deslinde poniente. Debido a que indica que autoriza a Jonathan Elías Ibáñez Mora, lo cual no se condice con propietario señalado en Solicitud y documentación adjuntada. A la vez, verificar que datos señalados en último párrafo, tengan relación con proyecto presentado (porcentaje de adosamiento, largo total y orientación). 2) Debe adjuntar carta de autorización escrita del propietario de la edificación vecina del deslinde PONIENTE y NORTE, suscrita ante notario, por mayor uso del adosamiento permitido (>40%), de acuerdo a lo indicado en el Art. 2.6.2 OGUC. Ítem 25: Informe calidad del subsuelo Art. 5.1.15. O.G.U.C. Observación: 1) Incluir informe calidad del subsuelo Art. 5.1.15. OGUC. Ítem 26: Informe de Mitigación Vial (IMIV). Observación: 1) Incluir certificado emitido por plataforma SEIM válido, el cual contenga firma y cuadros asociados a destino, superficie y firma. Ítem 34: Informe de resistencia al fuego de acuerdo a Art. 4.3.3 - 4.3.5 OGUC. Observación: 1) Adjuntar informe de resistencia al fuego. Art. 4.3.3 - 4.3.5. OGUC. El cual contenga soluciones constructivas que se homologue del 'listado oficial de comportamiento al fuego de elementos y componentes de la construcción del MINVU' o certificado de ensayo correspondiente por elemento constructivo. Ítem 39: Agrupamiento. Art. 2.6.1 O.G.U.C. – Art. 12 P.R.C. Observación: 1) Aclarar sistema de agrupamiento indicado, debido a que presenta incongruencias en documentos y planimetría con proyecto presentado Art. 2.6.1. OGUC. A la vez señala y grafica muro medianero, pero proyecto no cumple con las características mencionadas en el Art. 1.1.2. OGUC cito: '...muro medianero: el que pertenece en común a los dueños de dos predios colindantes...'",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "transparencia_cierre",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "PRC ZM-4",
+          "text": "Aclarar de que forma da cumplimiento a la transparencia permitida en la zona ZM-4 del PRC."
+        },
+        {
+          "number": 2,
+          "parameter": "cuadro_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Dividir esquema de superficies en polígonos regulares."
+        },
+        {
+          "number": 3,
+          "parameter": "cuadro_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": "79,43 m2 (total 1° P.)",
+          "allowed_value": null,
+          "article": "Permiso de Edificación N° 51/1987 de fecha 09.02.1987",
+          "text": "Aclarar lo indicado en cuadro de esquema de superficies, debido a que indica en 'total 1° P. 79,43 m2', superficie que no concuerda con la aprobada en Permiso de Edificación N° 51/1987 de fecha 09.02.1987."
+        },
+        {
+          "number": 4,
+          "parameter": "cuadro_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": "133,85 m2",
+          "allowed_value": null,
+          "article": "Permiso de Edificación N° 51/1987 de fecha 09.02.1987",
+          "text": "Evaluar los metros cuadrados declarados en Permiso de Edificación N° 51/1987 de fecha 09.02.1987, ya que de acuerdo a lo verificado el total señalado (133,85 m2) se encuentra erróneo y faltan metros cuadrados que no fueron evidenciados. Por lo cual debe declarar en presentación actual superficies faltantes."
+        },
+        {
+          "number": 5,
+          "parameter": "estructura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "Aclarar cumplimiento de Art. 5.1.7. OGUC por superficie ampliada."
+        },
+        {
+          "number": 6,
+          "parameter": "estructura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "Verificar que memoria de proyecto de cálculo estructural cumpla con el contenido indicado en el Art. 5.1.7. OGUC. Además, organizar como informe y dejar espacio en donde firme profesional competente."
+        },
+        {
+          "number": 7,
+          "parameter": "estructura",
+          "verdict": "VIOLATION",
+          "declared_value": "Escalera de acero (clase A)",
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "Clarificar como escalera proyectada da cumplimiento al Art. 5.1.7. OGUC. Ya que, según especificaciones técnicas en punto '1.4. Aceros - Estructura metálica en perfiles de acero' señala que escalera proyectada se considera materialidad de acero (clase A)."
+        },
+        {
+          "number": 8,
+          "parameter": "adosamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Aclarar lo indicado en 'autorización de adosamiento' de propietario de predio vecino de deslinde poniente. Debido a que indica que autoriza a Jonathan Elías Ibáñez Mora, lo cual no se condice con propietario señalado en Solicitud y documentación adjuntada. A la vez, verificar que datos señalados en último párrafo, tengan relación con proyecto presentado (porcentaje de adosamiento, largo total y orientación)."
+        },
+        {
+          "number": 9,
+          "parameter": "adosamiento",
+          "verdict": "VIOLATION",
+          "declared_value": ">40%",
+          "allowed_value": "40%",
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Debe adjuntar carta de autorización escrita del propietario de la edificación vecina del deslinde PONIENTE y NORTE, suscrita ante notario, por mayor uso del adosamiento permitido (>40%), de acuerdo a lo indicado en el Art. 2.6.2 OGUC."
+        },
+        {
+          "number": 10,
+          "parameter": "calidad_subsuelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "Incluir informe calidad del subsuelo Art. 5.1.15. OGUC."
+        },
+        {
+          "number": 11,
+          "parameter": "informe_mitigacion_vial",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Incluir certificado emitido por plataforma SEIM válido, el cual contenga firma y cuadros asociados a destino, superficie y firma."
+        },
+        {
+          "number": 12,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.3.3 - 4.3.5 OGUC",
+          "text": "Adjuntar informe de resistencia al fuego. Art. 4.3.3 - 4.3.5. OGUC. El cual contenga soluciones constructivas que se homologue del 'listado oficial de comportamiento al fuego de elementos y componentes de la construcción del MINVU' o certificado de ensayo correspondiente por elemento constructivo."
+        },
+        {
+          "number": 13,
+          "parameter": "agrupamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.1 OGUC, Art. 12 PRC, Art. 1.1.2 OGUC",
+          "text": "Aclarar sistema de agrupamiento indicado, debido a que presenta incongruencias en documentos y planimetría con proyecto presentado Art. 2.6.1. OGUC. A la vez señala y grafica muro medianero, pero proyecto no cumple con las características mencionadas en el Art. 1.1.2. OGUC cito: '...muro medianero: el que pertenece en común a los dueños de dos predios colindantes...'"
+        }
+      ],
+      "id": "acta-conchali-page3",
+      "source_file": "conchali_page3",
+      "num_observations": 13,
+      "vision_used": true
+    },
+    {
+      "municipality": "Conchalí",
+      "expedient_ref": "IDOOC: 759022",
+      "date": "14/09/2023",
+      "project_type": null,
+      "zone": "ZM-4",
+      "round": 1,
+      "format": "checklist",
+      "full_text": "Observaciones N°40 a N°51 del Acta de Observaciones de la Dirección de Obras Municipales de Conchalí, revisión de fecha 14.09.2023, correspondiente a expediente IDOOC 759022. Se detallan observaciones sobre Coeficiente de Constructibilidad, Coeficiente de Ocupación de Suelo, Coeficiente de Ocupación de los Pisos Superiores, Superficie Predial Mínima, Altura Máxima de Edificación, Adosamiento, Distanciamiento, Antejardín, Ochavo, Rasante, Densidad Máxima y Estacionamientos.",
+      "observations": [
+        {
+          "number": 40,
+          "parameter": "constructibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": "133,85 m2 (según Permiso de Edificación N°51/1987 de fecha 09.02.1987)",
+          "allowed_value": "según Coeficiente de Constructibilidad zona ZM-4 del Plan Regulador Comunal",
+          "article": "Art. 16 P.R.C.",
+          "text": "Debe aclarar los metros cuadrados declarados en Permiso de Edificación N° 51/1987 de fecha 09.02.1987, ya que de acuerdo a lo verificado el total señalado (133,85 m2) se encuentra erróneo y faltan metros cuadrados que no fueron evidenciados. Por lo cual debe declarar en presentación actual superficies faltantes. En consecuencia debe indicar Coeficiente de Constructibilidad y dar cumplimiento a lo permitido en la zona ZM-4 del plan regulador comunal."
+        },
+        {
+          "number": 41,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": "133,85 m2 (según Permiso de Edificación N°51/1987 de fecha 09.02.1987)",
+          "allowed_value": "según Coeficiente de Ocupación de Suelo zona ZM-4 del Plan Regulador Comunal",
+          "article": "Art. 16 P.R.C.",
+          "text": "Debe aclarar los metros cuadrados declarados en Permiso de Edificación N° 51/1987 de fecha 09.02.1987, ya que de acuerdo a lo verificado el total señalado (133,85 m2) se encuentra erróneo y faltan metros cuadrados que no fueron evidenciados. Por lo cual debe declarar en presentación actual superficies faltantes. En consecuencia debe indicar Coeficiente de Ocupación de Suelo y dar cumplimiento a lo permitido en la zona ZM-4 del plan regulador comunal."
+        },
+        {
+          "number": 42,
+          "parameter": "ocupacion_pisos_superiores",
+          "verdict": "VIOLATION",
+          "declared_value": "133,85 m2 (según Permiso de Edificación N°51/1987 de fecha 09.02.1987)",
+          "allowed_value": "según Coeficiente de Ocupación de Pisos Superiores zona ZV-4 del Plan Regulador Comunal",
+          "article": "Art. 16 P.R.C.",
+          "text": "Debe aclarar los metros cuadrados declarados en Permiso de Edificación N° 51/1987 de fecha 09.02.1987, ya que de acuerdo a lo verificado el total señalado (133,85 m2) se encuentra erróneo y faltan metros cuadrados que no fueron evidenciados. Por lo cual debe declarar en presentación actual superficies faltantes. En consecuencia debe indicar Coeficiente de Ocupación de los Pisos Superiores y dar cumplimiento a lo permitido en la zona ZV-4 del plan regulador comunal."
+        },
+        {
+          "number": 43,
+          "parameter": "superficie_predial_minima",
+          "verdict": "NOT_APPLICABLE",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 16 P.R.C.",
+          "text": "No aplica."
+        },
+        {
+          "number": 44,
+          "parameter": "altura",
+          "verdict": "COMPLIANT",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 16 P.R.C.",
+          "text": "..."
+        },
+        {
+          "number": 45,
+          "parameter": "adosamiento",
+          "verdict": "VIOLATION",
+          "declared_value": ">40% en deslinde norte y poniente",
+          "allowed_value": "40% máximo sin autorización del vecino (Art. 2.6.2 OGUC, Inciso 1, Numeral 1)",
+          "article": "Art. 2.6.2 O.G.U.C.",
+          "text": "Debe indicar correctamente el porcentaje de adosamiento de los deslindes norte y poniente. Además, por mayor uso de adosamiento del permitido (>40%) en deslinde norte y poniente, debe adjuntar carta de autorización del propietario del predio vecino firmada ante notario, según lo señalado en el Art. 2.6.2 OGUC, Inciso 1, Numeral 1."
+        },
+        {
+          "number": 46,
+          "parameter": "distanciamiento",
+          "verdict": "COMPLIANT",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.3 OGUC",
+          "text": "..."
+        },
+        {
+          "number": 47,
+          "parameter": "antejardin",
+          "verdict": "VIOLATION",
+          "declared_value": "Presenta elemento (muro) perteneciente a edificación proyectada ubicado sobre franja de antejardín",
+          "allowed_value": "3 metros según zona ZM-4 del Plan Regulador Comunal",
+          "article": "Art. 8 P.R.C.",
+          "text": "Aclarar como proyecto da cumplimiento al antejardín de 3 mts. permitido en la zona ZM-4 del Plan Regulador Comunal. Presenta elemento (muro) perteneciente a edificación proyectada que se ubica sobre franja de antejardín."
+        },
+        {
+          "number": 48,
+          "parameter": "ochavo",
+          "verdict": "NOT_APPLICABLE",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 11 P.R.C.",
+          "text": "No aplica."
+        },
+        {
+          "number": 49,
+          "parameter": "rasante",
+          "verdict": "COMPLIANT",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.3 O.G.U.C.",
+          "text": "..."
+        },
+        {
+          "number": 50,
+          "parameter": "densidad",
+          "verdict": "NOT_APPLICABLE",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 O.G.U.C.",
+          "text": "No aplica."
+        },
+        {
+          "number": 51,
+          "parameter": "estacionamientos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "1 estacionamiento por cada 100 m2 según Art. 14 PRC y Art. 7.1.2.9 PRMS (destino: comercio-restaurante)",
+          "article": "Art. 14 P.R.C. y Art. 7.1.2.9 PRMS",
+          "text": "Aclarar como proyecto da cumplimiento a los estacionamientos requeridos (1/100 m2) por destino y actividad indicado en presentación (comercio-restaurante), de acuerdo a lo señalado en el Art. 14 PRC y Art. 7.1.2.9. PRMS."
+        }
+      ],
+      "id": "acta-conchali-page4",
+      "source_file": "conchali_page4",
+      "num_observations": 12,
+      "vision_used": true
+    },
+    {
+      "municipality": "Valparaíso",
+      "expedient_ref": "298/12",
+      "date": "24/01/2012",
+      "project_type": "Ampliación",
+      "zone": "Seccional de Borde Costero Sector Barón",
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente correspondiente a la solicitud de fecha, se comunica al solicitante las siguientes observaciones referentes a: tipos de permisos a solicitar, emplazamiento en terreno, espacios públicos, planos de arquitectura y sistemas de seguridad.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_formulario_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.4-2 y 5.1.6 OGUC",
+          "text": "DEBE REGISTRAR EN FORMULARIO DE SOLICITUD DE OBRA DE AMPLIACIÓN LOS PERMISOS ANTERIORES.(ITEM Nº 8)"
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_edificaciones_existentes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC, Art. 5.1.4-2 OGUC",
+          "text": "DEBE GRAFICAR CLARAMENTE LAS EDIFICACIONES EXISTENTES (ICH) QUE SE MANTIENEN Y QUE SE INTERVIENEN, LO QUE DEBE CONSIGNARSE ADEMAS EN FORMULARIO DE SOLICITUD, ADEMÁS DE UN PRESUPUESTO DE LA INTERVENCION A LAS EDIFICACIONES PREEXISTENTES A INTERVENIR."
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion_unidades",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "DEBE CONSIGNAR EN FORMULARIO DE AMPLIACION ITEM Nº 6.4 EL Nº DE UNIDADES."
+        },
+        {
+          "number": 4,
+          "parameter": "documentacion_listado_planos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-1-a OGUC",
+          "text": "FALTA LISTADO DE PLANOS Y ANTECEDENTES EN CADA UNO DE ELLOS."
+        },
+        {
+          "number": 5,
+          "parameter": "acceso_proyecto",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "EN PLANO DE EMPLAZAMIENTO DEBE GRAFICAR COMO SE ACCEDE AL PROYECTO DESDE AV. ERRAZURIZ EN CONCORDANCIA CON LO ESTIPULADO POR EL PRC MODIFICACION SECTOR BARON lamina 3"
+        },
+        {
+          "number": 6,
+          "parameter": "acceso_terrenos_colindantes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "DEBE GRAFICAR CLARAMENTE COMO SE ACCEDERA A TERRENOS DE SAAM AL ORIENTE DEL PROYECTO Y HACIA TERRENOS DE EPV AL PONIENTE."
+        },
+        {
+          "number": 7,
+          "parameter": "espacio_publico_autorizacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "DEBE GRAFICAR Y DIFERENCIAR CLARAMENTE EN TODOS LOS PLANOS, CUANDO SE TRATE DE ESPACIO PUBLICO, O TERRENOS DE MERVAL, LOS PROYECTOS QUE SE PLANTEAN EN ESOS ESPACIOS DEBEN SER AUTORIZADOS POR SUS PROPIETARIOS, MEDIANTE SOLICITUD INDEPENDIENTE, O MEDIANTE LA AUTORIZACIÓN NOTARIAL RESPECTIVA."
+        },
+        {
+          "number": 8,
+          "parameter": "documentacion_vecinos_rol",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "DEBE GRAFICAR VECINOS CON Nº DE ROL EN EMPLAZAMIENTO."
+        },
+        {
+          "number": 9,
+          "parameter": "documentacion_certificados_informes_previos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7a OGUC",
+          "text": "DEBE GRAFICAR CERTIFICADOS DE INFORMES PREVIOS EN EMPLAZAMIENTO, ACOTANDO LINEA DE EDIFICACION, Y EJES DE CALLES QUE ENFRENTA."
+        },
+        {
+          "number": 10,
+          "parameter": "espacio_publico_aguas_lluvia",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "EN ESPACIO PUBLICO 'PLAZA FRANCIA', DEBE DETALLAR ESCURRIMIENTOS DE AGUAS LLUVIA Y COMO SE SOLUCIONAN AGUAS BAJO NIVEL."
+        },
+        {
+          "number": 11,
+          "parameter": "espacio_publico_patio_botes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2-a y b del Seccional de Borde Costero Sector Barón (SBCSB)",
+          "text": "EN ESPACIO PUBLICO 'VENTANA AV. ARGENTINA' DEBE DEFINIR ESPECIFICAMNETE DEL 'PATIO DE BOTES DE LA MARINA PUBLICA', QUE PARTE SE EMPLAZA EN ESPACIO PUBLICO, SI INTERFIERE CON LOS ESPACIOS DE CIRCULACION ORIGINADOS EN LOTEO INICIAL, PARA LO CUAL DEBE GRAFICAR LA CIRCULACION ORIGINAL, Y SI SE MODIFICA O NO LOTEO EL CUAL DEBE PRESENTARSE EN CARPETA APARTE."
+        },
+        {
+          "number": 12,
+          "parameter": "espacio_publico_club_yates",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2-a y b SBCSB",
+          "text": "INCLUIR EDIFICIO INDEPENDIENTE PARA CLUB DE YATES O MARINA PUBLICA, INCLUYENDO ESQUEMA DE FUNCIONAMIENTO EN DONDE NO SE PRODUZCAN CRUCES DE BOTES CON EL PASEO, EL QUE DEBERA SER REVISADO POR LOS ACTUALES CONCESIONARIOS, PARA INCLUIR TODOS LOS ELEMENTOS EXISTENTES, LAS SUPERFICIES ADECUADAS, Y LA DISTRIBUCION QUE PERMITA SU FUNCIONAMIENTO."
+        },
+        {
+          "number": 13,
+          "parameter": "espacio_publico_accesos_entorno",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7b OGUC",
+          "text": "EN PLANO DE ESPACIO PUBLICO Nº 601 DEBE RELACIONARSE CON EL RESTO DEL TERRITORIO, RESPECTO DE ACCESOS, BORDES, ENTORNO EN GENERAL (HAY VIAS QUE TERMINAN EN NADA HACIA EL PONIENTE Y ORIENTE) INDICAR FLUJOS DIFERENCIADOS DE LOS FLUJOS PEATONALES Y VEHICULARES, DEL PUERTO O DEL RESTO DE LA PROPIEDAD."
+        },
+        {
+          "number": 14,
+          "parameter": "documentacion_cotas_plantas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7c OGUC",
+          "text": "ACOTAR PLANTAS DE ARQUITECTURA, FALTAN ALGUNAS COTAS GENERALES Y OTRAS PARCIALES."
+        },
+        {
+          "number": 15,
+          "parameter": "documentacion_cubierta_paisajismo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7c OGUC",
+          "text": "EN PLANOS DE CUBIERTA SE REQUIERE MAYOR DETALLE ACERCA DE 'TRATAMIENTO DE PAISAJISMO', SI SE TRATA DE AREAS VERDES, SI SON TRANSITABLES, SI HAY MOBILIARIO URBANO, SOMBREADEROS, BARANDAS, Y UN PLANO DE EVACUACION DE AGUAS LLUVIA, DEFINIENDO PENDIENTES DE ESCURRIMIENTO DE AGUAS, PUNTOS DE BAJADAS, CANALES ETC."
+        },
+        {
+          "number": 16,
+          "parameter": "circulacion_patio_comidas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-7e OGUC",
+          "text": "EN PATIO DE COMIDAS PRIMER PISO, DEBE GRAFICARSE LA CIRCULACION CLARAMENTE, EN EL SENTIDO DE TRANSPARENTAR EL EJE DE VISION, DE MODO DE QUE A FUTURO NO EXISTAN ELEMENTOS COMO MESAS O MOBILIARIO QUE DIFICULTE LA VISTA."
+        },
+        {
+          "number": 17,
+          "parameter": "documentacion_firmas_arquitecto",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2-a y b SBCSB",
+          "text": "FALTAN FIRMAS ARQUITECTO EN MEMORIA DE INTERVENCION ICH."
+        },
+        {
+          "number": 18,
+          "parameter": "documentacion_circulaciones_subterraneas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6-1-h OGUC",
+          "text": "PLANTA DE CIRCULACIONES SUBTERRANEAS, DEBE HACERSE EN BASE A LAMINA Nº 3 DE LOTEO MODIFICACION SECCIONAL DE BORDE COSTERO PLAN REGULADOR SECTOR BARON, CON ESQUEMA DE FUNCIONAMIENTO CLARO, INCLUYENDO INGENIERIA DE CALCULO."
+        },
+        {
+          "number": 19,
+          "parameter": "acceso_carga_descarga",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.4-2 OGUC, Art. 5.1.15 OGUC",
+          "text": "ACLARAR ACCESO DE CARGA Y DESCARGA EL QUE DEBE SER BAJO NIVEL Y DE ANCHO ADECUADO PARA ACCESO VEHICULAR CON PLANTAS Y CORTES."
+        },
+        {
+          "number": 20,
+          "parameter": "documentacion_proyecto_ich",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2 a y b SBCSB",
+          "text": "EN CARPETA INDEPENDIENTE, DEBE EJECUTARSE PROYECTO DE READECUACION, RESTRUCTURACION Y OBRAS MENORES DEL EDIFICIO BODEGAS ICH. INCLUYENDO PRESUPUESTO DE OBRAS."
+        },
+        {
+          "number": 21,
+          "parameter": "acceso_principal",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2 a y b SBCSB",
+          "text": "ACCESO PRINCIPAL DE LA OBRA POR CABEZAL DE LA BODEGA ICH. DEBE DARSELE EL RANGO NECESARIO PARA QUE SEA EL ACCESO PRINCIPAL, FUNDADO EN EL ENTORNO, CON SOLUCION DE ALEROS PARA AGUAS LLUVIA, GRADAS O RAMPAS HASTA NIVEL INTERIOR ETC."
+        },
+        {
+          "number": 22,
+          "parameter": "documentacion_portales_fachada",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "NO APARECEN LOS PORTALES DE PILARES EN FACHADA SUR, LOS QUE CONSTITUIAN UN PORTICO DE ACCESO LATERAL, QUE FUERAN APROBADOS EN REUNIÓNES ANTERIORES, PLANOS QUE FUERON RETIRADOS POR EL ARQUITECTO DE LA CARPETA DE ANTEPROYECTO, SIENDO PARTE INTEGRANTE DE ESTE. PARA PODER EVALUAR LAS DIFERENCIAS ENTRE UNO Y OTRO, ES NECESARIO DEVOLVER ESOS PLANOS ANTES DE LA REVISION."
+        },
+        {
+          "number": 23,
+          "parameter": "seguridad_tsunami_memoria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "NO SE ADJUNTA MEMORIA, O ESTUDIO DE SEGURIDAD PARA SUNAMIS. ACLARAR EN PLANO Nº 117 QUE SIGNIFICA 'EVACUACION A LOCOMOCION COLECTIVA'."
+        },
+        {
+          "number": 24,
+          "parameter": "seguridad_vias_evacuacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "EN PLANO Nº 118 DE ESCALAS DE EVACUACION, ACLARAR COMO SE DISTINGUIRA EN LA REALIDAD LAS DIFERENTES VIAS DE ESCAPE, YA QUE ESTAN DIFERENCIADAS LAS DE SUNAMIS, CON LAS DE INCENDIO, LAS A LOCOMOCION COLECTIVA (no hay locomoción colectiva en el sector)."
+        },
+        {
+          "number": 25,
+          "parameter": "seguridad_anchos_evacuacion_tsunami",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "ACOTAR ANCHOS DE PASILLOS Y ESCALAS DE EVACUACIONES DE SUNAMI EN PLANOS DE CUBIERTA."
+        }
+      ],
+      "id": "acta-es-scribd-com-document-152529042-acta-de-observacionesmall-plaza-bis32",
+      "source_file": "es.scribd.com_document_152529042_Acta-de-Observacionesmall-Plaza-Bis32",
+      "num_observations": 25,
+      "vision_used": false
+    },
+    {
+      "municipality": "Codegua",
+      "expedient_ref": null,
+      "date": null,
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "checklist",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° correspondiente a la solicitud de PERMISO EDIFICACIÓN DE OBRA NUEVA, comunico al solicitante las siguientes observaciones.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "uso_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Uso de suelo"
+        },
+        {
+          "number": 2,
+          "parameter": "sistema_agrupamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Sistema de agrupamiento"
+        },
+        {
+          "number": 3,
+          "parameter": "constructibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Coeficiente de constructibilidad"
+        },
+        {
+          "number": 4,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Coeficiente de ocupación de suelo"
+        },
+        {
+          "number": 5,
+          "parameter": "coeficiente_area_libre",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Coeficiente de área libre"
+        },
+        {
+          "number": 6,
+          "parameter": "superficie_predial_minima",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Superficie predial mínima"
+        },
+        {
+          "number": 7,
+          "parameter": "altura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Altura máxima de la edificación"
+        },
+        {
+          "number": 8,
+          "parameter": "adosamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Adosamiento"
+        },
+        {
+          "number": 9,
+          "parameter": "distanciamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Distanciamiento"
+        },
+        {
+          "number": 10,
+          "parameter": "antejardin",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Antejardines"
+        },
+        {
+          "number": 11,
+          "parameter": "ochaво",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Ochavos"
+        },
+        {
+          "number": 12,
+          "parameter": "rasante",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Rasantes"
+        },
+        {
+          "number": 13,
+          "parameter": "densidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Densidades máximas"
+        },
+        {
+          "number": 14,
+          "parameter": "altura_cierros",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Alturas de cierros"
+        },
+        {
+          "number": 15,
+          "parameter": "estacionamientos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Estacionamientos"
+        },
+        {
+          "number": 16,
+          "parameter": "franjas_afectas_declaratoria_utilidad_publica",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Franjas afectas a declaratoria de utilidad pública"
+        },
+        {
+          "number": 17,
+          "parameter": "areas_riesgo_o_proteccion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Áreas de Riesgo o de proyección"
+        },
+        {
+          "number": 18,
+          "parameter": "franjas_proteccion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Franjas de protección"
+        },
+        {
+          "number": 19,
+          "parameter": "obras_ornato_arborización",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "LGUC, OGUC, PRI, PRC",
+          "text": "Obras de Ornato y Arborización"
+        },
+        {
+          "number": 20,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Solicitud Formulario 2.1"
+        },
+        {
+          "number": 21,
+          "parameter": "documentacion_certificado_informaciones_previas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Fotocopia del Certificado de Informaciones Previas"
+        },
+        {
+          "number": 22,
+          "parameter": "documentacion_formulario_estadisticas_ine",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Formulario único de estadísticas de edificación INE"
+        },
+        {
+          "number": 23,
+          "parameter": "documentacion_informe_revisor_independiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Informe del Revisor Independiente o del Arquitecto proyectista"
+        },
+        {
+          "number": 24,
+          "parameter": "documentacion_certificado_inscripcion_revisor_independiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Certificado de inscripción vigente del revisor independiente"
+        },
+        {
+          "number": 25,
+          "parameter": "documentacion_proyecto_calculo_estructural",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Proyecto de Cálculo Estructural"
+        },
+        {
+          "number": 26,
+          "parameter": "documentacion_informe_revisor_calculo_estructural",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Informe favorable de Revisor de Cálculo Estructural"
+        },
+        {
+          "number": 27,
+          "parameter": "documentacion_certificado_inscripcion_revisor_calculo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Certificado de inscripción vigente del revisor de cálculo"
+        },
+        {
+          "number": 28,
+          "parameter": "documentacion_patentes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Patentes"
+        },
+        {
+          "number": 29,
+          "parameter": "documentacion_factibilidad_dotacion_servicios",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Factibilidad de dotación de servicios de agua potable y alcantarillado"
+        },
+        {
+          "number": 30,
+          "parameter": "documentacion_plano_ubicacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Plano de ubicación"
+        },
+        {
+          "number": 31,
+          "parameter": "documentacion_plano_emplazamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Plano de emplazamiento"
+        },
+        {
+          "number": 32,
+          "parameter": "documentacion_plantas_arquitectura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Plantas de arquitectura"
+        },
+        {
+          "number": 33,
+          "parameter": "documentacion_cortes_elevaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Cortes y elevaciones"
+        },
+        {
+          "number": 34,
+          "parameter": "documentacion_planta_techumbre",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Planta de techumbre"
+        },
+        {
+          "number": 35,
+          "parameter": "documentacion_especificaciones_tecnicas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Especificaciones Técnicas"
+        },
+        {
+          "number": 36,
+          "parameter": "documentacion_cuadro_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Cuadro de Superficie"
+        },
+        {
+          "number": 37,
+          "parameter": "documentacion_plano_comparativo_sombras",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.6.11 OGUC",
+          "text": "Plano comparativo de sombras si se acoge al Art. 2.6.11. OGUC"
+        },
+        {
+          "number": 38,
+          "parameter": "accesibilidad_universal",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.7 OGUC",
+          "text": "Accesibilidad Universal Artículo 4.1.7"
+        },
+        {
+          "number": 39,
+          "parameter": "documentacion_carpeta_ascensores",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.2 OGUC, 5.1.6 Proyecto de obras de edificación",
+          "text": "Carpeta de ascensores o instalaciones similares"
+        }
+      ],
+      "id": "acta-es-scribd-com-document-373662298-acta",
+      "source_file": "es.scribd.com_document_373662298_Acta",
+      "num_observations": 39,
+      "vision_used": false
+    },
+    {
+      "municipality": "Pucón",
+      "expedient_ref": "2020/0342",
+      "date": "04/09/2020",
+      "project_type": "Permiso de Edificación",
+      "zone": "Z-1",
+      "round": 1,
+      "format": "free_text",
+      "full_text": "1. Proyecto debe respetar franja de antejardín de 3 metros definida para zona Z-1 según Ordenanza de Plan Regulador vigente. No se autorizarán edificaciones acogidas al Art. 122° y Art. 124° de la LGUC.\n2. Debe informar respecto a cumplimiento de dotación mínima de estacionamientos para el proyecto, según lo establecido en Art. 13 de la Ordenanza del Plan Regulador comunal. El cálculo exige 1 cada 50 m2 de edificación.\n3. Respecto a adosamiento y continuidad, debe indicar claramente en plano de emplazamiento los porcentajes de cada tramo en el deslinde. Respecto a terraza posterior, aplica como muro sin vano, por lo que debe cumplir con distanciamiento mínimo a deslinde de 3 metros, para resguardar privacidad de vecinos, o prolongar muro de continuidad sobre 1,80 metros medidos desde el nivel de piso del 2° nivel.\n4. Falta informe de resistencia al fuego de los elementos de construcción. Se sugiere utilizar formato AF-01 MINVU.\n5. Falta informar cumplimiento de condiciones de accesibilidad universal del proyecto, para lo cual debe adjuntar memoria y plano de accesibilidad.\n6. Adjuntar informe de cumplimiento de condiciones de seguridad, ancho de vías de evacuación, superficie mínima de cocina, ancho de escaleras, ventilación y arquitectura del Título 4 de la OGUC.\n7. Al menos uno de los cortes esquemáticos debe mostrar detalle de escalera, con cotas de dimensiones.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "antejardin",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "3 metros",
+          "article": "Art. 24° Ordenanza Plan Regulador comunal",
+          "text": "Proyecto debe respetar franja de antejardín de 3 metros definida para zona Z-1 según Ordenanza de Plan Regulador vigente. No se autorizarán edificaciones acogidas al Art. 122° y Art. 124° de la LGUC."
+        },
+        {
+          "number": 2,
+          "parameter": "estacionamientos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "1 cada 50 m2 de edificación",
+          "article": "Art. 13° Ordenanza Plan Regulador comunal",
+          "text": "Debe informar respecto a cumplimiento de dotación mínima de estacionamientos para el proyecto, según lo establecido en Art. 13 de la Ordenanza del Plan Regulador comunal. El cálculo exige 1 cada 50 m2 de edificación."
+        },
+        {
+          "number": 3,
+          "parameter": "distanciamiento_fondo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "3 metros o muro de continuidad sobre 1,80 metros desde nivel de piso del 2° nivel",
+          "article": "Art. 2.6.2 OGUC",
+          "text": "Respecto a adosamiento y continuidad, debe indicar claramente en plano de emplazamiento los porcentajes de cada tramo en el deslinde. Respecto a terraza posterior, aplica como muro sin vano, por lo que debe cumplir con distanciamiento mínimo a deslinde de 3 metros, para resguardar privacidad de vecinos, o prolongar muro de continuidad sobre 1,80 metros medidos desde el nivel de piso del 2° nivel."
+        },
+        {
+          "number": 4,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.3.1 OGUC",
+          "text": "Falta informe de resistencia al fuego de los elementos de construcción. Se sugiere utilizar formato AF-01 MINVU."
+        },
+        {
+          "number": 5,
+          "parameter": "accesibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 N°14 OGUC",
+          "text": "Falta informar cumplimiento de condiciones de accesibilidad universal del proyecto, para lo cual debe adjuntar memoria y plano de accesibilidad."
+        },
+        {
+          "number": 6,
+          "parameter": "documentacion_seguridad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Título 4 de la OGUC",
+          "text": "Adjuntar informe de cumplimiento de condiciones de seguridad, ancho de vías de evacuación, superficie mínima de cocina, ancho de escaleras, ventilación y arquitectura del Título 4 de la OGUC."
+        },
+        {
+          "number": 7,
+          "parameter": "documentacion_escalera",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 N°7 OGUC",
+          "text": "Al menos uno de los cortes esquemáticos debe mostrar detalle de escalera, con cotas de dimensiones."
+        }
+      ],
+      "id": "acta-es-scribd-com-document-713224299-acta-dom-pucon-el-uno",
+      "source_file": "es.scribd.com_document_713224299_Acta-DOM-Pucon-El-Uno",
+      "num_observations": 7,
+      "vision_used": false
+    },
+    {
+      "municipality": "LAMPA",
+      "expedient_ref": "202202552",
+      "date": "07/12/2022",
+      "project_type": "Permiso de Obra Menor - Ampliación hasta 100m2",
+      "zone": "ZUDC SANTO TOMAS",
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9 de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente Nº POMAM-180/2022 correspondiente a la solicitud de Permiso de Obra Menor - Ampliación hasta 100m2 para la propiedad ubicada en calle AV. BOULEVARD LOS ARRAYANES N° 4645, conjunto habitacional LAS CASAS DE SANTO TOMAS III, ZUDC SANTO TOMAS, Lote 195, Rol 667-195.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 30 Ley 19.880, Art. 31 Ley 19.880",
+          "text": "Los datos ingresados deben ser coherentes; según Certificado de informaciones Previas, Escritura e Inscripción en el Conservador de Bienes Raíces, además de ser concordantes en todo el Expediente. Completar, corregir y/o aclarar numeral 6 (corregir carga y densidad de ocupación, adjuntar desarrollo del cálculo), 6.1 (corregir sumatoria del 1°, 2° y 3° piso), 6.2 (completar), 6.5 (declarar), 6.6 (corregir y adjuntar desarrollo del cálculo), 6.9 (corregir), 6.12 (aclarar por qué se acoge al Art. 123), 6.14 (aclarar incongruencia con la información del INE), 9 (Cip incompleto y se solicitará internamente, pendiente declaración del arquitecto responsable)."
+        },
+        {
+          "number": 2,
+          "parameter": "certificado_informes_previos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.4 OGUC",
+          "text": "Debe encontrarse actualizado según Declaratoria de Utilidad Pública 20.791 29/10/2014. Y debe ser congruente al sitio donde se emplaza el proyecto y Nº de Rol correspondiente. Considerar información del CIP corregido con la calle Las Malvas (distancia entre L.O. 11 m, distancia de L.O. a eje de la calzada 5,5 m, antejardín 2 m) para el proyecto de arquitectura y los cálculos correspondientes. Antejardín debe ser considerado en ambas calles, en las cuales NO SE PERMITEN construcciones definitivas ni adosadas."
+        },
+        {
+          "number": 3,
+          "parameter": "antejardin",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "2 m (calle Las Malvas); NO SE PERMITEN construcciones definitivas ni adosadas en antejardín de ambas calles",
+          "article": "Art. 1.4.4 OGUC",
+          "text": "Antejardín debe ser considerado en ambas calles, en las cuales NO SE PERMITEN construcciones definitivas ni adosadas."
+        },
+        {
+          "number": 4,
+          "parameter": "planimetria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.4 OGUC",
+          "text": "Se presenta legible, a una escala adecuada conforme al mínimo exigido según Ordenanza, indicando usos, dependencias y elementos necesarios para la funcionalidad del proyecto. Graficar en el emplazamiento las calles que enfrentan el proyecto, con las medidas entre L.O, L.O al eje de la calzada, antejardín, etc. La numeración de la vivienda es por calle Boulevard Los Arrayanes. Por lo tanto, debe presentar autorización SERVIU para el nuevo acceso vehicular de la vivienda. Graficar con distintos colores la nomenclatura, buscando facilitar la lectura del proyecto. Aclarar acceso universal. Considere planta 2° y 3° piso a una menor escala."
+        },
+        {
+          "number": 5,
+          "parameter": "accesibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.2.8 y 4.1.7 OGUC",
+          "text": "Cumple con distanciamientos de ruta accesible, desniveles, protección, pendientes, materialidad pavimento, diseño mobiliario, áreas o zonas, estacionamientos y todo lo relacionado a la inclusión de personas con discapacidad o de movilidad reducida. Todo lo anterior; graficado e indicado en el Plano y Memoria de Accesibilidad Universal. Informar si el local comercial considera acceso universal."
+        },
+        {
+          "number": 6,
+          "parameter": "otros_documentos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2.2 OGUC, Art. 30 Ley 19.880, Art. 31 Ley 19.880",
+          "text": "Toda documentación debe ser coherente en cuanto a los datos que identifican la obra, tales como dirección, propietario, profesional patrocinante, ROL, etc. Y debe presentar las firmas correspondientes en fresco. Desarrollo de los cálculos correspondientes para completar la solicitud. Declaración del arquitecto responsable del proyecto. Avalúo Fiscal Detallado. Factibilidad de agua potable y alcantarillado, considerando el aumento de artefactos sanitarios."
+        }
+      ],
+      "id": "acta-es-scribd-com-document-875304991-obs-180-22-not",
+      "source_file": "es.scribd.com_document_875304991_OBS-180-22-NOT",
+      "num_observations": 6,
+      "vision_used": false
+    },
+    {
+      "municipality": null,
+      "expedient_ref": null,
+      "date": null,
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": null,
+      "observations": [],
+      "id": "acta-es-scribd-com-document-892690311-23-observaciones-coquimbo-1071",
+      "source_file": "es.scribd.com_document_892690311_23-observaciones-Coquimbo-1071",
+      "num_observations": 0,
+      "vision_used": false
+    },
+    {
+      "municipality": null,
+      "expedient_ref": "4192326",
+      "date": null,
+      "project_type": "Alteración y Ampliación (Oncología Chacab)",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Acta de observaciones N°P - 767 / 2025. Solicitud N° 4192326. PROYECTO ONCOLOGÍA CHACAB. Observaciones emitidas por la Dirección de Obras Municipales con sus respectivos estados y comentarios del Revisor Independiente.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_seremi_minvu",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Aportar aprobación de la SEREMI del MINVU y planos (tamaño carta)"
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_plano_aguas_andinas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Para la correcta revisión se solicita aportar el plano de Aguas Andinas N°500-Bis del 03.01.1919 informado en el Ord. N° DT-1971/2025"
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion_consejo_monumentos_nacionales",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Ley 17.288 de MN",
+          "text": "Aportar planos aprobados del Consejo de Monumentos Nacionales y aclaración referida a indicaciones realizadas por CMN."
+        },
+        {
+          "number": 4,
+          "parameter": "presupuesto_modificaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 60 OGUC",
+          "text": "Solo aportar presupuesto referido a las modificaciones (incluyen retiro de tabiques y alteraciones, en tanto no demuele superficie, no refiera a demoliciones, además no debe incluir ampliaciones, ya que estas se calcularán de acuerdo a superficie declarada en solicitud)."
+        },
+        {
+          "number": 5,
+          "parameter": "cuadro_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Para la comprensión del proyecto se solicita incluir cuadro de superficies que indique en columnas Permiso original (Planos de Aguas Andinas) - (otros permisos si hubiera) - demoliciones (si corresponde) - ampliaciones - Total, y en filas indicar pisos y total, ese cuadro debe referir a las superficies totales del inmueble."
+        },
+        {
+          "number": 6,
+          "parameter": "diagramas_superficies",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "No reitere diagramas de superficies y utilice achurados o colores que se diferencien."
+        },
+        {
+          "number": 7,
+          "parameter": "cuadro_carga_ocupacion_reiterado",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "No reitere cuadros de carga de ocupación."
+        },
+        {
+          "number": 8,
+          "parameter": "cuadro_superficies_reiterado",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "No reitere cuadros de superficie (datos difieren)."
+        },
+        {
+          "number": 9,
+          "parameter": "itemizado_mobiliario",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Eliminar itemizado de mobiliario y muebles de plano (o puede valorizar fino sin achurado)."
+        },
+        {
+          "number": 10,
+          "parameter": "ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Aclarar por qué mantiene coeficiente de ocupación de suelo si aumenta la superficie construída en primer piso."
+        },
+        {
+          "number": 11,
+          "parameter": "normas_urbanisticas_cuadro",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "En cuadro de normas urbanísticas en lámina solo aclare cálculo de coeficiente de constructibilidad y ocupación de suelo, los demás datos remítalos al formulario."
+        },
+        {
+          "number": 12,
+          "parameter": "correlativo_planos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Elimine de correlativo de planos de arquitectura, los correlativos de aguas lluvias y accesibilidad universal, enumérelos de forma independiente."
+        },
+        {
+          "number": 13,
+          "parameter": "ejes_estructurales_planos_arquitectura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Eliminar ejes estructurales de planos de arquitectura."
+        },
+        {
+          "number": 14,
+          "parameter": "accesibilidad_universal_planos_arquitectura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Elimine información de accesibilidad universal de planos de arquitectura."
+        },
+        {
+          "number": 15,
+          "parameter": "aguas_lluvias_camara_inspeccion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "En plano de aguas lluvias aclarar a qué corresponde cámara de inspección."
+        },
+        {
+          "number": 16,
+          "parameter": "documentacion_tipo_construccion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "En solicitud aclarar la calidad del tipo de construcción ej: A2"
+        },
+        {
+          "number": 17,
+          "parameter": "propietario_representante_legal",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Informar correctamente en formulario al Propietario y Representante legal."
+        },
+        {
+          "number": 18,
+          "parameter": "personeria_representacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Informar en solicitud la Personería de Representación."
+        },
+        {
+          "number": 19,
+          "parameter": "graficado_ampliaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Grafique en achurado rojo y línea negra lo que agrega."
+        },
+        {
+          "number": 20,
+          "parameter": "carga_ocupacion_propuesta",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.2.4 OGUC",
+          "text": "Debe informar carga de ocupación propuesta de todo el inmueble."
+        },
+        {
+          "number": 21,
+          "parameter": "bodegas_otros_usos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Considere bodegas y otros usos que puedan estar contenidos en el edificio."
+        },
+        {
+          "number": 22,
+          "parameter": "estacionamientos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.4.1 y Art. 2.4.1 bis",
+          "text": "Aportar cálculo de cuota de estacionamientos si corresponde. No corresponde indicar que la edificación queda exenta de estacionamientos por emplazarse en una vía de más de 100 años, lo anterior es uno de los requisitos para poder realizar una solicitud fundada de exención, adjuntarla si corresponde."
+        },
+        {
+          "number": 23,
+          "parameter": "resistencia_fuego",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.3.3 y 4.3.14",
+          "text": "Aportar informe de resistencia al fuego."
+        },
+        {
+          "number": 24,
+          "parameter": "cortafuegos_ampliaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "En corte D no grafca proyección de cortafuegos en ampliaciones."
+        },
+        {
+          "number": 25,
+          "parameter": "espacio_publico_adyacente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.2.5 bis OGUC",
+          "text": "De densificar, completar cálculo que dé cuenta del cálculo del espacio adyacente. Para calcular espacio público adyacente debe contemplar la mitad de la distancia entre las líneas oficiales señaladas en el CIP por el frente predial."
+        },
+        {
+          "number": 26,
+          "parameter": "avaluo_fiscal",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "De corresponder, aportar certificado de avalúo fiscal detallado del 2do semestre."
+        },
+        {
+          "number": 27,
+          "parameter": "documentacion_revisor_independiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Los planos EE.TT y otros documentos deben estar visados por el Revisor independiente."
+        },
+        {
+          "number": 28,
+          "parameter": "area_no_intervenida",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "En área no intervenida señalar que se mantiene de acuerdo a Plano de Aguas Andinas…"
+        },
+        {
+          "number": 29,
+          "parameter": "normas_urbanisticas_ich",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 27 letra a) O.L. PRCS",
+          "text": "Considere que las exigencias urbanísticas para ICH, se encuentra contenida en la letra a) del Art.27 de la Ordenanza Local, corrija cuadro."
+        },
+        {
+          "number": 30,
+          "parameter": "cuadro_carga_ocupacion_tabla",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "El cuadro de carga de ocupación debe referir a los usos contemplados en la tabla, sintetice el manejo de los datos y aclare a qué corresponde nomenclatura de achurados."
+        },
+        {
+          "number": 31,
+          "parameter": "informe_habitabilidad_seguridad_incendios",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Título 4 capítulo 1, 2 y 3 OGUC",
+          "text": "Aportar informe que aclare cómo cumple las condiciones de habitabilidad, seguridad y seguridad contra incendios aplicable. (No transcriba la OGUC)."
+        },
+        {
+          "number": 32,
+          "parameter": "aporte_espacio_publico",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "Aportar en documento anexo, comparativo de cargas entre lo existente y lo propuesto, el aporte se realiza por la diferencia."
+        }
+      ],
+      "id": "acta-es-scribd-com-document-906262945-acta-de-observaciones-12082025-dom-ri",
+      "source_file": "es.scribd.com_document_906262945_Acta-de-Observaciones-12082025-Dom-Ri",
+      "num_observations": 32,
+      "vision_used": false
+    },
+    {
+      "municipality": "Hualané",
+      "expedient_ref": null,
+      "date": null,
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Documento correspondiente al Acta de Observaciones de la Dirección de Obras Municipales de la Municipalidad de Hualané, firmado por Luis Antonio Campos Peñaloza, Director(A) de Obras Municipales.",
+      "observations": [],
+      "id": "acta-hualane-page2",
+      "source_file": "hualane_page2",
+      "num_observations": 0,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "SE-53",
+      "date": "25/01/2019",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Resolución Exenta N° 210 del Departamento de Desarrollo Urbano e Infraestructura, Equipo Supervisión Normativa (ESN), Interno N° 03 2019, que resuelve reclamo deducido por el Sr. Germán Bartel Jeffery en representación de Inmobiliaria Lomas de Asis Ltda. de fecha 02.08.2018, en contra de Oficio DOM N° 1285 de fecha 30.07.2018 de DOM de Las Condes, por rechazo de Expediente SE-53, en inmueble ubicado en Av. Francisco Bulnes Correa N° 898. Mediante la Solicitud de Permiso de Edificación N° 53 de fecha 16 de marzo de 2018, Inmobiliaria Lomas de Asís Ltda. solicitó la aprobación de 4 edificios residenciales de 5 pisos más sala de máquinas y 2 subterráneos e instalación de faenas, en el lote 2-C1-1-C del Plano de Loteo L-862. El proyecto antes mencionado enfrenta Av. Francisco Bulnes Correa cuya urbanización se encontraba a la fecha garantizada y sin ejecutar, lo que fue observado en el punto N° 1 de la respectiva Acta de Observaciones.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "urbanizacion_pendiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "El proyecto enfrenta Av. Francisco Bulnes Correa cuya urbanización se encontraba a la fecha garantizada y sin ejecutar."
+        }
+      ],
+      "id": "acta-lascondes2-page10",
+      "source_file": "lascondes2_page10",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "JPR19-005",
+      "date": "09/01/2019",
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "4. INSTRUIR a la DOM, en orden a que una vez calculados los derechos municipales correspondientes, se debe dar cumplimiento a lo relativo al pago de los respectivos derechos municipales, incluyendo el pago del 50% de éstos a la SEREMI MINVU, de conformidad a lo dispuesto en el cuarto inciso del artículo 118° de la Ley General de Urbanismo y Construcciones, según procedimiento que al efecto ha señalado la División de Desarrollo Urbano de este Ministerio, en la Circular Ord. N° 0108 de fecha 01 de marzo de 2016, DDU 30. 5. NOTIFÍQUESE LO RESUELTO a la Dirección de Obras Municipales de Las Condes y comuníquese al reclamante, sirviendo la presente resolución como atento oficio remisor.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "derechos_municipales",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "50% de los derechos municipales deben ser pagados a SEREMI MINVU",
+          "article": "Art. 118° inciso 4° LGUC; Circular Ord. N° 0108 de 01/03/2016 DDU 30",
+          "text": "INSTRUIR a la DOM, en orden a que una vez calculados los derechos municipales correspondientes, se debe dar cumplimiento a lo relativo al pago de los respectivos derechos municipales, incluyendo el pago del 50% de éstos a la SEREMI MINVU, de conformidad a lo dispuesto en el cuarto inciso del artículo 118° de la Ley General de Urbanismo y Construcciones, según procedimiento que al efecto ha señalado la División de Desarrollo Urbano de este Ministerio, en la Circular Ord. N° 0108 de fecha 01 de marzo de 2016, DDU 30."
+        }
+      ],
+      "id": "acta-lascondes2-page13",
+      "source_file": "lascondes2_page13",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "Interno N° 1242 - 2019 / Ingreso N° 0101013",
+      "date": "09/05/2019",
+      "project_type": "Loteo",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Esta Secretaría Ministerial recibió su presentación citada en el antecedente, mediante la cual solicita \"…la precisión de las vialidades, áreas verdes y zonas adyacentes al Canal El Bollo, asociadas al presente loteo\", correspondiente al Loteo Los Benedictinos, plano L-862, aprobado por esa DOM mediante Resolución Sección 2° N°10 de fecha 03.04.2017, ubicado en calles Francisco Bulnes Correa y Camino Francisco de Asís, esto debido a que se generaron ajustes en dicho loteo, en relación a lo planificado en el Plan Regulador Comunal (PRC), producto de adecuaciones que se habrían realizado a la vialidad en relación a la topografía existente en el lugar, como también a la factibilidad de cruce sobre el canal El Bollo y las obras de urbanización ejecutadas en el sector. Sobre el particular puedo informar a usted que, revisados los antecedentes que obran en poder de esta Secretaría, y considerando la información técnica por usted proporcionada en relación a su solicitud, se evaluó el hecho de que el cambio de escala del plano aprobado por la Modificación N°8 al PRC, publicada en el D.O. con fecha 28.01.2011, escala 1:7.500, al adecuarla a la escala del sector en comento, 1:2.500, evidencia una realidad topográfica distinta de la definida en el Instrumento de Planificación Territorial, implicando necesariamente precisiones en el trazado de la vialidad y en los límites de algunas zonas, por lo cual esta Secretaría Ministerial ha determinado interpretar el sector a través de la aplicación del artículo 4° de la LGUC.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "trazado_vialidad_y_zonificacion",
+          "verdict": "VIOLATION",
+          "declared_value": "Escala 1:2.500 (realidad topográfica del sector)",
+          "allowed_value": "Escala 1:7.500 (Modificación N°8 al PRC, D.O. 28.01.2011)",
+          "article": "Art. 4° LGUC",
+          "text": "El cambio de escala del plano aprobado por la Modificación N°8 al PRC, publicada en el D.O. con fecha 28.01.2011, escala 1:7.500, al adecuarla a la escala del sector en comento, 1:2.500, evidencia una realidad topográfica distinta de la definida en el Instrumento de Planificación Territorial, implicando necesariamente precisiones en el trazado de la vialidad y en los límites de algunas zonas, por lo cual esta Secretaría Ministerial ha determinado interpretar el sector a través de la aplicación del artículo 4° de la LGUC."
+        }
+      ],
+      "id": "acta-lascondes2-page14",
+      "source_file": "lascondes2_page14",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": null,
+      "expedient_ref": "MMD-19_033",
+      "date": "30/04/2019",
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Conforme a lo señalado en el punto anterior y de acuerdo a las atribuciones que entrega el citado artículo 4° de la LGUC, esta Seremi precisa las vialidades y zonas que rigen a los predios que conforman el Loteo Los Benedictinos, mediante el Plano RM-PRMS 19-47, escala 1:2.500, del cual se adjunta copia.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "vialidad_y_zonificacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4° LGUC",
+          "text": "Conforme a lo señalado en el punto anterior y de acuerdo a las atribuciones que entrega el citado artículo 4° de la LGUC, esta Seremi precisa las vialidades y zonas que rigen a los predios que conforman el Loteo Los Benedictinos, mediante el Plano RM-PRMS 19-47, escala 1:2.500, del cual se adjunta copia."
+        }
+      ],
+      "id": "acta-lascondes2-page15",
+      "source_file": "lascondes2_page15",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "096578",
+      "date": "15/05/2019",
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Providencia Nº 3547, Las Condes 15 MAY 2019. Documento recibido en Oficina de Partes DOM Municipalidad de Las Condes el 15 MAY 2019. Dirección de Obras Municipales seleccionada como destinataria. Anotación manuscrita: 'Depto. Urbanización. Claudia. Favor estudiar como incorporar este plano oficialmente a nuestros registros y al plano L-862. c/ Planos. c/c. - Depto. Catastro - Jefes DOM'. Instrucciones marcadas: 4.- Dar cumplimiento (manuscrito: Ye incluye); 5.- Devolver antecedentes (manuscrito: en nil); 6.- Dar respuesta (manuscrito: Am Th); 7.- Decretar (manuscrito: 16 Mayo 2019). Instrucción manuscrita adicional: 'Nava he pu.'",
+      "observations": [],
+      "id": "acta-lascondes2-page16",
+      "source_file": "lascondes2_page16",
+      "num_observations": 0,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "AP-50/2019",
+      "date": "11/09/2019",
+      "project_type": "Anteproyecto de Edificación",
+      "zone": null,
+      "round": 2,
+      "format": "free_text",
+      "full_text": "Mediante del expediente AP 50 de fecha 28.05.2019, Ud. ha solicitado a esta Dirección de Obras Municipales la solicitud de ANTEPROYECTO DE EDIFICACIÓN para 4 edificios residenciales de 4 pisos + piso mirador y 1 subterráneo, ubicados en Camino Gran Vista N° 11.709 (ex N° 11.780). Al respecto puedo informarle que el expediente AP 50/19 no ha resuelto todas las observaciones del acta 1 de fecha 21.06.2019, referente al siguiente punto: 2.- En relación al Canal El Bollo: No presentó informe de la Dirección General de Aguas que determine el ancho del cauce con el fin de establecer área de protección. No aclaró área afecta a utilidad pública del parque adyacente a cauce (Canal El Bollo), la cual debe ser determinada por la SEREMI por corresponder afectación del PRMS. En virtud de lo anterior y lo estipulado en el artículo 1.4.9 de la Ordenanza General de Urbanismo y Construcciones, esta Dirección de Obras da por rechazada la presente solicitud y devuelve los antecedentes.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "area_proteccion_cauce",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.9 OGUC",
+          "text": "No presentó informe de la Dirección General de Aguas que determine el ancho del cauce con el fin de establecer área de protección."
+        },
+        {
+          "number": 2,
+          "parameter": "afectacion_utilidad_publica",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.4.9 OGUC",
+          "text": "No aclaró área afecta a utilidad pública del parque adyacente a cauce (Canal El Bollo), la cual debe ser determinada por la SEREMI por corresponder afectación del PRMS."
+        }
+      ],
+      "id": "acta-lascondes2-page5",
+      "source_file": "lascondes2_page5",
+      "num_observations": 2,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "SE/52/18",
+      "date": "17/01/2019",
+      "project_type": "Obra Nueva (Condominio de viviendas)",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "RESUELVE RECLAMO DEDUCIDO POR EL SR. GERMÁN BARTEL JEFFERY EN REPRESENTACIÓN DE INMOBILIARIA LOMAS DE ASIS LTDA. DE FECHA 02.08.2018, EN CONTRA DE OFICIO DOM N° 1288 DE FECHA 30.07.2018 DE DOM DE LAS CONDES, POR RECHAZO DE EXPEDIENTE SE/52/18, EN INMUEBLE UBICADO EN CALLE LA PORTERÍA N° 12.005. El Sr. Germán Bartel Jeffery, en representación de Inmobiliaria Lomas de Asis Ltda., interpuso reclamación ante esta Secretaría Ministerial, de conformidad a las disposiciones establecidas en los artículos 12° y 118° de la Ley General de Urbanismo y Construcciones, en contra del Oficio DOM N° 1288 de fecha 30 de julio de 2018, mediante el cual la Dirección de Obras Municipales de Las Condes rechazó una Solicitud de Permiso de Edificación, Expediente SE/52/18 de fecha 16 de marzo de 2018, referido a un condominio de 9 viviendas, ubicado en calle La Portería N° 12.005, comuna de Las Condes. Requerido el informe respectivo a la DOM, éste es remitido por Oficio DOM N° 1618 de fecha 08 de septiembre de 2018, señalando que mediante la Solicitud de Permiso de Edificación N° 52 de fecha 16 de marzo de 2018, Inmobiliaria Lomas de Asís Ltda. solicitó la aprobación de un condominio de 9 viviendas en el lote 2-C1-1-I del Plano de Loteo L-862, cuya urbanización se encontraba a la fecha garantizada y sin ejecutar, lo que fue observado en el punto N° 1 de la respectiva Acta de Observaciones, junto con señalar que el interesado debía demostrar que el predio contaba con acceso al espacio público ya que es un requerimiento señalado en el artículo 2.3.6. de la Ordenanza General de Urbanismo y Construcciones.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "urbanizacion_y_acceso_espacio_publico",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.3.6 OGUC",
+          "text": "La urbanización del lote 2-C1-1-I del Plano de Loteo L-862 se encontraba a la fecha garantizada y sin ejecutar. Además, el interesado debía demostrar que el predio contaba con acceso al espacio público, requerimiento señalado en el artículo 2.3.6 de la Ordenanza General de Urbanismo y Construcciones."
+        }
+      ],
+      "id": "acta-lascondes2-page6",
+      "source_file": "lascondes2_page6",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "SE-53",
+      "date": "25/01/2019",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Resolución Exenta N° 210 de fecha 25 de enero de 2019, emitida por la SEREMI Metropolitana de Vivienda y Urbanismo, que resuelve reclamo deducido por el Sr. Germán Bartel Jeffery en representación de Inmobiliaria Lomas de Asís Ltda., en contra del Oficio DOM N° 1285 de fecha 30 de julio de 2018 de la DOM de Las Condes, por rechazo de Expediente SE-53, referido a 4 edificios residenciales de 5 pisos más sala de máquinas y 2 subterráneos e instalación de faenas, en el lote 2-C1-1-C del Plano de Loteo L-862, ubicado en Av. Francisco Bulnes Correa N° 898, comuna de Las Condes. El proyecto enfrenta Av. Francisco Bulnes Correa cuya urbanización se encontraba a la fecha garantizada y sin ejecutar.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "urbanizacion_pendiente",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "El proyecto enfrenta Av. Francisco Bulnes Correa cuya urbanización se encontraba a la fecha garantizada y sin ejecutar, lo que fue observado en el punto N° 1 de la respectiva Acta de Observaciones."
+        }
+      ],
+      "id": "acta-lascondes-page10",
+      "source_file": "lascondes_page10",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "SE-53 / Reclamación N° 1866",
+      "date": "02/08/2018",
+      "project_type": "Obra Nueva - Edificios Residenciales",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Que de lo anteriormente expuesto, es factible consignar que no se establece en parte alguna de la actual legislación sobre urbanismo y construcciones, que para que la DOM otorgue un Permiso de Edificación como el que se ha solicitado en el presente caso, sea requisito el que se encuentren ejecutadas y recibidas las obras de urbanización, estableciéndose dicha obligación al momento de solicitar la Recepción Final de las obras de edificación. Que la Recepción Final de las obras de urbanización se obtiene una vez ejecutadas por el urbanizador, o bien si estas se hicieron efectivas por la DOM dentro del plazo establecido, luego de haber sido garantizadas en conformidad con lo establecido en los artículos 129° y 136° de la LGUC. Que debe observarse, en función de la facultad de supervisión otorgada a las Secretarías Regionales Ministeriales de Vivienda y Urbanismo por el artículo 4° de la LGUC, que se han constatado en la aprobación del respectivo Loteo, varias situaciones que necesariamente debió observar la DOM en su momento, siendo algunas de relevancia mayor por estar transgrediendo el propio Instrumento de Planificación Territorial, vale citar, Afectación a Declaratoria de Utilidad Pública de la vía colectora La Parroquia en su encuentro con Av. Francisco Bulnes Correa y del Área Verde previsto del PRMS, artículo 5.2.3. Parque Intercomunal y su artículo 5.2.3.4. Avenidas Parques, numeral 1. Parque adyacente a cauce, denominado Parque Canal El Bollo, también consignada en el PRCLC, que afecta al Lote propuesto 2-C1-1-A del respectivo Plano de Loteo. SE ACOGE RECLAMACIÓN ingresada bajo el N° 1866, de fecha 02 de agosto de 2018 por el Sr. Germán Bartel Jeffery, en representación de Inmobiliaria Lomas de Asís Ltda., ante esta Secretaría Ministerial, de conformidad a las disposiciones establecidas en los artículos 12° y 118° de la LGUC, en contra del Oficio DOM N° 1285 de fecha 30 de julio de 2018. SE INSTRUYE a la DOM de Las Condes desestimar el rechazo de la Solicitud de Permiso de Edificación y permitir su reingreso bajo el mismo número y fecha original, procediendo a su aprobación. SE INSTRUYE a la DOM de Las Condes adoptar las medidas que correspondan para subsanar lo relativo a la Declaratoria de Utilidad Pública de la vía colectora La Parroquia y del Área Verde del PRMS, Parque Canal El Bollo.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "obras_urbanizacion_previas",
+          "verdict": "VIOLATION",
+          "declared_value": "Permiso de Edificación solicitado sin obras de urbanización ejecutadas y recibidas",
+          "allowed_value": "No se requiere que las obras de urbanización estén ejecutadas y recibidas para obtener Permiso de Edificación; dicha obligación aplica al momento de la Recepción Final",
+          "article": "Arts. 65, 116, 129, 134 y 136 LGUC; Art. 3.4.3 OGUC; DDU-Específica N° 25/2008 Circular ORD. N° 0644",
+          "text": "El Permiso de Edificación fue rechazado por la DOM bajo la causal de que las obras de urbanización no estaban ejecutadas y recibidas. Dicha causal no es válida según la legislación vigente, ya que no se establece en parte alguna que para otorgar un Permiso de Edificación sea requisito que se encuentren ejecutadas y recibidas las obras de urbanización, siendo dicha obligación exigible al momento de solicitar la Recepción Final."
+        },
+        {
+          "number": 2,
+          "parameter": "declaratoria_utilidad_publica_vialidad",
+          "verdict": "VIOLATION",
+          "declared_value": "Lote propuesto 2-C1-1-A según Plano de Loteo aprobado",
+          "allowed_value": "Debe respetarse la Declaratoria de Utilidad Pública de la vía colectora La Parroquia en su encuentro con Av. Francisco Bulnes Correa, conforme al PRMS y PRCLC",
+          "article": "Art. 4° LGUC; Art. 5.2.3 PRMS; Art. 5.2.3.4 PRMS",
+          "text": "Se constata en la aprobación del respectivo Loteo que existe afectación a la Declaratoria de Utilidad Pública de la vía colectora La Parroquia en su encuentro con Av. Francisco Bulnes Correa, situación que transgrede el Instrumento de Planificación Territorial y que la DOM debió observar en su momento."
+        },
+        {
+          "number": 3,
+          "parameter": "area_verde_prms_parque_canal",
+          "verdict": "VIOLATION",
+          "declared_value": "Lote propuesto 2-C1-1-A según Plano de Loteo aprobado",
+          "allowed_value": "Debe respetarse el Área Verde prevista en el PRMS, artículo 5.2.3 Parque Intercomunal y artículo 5.2.3.4 Avenidas Parques, numeral 1, Parque adyacente a cauce denominado Parque Canal El Bollo, también consignado en el PRCLC",
+          "article": "Art. 4° LGUC; Art. 5.2.3 PRMS; Art. 5.2.3.4 numeral 1 PRMS; PRCLC",
+          "text": "Se constata afectación al Área Verde previsto del PRMS, artículo 5.2.3 Parque Intercomunal y su artículo 5.2.3.4 Avenidas Parques, numeral 1, Parque adyacente a cauce, denominado Parque Canal El Bollo, también consignada en el PRCLC, que afecta al Lote propuesto 2-C1-1-A del respectivo Plano de Loteo. La DOM debió observar esta situación al momento de aprobar el Loteo."
+        }
+      ],
+      "id": "acta-lascondes-page12",
+      "source_file": "lascondes_page12",
+      "num_observations": 3,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "Interno N° 1242 - 2019 / Ingreso N° 0101013",
+      "date": "09/05/2019",
+      "project_type": "Loteo",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Esta Secretaría Ministerial recibió su presentación citada en el antecedente, mediante la cual solicita '…la precisión de las vialidades, áreas verdes y zonas adyacentes al Canal El Bollo, asociadas al presente loteo', correspondiente al Loteo Los Benedictinos, plano L-862, aprobado por esa DOM mediante Resolución Sección 2° N°10 de fecha 03.04.2017, ubicado en calles Francisco Bulnes Correa y Camino Francisco de Asís, esto debido a que se generaron ajustes en dicho loteo, en relación a lo planificado en el Plan Regulador Comunal (PRC), producto de adecuaciones que se habrían realizado a la vialidad en relación a la topografía existente en el lugar, como también a la factibilidad de cruce sobre el canal El Bollo y las obras de urbanización ejecutadas en el sector. Sobre el particular puedo informar a usted que, revisados los antecedentes que obran en poder de esta Secretaría, y considerando la información técnica por usted proporcionada en relación a su solicitud, se evaluó el hecho de que el cambio de escala del plano aprobado por la Modificación N°8 al PRC, publicada en el D.O. con fecha 28.01.2011, escala 1:7.500, al adecuarla a la escala del sector en comento, 1:2.500, evidencia una realidad topográfica distinta de la definida en el Instrumento de Planificación Territorial, implicando necesariamente precisiones en el trazado de la vialidad y en los límites de algunas zonas, por lo cual esta Secretaría Ministerial ha determinado interpretar el sector a través de la aplicación del artículo 4° de la LGUC.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "trazado_vialidad_y_zonificacion",
+          "verdict": "VIOLATION",
+          "declared_value": "Escala 1:2.500 (escala real del sector)",
+          "allowed_value": "Escala 1:7.500 (escala del PRC, Modificación N°8, D.O. 28.01.2011)",
+          "article": "Art. 4° LGUC",
+          "text": "El cambio de escala del plano aprobado por la Modificación N°8 al PRC, publicada en el D.O. con fecha 28.01.2011, escala 1:7.500, al adecuarla a la escala del sector en comento, 1:2.500, evidencia una realidad topográfica distinta de la definida en el Instrumento de Planificación Territorial, implicando necesariamente precisiones en el trazado de la vialidad y en los límites de algunas zonas, por lo cual esta Secretaría Ministerial ha determinado interpretar el sector a través de la aplicación del artículo 4° de la LGUC."
+        }
+      ],
+      "id": "acta-lascondes-page14",
+      "source_file": "lascondes_page14",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "SE/52/18",
+      "date": "17/01/2019",
+      "project_type": "Obra Nueva - Condominio de viviendas",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "Resolución Exenta N° 124 de fecha 17 de enero de 2019, emitida por la SEREMI Metropolitana de Vivienda y Urbanismo, que resuelve reclamo deducido por el Sr. Germán Bartel Jeffery en representación de Inmobiliaria Lomas de Asis Ltda. de fecha 02.08.2018, en contra de Oficio DOM N° 1288 de fecha 30.07.2018 de DOM de Las Condes, por rechazo de Expediente SE/52/18, en inmueble ubicado en calle La Portería N° 12.005. Mediante la Solicitud de Permiso de Edificación N° 52 de fecha 16 de marzo de 2018, Inmobiliaria Lomas de Asís Ltda. solicitó la aprobación de un condominio de 9 viviendas en el lote 2-C1-1-I del Plano de Loteo L-862, cuya urbanización se encontraba a la fecha garantizada y sin ejecutar, lo que fue observado en el punto N° 1 de la respectiva Acta de Observaciones, junto con señalar que el interesado debía demostrar que el predio contaba con acceso al espacio público ya que es un requerimiento señalado en el artículo 2.3.6. de la Ordenanza General de Urbanismo y Construcciones.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "urbanizacion_ejecutada",
+          "verdict": "VIOLATION",
+          "declared_value": "Urbanización garantizada y sin ejecutar",
+          "allowed_value": "Urbanización ejecutada o debidamente garantizada conforme a la normativa",
+          "article": "Art. 2.3.6 OGUC",
+          "text": "La urbanización del lote 2-C1-1-I del Plano de Loteo L-862 se encontraba a la fecha garantizada y sin ejecutar. Además, el interesado debía demostrar que el predio contaba con acceso al espacio público, ya que es un requerimiento señalado en el artículo 2.3.6 de la Ordenanza General de Urbanismo y Construcciones."
+        }
+      ],
+      "id": "acta-lascondes-page6",
+      "source_file": "lascondes_page6",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Las Condes",
+      "expedient_ref": "JPR18-155",
+      "date": "13/12/2018",
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "3. INSTRUIR a la DOM de Las Condes, adoptar las medidas que correspondan con el fin de subsanar lo señalado en el numeral 7 de la parte considerativa de la presente Resolución, relativo a la Declaratoria de Utilidad Pública de la vía colectora La Parroquia en su encuentro con Av. Francisco Bulnes Correa y del Área Verde del PRMS, artículo 5.2.3. Parque Intercomunal y su artículo 5.2.3.4. Avenidas Parques, numeral 1. Parque adyacente a cauce, denominado Parque Canal El Bollo.\n\n4. INSTRUIR a la DOM, en orden a que una vez calculados los derechos municipales correspondientes, se debe dar cumplimiento a lo relativo al pago de los respectivos derechos municipales, incluyendo el pago del 50% de éstos a la SEREMI MINVU, de conformidad a lo dispuesto en el cuarto inciso del artículo 118° de la Ley General de Urbanismo y Construcciones, según procedimiento que al efecto ha señalado la División de Desarrollo Urbano de este Ministerio, en la Circular Ord. N° 0108 de fecha 01 de marzo de 2016, DDU 30.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "declaratoria_utilidad_publica",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.2.3 PRMS / Art. 5.2.3.4 PRMS numeral 1",
+          "text": "INSTRUIR a la DOM de Las Condes, adoptar las medidas que correspondan con el fin de subsanar lo señalado en el numeral 7 de la parte considerativa de la presente Resolución, relativo a la Declaratoria de Utilidad Pública de la vía colectora La Parroquia en su encuentro con Av. Francisco Bulnes Correa y del Área Verde del PRMS, artículo 5.2.3. Parque Intercomunal y su artículo 5.2.3.4. Avenidas Parques, numeral 1. Parque adyacente a cauce, denominado Parque Canal El Bollo."
+        },
+        {
+          "number": 2,
+          "parameter": "derechos_municipales",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "50% de derechos municipales a SEREMI MINVU",
+          "article": "Art. 118° inciso 4° LGUC / Circular Ord. N° 0108 del 01/03/2016 DDU 30",
+          "text": "INSTRUIR a la DOM, en orden a que una vez calculados los derechos municipales correspondientes, se debe dar cumplimiento a lo relativo al pago de los respectivos derechos municipales, incluyendo el pago del 50% de éstos a la SEREMI MINVU, de conformidad a lo dispuesto en el cuarto inciso del artículo 118° de la Ley General de Urbanismo y Construcciones, según procedimiento que al efecto ha señalado la División de Desarrollo Urbano de este Ministerio, en la Circular Ord. N° 0108 de fecha 01 de marzo de 2016, DDU 30."
+        }
+      ],
+      "id": "acta-lascondes-page9",
+      "source_file": "lascondes_page9",
+      "num_observations": 2,
+      "vision_used": true
+    },
+    {
+      "municipality": "Paine",
+      "expedient_ref": "632/2019",
+      "date": "27/09/2019",
+      "project_type": "Modificación de Proyecto de Edificación por Obra Nueva",
+      "zone": "Área Rural - Zona de Riesgo por Inundación / Protección Ecológica de Desarrollo Controlado (P.E.D.C 6)",
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. De la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 632/2019 correspondiente a la Solicitud de Modificación de Proyecto de Edificación por Obra Nueva comunico al solicitante las siguientes observaciones: Por aumentos de superficie mayores al 5% respecto al proyecto original y certificado de informaciones previas: Por estar emplazado en Zona de Riesgo por Inundación por desborde de cauce natural; Por estar emplazado en área de Protección Ecológica de Desarrollo Controlado (P.E.D.C 6); Aclarar materialidad predominante de ampliación; Informe de Calidad de Subsuelo; Listado de modificaciones; Planimetría; Solicitud incompleta; Cambio de profesionales responsables; Documentos sin firmas; Certificado de agua potable.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "zona_riesgo_inundacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 8.2.1.1 PRMS; Art. 1.2.1, 2.1.17, 5.1.17 y 5.1.18 OGUC",
+          "text": "Por aumentos de superficie mayores al 5% respecto al proyecto original y certificado de informaciones previas: Por estar emplazado en Zona de Riesgo por Inundación por desborde de cauce natural: a) Deberá dar cumplimiento al Art. 8.2.1.1 del Plan Regulador Metropolitano de Santiago, adjuntando el correspondiente estudio específico aprobado por los servicios pertinentes del Ministerio de Obras Públicas. Se recuerda además, que en caso de contemplar obras de ingeniería, estas deberán ser recepcionadas con anterioridad al permiso de la Dirección de Obras Municipales. b) Adjuntar patente vigente de profesional que suscribe el estudio o título profesional acreditando su competencia, según tipo de responsabilidad, de acuerdo a Art. 1.2.1 y 2.1.17 de la O.G.U.C. Por estar emplazado en área de Protección Ecológica de Desarrollo Controlado (P.E.D.C 6) deberá: a) Incluir medidas de control y conservación del suelo de acuerdo a las disposiciones del Art. 8.3.1.2 del P.R.M.S. b) Incluir cálculo de la pendiente promedio de acuerdo a fórmula indicada en Art. 3.3.2.2 del P.R.M.S. Con posterioridad se verificarán concordancias con pendiente declarada en instancias del permiso original ('5% aprox.' según informe de riesgos adjunto al expediente y que corresponde al permiso N° 141/2003). c) Se debe dar cumplimiento al Art. 3.3.2 y demás disposiciones sobre terrenos en pendiente contenidos en el capítulo 3.3 del P.R.M.S. d) Si el cálculo de la pendiente es superior al 22%, se debe realizar estudios de riesgo suscrito por los profesionales competentes. e) Si el cálculo de la pendiente es superior al 25,1% deberá presentar proyectos específicos de obra de defensa y contención de suelo y cálculo de mecánica de suelo, en conformidad a lo establecido en el Art. 134 de la LGUC. f) Incluir porcentaje de pendiente en cortes y elevaciones. (*) Se recuerda que los informes, estudios específicos y mecánica de suelo deberán ser suscritos por profesionales competentes o especialistas. Así mismo, se deberá adjuntar forma de acreditación de su competencia mediante título o patente profesional según corresponda."
+        },
+        {
+          "number": 2,
+          "parameter": "especificaciones_tecnicas_estructura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 y 5.3.1 OGUC",
+          "text": "Aclarar materialidad predominante de ampliación de vivienda original por discordancias entre especificaciones técnicas (estructura metálica) y restante presentación (madera). Adjuntar especificaciones técnicas de nueva vivienda proyectada. Se verificarán concordancias. Conforme a ítems precedentes, deberá adjuntar proyecto de cálculo o declaración de estabilidad donde deberá indicar cumplimiento a las disposiciones del Título 5 del capítulo 6 de la O.G.U.C. firmada por el propietario (según corresponda por cada volumen proyectado). Aclarar identificación de calculista en la presente solicitud de tramitación."
+        },
+        {
+          "number": 3,
+          "parameter": "informe_calidad_subsuelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.15 OGUC",
+          "text": "Informe de Calidad de Subsuelo o de Riesgo presentado corresponde a documentación ingresada en instancias de obtención del permiso N° 141/2003 (suscrito además por el profesional responsable de dicha tramitación). Se solicita aclarar su aplicabilidad a la actual tramitación y responsabilidad profesional."
+        },
+        {
+          "number": 4,
+          "parameter": "documentacion_listado_modificaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.17 OGUC",
+          "text": "Adjuntar listado de modificaciones por plano, conforme al Art. 5.1.17 de la OGUC."
+        },
+        {
+          "number": 5,
+          "parameter": "planimetria",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2, 2.6.3, 5.1.11 y 5.1.17 OGUC; DDU 110 MINVU",
+          "text": "En planimetría: Planos de emplazamiento general Lámina 8 y 15, deberán contener requerimientos mínimos de acuerdo a la OGUC, entre ellos (distanciamientos a totalidad de deslindes y distancia entre edificaciones). Corregir y/o completar según corresponda. Aclarar si se contempla cambios de emplazamiento de la vivienda original. Indicar además en listados (si corresponde). Aclarar orientación norte por diferencias entre antecedentes. Corregir identificación de elevaciones y cortes (según corresponda). Con posterioridad se verificarán concordancias. En elevaciones, cotas informadas deberán proyectarse hasta el elemento vertical más cercano de la edificación. Corregir según corresponda. Incluir altura máxima en elevaciones y cortes. En vivienda N°1 completar identificación de totalidad de recintos en la edificación. En vivienda N°2 aclarar disposición de pilares en sector terraza, ya que planta de arquitectura no es concordante con diagrama de superficies. Corregir cálculo de superficies de acuerdo a DDU 110 MINVU en totalidad de la presentación, incorporando polígono exterior cubierto a vivienda N°2. Con posterioridad se verificarán concordancias y exigencias aplicables. Se sugiere mejorar gráfica en totalidad de planos presentados, entre ellos (tamaño de cotas, proyección de líneas, entre otros), por contener gráfica ilegible."
+        },
+        {
+          "number": 6,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 y 5.1.17 OGUC",
+          "text": "En solicitud: Deberá completar y corregir la totalidad de campos según corresponda, entre ellos normativa urbanística permitida y proyectada. Con posterioridad se verificarán concordancias."
+        },
+        {
+          "number": 7,
+          "parameter": "cambio_profesional_responsable",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.20 OGUC",
+          "text": "Por cambio de profesional responsable (arquitecto) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C., por lo que deberá: a) Adjuntar acta de avance físico por partidas de la obra y de las observaciones técnicas (en caso de corresponder) suscrita por el propietario y profesionales respectivos. b) Incluir firmas de los profesionales anteriores en antecedentes presentados. En caso de imposibilidad de localizarlo, se deberá informar a la Dirección de Obras Municipales, para proceder conforme al Art. 5.1.20 de la OGUC (carta certificada). Por cambios de profesionales responsables (calculista y constructor) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C., por lo que deberá: a) Adjuntar comunicación suscrita por el propietario, donde deberá señalar la fecha del cese o desistimiento de las funciones de el o los profesionales que desisten. b) Acompañar un acta en la que el propietario informe el avance físico por partidas de la obra y de las observaciones técnicas, si las hubiere. Se recuerda que dicha acta deberá estar suscrita tanto por el nuevo profesional que asume como por el que desiste. (En caso de no ser suscritos por el profesional original, la Dirección de Obras procederá a citar por carta certificada, según lo señalado en Art. 5.1.20 de la O.G.U.C.)"
+        },
+        {
+          "number": 8,
+          "parameter": "firmas_y_patentes_profesionales",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2.1 y 1.2.2 OGUC",
+          "text": "Todos los documentos técnicos deberán ser firmados por el propietario y el profesional que los elabora. Incluir firmas según corresponda. Aclarar identificación del Sr. Carlos Díaz Moya (arquitecto) en especificaciones técnicas presentadas, por no corresponder a un profesional identificado en la presente tramitación. Adjuntar patente vigente de calculista y de constructor informados en solicitud."
+        },
+        {
+          "number": 9,
+          "parameter": "documentacion_agua_potable_alcantarillado",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.17 OGUC",
+          "text": "Aclarar la incorporación del certificado de agua potable y alcantarillado, entendiendo que para la presente modalidad de solicitud, no forma parte de las exigencias aplicables. En caso de mantener, se solicita reemplazar por documento legible."
+        }
+      ],
+      "id": "acta-paine-acta",
+      "source_file": "paine_acta",
+      "num_observations": 9,
+      "vision_used": true
+    },
+    {
+      "municipality": "Paine",
+      "expedient_ref": "632/2019",
+      "date": null,
+      "project_type": null,
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "6.- En solicitud: - Deberá completar y corregir la totalidad de campos según corresponda, entre ellos normativa urbanística permitida y proyectada. Con posterioridad se verificarán concordancias.\n7.- Por cambio de profesional responsable (arquitecto) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C, por lo que deberá: a) Adjuntar acta de avance físico por partidas de la obra y de las observaciones técnicas (en caso de corresponder) suscrita por el propietario y profesionales respectivos. b) Incluir firmas de los profesionales anteriores en antecedentes presentados. En caso de imposibilidad de localizarlo, se deberá informar a la Dirección de Obras Municipales, para proceder conforme al Art. 5.1.20 de la OGUC (carta certificada). Por cambios de profesionales responsables (calculista y constructor) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C, por lo que deberá: a) Adjuntar comunicación suscrita por el propietario, donde deberá señalar la fecha del cese o desistimiento de las funciones de el o los profesionales que desisten. b) Acompañar un acta en la que el propietario informe el avance físico por partidas de la obra y de las observaciones técnicas, si las hubiere. Se recuerda que dicha acta deberá estar suscrita tanto por el nuevo profesional que asume como por el que desiste.\n8.- - Todos los documentos técnicos deberán ser firmados por el propietario y el profesional que los elabora. Incluir firmas según corresponda. - Aclarar identificación del Sr. Carlos Díaz Moya (arquitecto) en especificaciones técnicas presentadas, por no corresponder a un profesional identificado en la presente tramitación. - Adjuntar patente vigente de calculista y de constructor informados en solicitud.\n9.- - Aclarar la incorporación del certificado de agua potable y alcantarillado, entendiendo que para la presente modalidad de solicitud, no forma parte de las exigencias aplicables. En caso de mantener, se solicita reemplazar por documento legible.",
+      "observations": [
+        {
+          "number": 6,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 y 5.1.17 OGUC",
+          "text": "En solicitud: - Deberá completar y corregir la totalidad de campos según corresponda, entre ellos normativa urbanística permitida y proyectada. Con posterioridad se verificarán concordancias."
+        },
+        {
+          "number": 7,
+          "parameter": "cambio_profesional_responsable",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.20 OGUC",
+          "text": "Por cambio de profesional responsable (arquitecto) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C, por lo que deberá: a) Adjuntar acta de avance físico por partidas de la obra y de las observaciones técnicas (en caso de corresponder) suscrita por el propietario y profesionales respectivos. b) Incluir firmas de los profesionales anteriores en antecedentes presentados. En caso de imposibilidad de localizarlo, se deberá informar a la Dirección de Obras Municipales, para proceder conforme al Art. 5.1.20 de la OGUC (carta certificada). Por cambios de profesionales responsables (calculista y constructor) respecto al permiso N° 141/03, se deberá dar cumplimiento a disposiciones del Art. 5.1.20 de la O.G.U.C, por lo que deberá: a) Adjuntar comunicación suscrita por el propietario, donde deberá señalar la fecha del cese o desistimiento de las funciones de el o los profesionales que desisten. b) Acompañar un acta en la que el propietario informe el avance físico por partidas de la obra y de las observaciones técnicas, si las hubiere. Se recuerda que dicha acta deberá estar suscrita tanto por el nuevo profesional que asume como por el que desiste."
+        },
+        {
+          "number": 8,
+          "parameter": "documentacion_firmas_profesionales",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2.1 y 1.2.2 OGUC",
+          "text": "- Todos los documentos técnicos deberán ser firmados por el propietario y el profesional que los elabora. Incluir firmas según corresponda. - Aclarar identificación del Sr. Carlos Díaz Moya (arquitecto) en especificaciones técnicas presentadas, por no corresponder a un profesional identificado en la presente tramitación. - Adjuntar patente vigente de calculista y de constructor informados en solicitud."
+        },
+        {
+          "number": 9,
+          "parameter": "documentacion_certificados",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.17 OGUC",
+          "text": "- Aclarar la incorporación del certificado de agua potable y alcantarillado, entendiendo que para la presente modalidad de solicitud, no forma parte de las exigencias aplicables. En caso de mantener, se solicita reemplazar por documento legible."
+        }
+      ],
+      "id": "acta-paine-page2",
+      "source_file": "paine_page2",
+      "num_observations": 4,
+      "vision_used": true
+    },
+    {
+      "municipality": "Quirihue",
+      "expedient_ref": "146/395",
+      "date": null,
+      "project_type": "Regularización",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo N° 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiéndose revisado el expediente 146/395 correspondiente a la solicitud de REGULARIZACIÓN 20898, comunico al solicitante MONICA CANALES las siguientes observaciones, según se indican.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "estructura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Ley 20.898",
+          "text": "SE DEBE CONSIDERAR MEDIA SUPERFICIE EN PRIMER NIVEL, BAJO SEGUNDO PISO (PROYECCIÓN SEGUNDO PISO), COMO SE SUSTENTA EL SEGUNDO PISO GRAFICAR ESTRUCTURA."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": null,
+          "text": "AL AUMENTAR SUPERFICIE MODIFICAR FORMULARIOS."
+        }
+      ],
+      "id": "acta-quirihue-page2",
+      "source_file": "quirihue_page2",
+      "num_observations": 2,
+      "vision_used": true
+    },
+    {
+      "municipality": "Quirihue",
+      "expedient_ref": "1487435",
+      "date": "10/04/2025",
+      "project_type": "Obra Nueva",
+      "zone": "ZHM",
+      "round": 1,
+      "format": "free_text",
+      "full_text": "PERMISO DE EDIFICACION - OBRA NUEVA - DIRECCION DE OBRAS MUNICIPALES DE QUIRIHUE. ROL S.U. 51-6. Conceder permiso para CONDOMINIO GRUMETE CORTEZ con una superficie total de 375 m2 y de 2 pisos de altura, destinado a VIVIENDA, ubicado en calle GRUMETE CORTEZ N° 650, sector URBANO, Zona ZHM del Plan Regulado COMUNAL. Propietario: HERNAN BUSTOS ROMERO, RUT 9.754.616-K. La obra MANTIENE los beneficios del D.F.L. N-2 de 1959. --- CERTIFICADO DE RECEPCION DEFINITIVA DE OBRAS DE EDIFICACION - OBRA NUEVA - DIRECCION DE OBRAS MUNICIPALES DE QUIRIHUE. NUMERO DE CERTIFICADO: 0. FECHA: 10-04-2025. ROL S.U. 107-22. Expediente N° 1487435, antecedentes 107/135 de 2022. Otorgar certificado de Recepción Definitiva TOTAL de la obra destinada a VIVIENDA UNIFAMILIAR ubicada en calle JUAN DE LA CRUZ LEON N° 552, QUIRIHUE, sector URBANO, con una superficie edificada total de 156.13 m2. Crecimiento Urbano por Densificación: Aporte en Dinero $30.320 según GIM vigente N° 44473 de 10/08/2022.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 116 LGUC",
+          "text": "El Número de Resolución y Fecha de Aprobación del Permiso de Edificación se encuentran en blanco, sin ser completados en el documento."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 116 LGUC; Art. 5.1.6 OGUC",
+          "text": "Los campos correspondientes al Anteproyecto de Edificación (número y fecha), Informe Favorable de Revisor Independiente (número y fecha) e Informe Favorable de Revisor de Proyecto de Cálculo Estructural (número y fecha) se encuentran en blanco o ilegibles en el Permiso de Edificación."
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 144 LGUC; Art. 5.2.5 y 5.2.6 OGUC",
+          "text": "El Número de Certificado de Recepción Definitiva figura como '0', lo que indica que no se ha asignado un número de certificado válido al momento de emisión del documento."
+        },
+        {
+          "number": 4,
+          "parameter": "uso_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": "CONDOMINIO GRUMETE CORTEZ, calle GRUMETE CORTEZ N° 650 (Permiso de Edificación)",
+          "allowed_value": null,
+          "article": "Art. 144 LGUC",
+          "text": "Existe una discrepancia entre la dirección consignada en el Permiso de Edificación (calle GRUMETE CORTEZ N° 650, ROL S.U. 51-6) y la dirección consignada en el Certificado de Recepción Definitiva (calle JUAN DE LA CRUZ LEON N° 552, ROL S.U. 107-22), correspondiendo además a roles de suelo distintos, lo que genera inconsistencia documental entre ambos instrumentos."
+        },
+        {
+          "number": 5,
+          "parameter": "superficie_edificada",
+          "verdict": "VIOLATION",
+          "declared_value": "156.13 m2 (Recepción Definitiva)",
+          "allowed_value": "375 m2 (Permiso de Edificación)",
+          "article": "Art. 144 LGUC; Art. 5.2.5 OGUC",
+          "text": "La superficie edificada total consignada en el Certificado de Recepción Definitiva (156.13 m2) no coincide con la superficie total aprobada en el Permiso de Edificación (375 m2), sin que conste en el documento modificación de permiso aprobada que justifique dicha diferencia."
+        },
+        {
+          "number": 6,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 144 LGUC; Art. 5.2.5 OGUC",
+          "text": "En el Certificado de Recepción Definitiva, los campos relativos a obras de mitigación, Resolución Municipal de mitigación y fecha de dicha resolución se encuentran en blanco o ilegibles, sin ser completados."
+        }
+      ],
+      "id": "acta-quirihue-page3",
+      "source_file": "quirihue_page3",
+      "num_observations": 6,
+      "vision_used": true
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "63397",
+      "date": null,
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 63397, correspondiente a la solicitud de 2-3.1 Solicitud de Permiso de Edificación (obra nueva) de la(s) propiedad(es) ubicada(s) en Av. Presidente Kennedy N°3670 (Rol 00419-00014 (EX 3706)).",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "superficie_predial_minima",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 8 Ley 19.537",
+          "text": "El terreno en el cual se emplaza el proyecto no cumple con lo señalado en el Art. 8 de la Ley 19.537 como requisito para acogerse a dicha Ley, dado que el terreno no cuenta con superficie predial mínima, fijada por el Instrumento de Planificación Territorial establecida en la zona en se emplaza el proyecto.-"
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 OGUC; Art. 8 Ley 19.537; DDU 199 de fecha 22 febrero 2008; D.F.L.-N°2 de 1959",
+          "text": "En formulario de Solicitud de Proyecto, A) Llenar información de declaración Jurada de Propietario B) En ítem 6.9 replantear disposiciones aplicables al proyecto. C) Llenar campo 6.1"
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Formulario INE : A) Informa incorrectamente el destino de la propiedad corregir.-"
+        },
+        {
+          "number": 4,
+          "parameter": "accesibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "DS 50/2016; Art. 5.1.6 num. 14 OGUC; Disposición Transitoria OGUC; DTR Accesibilidad 2016/001010 de fecha 27/04/2016 (SENADIS); Art. 4.1.7 OGUC; Art. 2.4.2 OGUC",
+          "text": "Debe dar cumplimiento a las normas de accesibilidad establecidas en el D.S No50/2016 referido a las disposiciones de la Ley N°20.422. Para lo cual deberá presentar Plano de Accesibilidad y su correspondiente Memoria, conforme al estándar de presentación establecido por SENADIS, dando cumpliendo al Art. 4.1.7 de la OGUC. y Art. 2.4.2 de la OGUC. Considerar que, debe resolver todas las exigencias al interior del predio."
+        },
+        {
+          "number": 5,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 pto. 13 OGUC",
+          "text": "Debe adjuntar carpeta de ascensores dando cumplimiento al Art. 5.1.6. pto 13 de la OGUC."
+        },
+        {
+          "number": 6,
+          "parameter": "aguas_lluvias",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 4.1.16 OGUC",
+          "text": "Debe adjuntar proyecto de aguas lluvias en conformidad al Art. 4.1.16 de la OGUC.-"
+        },
+        {
+          "number": 7,
+          "parameter": "rasante",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 OGUC; Art. 2.6.11 al 2.6.14 OGUC; DDU Específica 16 de fecha 23/06/2008; DDU 354 de fecha 30/05/2017",
+          "text": "Considerando que la edificación no respeta distanciamientos, no es factible acoger su proyecto al Art. 2.6.11 de la OGUC., no obstante cabe señalar que estudio presentado debe acreditar disposiciones fijadas en los Art. 2.6.11 al 2.6.14 de la OGUC. y las normas urbanísticas que aplican al volumen teórico, de acuerdo a definición del Art. 1.1.2 de la OGUC. En información presentada grafica volúmenes en 3d, situación que no está permitida. De igual modo se requiere, sean indicados puntos de NNT en vértices de la edificación, alturas de volumen y cotas de longitud de sombra, asimismo en volumen proyectado debe graficar toda la edificación.- Ver DDU señaladas para correcta proyección del estudio de sombra.-"
+        }
+      ],
+      "id": "acta-vitacura2-page1",
+      "source_file": "vitacura2_page1",
+      "num_observations": 7,
+      "vision_used": true
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "63874",
+      "date": null,
+      "project_type": "Alteración",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 63874, correspondiente a la solicitud de 2-5.3 Solicitud de modificación de Proyecto de Edificación (alteración) de la(s) propiedad(es) ubicada(s) en Av. Agua del Palo N°180 (Rol 03247-00025), se comunican las siguientes observaciones: En solicitud: a) rectificar datos de ítem 6.1; b) completar ítem 6.2, 6.3; c) eliminar dato de porcentaje de cesión de ítem 6.7; d) completar datos de ítem 6.14 relativo a nuevas superficies que proyecta. En planta de arquitectura, indicar todas las cotas relativas a las superficies proyectadas, todas deben ser verificables en esquema de superficies. Deberá informar cortes ilustrativos de su proyecto y los aprobados, según lo indicado en Art. 5.1.6. de la OGUC, por cuanto en actual MP elimina todos los planos del PE N°135/1999 que modifica, no adjuntando láminas con cortes. Deberá graficar todos los cambios propuestos al permiso que modifica, por cuanto no se han informado en su totalidad. Debe tener en consideración que lo proyectado debe cumplir con las normas urbanísticas atingentes al Área en que se emplaza.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2. OGUC; Art. 5.1.17. OGUC; Art. 5.1.11. OGUC; Art. 41 Ordenanza PRCV",
+          "text": "En solicitud: a) rectificar datos de ítem 6.1; b) completar ítem 6.2, 6.3; c) eliminar dato de porcentaje de cesión de ítem 6.7; d) completar datos de ítem 6.14 relativo a nuevas superficies que proyecta."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_planos_cotas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6. OGUC; Art. 5.1.17. OGUC; Art. 5.1.11. OGUC",
+          "text": "En planta de arquitectura, indicar todas las cotas relativas a las superficies proyectadas, todas deben ser verificables en esquema de superficies."
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion_planos_cortes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6. OGUC; Art. 5.1.17. OGUC",
+          "text": "Deberá informar cortes ilustrativos de su proyecto y los aprobados, según lo indicado en Art. 5.1.6. de la OGUC, por cuanto en actual MP elimina todos los planos del PE N°135/1999 que modifica, no adjuntando láminas con cortes."
+        },
+        {
+          "number": 4,
+          "parameter": "documentacion_planos_cambios",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6. OGUC; Art. 5.1.17. OGUC; Art. 41 Ordenanza PRCV",
+          "text": "Deberá graficar todos los cambios propuestos al permiso que modifica, por cuanto no se han informado en su totalidad. Debe tener en consideración que lo proyectado debe cumplir con las normas urbanísticas atingentes al Área en que se emplaza."
+        }
+      ],
+      "id": "acta-vitacura3-page1",
+      "source_file": "vitacura3_page1",
+      "num_observations": 4,
+      "vision_used": true
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "50408",
+      "date": null,
+      "project_type": "Aprobación de Anteproyecto de Edificación",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 50408, correspondiente a la solicitud de 2.1 Solicitud Aprobación de AnteProyecto Edificación de la(s) propiedad(es) ubicada(s) en Pasaje Arco Iris N°8669 (Rol 03005-00076), comunico al solicitante las siguientes observaciones:",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.2.2 OGUC, Art. 5.1.5 OGUC",
+          "text": "En Solicitud de Aprobación de Anteproyecto de Edificación, falta completar punto 2 \"Declaración Jurada\". Además en virtud a lo señalado en \"Poder Especial de Inmobiliaria Nueva Costanera Spa. a Vista Capital Group Spa. y otros\", señalar nombre del representante legal del propietario, además anteponer P.P. ante el nombre de Vista Capital Group Spa. e indicar nombre del representante de esta ultima empresa que suscribirá la presente solicitud."
+        }
+      ],
+      "id": "acta-vitacura4-page1",
+      "source_file": "vitacura4_page1",
+      "num_observations": 1,
+      "vision_used": true
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "73364",
+      "date": null,
+      "project_type": "Modificación de Proyecto de Edificación (Ampliación mayor a 100 m2)",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 73364, correspondiente a la solicitud de 2-5.2 Solicitud de modificación de Proyecto de Edificación (ampliación mayor a 100 m2) de la(s) propiedad(es) ubicada(s) en Arquitecto Oscar Niemeyer N°6481 (Rol 01721-00002), comunico al solicitante las siguientes observaciones:\n1. Dado que el plano de loteo no informa las medidas de deslindes comunes con los vecinos, deberá ingresar plano de levantamiento topográfico debidamente acotado, suscrito por un profesional o técnico competente y refrendado por el arquitecto proyectista, a fin de validar las medidas de deslinde informadas en su proyecto.\n2. Revisar cálculos de superficies conforme al art. 5.1.11 O.G.U.Y.C., y recalcular coeficientes en base a superficie de terreno según Loteo. Aclarar modificaciones en nichos.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_deslinde",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.17 OGUC; DDU 385/2017; Art. 1.2.2 OGUC",
+          "text": "Dado que el plano de loteo no informa las medidas de deslindes comunes con los vecinos, deberá ingresar plano de levantamiento topográfico debidamente acotado, suscrito por un profesional o técnico competente y refrendado por el arquitecto proyectista, a fin de validar las medidas de deslinde informadas en su proyecto."
+        },
+        {
+          "number": 2,
+          "parameter": "constructibilidad_ocupacion_suelo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.10 OGUC; Art. 5.1.11 OGUC; Art. 5.1.12 OGUC; Art. 41 Ordenanza Local",
+          "text": "Revisar cálculos de superficies conforme al art. 5.1.11 O.G.U.Y.C., y recalcular coeficientes en base a superficie de terreno según Loteo. Aclarar modificaciones en nichos."
+        }
+      ],
+      "id": "acta-vitacura5-page1",
+      "source_file": "vitacura5_page1",
+      "num_observations": 2,
+      "vision_used": true
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "74049",
+      "date": null,
+      "project_type": "Alteración",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 74049, correspondiente a la solicitud de 2-3.3 Solicitud de Permiso de Edificación (alteración) de la(s) propiedad(es) ubicada(s) en Av. Luis Pasteur N°5441 (Rol 01169-00012), se comunican las siguientes observaciones en Solicitud Oficial y Planos.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud_oficial",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "En Solicitud Oficial, falta: - Aclarar datos de inscripción de la propiedad, cuya información en el CBR no concuerda con propietarios declarados. - Completar puntos 6 y 7. - Corregir punto 6.2. - Corregir conforme a las observaciones del presente acta."
+        },
+        {
+          "number": 2,
+          "parameter": "especificaciones_tecnicas_instalaciones",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Cap. 9, título 5 OGUC",
+          "text": "En especificaciones técnicas completar con todas las instalaciones reglamentarias contempladas en el proyecto (falta incorporar partidas de gas, agua potable y alcantarillado), lo anterior para verificar en la etapa de recepción de obras."
+        },
+        {
+          "number": 3,
+          "parameter": "accesibilidad",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "D.S N°50/2016; Art. 5.1.6 punto 14 OGUC; DTR Accesibilidad 2016/001010 de fecha 27/04/2016 (SENADIS); Art. 4.1.7 OGUC; Art. 2.4.2 OGUC",
+          "text": "Para dar cumplimiento a las normas de accesibilidad establecidas en el D.S N°50/2016 referido a las disposiciones de la Ley N°20.422, falta: - Acotar ancho de ruta accesible. - Acotar ancho libre de puertas. - Incorporar detalle de rampas, mesón accesible y baño universal. - Parte de ruta accesible se proyecta en área afecta a utilidad pública."
+        },
+        {
+          "number": 4,
+          "parameter": "aportes_espacio_publico",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Ley 20.958; DDU 447; Art. 1.4.3 OGUC; Art. 4.2.4 OGUC; Art. 1.1.2 OGUC",
+          "text": "Para dar cumplimiento a las exigencias de Ley 20.958, de aportes al espacio público, falta: - Corregir carga de ocupación que aumenta (no se debe aproximar). - Corregir superficie de terreno. - Corregir esquema de superficie bruta con perfiles de vías según CIP."
+        },
+        {
+          "number": 5,
+          "parameter": "superficie_terreno",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "720,00 m2 según plano de loteo L 351 AB (menos superficie afecta)",
+          "article": "DDU 271/2014; DDU 300/2015; Art. 67 LGUC",
+          "text": "Superficie de terreno indicada en la presentación no concuerda con lo señalado en el plano de loteo Plano L 351 AB aprobado por esta DOM (720,00 m2, se le debe restar superficie afecta). Si el terreno presenta diferencias respecto de lo anteriormente aprobado, deberá verificar la pertinencia de contar previamente con Aprobación de Modificación o Rectificación de Deslindes."
+        },
+        {
+          "number": 6,
+          "parameter": "estacionamientos",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 2.4.1 OGUC; Art. 35 PRCV",
+          "text": "Estacionamientos: - Corregir cálculo de estacionamientos exigidos y proyectados para superficie que amplía según el Art. 2.4.1 OGUC y Art. 35 PRCV. - Acotar todos los estacionamientos del proyecto (autos y bicicletas)."
+        },
+        {
+          "number": 7,
+          "parameter": "calculo_superficies_normas_urbanisticas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.10 OGUC; Art. 5.1.11 OGUC; Art. 5.1.12 OGUC; DDU 110/2002; DDU 75/2007",
+          "text": "Revisar cálculos de superficies conforme al Art. 5.1.11 de la OGUC y DDU N°110/2002, acotar esquemas de superficies presentados en concordancia con plantas de arquitectura. Con lo anterior, corregir normas urbanísticas asociadas en base a superficie de terreno según Loteo."
+        },
+        {
+          "number": 8,
+          "parameter": "uso_suelo_bodega",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "máximo permitido según Art. 4.3.4 OGUC",
+          "article": "Art. 4.3.4 OGUC",
+          "text": "Porcentaje de superficie destinada a bodega, supera el máximo permitido según el Art. 4.3.4 de la OGUC, deberá abordar proyecto como uso mixto."
+        },
+        {
+          "number": 9,
+          "parameter": "documentacion_plano_ubicacion",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "Falta plano de ubicación del predio, señalando su posición relativa respecto de los terrenos colindantes y espacios de uso público."
+        },
+        {
+          "number": 10,
+          "parameter": "plano_emplazamiento",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Art. 1.1.2 OGUC; Art. 2.4.4 OGUC; Art. 35 PRCV-99",
+          "text": "Plano de emplazamiento deberá ser denominado claramente como tal, además falta: - Indicar línea Oficial y línea de edificación según CIP (acotando antejardín). - Acotar silueta de la edificación. - Graficar puntos de aplicación de rasantes y sus cotas con relación al nivel de suelo natural. - Completar levantamiento del espacio público existente y aprobado frente a su propiedad hasta el eje de la calzada (perfil de vía según CIP), graficando situación de urbanización, árboles, áreas verdes, veredas, pavimentos, accesos vehiculares y peatonales, y rebaje de solera, todo esto, debidamente acotado y con indicación de niveles, dando cumplimiento a las letras c), d) y e) del Art. 35 de la O. Local, y art. 2.4.4. de la O.G.U.Y.C."
+        },
+        {
+          "number": 11,
+          "parameter": "documentacion_plantas_arquitectura",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": "escala gráfica 1:50",
+          "article": "Art. 5.1.6 OGUC",
+          "text": "En plantas de arquitectura, completar con nombre de todos los recintos, considerar que planos deben estar a escala gráfica 1:50. - Incorporar plano de cubierta en la presentación."
+        }
+      ],
+      "id": "acta-vitacura-acta1",
+      "source_file": "vitacura_acta1",
+      "num_observations": 11,
+      "vision_used": false
+    },
+    {
+      "municipality": "Vitacura",
+      "expedient_ref": "63874",
+      "date": null,
+      "project_type": "Alteración",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente N° 63874, correspondiente a la solicitud de 2-5.3 Solicitud de modificación de Proyecto de Edificación (alteración) de la(s) propiedad(es) ubicada(s) en Av. Agua del Palo N°180 (Rol 03247-00025), se comunican las siguientes observaciones: EN SOLICITUD: 1. En solicitud: a) rectificar datos de ítem 6.1; b) completar ítem 6.2, 6.3, c) eliminar dato de porcentaje de cesión de ítem 6.7; d) completar datos de ítem 6.14 relativo a nuevas superficies que proyecta. EN PLANOS: 1. En planta de arquitectura, indicar todas las cotas relativas a las superficies proyectadas, todas deben ser verificables en esquema de superficies. 2. Deberá informar cortes ilustrativos de su proyecto y los aprobados, según lo indicado en Art. 5.1.6. de la OGUC, por cuanto en actual MP elimina todos los planos del PE N°135/1999 que modifica, no adjuntando láminas con cortes. 3. Deberá graficar todos los cambios propuestos al permiso que modifica, por cuanto no se han informado en su totalidad. Debe tener en consideración que lo proyectado debe cumplir con las normas urbanísticas atingentes al Área en que se emplaza.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_solicitud",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 1.1.2 OGUC; Art. 5.1.17 OGUC; Art. 5.1.11 OGUC; Art. 41 Ordenanza PRCV",
+          "text": "En solicitud: a) rectificar datos de ítem 6.1; b) completar ítem 6.2, 6.3, c) eliminar dato de porcentaje de cesión de ítem 6.7; d) completar datos de ítem 6.14 relativo a nuevas superficies que proyecta."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_planos_cotas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Art. 5.1.17 OGUC; Art. 5.1.11 OGUC",
+          "text": "En planta de arquitectura, indicar todas las cotas relativas a las superficies proyectadas, todas deben ser verificables en esquema de superficies."
+        },
+        {
+          "number": 3,
+          "parameter": "documentacion_planos_cortes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Art. 5.1.17 OGUC",
+          "text": "Deberá informar cortes ilustrativos de su proyecto y los aprobados, según lo indicado en Art. 5.1.6. de la OGUC, por cuanto en actual MP elimina todos los planos del PE N°135/1999 que modifica, no adjuntando láminas con cortes."
+        },
+        {
+          "number": 4,
+          "parameter": "documentacion_planos_cambios",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Art. 5.1.17 OGUC; Art. 41 Ordenanza PRCV",
+          "text": "Deberá graficar todos los cambios propuestos al permiso que modifica, por cuanto no se han informado en su totalidad. Debe tener en consideración que lo proyectado debe cumplir con las normas urbanísticas atingentes al Área en que se emplaza."
+        }
+      ],
+      "id": "acta-vitacura-acta3",
+      "source_file": "vitacura_acta3",
+      "num_observations": 4,
+      "vision_used": false
+    },
+    {
+      "municipality": "Chillán",
+      "expedient_ref": "10418",
+      "date": "01/07/2021",
+      "project_type": "Obra Nueva",
+      "zone": null,
+      "round": 1,
+      "format": "free_text",
+      "full_text": "En conformidad al artículo 1.4.9. de la Ordenanza General de Urbanismo y Construcciones, habiendo revisado el expediente Nº 10418/24-05-2021 correspondiente a la solicitud de PERMISO DE EDIFICACION. ARQUITECTO: FELIPE CAMPOS CARCAMO. PROPIETARIO: OSCAR URREA ARAYA. REGIÓN: ÑUBLE.",
+      "observations": [
+        {
+          "number": 1,
+          "parameter": "documentacion_planos_aprobados",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 55 LGUC",
+          "text": "DEBE ADJUNTAR PLANOS APROBADOS O QUE FUERON PRESENTADOS EN SEREMI DE VIVIENDA PARA APROBACION DE IFC. ART.55 L.G.U.C."
+        },
+        {
+          "number": 2,
+          "parameter": "documentacion_proyecto_calculo",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.7 OGUC",
+          "text": "DEBE ADJUNTAR PROYECTO DE CALCULO ARTICULO 5.1.7. DE LA O.G.U.C."
+        },
+        {
+          "number": 3,
+          "parameter": "impacto_ambiental",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC; Ley 20.417",
+          "text": "DEBE PRESENTAR DECLARACION DE IMPACTO AMBIENTAL SI CORRESPONDE O LEY NÚM. 20.417 ESTUDIO DE IMPACTO AMBIENTAL. ARTICULO 5.1.6. DE LA O.G.U.C."
+        },
+        {
+          "number": 4,
+          "parameter": "superficie_caseta_guardia",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "ACLARAR M2 DE CASETA DE GUARDIA Y ACLARAR SI ESTAN INCLUIDOS EN LOS M2 APROBADOS POR INFORME FAVORABLE DE LA CONSTRUCCIÓN. ARTICULO 5.1.6. DE LA O.G.U.C."
+        },
+        {
+          "number": 5,
+          "parameter": "instalaciones_sanitarias",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "ACLARAR SI EXISTE INSTALACION DE BAÑOS, COCINA ETC. QUE INCLUYAN PROYECTO DE ALCANTARILLADO O AGUA POTABLE. DEJAR ESTIPULADO. ARTICULO 5.1.6. DE LA O.G.U.C."
+        },
+        {
+          "number": 6,
+          "parameter": "especificaciones_tecnicas",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "ESPECIFICACIONES TECNICAS DEBEN ESTAR REFERIDAS A LA CONSTRUCCION MATERIALIDAD ETC, DEL PROYECTO PRESENTADO CORRESPONDIENTE A LAS CONSTRUCCIONES PERMANENTES. RECTIFICAR. ARTICULO 5.1.6. DE LA O.G.U.C."
+        },
+        {
+          "number": 7,
+          "parameter": "planta_arquitectura_obras_provisorias_permanentes",
+          "verdict": "VIOLATION",
+          "declared_value": null,
+          "allowed_value": null,
+          "article": "Art. 5.1.6 OGUC",
+          "text": "ACLARAR PLANTA DE ARQUITECTURA YA QUE INDICA OBRAS PROVISORIAS Y OBRAS PERMANENTES. Y SU SOLICITUD CORRESPONDE A PERMISO DE EDIFICACION. ARTICULO 5.1.6. DE LA O.G.U.C."
+        }
+      ],
+      "id": "acta-www-scribd-com-document-520878303-acta-de-observaciones-pde-chillan-vicente-mendez-01-0721",
+      "source_file": "www.scribd.com_document_520878303_Acta-de-Observaciones-PdE-Chillan-Vicente-Mendez-01-0721",
+      "num_observations": 7,
+      "vision_used": false
+    }
+  ]
+}

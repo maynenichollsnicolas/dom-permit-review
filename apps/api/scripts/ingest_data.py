@@ -5,10 +5,15 @@ Run once (or re-run after adding new documents):
   python3 scripts/ingest_data.py
 
 Source priority (uses processed/ over seed/ when available):
-  1. data/processed/oguc-chunks.json    (from parse_oguc.py)
-  2. data/processed/prc-chunks.json     (from parse_prc.py)
-  3. data/oguc/key-articles.json        (seed fallback)
-  4. data/prc/zhr2.json                 (seed fallback)
+  1. data/processed/oguc-chunks.json    (from parse_oguc.py)   → source: OGUC
+  2. data/processed/lguc-chunks.json    (from parse_lguc.py)   → source: LGUC
+  3. data/processed/prc-chunks.json     (from parse_prc.py)    → source: PRC_LAS_CONDES
+  4. data/oguc/key-articles.json        (seed fallback for OGUC)
+  5. data/prc/zhr2.json                 (seed fallback — DEPRECATED zone names)
+
+NOTE on file naming (files were previously misnamed):
+  - data/raw/oguc/OGUC.pdf = Ordenanza General (Decreto 47/1992), decimal articles
+  - data/raw/lguc/LGUC.pdf = Ley General (DFL 458/1975), integer articles
 
 Requires .env with OPENAI_API_KEY and SUPABASE_* vars set.
 """
@@ -40,40 +45,92 @@ def embed_text(text: str) -> list[float]:
 
 def load_chunks() -> list[dict]:
     """
-    Load all chunks. Uses processed/ files when available, falls back to seed data.
-    This means you can re-run ingest_data.py after adding new documents and it will
-    automatically use the richer parsed data.
+    Load all chunks from OGUC, LGUC, and PRC sources.
+    Uses processed/ files when available, falls back to seed data.
     """
     all_chunks = []
 
     # OGUC: prefer processed, fall back to seed
     oguc_processed = DATA_DIR / "processed" / "oguc-chunks.json"
     oguc_seed = DATA_DIR / "oguc" / "key-articles.json"
-    oguc_path = oguc_processed if oguc_processed.exists() else oguc_seed
-    with open(oguc_path) as f:
-        data = json.load(f)
-    chunks = data.get("chunks", [])
-    all_chunks.extend(chunks)
-    source_label = "processed (full OGUC)" if oguc_processed.exists() else "seed (key articles only)"
-    print(f"OGUC: {len(chunks)} chunks from {source_label}")
+    oguc_path = oguc_processed if oguc_processed.exists() else (oguc_seed if oguc_seed.exists() else None)
+    if oguc_path:
+        with open(oguc_path) as f:
+            data = json.load(f)
+        chunks = data.get("chunks", [])
+        all_chunks.extend(chunks)
+        label = "processed (full OGUC)" if oguc_processed.exists() else "seed (key articles only)"
+        print(f"OGUC: {len(chunks)} chunks from {label}")
+    else:
+        print("OGUC: no data file — run parse_oguc.py first")
+
+    # LGUC: processed only (no seed fallback)
+    lguc_processed = DATA_DIR / "processed" / "lguc-chunks.json"
+    if lguc_processed.exists():
+        with open(lguc_processed) as f:
+            data = json.load(f)
+        chunks = data.get("chunks", [])
+        all_chunks.extend(chunks)
+        print(f"LGUC: {len(chunks)} chunks from processed")
+    else:
+        print("LGUC: no processed file — skipping (run parse_lguc.py to add LGUC articles)")
 
     # PRC: prefer processed, fall back to seed
     prc_processed = DATA_DIR / "processed" / "prc-chunks.json"
     prc_seed = DATA_DIR / "prc" / "zhr2.json"
-    prc_path = prc_processed if prc_processed.exists() else prc_seed
-    with open(prc_path) as f:
-        data = json.load(f)
-    chunks = data.get("chunks", [])
-    all_chunks.extend(chunks)
-    source_label = "processed (full PRC)" if prc_processed.exists() else "seed (ZHR2 only)"
-    print(f"PRC: {len(chunks)} chunks from {source_label}")
+    if prc_processed.exists():
+        with open(prc_processed) as f:
+            data = json.load(f)
+        chunks = data.get("chunks", [])
+        all_chunks.extend(chunks)
+        print(f"PRC: {len(chunks)} chunks from processed (Las Condes zone norms)")
+    elif prc_seed.exists():
+        with open(prc_seed) as f:
+            data = json.load(f)
+        chunks = data.get("chunks", [])
+        all_chunks.extend(chunks)
+        print(f"PRC: {len(chunks)} chunks from seed (DEPRECATED ZHR zone names)")
+        print("     Run parse_prc.py to replace with correct E-Ab1/E-Aa1 zone names")
+    else:
+        print("PRC: no data file — run parse_prc.py first")
 
     return all_chunks
 
 
+def get_existing_ids() -> set[str]:
+    """Fetch all chunk IDs already in Supabase (for resume support)."""
+    existing: set[str] = set()
+    page_size = 1000
+    offset = 0
+    while True:
+        result = (
+            supabase.table("regulatory_chunks")
+            .select("id")
+            .range(offset, offset + page_size - 1)
+            .execute()
+        )
+        rows = result.data or []
+        for row in rows:
+            existing.add(row["id"])
+        if len(rows) < page_size:
+            break
+        offset += page_size
+    return existing
+
+
 def ingest_chunks(chunks: list[dict], batch_size: int = 10) -> None:
     """Embed chunks and upsert into Supabase regulatory_chunks table."""
-    print(f"\nIngesting {len(chunks)} chunks into Supabase...")
+    # Skip already-ingested chunks so we can resume interrupted runs
+    existing_ids = get_existing_ids()
+    pending = [c for c in chunks if c["id"] not in existing_ids]
+    print(f"\n{len(existing_ids)} chunks already in Supabase, {len(pending)} remaining to ingest")
+
+    if not pending:
+        print("Nothing to do — all chunks already ingested.")
+        return
+
+    chunks = pending
+    print(f"Ingesting {len(chunks)} chunks into Supabase...")
 
     for i in range(0, len(chunks), batch_size):
         batch = chunks[i:i + batch_size]
@@ -82,7 +139,6 @@ def ingest_chunks(chunks: list[dict], batch_size: int = 10) -> None:
         for chunk in batch:
             print(f"  Embedding: {chunk['id']}")
 
-            # Embed the content
             embedding = embed_text(chunk["content"])
 
             record = {
@@ -101,11 +157,9 @@ def ingest_chunks(chunks: list[dict], batch_size: int = 10) -> None:
             }
             records.append(record)
 
-        # Upsert batch
         result = supabase.table("regulatory_chunks").upsert(records).execute()
         print(f"  Batch {i // batch_size + 1} upserted ({len(batch)} chunks)")
 
-        # Small delay to avoid rate limits
         if i + batch_size < len(chunks):
             time.sleep(0.5)
 
@@ -113,62 +167,72 @@ def ingest_chunks(chunks: list[dict], batch_size: int = 10) -> None:
 
 
 def create_match_function() -> None:
-    """
-    Create the pgvector similarity search RPC function in Supabase.
-    Run this once after creating the regulatory_chunks table.
-    """
+    """Print the pgvector RPC SQL. Run once in Supabase SQL Editor."""
     sql = """
-    CREATE OR REPLACE FUNCTION match_regulatory_chunks(
-      query_embedding VECTOR(1536),
-      match_threshold FLOAT DEFAULT 0.3,
-      match_count INT DEFAULT 5,
-      filter_zone TEXT DEFAULT NULL
-    )
-    RETURNS TABLE (
-      id TEXT,
-      source TEXT,
-      article TEXT,
-      zone TEXT,
-      parameter_types TEXT[],
-      title TEXT,
-      content TEXT,
-      article_reference TEXT,
-      similarity FLOAT
-    )
-    LANGUAGE sql STABLE
-    AS $$
-      SELECT
-        rc.id,
-        rc.source,
-        rc.article,
-        rc.zone,
-        rc.parameter_types,
-        rc.title,
-        rc.content,
-        rc.article_reference,
-        1 - (rc.embedding <=> query_embedding) AS similarity
-      FROM regulatory_chunks rc
-      WHERE
-        (filter_zone IS NULL OR rc.zone = filter_zone OR rc.zone IS NULL)
-        AND 1 - (rc.embedding <=> query_embedding) > match_threshold
-      ORDER BY rc.embedding <=> query_embedding
-      LIMIT match_count;
-    $$;
-    """
-    print("NOTE: Run the following SQL in your Supabase SQL Editor to create the match function:")
+-- Run in Supabase SQL Editor:
+CREATE OR REPLACE FUNCTION match_regulatory_chunks(
+  query_embedding VECTOR(1536),
+  match_threshold FLOAT DEFAULT 0.25,
+  match_count INT DEFAULT 10,
+  filter_zone TEXT DEFAULT NULL
+)
+RETURNS TABLE (
+  id TEXT,
+  source TEXT,
+  article TEXT,
+  zone TEXT,
+  parameter_types TEXT[],
+  title TEXT,
+  content TEXT,
+  article_reference TEXT,
+  similarity FLOAT
+)
+LANGUAGE sql STABLE
+AS $$
+  SELECT
+    rc.id,
+    rc.source,
+    rc.article,
+    rc.zone,
+    rc.parameter_types,
+    rc.title,
+    rc.content,
+    rc.article_reference,
+    1 - (rc.embedding <=> query_embedding) AS similarity
+  FROM regulatory_chunks rc
+  WHERE
+    (filter_zone IS NULL OR rc.zone = filter_zone OR rc.zone IS NULL)
+    AND 1 - (rc.embedding <=> query_embedding) > match_threshold
+  ORDER BY rc.embedding <=> query_embedding
+  LIMIT match_count;
+$$;
+"""
+    print("NOTE: Run the following SQL in your Supabase SQL Editor:")
     print(sql)
 
 
 if __name__ == "__main__":
     print("DOM Permit Review AI — Regulatory Data Ingestion")
-    print("=" * 50)
+    print("=" * 55)
 
-    # Print the SQL function to create (user runs this in Supabase)
     create_match_function()
-    print("\n" + "=" * 50)
-    input("Press Enter after you've created the match function in Supabase...")
+    print("\n" + "=" * 55)
+    input("Press Enter after you've updated the match function in Supabase...")
 
-    # Load and ingest chunks
     chunks = load_chunks()
-    print(f"\nTotal chunks to ingest: {len(chunks)}")
+
+    # Deduplicate by id (last occurrence wins)
+    seen: dict[str, dict] = {}
+    for c in chunks:
+        seen[c["id"]] = c
+    chunks = list(seen.values())
+    print(f"\nTotal chunks to ingest (after dedup): {len(chunks)}")
+
+    if not chunks:
+        print("No chunks to ingest. Run the parse scripts first:")
+        print("  python3 scripts/parse_oguc.py")
+        print("  python3 scripts/parse_lguc.py")
+        print("  python3 scripts/parse_prc.py")
+        sys.exit(1)
+
     ingest_chunks(chunks)
