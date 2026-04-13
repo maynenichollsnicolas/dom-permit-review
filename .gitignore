@@ -31,6 +31,10 @@ next-env.d.ts
 *.swp
 *.swo
 .DS_Store
+.obsidian/
+
+# Raw data (large PDFs — not for git)
+data/raw/
 
 # Logs
 *.log

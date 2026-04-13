@@ -1,0 +1,2114 @@
+{
+  "_meta": {
+    "source": "PRC Las Condes — Plan Regulador Comunal, Texto Refundido Modificación N°11",
+    "municipality": "Las Condes",
+    "parsed_from": "Texto_Refundido_SEREMI_firmado.pdf",
+    "zones_found": [
+      "E-Aa1",
+      "E-Aa3-A",
+      "E-Aa4",
+      "E-Ab1-A",
+      "E-Ab2-A",
+      "E-Ab3",
+      "E-Ab4",
+      "E-Am1",
+      "E-Am1-A",
+      "E-Am2",
+      "E-Am4",
+      "E-Am4-A",
+      "E-e1",
+      "E-e2",
+      "E-e3",
+      "E-e5"
+    ],
+    "total_chunks": 184,
+    "note": "Zone codes: E-Ab=Aislada Baja, E-Am=Aislada Media, E-Aa=Aislada Alta, E-e=Especial"
+  },
+  "chunks": [
+    {
+      "id": "prc-lc-art5",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "antejardin"
+      ],
+      "title": "PRC Las Condes Art. 5 — De los Antejardines",
+      "content": "PRC Las Condes, Artículo 5. De los Antejardines\n\nEn proyectos de densificación de más de 3 pisos de altura destinados a vivienda, no se permite utilizar el\nantejardín para estacionamiento.\nEn proyectos de equipamiento, incluidos los cambios de destino, queda prohibido el uso del antejardín\ncomo estacionamiento o para exposición de vehículos o productos.",
+      "article_reference": "PRC Las Condes, Artículo 5"
+    },
+    {
+      "id": "prc-lc-art6",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "cierros"
+      ],
+      "title": "PRC Las Condes Art. 6 — De los Cierros y Ochavos",
+      "content": "PRC Las Condes, Artículo 6. De los Cierros y Ochavos\n\nLos cierros exteriores, tendrán una altura máxima de 2,5 m medidos en el plano paralelo al suelo natural.\nLos cierros exteriores de sitios abandonados y eriazos deberán ser transparentes en un 70% de su longitud\ncomo mínimo.\nLos cierros en esquinas deberán formar ochavos, según lo previsto en la Ordenanza General de Urbanismo\ny Construcciones y conforme a las líneas oficiales.",
+      "article_reference": "PRC Las Condes, Artículo 6"
+    },
+    {
+      "id": "prc-lc-art7",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "sistema_agrupamiento"
+      ],
+      "title": "PRC Las Condes Art. 7 — Sistemas de Agrupamiento y Adosamiento",
+      "content": "PRC Las Condes, Artículo 7. Sistemas de Agrupamiento y Adosamiento\n\nEn conformidad con lo dispuesto en la Ordenanza General de Urbanismo y Construcciones, se permitirán\nadosamientos según se indica en las zonas, subzonas y/o sectores de Edificación definidas en la presente\nOrdenanza.",
+      "article_reference": "PRC Las Condes, Artículo 7"
+    },
+    {
+      "id": "prc-lc-art8",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "rasante",
+        "distanciamiento"
+      ],
+      "title": "PRC Las Condes Art. 8 — Alturas Máximas de Edificación",
+      "content": "PRC Las Condes, Artículo 8. Alturas Máximas de Edificación\n\nLa altura máxima de edificación permitida en las diferentes zonas, subzonas y/o sectores, será la indicada\nen metros y pisos en los artículos pertinentes de la presente ordenanza.",
+      "article_reference": "PRC Las Condes, Artículo 8"
+    },
+    {
+      "id": "prc-lc-art9",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "PRC Las Condes Art. 9 — Profundidad Máxima Sistema de Agrupamiento Continuo",
+      "content": "PRC Las Condes, Artículo 9. Profundidad Máxima Sistema de Agrupamiento Continuo\n\nEn las zonas en que se establece agrupamiento continuo, EAa+cm, EAa+ca y proyectos acogidos a la tabla\nB de la zona E-e1, la profundidad del cuerpo continuo será equivalente como máximo al 40% del deslinde\ncomún, aplicado desde la línea de edificación de la edificación continua.",
+      "article_reference": "PRC Las Condes, Artículo 9"
+    },
+    {
+      "id": "prc-lc-art10",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 10 — De los Cuerpos Salientes o Volados",
+      "content": "PRC Las Condes, Artículo 10. De los Cuerpos Salientes o Volados\n\nSobre el terreno correspondiente a antejardines que tengan a lo menos 5,0 m, podrán sobresalir hasta 2,0\nm del plano de fachada, volados abiertos por tres lados, destinados exclusivamente a jardineras y terrazas,\nlas cuales podrán situarse a partir del segundo piso. En los pisos 1° y 2° de proyectos de equipamiento,\ndichos elementos no podrán sobresalir de la línea de edificación. Estos volados no podrán cerrarse total o\nparcialmente. Las escaleras y zonas verticales de seguridad definidas en la Ordenanza General de\nUrbanismo y Construcciones no podrán sobresalir del plano de fachada sobre el ",
+      "article_reference": "PRC Las Condes, Artículo 10"
+    },
+    {
+      "id": "prc-lc-art11",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 11 — De las Construcciones y Características del Espacio Público",
+      "content": "PRC Las Condes, Artículo 11. De las Construcciones y Características del Espacio Público\n\nSi como resultado de la división del suelo en zonas residenciales, resulten áreas verdes de una superficie\ninferior a 1.000 m², estas deberán concentrarse en un solo paño. Si superaren dicha dimensión, al menos\nel 70% deberá concentrarse en un paño de una superficie mínima de 1.000 m², según lo indicado en el\nPlan Regulador Metropolitano de Santiago.\nTratándose de superficies a ceder para áreas verdes conforme a lo dispuesto en la Ley General de\nUrbanismo y Construcciones y Ordenanza General de Urbanismo y Construcciones, que se dispongan en\nsentido transversal con respecto al espacio público ",
+      "article_reference": "PRC Las Condes, Artículo 11"
+    },
+    {
+      "id": "prc-lc-art12",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 12 — Construcciones en Subterráneos",
+      "content": "PRC Las Condes, Artículo 12. Construcciones en Subterráneos\n\nLas construcciones de subterráneos se regirán por las siguientes normas:\na) A partir de los deslindes de los terrenos, se deberán mantener franjas inexcavadas de al menos 1 m\nde ancho.\nb) Bajo la zona de antejardines correspondiente se dejará una faja de terreno inexcavada de al menos 2\nm, inmediatamente a continuación de la línea oficial. Excluyendo de esta, la rampa de acceso a los\nestacionamientos subterráneos.\nc) En aquellos casos en que existan subterráneos en los deslindes de predios vecinos, se podrá\nconstruir adosados a éstos en la misma extensión de los existentes, exceptuándose el ár",
+      "article_reference": "PRC Las Condes, Artículo 12"
+    },
+    {
+      "id": "prc-lc-art13",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 13 — De la Publicidad",
+      "content": "PRC Las Condes, Artículo 13. De la Publicidad\n\nToda expresión espacial y publicitaria de las actividades permitidas quedará condicionada al cumplimiento\nde la Ordenanza que sobre la materia dicte la Municipalidad en uso de las facultades otorgadas por la\nOrdenanza General de Urbanismo y Construcciones.",
+      "article_reference": "PRC Las Condes, Artículo 13"
+    },
+    {
+      "id": "prc-lc-art14",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "PRC Las Condes Art. 14 — De los Terminales de Locomoción Colectiva Urbana",
+      "content": "PRC Las Condes, Artículo 14. De los Terminales de Locomoción Colectiva Urbana\n\nLos Terminales de Locomoción Colectiva Urbana, sólo podrán localizarse en las zonas, subzonas y/o\nsectores que contemplen dicho destino en el Capítulo VI de la presente Ordenanza. Salvo lo dispuesto en\nel Capítulo 13 Terminales de Servicios de Locomoción Colectiva Urbana de la Ordenanza General de\nUrbanismo y Construcciones.\n10\nCAPÍTULO III\nNORMAS GENERALES SOBRE ESTACIONAMIENTOS.",
+      "article_reference": "PRC Las Condes, Artículo 14"
+    },
+    {
+      "id": "prc-lc-art15",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "estacionamientos"
+      ],
+      "title": "PRC Las Condes Art. 15 — Dotación Mínima de Estacionamientos",
+      "content": "PRC Las Condes, Artículo 15. Dotación Mínima de Estacionamientos\n\nLos estacionamientos se regirán, en general, por lo dispuesto en la Ordenanza General de Urbanismo y\nConstrucciones y de acuerdo a las normas y estándares establecidas por el Plan Regulador Metropolitano\nde Santiago.\nDeberán cumplir, además, con las condiciones que se establecen en este artículo:\n1.- En el tipo de uso de suelo residencial, las edificaciones cuyo destino son viviendas, deberán disponer\nde estacionamientos conforme a la siguiente tabla:\n­ Uno por vivienda de menos de 70 m² útiles.\n­ Uno y medio por vivienda de 70 hasta menos de 110 m² útiles.\n­ Dos por vivienda de 110 hasta meno",
+      "article_reference": "PRC Las Condes, Artículo 15"
+    },
+    {
+      "id": "prc-lc-art16",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "densificacion"
+      ],
+      "title": "PRC Las Condes Art. 16 — Proyectos de Densificación",
+      "content": "PRC Las Condes, Artículo 16. Proyectos de Densificación\n\nTodo proyecto que opte a alguno de los incentivos de normas urbanísticas del presente Capítulo o a los\nincentivos definidos en las tablas de densificación establecidas en el artículo 38 para cada zona, subzona o\nsector, corresponderán a proyectos de densificación y le serán aplicables las condiciones establecidas en el\nCapítulo V de la presente Ordenanza.",
+      "article_reference": "PRC Las Condes, Artículo 16"
+    },
+    {
+      "id": "prc-lc-art17",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 17 — Incentivo al Uso Eficiente del Suelo por Incremento de la Superficie Predial Mínima",
+      "content": "PRC Las Condes, Artículo 17. Incentivo al Uso Eficiente del Suelo por Incremento de la Superficie Predial Mínima\n\nAquellos terrenos cuya superficie bruta corresponda a dos o más veces la superficie de subdivisión predial\nmínima fijada para los proyectos de densificación en las diferentes zonas, subzona y sector de edificación y\nque no hagan uso de los beneficios que otorga el artículo 63 de la Ley General de Urbanismo y\nConstrucciones, podrán aumentar su coeficiente de constructibilidad en hasta un 30%. Sin embargo este\nbeneficio no podrá acumularse a aquél que deriva de la calificación de un proyecto como Conjunto\nArmónico.",
+      "article_reference": "PRC Las Condes, Artículo 17"
+    },
+    {
+      "id": "prc-lc-art18",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 18 — Incentivo al Uso Eficiente del Suelo para la Vivienda Colectiva en Altura",
+      "content": "PRC Las Condes, Artículo 18. Incentivo al Uso Eficiente del Suelo para la Vivienda Colectiva en Altura\n\nEn la zona de edificación E-Ab4’ los proyectos de densificación que se acojan a la altura máxima de la tabla\nC) y sean destinados en su totalidad a vivienda colectiva, podrán concentrar densidades en el porcentaje\nnecesario hasta alcanzar en algún sector del predio la densidad máxima de 240 hab/ha siempre y cuando\nen todo el predio se mantenga una densidad promedio de 120 hab/ha.\nEn todas las zonas, subzonas y/o sectores de Edificación Alta en que se establecen densidades máximas,\nlos proyectos de más de 3 pisos de altura, podrán superar estas densidades establecidas en las tablas\ncorrespondie",
+      "article_reference": "PRC Las Condes, Artículo 18"
+    },
+    {
+      "id": "prc-lc-art19",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 19 — Incentivo por Cableado Subterráneo",
+      "content": "PRC Las Condes, Artículo 19. Incentivo por Cableado Subterráneo\n\nLos proyectos de densificación emplazados en zonas, subzonas y/o sectores de edificación alta con o sin\ncontinuidad, aislada media y las zonas E-Ab4 y E-Ab4’ que incluya el tendido subterráneo de todo el\ncableado aéreo cualquiera sea su naturaleza en todos sus frentes, podrán incrementar el coeficiente de\nconstructibilidad hasta en un 10%. En todo caso el propietario podrá optar al incremento de\nconstructibilidad antes señalado ejecutando un cableado subterráneo equivalente, de al menos 30 m\nlineales, en otra ubicación definida por la Dirección de Obras Municipales o aportando a la Municipalid",
+      "article_reference": "PRC Las Condes, Artículo 19"
+    },
+    {
+      "id": "prc-lc-art20",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 20 — Incentivos al Desarrollo de Proyectos Comunitarios o Con Subsidio Estatal o Municipal y a la Ampliación de",
+      "content": "PRC Las Condes, Artículo 20. Incentivos al Desarrollo de Proyectos Comunitarios o Con Subsidio Estatal o Municipal y a la Ampliación de\n\nViviendas Unifamiliares.\nLos proyectos de servicios municipales con destino equipamiento de la clase salud, social, educación, o\nrecreacional deportivo, podrán adicionar hasta un 0,3 a los coeficientes señalados en las tablas de\ndensificación; lo mismo para los proyectos de viviendas sociales o sus ampliaciones. 12\nLos proyectos con subsidio estatal o municipal de viviendas y de equipamiento así como sus ampliaciones,\nno le será exigible antejardín mínimo. Asimismo, los proyectos de reparaciones, alteraciones, obras\nmenores y ampliaciones de viviendas unifamiliares, podrán excepcionalmente exi",
+      "article_reference": "PRC Las Condes, Artículo 20"
+    },
+    {
+      "id": "prc-lc-art21",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 21 — Incentivo al Uso Eficiente del Suelo en Predio entre Edificaciones de Mayor Altura y Densidad",
+      "content": "PRC Las Condes, Artículo 21. Incentivo al Uso Eficiente del Suelo en Predio entre Edificaciones de Mayor Altura y Densidad\n\nAquellos predios existentes con anterioridad al 13 de junio de 1995 y que no sean producto de una fusión\npredial, localizados en zonas, subzonas y/o sectores de densidad baja y aquellos que enfrentan zonas,\nsubzonas y/o sectores de densidad media del territorio comunal y que se encuentren entre dos predios en\nque existan edificaciones de mayor altura y mayor densidad a la actualmente permitida, podrán optar a las\nmismas condiciones de edificación de los terrenos adyacentes. Sin embargo, les será aplicable un\ndistanciamiento mínimo de 8 m. para las zonas, subzonas y/o sectores E-Ab y de 5 m par",
+      "article_reference": "PRC Las Condes, Artículo 21"
+    },
+    {
+      "id": "prc-lc-art22",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 22 — Incentivo al Uso Eficiente del Suelo, Incremento de Altura Máxima",
+      "content": "PRC Las Condes, Artículo 22. Incentivo al Uso Eficiente del Suelo, Incremento de Altura Máxima\n\nSin perjuicio de las normas de altura máxima aplicables para los proyectos de densificación reglamentados\nen las diferentes zonas, subzonas o sectores de edificación alta y media, se permitirá sobre dichas alturas\nmáximas la construcción de un piso retirado habitable, de hasta 4,0 m de altura, conformado por planos\nverticales de fachada, inscrito dentro de la rasante respectiva de la zona, subzona o sector en que se\nemplaza y cuya superficie construida será equivalente como máximo a un 65% de la superficie de la planta\ninmediatamente inferior. El piso retirado no se contabilizará como parte de",
+      "article_reference": "PRC Las Condes, Artículo 22"
+    },
+    {
+      "id": "prc-lc-art23",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 23 — Incentivo al Agrupamiento de Edificación Continua",
+      "content": "PRC Las Condes, Artículo 23. Incentivo al Agrupamiento de Edificación Continua\n\nEn los proyectos que se acojan a las condiciones de edificación continua, en las zonas, subzonas y sectores\nE-Aa+cm, E-Aa+ca y E-e1, para efectos de la construcción del cuerpo continuo, los coeficientes de\nconstructibilidad y ocupación de suelo se incrementarán en la medida suficiente y se adicionarán sobre\naquellos autorizados en la zona, subzona o sector en la que se emplaza el proyecto. La ejecución de dicho\nagrupamiento no permitirá aumentar la altura máxima establecida para la zona, subzona o sector de\nedificación en que se emplaza.\n13\nCAPÍTULO V\nDE LAS CONDICIONES PARA APLICAR LOS INCENT",
+      "article_reference": "PRC Las Condes, Artículo 23"
+    },
+    {
+      "id": "prc-lc-art24",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 24 — Exigencia de Condiciones para los Proyectos de Densificación",
+      "content": "PRC Las Condes, Artículo 24. Exigencia de Condiciones para los Proyectos de Densificación\n\nTodo proyecto de densificación, es decir aquel que opte a algún incentivo establecido en el capítulo IV y/o\na las tablas de densificación establecidas en el Artículo 38, según las zonas, subzonas o sectores de la\npresente Ordenanza, deberá cumplir con las condiciones que se señalan en el presente Capítulo.",
+      "article_reference": "PRC Las Condes, Artículo 24"
+    },
+    {
+      "id": "prc-lc-art25",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 25 — Condición de Destinar un Porcentaje de Área Libre con Cobertura Vegetal",
+      "content": "PRC Las Condes, Artículo 25. Condición de Destinar un Porcentaje de Área Libre con Cobertura Vegetal\n\nLos proyectos de densificación deberán cumplir con un mínimo de metros cuadrados destinados a área\nlibre con cobertura vegetal de al menos una profundidad de 0,40 m. Para calcular el mínimo de superficie\nse aplicará un coeficiente de área libre según la zona, subzona y/o sector en que se emplace el proyecto\ncorrespondiente al número que multiplicado por la superficie total del predio, descontadas de esta última\nlas áreas declaradas de utilidad pública, determinará la superficie de área libre.\nAl menos una superficie equivalente a 60% de estas áreas debe construirse como jardín y cumplir con la",
+      "article_reference": "PRC Las Condes, Artículo 25"
+    },
+    {
+      "id": "prc-lc-art26",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 26 — Condiciones de Accesibilidad Universal en los Antejardines",
+      "content": "PRC Las Condes, Artículo 26. Condiciones de Accesibilidad Universal en los Antejardines\n\nLos proyectos de densificación que se emplacen en zonas, subzonas o sectores E-Aa, E-Am y en las zonas\nE-Ab4 y E-Ab4’, respecto de los antejardines deberán cumplir las siguientes condiciones:\na) Aquellos terrenos con pendiente promedio inferior al 10%, pertenecientes a las zonas, subzonas o\nsectores E-Aa o E-Am, deberán dar una solución tal a los niveles del antejardín, que en ningún punto\nse produzca una diferencia de nivel mayor a 0,60 m entre el antejardín y la acera que enfrenta.\nb) No contemplar la ventilación de los pisos subterráneos, cámaras o instalaciones, sobre el nivel\nnatural del ",
+      "article_reference": "PRC Las Condes, Artículo 26"
+    },
+    {
+      "id": "prc-lc-art27",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 27 — Condición de Transparencia de los Cierros Exteriores",
+      "content": "PRC Las Condes, Artículo 27. Condición de Transparencia de los Cierros Exteriores\n\nLos cierros exteriores de los proyectos de densificación tendrán una altura máxima de 2,5 m medidos en el\nplano paralelo al suelo natural hacia el espacio público. Los cierros exteriores además, deberán ser\ntransparentes o de cerco vivo en un 40% de su longitud como mínimo.",
+      "article_reference": "PRC Las Condes, Artículo 27"
+    },
+    {
+      "id": "prc-lc-art28",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 28 — Condición de Desarrollo de Cableado Subterráneo",
+      "content": "PRC Las Condes, Artículo 28. Condición de Desarrollo de Cableado Subterráneo\n\nEn conformidad al Decreto Alcaldicio Sección 1ª N° 2125, de 10 de septiembre de 1998, los proyectos de 14\ndensificación deberán efectuar las acometidas o conexiones de cables con el tendido aéreo existente en el\nespacio público de forma subterránea hasta el poste respectivo. Asimismo, los transformadores,\ninterruptores y demás elementos conexos también deberán instalarse de forma subterránea.\nEn todo nuevo proyecto de loteo o urbanización de más de 0,5 hectáreas las líneas de distribución\neléctrica deberán ser canalizadas en ductos subterráneos, en conformidad al Decreto Alcaldicio Sección 1ª\n",
+      "article_reference": "PRC Las Condes, Artículo 28"
+    },
+    {
+      "id": "prc-lc-art29",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 29 — Condición de Desarrollo de Obras en el Espacio Público",
+      "content": "PRC Las Condes, Artículo 29. Condición de Desarrollo de Obras en el Espacio Público\n\nLos proyectos de viviendas y los equipamientos que se emplacen en la zona E-Ab4 podrán optar a la\ndensificación de acuerdo a la tabla B), los proyectos de viviendas y los equipamientos que se emplacen en\nel zona E-Ab4’ podrán optar a la densificación de acuerdo a la tabla B) o C), y la subzona E-Am1-A– Lo\nFontecilla Edificación Aislada Media N° 1-A, a la tabla C), siempre que se cumpla lo siguiente:\na) Concurrir al financiamiento proporcional de las obras establecidas en el artículo 39 de la presente\nOrdenanza conforme al Estudio de Factibilidad de Densificación realizado por la Municipalidad,",
+      "article_reference": "PRC Las Condes, Artículo 29"
+    },
+    {
+      "id": "prc-lc-art30",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 30 — Condición de Accesibilidad Universal y Peatonal",
+      "content": "PRC Las Condes, Artículo 30. Condición de Accesibilidad Universal y Peatonal\n\nEn los proyectos de densificación, emplazados en terrenos con pendiente promedio inferior al 10%, el\nnivel de piso terminado del primer piso no podrá situarse a una diferencia superior a 0,60 m respecto del\nnivel natural del terreno o del nivel medio de la vereda que enfrenta la edificación, este desnivel deberá\nsalvarse mediante rampas o planos inclinados de tal manera de asegurar la accesibilidad universal a los\nproyectos de densificación.\nAsimismo, todo proyecto de densificación que se emplace en un predio que enfrente dos calles de distinto\nancho y opte por el uso de suelo no residencial q",
+      "article_reference": "PRC Las Condes, Artículo 30"
+    },
+    {
+      "id": "prc-lc-art31",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 31 — Condición de Distanciamientos y Rasantes Mínimos Aplicables Entre Zonas",
+      "content": "PRC Las Condes, Artículo 31. Condición de Distanciamientos y Rasantes Mínimos Aplicables Entre Zonas\n\nLos proyectos de densificación emplazados en predios en cuyos deslindes concurren zonas, subzonas y/o\nsectores de Edificación Media o Alta con zonas, subzonas y/o sectores de Edificación Baja o Especial, sin\nperjuicio de lo que establecen las tablas de densificación del artículo 38 de la presente Ordenanza, se\naplicará lo siguiente:\na) La rasante más restrictiva que corresponda a ambas zonas, subzonas y/o sectores.\nb) Un distanciamiento mínimo diferenciado, para aquellas edificaciones nuevas en zonas, subzonas y/o\nsectores de Edificación Media y Alta, que colinden con zonas, subzonas y/o secto",
+      "article_reference": "PRC Las Condes, Artículo 31"
+    },
+    {
+      "id": "prc-lc-art32",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 32 — Condición de Asoleamiento",
+      "content": "PRC Las Condes, Artículo 32. Condición de Asoleamiento\n\nPara asegurar el asoleamiento de las edificaciones, en los proyectos de densificación, a partir del punto de\nencuentro entre el plano de altura máxima y la rasante respectiva de la zona, subzona y/o sector de\nedificación, se bajarán o subirán planos verticales imaginarios que constituirán los planos de fachadas hacia\ntodos los deslindes los cuales deberán respetar los distanciamientos mínimos estipulados, no pudiendo\nsobrepasar estos planos ningún elemento constructivo, con excepción de las jardineras, balcones abiertos\npor tres lados, y aquello expresamente señalados en la Ordenanza General d",
+      "article_reference": "PRC Las Condes, Artículo 32"
+    },
+    {
+      "id": "prc-lc-art33",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 33 — Condición de Conformación de Terreno Frente a Calle Ciega o Pasaje",
+      "content": "PRC Las Condes, Artículo 33. Condición de Conformación de Terreno Frente a Calle Ciega o Pasaje\n\nPara el uso eficiente del suelo urbano, en los predios que tengan frente a una calle ciega o a un pasaje\npúblico o privado, o a una servidumbre de tránsito, sólo se podrán desarrollar proyectos de densificación si\nse conforma un solo lote mediante la fusión de la totalidad de los lotes en dicha condición o de los que\nmantengan su uso residencial, y no les serán aplicables las limitaciones del numeral 2 del artículo 35 de la\npresente ordenanza.\nLo anterior no será aplicable a predios que no fueron originados en el mismo proyecto de loteo o\nsubdivisión que originó el pasaje o calle ciega.",
+      "article_reference": "PRC Las Condes, Artículo 33"
+    },
+    {
+      "id": "prc-lc-art34",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 34 — Condición de Tamaño Predial Mínimo para Proyectos de Densificación",
+      "content": "PRC Las Condes, Artículo 34. Condición de Tamaño Predial Mínimo para Proyectos de Densificación\n\nLos proyectos de densificación deberán cumplir con un tamaño predial mínimo, correspondiente a la\nsuperficie de subdivisión predial mínima establecidas en las tablas de densificación, según la zona o\nsubzona o sector en que se emplace el proyecto, descontadas las áreas afectas a utilidad pública y podrá 16\ntener hasta un 5% menos, sin que por ello se altere el resto de las normas establecidas en la misma tabla.\nEn las distintas zonas, subzonas y/o sectores de edificación que se establecen en esta Ordenanza, los\nproyectos que al constituir una nueva superficie predial para acogerse a densificac",
+      "article_reference": "PRC Las Condes, Artículo 34"
+    },
+    {
+      "id": "prc-lc-art35",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 35 — Condiciones Especiales para los Estacionamientos en Proyectos de Densificación",
+      "content": "PRC Las Condes, Artículo 35. Condiciones Especiales para los Estacionamientos en Proyectos de Densificación\n\n1. Los estacionamientos deberán desarrollarse en un plano horizontal, aceptándose una pendiente\nmáxima de 10%. Cada estacionamiento deberá tener libre ingreso y salida.\n2. Los proyectos que generen 10 o más unidades de estacionamientos, no podrán considerar accesos\nvehiculares por vías públicas de un ancho inferior a 10 m. Asimismo, no se autorizará el acceso\nvehicular por calles en fondo de saco a los estacionamientos generados por edificaciones de\nvivienda colectiva de 4 o más pisos de altura.\n3. En los edificios de instituciones de salud, previsión o consultas médicas, bancos y otros locale",
+      "article_reference": "PRC Las Condes, Artículo 35"
+    },
+    {
+      "id": "prc-lc-art36",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 36 — Condición de Uso Mixto del Territorio",
+      "content": "PRC Las Condes, Artículo 36. Condición de Uso Mixto del Territorio\n\nLos proyectos de densificación de vivienda o de vivienda y equipamiento, que se emplacen en las zonas\nde edificación aislada alta: E-Aa1 y E-Aa3 y, zona de edificación media E-Am4 y que opten por alguna de\nlas tablas de densificación de sus correspondientes zonas, no podrán disponer el uso de vivienda en el\nnivel de primer piso.\nLos proyectos de densificación que se emplacen en la zona E-Aa+ca: edificación aislada alta con\ncontinuidad alta, que opten por la tabla A) Proyectos de densificación de vivienda y equipamiento, no\npodrán disponer el uso de vivienda en el nivel de primer piso.",
+      "article_reference": "PRC Las Condes, Artículo 36"
+    },
+    {
+      "id": "prc-lc-art37",
+      "source": "PRC_LAS_CONDES",
+      "zone": null,
+      "parameter_types": [
+        "general"
+      ],
+      "title": "PRC Las Condes Art. 37 — Condición de Ocupación del Suelo en Predio con Pendientes",
+      "content": "PRC Las Condes, Artículo 37. Condición de Ocupación del Suelo en Predio con Pendientes\n\nLos proyectos de subdivisión, loteo o edificación que se emplacen en terrenos con pendiente superior al\n10%, en el área de aplicación de la presente Ordenanza, deberán cumplir con las siguientes condiciones:\nTerrenos que presenten pendientes variables deberán graficar sobre el plano de Levantamiento\nTopográfico, las áreas con sus respectivas superficies de modo que la pendiente final sea el resultado del\npromedio ponderado en relación a las unidades de superficie.\nDentro de un paño de terreno se podrá concentrar la densidad siempre que las cabidas resultantes no\nsuperen la densidad promedio de",
+      "article_reference": "PRC Las Condes, Artículo 37"
+    },
+    {
+      "id": "prc-lc-eab1a-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Ab1-A — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Ab1-A — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 40.0 hab/há\nSubdivisión predial mínima: 1000.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada baja N° 1-A.\nLos proyectos de densificación que se emplacen en esta subzona graficada en el Plano MPRCLC-2020,\npodrán optar además a las normas señaladas en la siguiente Tabla C):",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Ab1-A — Constructibilidad",
+      "content": "Zona E-Ab1-A, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Ab1-A — Ocupacion Suelo",
+      "content": "Zona E-Ab1-A, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Ab1-A — Altura",
+      "content": "Zona E-Ab1-A, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Ab1-A — Densidad Bruta",
+      "content": "Zona E-Ab1-A, Las Condes. Densidad habitacional máxima: 40.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Ab1-A — Rasante",
+      "content": "Zona E-Ab1-A, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab1-A — Antejardin",
+      "content": "Zona E-Ab1-A, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab1a-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab1-A",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Ab1-A — Subdivision Predial Min M2",
+      "content": "Zona E-Ab1-A, Las Condes. Superficie de subdivisión predial mínima: 1000.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab1-A"
+    },
+    {
+      "id": "prc-lc-eab2a-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Ab2-A — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Ab2-A — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 1.6\nCoeficiente de ocupación de suelo máximo: 0.3\nAltura máxima: 5 pisos (17.5 m)\nDensidad máxima: 150.0 hab/há\nSubdivisión predial mínima: 4000.0 m²\nRasante máxima: 70.0°\nAntejardín mínimo: 10.0 m\nDistanciamiento mínimo: 11.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada baja N° 2-A.\nEn el área comprendida entre Camino El Alba, Avda. Plaza, Parque Quebrada Grande y Avda. San Carlos de\nApoquindo y graficada en el Plano MPRCLC- 2020, los proyectos de equipamiento de salud o educación\npodrán acogerse a la siguiente Tabla B):\nTabla B) Proyecto de Densificación de Equipamiento Salud o Educación.\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicna",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Ab2-A — Constructibilidad",
+      "content": "Zona E-Ab2-A, Las Condes. Coeficiente de constructibilidad máximo: 1.6. La superficie total edificada no puede superar 1.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Ab2-A — Ocupacion Suelo",
+      "content": "Zona E-Ab2-A, Las Condes. Coeficiente de ocupación de suelo máximo: 0.3. La huella de la edificación no puede superar 0.3 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Ab2-A — Altura",
+      "content": "Zona E-Ab2-A, Las Condes. Altura máxima de edificación: 5 pisos / 17.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Ab2-A — Densidad Bruta",
+      "content": "Zona E-Ab2-A, Las Condes. Densidad habitacional máxima: 150.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Ab2-A — Rasante",
+      "content": "Zona E-Ab2-A, Las Condes. Rasante máxima: 70.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab2-A — Antejardin",
+      "content": "Zona E-Ab2-A, Las Condes. Antejardín mínimo desde línea oficial: 10.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab2-A — Distanciamiento",
+      "content": "Zona E-Ab2-A, Las Condes. Distanciamiento mínimo a deslindes: 11.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab2a-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab2-A",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Ab2-A — Subdivision Predial Min M2",
+      "content": "Zona E-Ab2-A, Las Condes. Superficie de subdivisión predial mínima: 4000.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab2-A"
+    },
+    {
+      "id": "prc-lc-eab3-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Ab3 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Ab3 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 1.6\nCoeficiente de ocupación de suelo máximo: 0.35\nAltura máxima: 5 pisos (17.5 m)\nDensidad máxima: 190.0 hab/há\nSubdivisión predial mínima: 1000.0 m²\nRasante máxima: 70.0°\nAntejardín mínimo: 7.0 m\nDistanciamiento mínimo: 7.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada baja N° 3.\nLas edificaciones que se emplacen en las zonas E-Ab3 deberán cumplir con las normas específicas de la\nsiguiente Tabla A) Base:",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Ab3 — Constructibilidad",
+      "content": "Zona E-Ab3, Las Condes. Coeficiente de constructibilidad máximo: 1.6. La superficie total edificada no puede superar 1.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Ab3 — Ocupacion Suelo",
+      "content": "Zona E-Ab3, Las Condes. Coeficiente de ocupación de suelo máximo: 0.35. La huella de la edificación no puede superar 0.35 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Ab3 — Altura",
+      "content": "Zona E-Ab3, Las Condes. Altura máxima de edificación: 5 pisos / 17.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Ab3 — Densidad Bruta",
+      "content": "Zona E-Ab3, Las Condes. Densidad habitacional máxima: 190.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Ab3 — Rasante",
+      "content": "Zona E-Ab3, Las Condes. Rasante máxima: 70.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab3 — Antejardin",
+      "content": "Zona E-Ab3, Las Condes. Antejardín mínimo desde línea oficial: 7.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab3 — Distanciamiento",
+      "content": "Zona E-Ab3, Las Condes. Distanciamiento mínimo a deslindes: 7.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab3-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab3",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Ab3 — Subdivision Predial Min M2",
+      "content": "Zona E-Ab3, Las Condes. Superficie de subdivisión predial mínima: 1000.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab3"
+    },
+    {
+      "id": "prc-lc-eab4-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Ab4 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Ab4 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.8\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 120.0 hab/há\nSubdivisión predial mínima: 300.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado y Pareado\n\nNormas adicionales:\n: edificación aislada baja N° 4.\nLas Edificaciones que se emplacen en las Zonas E-Ab4 deberán cumplir con las normas específicas de la\nsiguiente Tabla A) Base:\nTabla A) Base.\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\nEdif. Edif.\n3 pisos con Colectivas: Colectivas:\naltura 10 m 10 m No se\n10 hab/ha 2.500 m² 0,12 0,12 4",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Ab4 — Constructibilidad",
+      "content": "Zona E-Ab4, Las Condes. Coeficiente de constructibilidad máximo: 0.8. La superficie total edificada no puede superar 0.8 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Ab4 — Ocupacion Suelo",
+      "content": "Zona E-Ab4, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Ab4 — Altura",
+      "content": "Zona E-Ab4, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado y Pareado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Ab4 — Densidad Bruta",
+      "content": "Zona E-Ab4, Las Condes. Densidad habitacional máxima: 120.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Ab4 — Rasante",
+      "content": "Zona E-Ab4, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab4 — Antejardin",
+      "content": "Zona E-Ab4, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Ab4 — Subdivision Predial Min M2",
+      "content": "Zona E-Ab4, Las Condes. Superficie de subdivisión predial mínima: 300.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Ab4 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Ab4 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.12\nCoeficiente de ocupación de suelo máximo: 0.12\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 10.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 45.0°\nAntejardín mínimo: 10.0 m\nDistanciamiento mínimo: 11.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n’: edificación aislada baja N° 4 prima.\nLas Edificaciones que se emplacen en las zonas E-Ab4’ deberán cumplir con las normas específicas de la\nsiguiente Tabla A) Base:\nTabla A) Base.\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\naltura No se\n10 hab/ha 2.500 m² 0,12 0,12 45° 10 m 11 m Aislado\nmáxima de permite",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Ab4 — Constructibilidad",
+      "content": "Zona E-Ab4, Las Condes. Coeficiente de constructibilidad máximo: 0.12. La superficie total edificada no puede superar 0.12 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Ab4 — Ocupacion Suelo",
+      "content": "Zona E-Ab4, Las Condes. Coeficiente de ocupación de suelo máximo: 0.12. La huella de la edificación no puede superar 0.12 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Ab4 — Altura",
+      "content": "Zona E-Ab4, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Ab4 — Densidad Bruta",
+      "content": "Zona E-Ab4, Las Condes. Densidad habitacional máxima: 10.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Ab4 — Rasante",
+      "content": "Zona E-Ab4, Las Condes. Rasante máxima: 45.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab4 — Antejardin",
+      "content": "Zona E-Ab4, Las Condes. Antejardín mínimo desde línea oficial: 10.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Ab4 — Distanciamiento",
+      "content": "Zona E-Ab4, Las Condes. Distanciamiento mínimo a deslindes: 11.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Ab4 — Subdivision Predial Min M2",
+      "content": "Zona E-Ab4, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4"
+    },
+    {
+      "id": "prc-lc-eab4-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Ab4 — Normas de Densificación",
+      "content": "Zona E-Ab4, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 90.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 0.8\n  ocupacion_suelo: 0.3\n  area_libre: 0.5\n  rasante: 60.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 10.0\n  distanciamiento: 11.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eab4-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Ab4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Ab4 — Normas de Densificación",
+      "content": "Zona E-Ab4, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 60.0\n  subdivision_predial_min_m2: 600.0\n  constructibilidad: 0.6\n  ocupacion_suelo: 0.4\n  area_libre: No se exige\n  rasante: 70.0\n  altura: {'raw': '3 pisos con altura máxima de 10,5 m', 'pisos': 3, 'metros': 10.5}\n  antejardin: 5.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Ab4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam1a-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Am1-A — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Am1-A — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 40.0 hab/há\nSubdivisión predial mínima: 1000.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n– Lo Fontecilla: edificación aislada media N° 1.\nEn el área comprendida entre la Avda. Paul Harris, por el norte; la Avda. Charles Hamilton, por el sur; la\ncalle Lo Fontecilla, por el oriente; y, la Avda. Estoril, por el poniente, correspondiente al sector “Lo\nFontecilla” graficada en el Plano MPRCLC-2020, los proyectos de viviendas y los equipamientos que se\nemplacen en el área descrita precedentemente podrán optar a la densificación de acuerdo a la tabla C),\nsiempre que se cumpla con la Condic",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Am1-A — Constructibilidad",
+      "content": "Zona E-Am1-A, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Am1-A — Ocupacion Suelo",
+      "content": "Zona E-Am1-A, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Am1-A — Altura",
+      "content": "Zona E-Am1-A, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Am1-A — Densidad Bruta",
+      "content": "Zona E-Am1-A, Las Condes. Densidad habitacional máxima: 40.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Am1-A — Rasante",
+      "content": "Zona E-Am1-A, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Am1-A — Antejardin",
+      "content": "Zona E-Am1-A, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Am1-A — Subdivision Predial Min M2",
+      "content": "Zona E-Am1-A, Las Condes. Superficie de subdivisión predial mínima: 1000.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A"
+    },
+    {
+      "id": "prc-lc-eam1a-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am1-A — Normas de Densificación",
+      "content": "Zona E-Am1-A, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 100.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 0.8\n  ocupacion_suelo: 0.3\n  area_libre: 0.4\n  rasante: 60.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  distanciamiento: 11.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam1a-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1-A",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am1-A — Normas de Densificación",
+      "content": "Zona E-Am1-A, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 320.0\n  subdivision_predial_min_m2: 800.0\n  constructibilidad: 1.0\n  ocupacion_suelo: 0.3\n  area_libre: 0.2\n  rasante: 60.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  distanciamiento: 6.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1-A (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam1-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Am1 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Am1 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n’: edificación aislada media N° 1 prima.\nLas edificaciones con destino vivienda que se emplacen en la zona E-Am1’ deberán cumplir con las normas\nespecíficas de la siguiente Tabla A) Base:\nTabla A) Base\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\naltura No se\n20 hab/ha 2.500 m² 0,6 0,4 60° 5 m O.G.U.C. Aisla",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Am1 — Constructibilidad",
+      "content": "Zona E-Am1, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Am1 — Ocupacion Suelo",
+      "content": "Zona E-Am1, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Am1 — Altura",
+      "content": "Zona E-Am1, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Am1 — Densidad Bruta",
+      "content": "Zona E-Am1, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Am1 — Rasante",
+      "content": "Zona E-Am1, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Am1 — Antejardin",
+      "content": "Zona E-Am1, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Am1 — Subdivision Predial Min M2",
+      "content": "Zona E-Am1, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1"
+    },
+    {
+      "id": "prc-lc-eam1-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am1 — Normas de Densificación",
+      "content": "Zona E-Am1, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 240.0\n  subdivision_predial_min_m2: 4000.0\n  constructibilidad: 0.6\n  ocupacion_suelo: 0.35\n  area_libre: 0.4\n  rasante: 60.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 10.0\n  distanciamiento: 11.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam1-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am1 — Normas de Densificación",
+      "content": "Zona E-Am1, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.5\n  ocupacion_suelo: 0.7\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  distanciamiento: 4.0\n  sistema_agrupamiento: Aislado y pareado, en este caso con permiso de Edificación simultáneo.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam1-densificacion-3",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am1 — Normas de Densificación",
+      "content": "Zona E-Am1, Las Condes — Normas de Densificación (Tabla D)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.5\n  ocupacion_suelo: 0.5\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '5 pisos con altura máxima de 17,50 m', 'pisos': 5, 'metros': 17.5}\n  antejardin: 7.0\n  distanciamiento: 5.0\n  sistema_agrupamiento: Aislado No se permite adosamiento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam2-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Am2 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Am2 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada media N° 2.\nLas edificaciones con destino vivienda que se emplacen en la zona E-Am2 deberán cumplir con las normas\nespecíficas de la siguiente Tabla A) Base:\nTabla A) Base\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\naltura No se\n20 hab/ha 2.500 m² 0,6 0,4 60° 5 m O.G.U.C. Aislado\nmáxim",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Am2 — Constructibilidad",
+      "content": "Zona E-Am2, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Am2 — Ocupacion Suelo",
+      "content": "Zona E-Am2, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Am2 — Altura",
+      "content": "Zona E-Am2, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Am2 — Densidad Bruta",
+      "content": "Zona E-Am2, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Am2 — Rasante",
+      "content": "Zona E-Am2, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Am2 — Antejardin",
+      "content": "Zona E-Am2, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Am2 — Subdivision Predial Min M2",
+      "content": "Zona E-Am2, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2"
+    },
+    {
+      "id": "prc-lc-eam2-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am2 — Normas de Densificación",
+      "content": "Zona E-Am2, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: Libre\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.5\n  ocupacion_suelo: 0.3\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '7 pisos con altura máxima de 24,50 m o 21 m para vivienda', 'pisos': 7, 'metros': 24.5}\n  antejardin: 7.0\n  distanciamiento: 7.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam2-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am2",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am2 — Normas de Densificación",
+      "content": "Zona E-Am2, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 580.0\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 1.6\n  ocupacion_suelo: 0.3\n  area_libre: 0.4\n  rasante: 70.0\n  altura: {'raw': '7 pisos con altura máxima de 20 m', 'pisos': 7, 'metros': 20.0}\n  antejardin: 7.0\n  distanciamiento: 7.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am2 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam4-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Am4 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Am4 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada media N° 4.\nLas edificaciones con destino vivienda que se emplacen en la zona E-Am4 y subzona E-Am4-A, deberán\ncumplir con las normas específicas de la siguiente Tabla A) Base:\nTabla A) Base\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\naltura No se\n20 hab/ha 2.500 m² 0,6 0,4 60° 5 m O.G",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Am4 — Constructibilidad",
+      "content": "Zona E-Am4, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Am4 — Ocupacion Suelo",
+      "content": "Zona E-Am4, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Am4 — Altura",
+      "content": "Zona E-Am4, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Am4 — Densidad Bruta",
+      "content": "Zona E-Am4, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Am4 — Rasante",
+      "content": "Zona E-Am4, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Am4 — Antejardin",
+      "content": "Zona E-Am4, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Am4 — Subdivision Predial Min M2",
+      "content": "Zona E-Am4, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4"
+    },
+    {
+      "id": "prc-lc-eam4-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am4 — Normas de Densificación",
+      "content": "Zona E-Am4, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 1170.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 1.6\n  ocupacion_suelo: 0.4\n  area_libre: 0.4\n  rasante: 70.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eam4a-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Am4-A — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Am4-A — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.6\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada media N° 4-A.\nEn la subzona de edificación E-Am4 - A “Sector Hermanos Cabot” delimitada por calle Hermanos Cabot,\npor el norte; calle Reina Astrid, por el oriente; Avda. Presidente Riesco, por el sur; y, calle Benito Juárez, por\nel poniente, se aplicará la Tabla A) Base.\nTabla A) Base\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otne",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Am4-A — Constructibilidad",
+      "content": "Zona E-Am4-A, Las Condes. Coeficiente de constructibilidad máximo: 0.6. La superficie total edificada no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Am4-A — Ocupacion Suelo",
+      "content": "Zona E-Am4-A, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Am4-A — Altura",
+      "content": "Zona E-Am4-A, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Am4-A — Densidad Bruta",
+      "content": "Zona E-Am4-A, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Am4-A — Rasante",
+      "content": "Zona E-Am4-A, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Am4-A — Antejardin",
+      "content": "Zona E-Am4-A, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Am4-A — Subdivision Predial Min M2",
+      "content": "Zona E-Am4-A, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A"
+    },
+    {
+      "id": "prc-lc-eam4a-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Am4-A",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Am4-A — Normas de Densificación",
+      "content": "Zona E-Am4-A, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 860.0\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 1.8\n  ocupacion_suelo: 0.4\n  area_libre: 0.4\n  rasante: 70.0\n  altura: {'raw': '9 pisos con un máximo de 31,5 m', 'pisos': 9, 'metros': 31.5}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite el adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Am4-A (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa1-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Aa1 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Aa1 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 1.0\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 70.0°\nAntejardín mínimo: 7.0 m\nDistanciamiento mínimo: 6.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada alta N° 1.\nLas edificaciones de viviendas o equipamientos que se emplacen en la zona E-Aa1 deberán cumplir con las\nnormas específicas de la siguiente Tabla A) Base:\nTabla A) Base\n30\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\naltura No se\n20 hab/ha 2.500 m² 1,0 0,4 70° 7 m 6 m Aislado\n",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Aa1 — Constructibilidad",
+      "content": "Zona E-Aa1, Las Condes. Coeficiente de constructibilidad máximo: 1.0. La superficie total edificada no puede superar 1.0 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Aa1 — Ocupacion Suelo",
+      "content": "Zona E-Aa1, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Aa1 — Altura",
+      "content": "Zona E-Aa1, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Aa1 — Densidad Bruta",
+      "content": "Zona E-Aa1, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Aa1 — Rasante",
+      "content": "Zona E-Aa1, Las Condes. Rasante máxima: 70.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa1 — Antejardin",
+      "content": "Zona E-Aa1, Las Condes. Antejardín mínimo desde línea oficial: 7.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa1 — Distanciamiento",
+      "content": "Zona E-Aa1, Las Condes. Distanciamiento mínimo a deslindes: 6.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Aa1 — Subdivision Predial Min M2",
+      "content": "Zona E-Aa1, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1"
+    },
+    {
+      "id": "prc-lc-eaa1-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa1 — Normas de Densificación",
+      "content": "Zona E-Aa1, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 1.8\n  ocupacion_suelo: 0.3\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '12 pisos con una altura máxima de 42 m', 'pisos': 12, 'metros': 42.0}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa1-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa1 — Normas de Densificación",
+      "content": "Zona E-Aa1, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 840.0\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.0\n  ocupacion_suelo: 0.3\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '15 pisos con una altura máxima de 42 m', 'pisos': 15, 'metros': 42.0}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa3a-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Aa3-A — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Aa3-A — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 1.0\nCoeficiente de ocupación de suelo máximo: 0.4\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 70.0°\nAntejardín mínimo: 7.0 m\nDistanciamiento mínimo: 6.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada alta N° 3-A.\nEn el área delimitada por la Avda. Presidente Riesco, por el norte; calle Estocolmo, por el oriente; calle\nCerro El Plomo, por el sur; y, Avda. Alonso de Córdova, por el poniente, los proyectos podrán aplicar las\ncondiciones establecidas en la Tabla B).",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Aa3-A — Constructibilidad",
+      "content": "Zona E-Aa3-A, Las Condes. Coeficiente de constructibilidad máximo: 1.0. La superficie total edificada no puede superar 1.0 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Aa3-A — Ocupacion Suelo",
+      "content": "Zona E-Aa3-A, Las Condes. Coeficiente de ocupación de suelo máximo: 0.4. La huella de la edificación no puede superar 0.4 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Aa3-A — Altura",
+      "content": "Zona E-Aa3-A, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Aa3-A — Densidad Bruta",
+      "content": "Zona E-Aa3-A, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Aa3-A — Rasante",
+      "content": "Zona E-Aa3-A, Las Condes. Rasante máxima: 70.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa3-A — Antejardin",
+      "content": "Zona E-Aa3-A, Las Condes. Antejardín mínimo desde línea oficial: 7.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa3-A — Distanciamiento",
+      "content": "Zona E-Aa3-A, Las Condes. Distanciamiento mínimo a deslindes: 6.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Aa3-A — Subdivision Predial Min M2",
+      "content": "Zona E-Aa3-A, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A"
+    },
+    {
+      "id": "prc-lc-eaa3a-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa3-A",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa3-A — Normas de Densificación",
+      "content": "Zona E-Aa3-A, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 840.0\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.0\n  ocupacion_suelo: 0.3\n  area_libre: 0.5\n  rasante: 70.0\n  altura: {'raw': '15 pisos con un máximo de 52,5 m', 'pisos': 15, 'metros': 52.5}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite el adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa3-A (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-Aa4 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-Aa4 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 1.0\nCoeficiente de ocupación de suelo máximo: 0.6\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: 20.0 hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 70.0°\nAntejardín mínimo: 7.0 m\nDistanciamiento mínimo: 6.0 m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: edificación aislada alta N° 4.\nLas edificaciones que se emplacen en esta zona, deberán cumplir con las normas específicas de la\nsiguiente Tabla A) Base:\nTabla A) Base\naturB\ndadisneD\n)ah/bah(\namixáM\ned\neicifrepuS\nnóisividbuS aminíM\nlaiderP\ned\netneicifeoC\ndadilibitcurtsnoC ed\netneicifeoC\ned\nnóicapucO oleuS etnasaR\namixám\narutlA\nnídrajetnA otneimaicnatsiD otneimasodA ed\nametsiS\notneimapurgA\n3 pisos con\nNo se\n20 hab/ha 2.500 m² 1,0 0,6 70° un máximo 7 m 6 m Aislado\npermite\nde 10,5 m\n13.a. S-IG - S",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-Aa4 — Constructibilidad",
+      "content": "Zona E-Aa4, Las Condes. Coeficiente de constructibilidad máximo: 1.0. La superficie total edificada no puede superar 1.0 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-Aa4 — Ocupacion Suelo",
+      "content": "Zona E-Aa4, Las Condes. Coeficiente de ocupación de suelo máximo: 0.6. La huella de la edificación no puede superar 0.6 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Altura",
+      "content": "Zona E-Aa4, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-Aa4 — Densidad Bruta",
+      "content": "Zona E-Aa4, Las Condes. Densidad habitacional máxima: 20.0 hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-Aa4 — Rasante",
+      "content": "Zona E-Aa4, Las Condes. Rasante máxima: 70.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa4 — Antejardin",
+      "content": "Zona E-Aa4, Las Condes. Antejardín mínimo desde línea oficial: 7.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-distanciamiento",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-Aa4 — Distanciamiento",
+      "content": "Zona E-Aa4, Las Condes. Distanciamiento mínimo a deslindes: 6.0 metros. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-Aa4 — Subdivision Predial Min M2",
+      "content": "Zona E-Aa4, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 840.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 4.0\n  ocupacion_suelo: 0.4\n  area_libre: 0.6\n  rasante: 70.0\n  altura: {'raw': '15 pisos con una altura máxima de 52,5 m', 'pisos': 15, 'metros': 52.5}\n  antejardin: 10.0\n  distanciamiento: 10.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 840.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 2.0\n  ocupacion_suelo: 0.3\n  area_libre: 0.5\n  rasante: 70.0\n  altura: {'raw': '15 pisos con una altura máxima de 52,5 m', 'pisos': 15, 'metros': 52.5}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-3",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla D)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.0\n  ocupacion_suelo: 0.4\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '12 pisos con un máximo de 42 m', 'pisos': 12, 'metros': 42.0}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-4",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla E)\n  densidad_bruta: 1200.0\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.5\n  ocupacion_suelo: 0.3\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '15 pisos con una altura máxima de 42 m', 'pisos': 15, 'metros': 42.0}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-5",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla F)\n  densidad_bruta: Libre\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 3.0\n  ocupacion_suelo: 0.3\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '15 pisos con un máximo de 52,5 m', 'pisos': 15, 'metros': 52.5}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite el adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-6",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla G)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 3.0\n  ocupacion_suelo: 0.75\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '5 pisos con un máximo de 17,5 m', 'pisos': 5, 'metros': 17.5}\n  antejardin: 7.0\n  distanciamiento: 4.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-7",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla H)\n  densidad_bruta: Libre\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 3.0\n  ocupacion_suelo: 0.4\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '2 pisos con un máximo de 7 m para la edificación continua y 17 pisos con un máximo de 59,50 m para la edificación aislada', 'pisos': 2, 'metros': 7.0}\n  antejardin: Edificación aislada 7 m Edificación continua 5 m\n  distanciamiento: 8.0\n  sistema_agrupamiento: Continuo y Aislado. No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-8",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla I)\n  densidad_bruta: Libre\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: -\n  ocupacion_suelo: 0.6\n  area_libre: 70.0\n  rasante: 70.0\n  altura: {'raw': 'libre'}\n  antejardin: 7.0\n  distanciamiento: 15.0\n  sistema_agrupamiento: Aislado o Pareado hasta 40 m. Continuo en la altura de placa existente.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-9",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla J)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: No aplica\n  constructibilidad: No aplica\n  ocupacion_suelo: -\n  rasante: Hacia el espacio público: O.G.U.C.\n  altura: {'raw': '8 pisos con altura máxima de 32 m', 'pisos': 8, 'metros': 32.0}\n  antejardin: -\n  distanciamiento: -\n  adosamiento: -\n  sistema_agrupamiento: -",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-eaa4-densificacion-10",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-Aa4",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-Aa4 — Normas de Densificación",
+      "content": "Zona E-Aa4, Las Condes — Normas de Densificación (Tabla K)\n  densidad_bruta: Libre\n  subdivision_predial_min_m2: 1500.0\n  constructibilidad: 2.5\n  ocupacion_suelo: 0.4\n  area_libre: 0.2\n  rasante: 70.0\n  altura: {'raw': '15 pisos con una altura máxima de 52,5 m', 'pisos': 15, 'metros': 52.5}\n  antejardin: 7.0\n  distanciamiento: 8.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-Aa4 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee1-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-e1 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-e1 — Plan Regulador Comunal de Las Condes (PRC)\n\nCoeficiente de constructibilidad máximo: 0.8\nCoeficiente de ocupación de suelo máximo: 0.5\nAltura máxima: 3 pisos (10.5 m)\nDensidad máxima: No aplica hab/há\nSubdivisión predial mínima: 2500.0 m²\nRasante máxima: 60.0°\nAntejardín mínimo: 5.0 m\nDistanciamiento mínimo: O.G.U.C. m\nSistema de agrupamiento: Aislado\n\nNormas adicionales:\n: Edificación Especial N° 1. Equipamientos\nLa zona de edificación E-e1, de Equipamiento, estará constituida por los terrenos en que se emplazan las\nedificaciones destinadas a complementar las funciones urbanas básicas, según se establece en la\nOrdenanza del Plan Regulador Metropolitano de Santiago. En el territorio comunal estos son los siguientes,\nagrupados en las siguientes subzonas:\n16.a. E-e1-SE-M Subzona Equipamiento Metropolitano\n•••• Centro Comercial Alto Las Condes.\n•••• Centro Comercial",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-constructibilidad",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "constructibilidad"
+      ],
+      "title": "Zona E-e1 — Constructibilidad",
+      "content": "Zona E-e1, Las Condes. Coeficiente de constructibilidad máximo: 0.8. La superficie total edificada no puede superar 0.8 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-ocupacion-suelo",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "ocupacion_suelo"
+      ],
+      "title": "Zona E-e1 — Ocupacion Suelo",
+      "content": "Zona E-e1, Las Condes. Coeficiente de ocupación de suelo máximo: 0.5. La huella de la edificación no puede superar 0.5 veces la superficie del predio.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-altura",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "altura"
+      ],
+      "title": "Zona E-e1 — Altura",
+      "content": "Zona E-e1, Las Condes. Altura máxima de edificación: 3 pisos / 10.5 m de altura. Sistema de agrupamiento: Aislado.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-densidad-bruta",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "densidad"
+      ],
+      "title": "Zona E-e1 — Densidad Bruta",
+      "content": "Zona E-e1, Las Condes. Densidad habitacional máxima: No aplica hab/há.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-rasante",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "rasante"
+      ],
+      "title": "Zona E-e1 — Rasante",
+      "content": "Zona E-e1, Las Condes. Rasante máxima: 60.0°.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-antejardin",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "distanciamiento"
+      ],
+      "title": "Zona E-e1 — Antejardin",
+      "content": "Zona E-e1, Las Condes. Antejardín mínimo desde línea oficial: 5.0 metros.",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-subdivision-predial-min-m2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "subdivision_predial"
+      ],
+      "title": "Zona E-e1 — Subdivision Predial Min M2",
+      "content": "Zona E-e1, Las Condes. Superficie de subdivisión predial mínima: 2500.0 m².",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1"
+    },
+    {
+      "id": "prc-lc-ee1-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e1 — Normas de Densificación",
+      "content": "Zona E-e1, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: Libre\n  constructibilidad: 2.0\n  ocupacion_suelo: 0.7\n  area_libre: 0.3\n  rasante: 70.0\n  altura: {'raw': '4 pisos con una altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  distanciamiento: 6.0\n  sistema_agrupamiento: Continuo o Aislado Adosa- miento según O.G.U.C:",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee1-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e1",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e1 — Normas de Densificación",
+      "content": "Zona E-e1, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: No aplica\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 1.4\n  ocupacion_suelo: 0.6\n  area_libre: 0.3\n  rasante: 60.0\n  altura: {'raw': '5 pisos o 17,50 m', 'pisos': 5, 'metros': 17.5}\n  antejardin: 10.0\n  distanciamiento: 11.0\n  sistema_agrupamiento: Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e1 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee2-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e2",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-e2 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-e2 — Plan Regulador Comunal de Las Condes (PRC)\n\n\nNormas adicionales:\n: Edificación Especial N° 2 Equipamiento Recreacional Deportivo\nSon áreas de propiedad fiscal, municipal o privada, destinadas a acoger actividades deportivas y/o\nespectáculos de concurrencia masiva, definidas en la Ordenanza del Plan Regulador Metropolitano de\nSantiago.\nEn el territorio Comunal se establecen las siguientes:\n• Estadio Rolf Nathan\n• Estadio Israelita\n• Estadio Italiano\n• Estadio Español\n• Stade Francais\n• Club de Golf Los Leones.\n• Estadio U.C. San Carlos de Apoquindo\n• Estadio C",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e2"
+    },
+    {
+      "id": "prc-lc-ee2-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e2",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e2 — Normas de Densificación",
+      "content": "Zona E-e2, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 1170.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 20.0\n  ocupacion_suelo: 6.0\n  area_libre: 0.4\n  rasante: 70.0\n  altura: {'raw': '4 pisos o 14 m para edificación continua y 15 pisos o 52,5 m para edificación aislada.', 'pisos': 4, 'metros': 14.0}\n  antejardin: 10.0\n  distanciamiento: 10.0\n  sistema_agrupamiento: Continuo y Aislado No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e2 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee3-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e3",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-e3 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-e3 — Plan Regulador Comunal de Las Condes (PRC)\n\n\nNormas adicionales:\n: Edificación Especial N° 3 Áreas Verdes: Intercomunales y Comunales\nSon áreas verdes intercomunales de uso público o privado según se establece en la Ordenanza del Plan\nRegulador Metropolitano de Santiago y en la presente Ordenanza:\n• Parques\n• Cerros Islas\n• Parques Quebradas\n• Avenidas Parques\n18.a. Parques\nEn el territorio Comunal se consideran los siguientes parques intercomunales:\n­ Parque Araucano\n­ Parque Los Dominicos\n­ Bosque y Parque Pie Andino.\n­ Parque Intercomunal Oriente.\nLos proy",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e3"
+    },
+    {
+      "id": "prc-lc-ee3-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e3",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e3 — Normas de Densificación",
+      "content": "Zona E-e3, Las Condes — Normas de Densificación (Tabla B)\n  subdivision_predial_min_m2: 0.3\n  constructibilidad: 0.2\n  ocupacion_suelo: 0.7\n  rasante: 60.0\n  altura: {'raw': '5 pisos o 17,50 m.', 'pisos': 5}\n  antejardin: 7.0\n  distanciamiento: 11.0\n  adosamiento: No se permite\n  sistema_agrupamiento: Aislado",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e3 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee5-resumen",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e5",
+      "parameter_types": [
+        "resumen"
+      ],
+      "title": "Zona E-e5 — Resumen de Normas Urbanísticas",
+      "content": "Zona E-e5 — Plan Regulador Comunal de Las Condes (PRC)\n\n\nNormas adicionales:\n: Edificación Especial N° 5\n42\nZonas de Protección de Recurso de Valor Patrimonial Cultural\nÁreas e inmuebles de propiedad fiscal, municipal o privada, descritos en el Artículo 3, artículo 3.3 de la\npresente Ordenanza, que constituyen valores arquitectónico - culturales.\nLos proyectos de construcción que puedan afectar edificios declarados Monumentos Históricos o Zonas\nTípicas, para su aprobación deberán atender lo dispuesto en la Ley N° 17.288, sobre Monumentos\nNacionales.\nAquellos proyectos de",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e5"
+    },
+    {
+      "id": "prc-lc-ee5-densificacion-1",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e5",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e5 — Normas de Densificación",
+      "content": "Zona E-e5, Las Condes — Normas de Densificación (Tabla B)\n  densidad_bruta: 8.0\n  subdivision_predial_min_m2: 2500.0\n  constructibilidad: 0.6\n  ocupacion_suelo: 0.4\n  rasante: 60.0\n  altura: {'raw': '2 pisos y mansarda con altura máxima de 10,5 m', 'pisos': 2, 'metros': 10.5}\n  antejardin: Existente\n  sistema_agrupamiento: Aislado Pareado",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e5 (Tabla Densificación)"
+    },
+    {
+      "id": "prc-lc-ee5-densificacion-2",
+      "source": "PRC_LAS_CONDES",
+      "zone": "E-e5",
+      "parameter_types": [
+        "densificacion",
+        "constructibilidad",
+        "altura"
+      ],
+      "title": "Zona E-e5 — Normas de Densificación",
+      "content": "Zona E-e5, Las Condes — Normas de Densificación (Tabla C)\n  densidad_bruta: 320.0\n  subdivision_predial_min_m2: 800.0\n  constructibilidad: 1.3\n  ocupacion_suelo: 0.4\n  area_libre: 0.2\n  rasante: 60.0\n  altura: {'raw': '4 pisos con altura máxima de 14 m', 'pisos': 4, 'metros': 14.0}\n  antejardin: 7.0\n  distanciamiento: 6.0\n  sistema_agrupamiento: Aislado. No se permite adosa- miento",
+      "article_reference": "PRC Las Condes, Art. 38, Zona E-e5 (Tabla Densificación)"
+    }
+  ]
+}
