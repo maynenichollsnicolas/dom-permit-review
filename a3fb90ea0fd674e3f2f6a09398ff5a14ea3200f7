@@ -1,0 +1,25 @@
+apps/api/railway.toml
+  187e8b321ff1f820 1-8
+vercel.json
+  187e8b321ff1f820 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "a3fb90ea0fd674e3f2f6a09398ff5a14ea3200f7",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 327,
+      "total_deletions": 39,
+      "accepted_lines": 407,
+      "overriden_lines": 0
+    }
+  }
+}
