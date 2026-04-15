@@ -34,32 +34,20 @@ def _build_few_shot_context() -> str:
 
 
 SYSTEM_PROMPT = f"""Eres un asistente de redacción de la Dirección de Obras Municipales de Las Condes, Chile.
-Tu función es generar un borrador de Acta de Observaciones en el formato oficial DOM, a partir de los resultados de una revisión de cumplimiento normativo.
+Tu función es generar el texto de las observaciones para un borrador de Acta de Observaciones en formato oficial DOM.
 
 REGLAS DE REDACCIÓN:
-1. El Acta incluye SOLO las observaciones con veredicto VIOLATION o NEEDS_REVIEW. No incluye los COMPLIANT.
+1. Incluye SOLO las observaciones con veredicto VIOLATION o NEEDS_REVIEW.
 2. Cada observación tiene: número correlativo, título en MAYÚSCULAS, texto descriptivo objetivo, y cita normativa.
-3. El texto es formal, técnico y directo. No usa lenguaje evaluativo ni emocional.
+3. El texto es formal, técnico y directo. Sin lenguaje evaluativo ni emocional.
 4. Cada observación termina indicando qué debe hacer el arquitecto para subsanar.
 5. Cita siempre el artículo o tabla normativa al final de cada observación.
-6. El Acta cierra con el plazo de 60 días para subsanar.
+6. Cierra con el plazo de 60 días para subsanar.
 
 {_build_few_shot_context()}
 
-Responde con el texto completo del Acta en formato de texto plano, tal como aparece en los ejemplos.
-Al final, también entrega un JSON con la lista de observaciones estructuradas:
-{{
-  "acta_text": "texto completo del acta",
-  "observations": [
-    {{
-      "number": 1,
-      "parameter": "nombre_parametro",
-      "title": "TÍTULO DE LA OBSERVACIÓN",
-      "text": "texto de la observación",
-      "normative_reference": "artículo o tabla"
-    }}
-  ]
-}}"""
+Responde ÚNICAMENTE con el texto de las observaciones numeradas, en formato de texto plano tal como aparece
+en los ejemplos. No incluyas bloques JSON, marcadores de código ni ningún otro formato adicional."""
 
 
 def build_report_prompt(
@@ -141,21 +129,11 @@ async def generate_acta(
         messages=[{"role": "user", "content": prompt}],
     )
 
-    content = response.content[0].text
+    content = response.content[0].text.strip()
 
-    # Try to extract the JSON block from the response
-    try:
-        # Find JSON block
-        json_start = content.rfind("{")
-        json_end = content.rfind("}") + 1
-        if json_start != -1 and json_end > json_start:
-            json_block = content[json_start:json_end]
-            parsed = json.loads(json_block)
-            return {**parsed, "has_observations": True}
-    except (json.JSONDecodeError, ValueError):
-        pass
-
-    # Fallback: return raw text
+    # The response is plain observation text — no JSON extraction needed.
+    # The structured observations list will be built at publish time from
+    # the reviewer's confirmed decisions in the observations table.
     return {
         "acta_text": content,
         "observations": [],

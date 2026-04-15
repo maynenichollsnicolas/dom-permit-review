@@ -28,13 +28,63 @@ export const api = {
     getActa: (id: string) => apiFetch<Acta>(`/expedients/${id}/acta`),
     publishActa: (id: string) =>
       apiFetch(`/expedients/${id}/acta/publish`, { method: "POST" }),
+    approve: (id: string) =>
+      apiFetch<{ status: string }>(`/expedients/${id}/approve`, { method: "POST" }),
+    chat: (id: string, message: string, history: { role: string; content: string }[]) =>
+      apiFetch<{ response: string }>(`/expedients/${id}/chat`, {
+        method: "POST",
+        body: JSON.stringify({ message, history }),
+      }),
+  },
+  intake: {
+    queue: () => apiFetch<any[]>("/intake/queue"),
+    getChecklist: (id: string) => apiFetch<ChecklistResult>(`/intake/${id}/checklist`),
+    analyzeDocuments: (id: string) =>
+      apiFetch<{ results: ChecklistItem[] }>(`/intake/${id}/analyze-documents`, { method: "POST" }),
+    overrideChecklist: (id: string, requirement: string, finalStatus: "met" | "unmet") =>
+      apiFetch(`/intake/${id}/checklist`, {
+        method: "PATCH",
+        body: JSON.stringify({ requirement, final_status: finalStatus }),
+      }),
+    getDocuments: (id: string) =>
+      apiFetch<{ document_type: string; file_name: string; ai_status: string; [key: string]: string }[]>(`/intake/${id}/documents`),
+    getDocumentUrl: (id: string, docType: string) =>
+      apiFetch<{ url: string; file_name: string }>(`/intake/${id}/documents/${encodeURIComponent(docType)}/url`),
+    admit: (id: string) => apiFetch(`/intake/${id}/admit`, { method: "POST" }),
+    resubmit: (id: string, body: ResubmitRequest) =>
+      apiFetch(`/intake/${id}/resubmit`, {
+        method: "POST",
+        body: JSON.stringify(body),
+      }),
+    architectExpedients: (email: string) =>
+      apiFetch<any[]>(`/intake/architect/${encodeURIComponent(email)}/expedients`),
+    extractFromDoc: async (docType: string, file: File): Promise<ExtractedParams> => {
+      const fd = new FormData();
+      fd.append("doc_type", docType);
+      fd.append("file", file);
+      const res = await fetch(`${API_URL}/api/v1/intake/extract-from-doc`, { method: "POST", body: fd });
+      if (!res.ok) {
+        const error = await res.json().catch(() => ({ detail: res.statusText }));
+        throw new Error(error.detail || "Extraction error");
+      }
+      return res.json();
+    },
+  },
+  geo: {
+    zoneFromCoords: (lat: number, lng: number) =>
+      apiFetch<{ zone: string | null; source: string; error: string | null }>("/geo/zone-from-coords", {
+        method: "POST",
+        body: JSON.stringify({ lat, lng }),
+      }),
+    zoneParams: (zone: string) =>
+      apiFetch<ZoneParamsResult>(`/geo/zone-params/${encodeURIComponent(zone)}`),
   },
 };
 
 // --- Types ---
 
 export type ProjectType = "obra_nueva_residencial" | "ampliacion_residencial";
-export type ExpedientStatus = "admitido" | "en_revision" | "observado" | "aprobado" | "rechazado";
+export type ExpedientStatus = "pendiente_admision" | "admitido" | "en_revision" | "observado" | "aprobado" | "rechazado";
 export type ObservationVerdict = "VIOLATION" | "COMPLIANT" | "NEEDS_REVIEW" | "SIN_DATOS";
 export type ObservationRoundStatus = "NUEVA" | "PENDIENTE" | "SUBSANADA" | "REABIERTA";
 export type ReviewerAction = "pending" | "accepted" | "edited" | "discarded";
@@ -136,4 +186,77 @@ export interface ObservationAction {
   reviewer_final_text?: string;
   reviewer_discard_reason?: string;
   reviewer_notes?: string;
+}
+
+export interface ChecklistItem {
+  id?: string;
+  requirement: string;
+  ai_status: "pending" | "met" | "unmet" | "uncertain" | null;
+  ai_confidence: "HIGH" | "MEDIUM" | "LOW" | null;
+  ai_notes: string | null;
+  final_status: "met" | "unmet" | null;
+  officer_notes: string | null;
+}
+
+export interface ChecklistResult {
+  checklist: ChecklistItem[];
+  documents: { id: string; document_type: string; file_name: string; ai_status: string }[];
+}
+
+export interface ExtractedParams {
+  // CIP fields
+  cip_number?: string | null;
+  cip_date?: string | null;
+  zone?: string | null;
+  cip_constructibilidad_max?: number | null;
+  cip_ocupacion_suelo_max?: number | null;
+  cip_altura_maxima_m?: number | null;
+  cip_densidad_max_hab_ha?: number | null;
+  cip_estacionamientos_min?: number | null;
+  cip_distanciamiento_lateral_m?: number | null;
+  cip_distanciamiento_fondo_m?: number | null;
+  cip_antejardin_m?: number | null;
+  // Declared fields
+  declared_constructibilidad?: number | null;
+  declared_ocupacion_suelo?: number | null;
+  declared_altura_m?: number | null;
+  declared_densidad_hab_ha?: number | null;
+  declared_estacionamientos?: number | null;
+  declared_distanciamiento_lateral_m?: number | null;
+  declared_distanciamiento_fondo_m?: number | null;
+  declared_antejardin_m?: number | null;
+  declared_superficie_predio_m2?: number | null;
+  declared_superficie_total_edificada_m2?: number | null;
+  declared_num_unidades_vivienda?: number | null;
+  confidence?: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface ZoneParamsResult {
+  zone: string;
+  source: string;
+  disclaimer: string;
+  params: {
+    constructibilidad: number;
+    ocupacion_suelo: number;
+    altura_m: number;
+    densidad: number;
+    estacionamientos: number;
+    distanciamiento_lateral_m: number;
+    distanciamiento_fondo_m: number;
+    antejardin_m: number;
+  };
+}
+
+export interface ResubmitRequest {
+  declared_constructibilidad?: number;
+  declared_ocupacion_suelo?: number;
+  declared_altura_m?: number;
+  declared_densidad_hab_ha?: number;
+  declared_estacionamientos?: number;
+  declared_distanciamiento_lateral_m?: number;
+  declared_distanciamiento_fondo_m?: number;
+  declared_antejardin_m?: number;
+  declared_superficie_total_edificada_m2?: number;
+  declared_num_unidades_vivienda?: number;
+  correction_notes?: string;
 }

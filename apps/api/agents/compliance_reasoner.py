@@ -95,7 +95,43 @@ Responde SIEMPRE en JSON con esta estructura exacta (después de usar todas las 
 
 # ─── Prompt builder ───────────────────────────────────────────────────────────
 
-def build_analysis_prompt(parsed: ParsedProject, chunks: list[dict]) -> str:
+def _format_reviewer_feedback(feedback: list[dict], zone: str) -> str:
+    """
+    Format historical reviewer discard data into a prompt section.
+    Returns an empty string if there is no feedback to show.
+    """
+    if not feedback:
+        return ""
+
+    lines = [
+        "HISTORIAL DE CORRECCIONES DEL REVISOR:",
+        f"En expedientes anteriores de zona {zone}, el revisor humano descartó las siguientes",
+        "observaciones generadas por IA. Considera esto antes de emitir un veredicto:\n",
+    ]
+    for fb in feedback:
+        param = fb["parameter"]
+        lines.append(f"Parámetro '{param}':")
+        for d in fb["discards"]:
+            count_label = f"×{d['count']}"
+            notes_str = ""
+            if d.get("notes"):
+                notes_str = f" — Notas del revisor: \"{'; '.join(d['notes'])}\""
+            lines.append(f"  • Motivo: \"{d['reason']}\" ({count_label}){notes_str}")
+        lines.append("")
+
+    lines.append(
+        "INSTRUCCIÓN: Si el caso actual de un parámetro es similar a los descartados arriba, "
+        "evalúa con mayor cuidado antes de emitir VIOLATION — considera usar NEEDS_REVIEW si "
+        "hay duda razonable. Si la situación normativa es claramente distinta, procede normalmente."
+    )
+    return "\n".join(lines)
+
+
+def build_analysis_prompt(
+    parsed: ParsedProject,
+    chunks: list[dict],
+    reviewer_feedback: list[dict] | None = None,
+) -> str:
     param_lines = []
     for d in parsed.deltas:
         if d.status == "missing":
@@ -124,6 +160,8 @@ def build_analysis_prompt(parsed: ParsedProject, chunks: list[dict]) -> str:
             f"{content_preview}\n"
         )
 
+    feedback_section = _format_reviewer_feedback(reviewer_feedback or [], parsed.zone)
+
     return f"""PROYECTO A REVISAR:
 Expediente: {parsed.expedient_id}
 Zona: {parsed.zone}
@@ -134,7 +172,7 @@ PARÁMETROS (comparación CIP vs. declarado):
 
 FRAGMENTOS NORMATIVOS RECUPERADOS:
 {chr(10).join(chunk_lines) if chunk_lines else "No se recuperaron fragmentos. Usa retrieve_regulation() para buscar la normativa aplicable."}
-
+{(chr(10) + feedback_section + chr(10)) if feedback_section else ""}
 Analiza cada parámetro. Si no tienes suficiente contexto normativo para algún parámetro,
 llama a retrieve_regulation() antes de emitir tu veredicto.
 Cuando hayas evaluado todos los parámetros, responde en el formato JSON especificado."""
@@ -194,6 +232,7 @@ async def run_compliance_check(
     parsed: ParsedProject,
     chunks: list[dict],
     zone: str,
+    reviewer_feedback: list[dict] | None = None,
 ) -> dict[str, Any]:
     """
     Run the Compliance Reasoner as a true ReAct agent.
@@ -202,8 +241,11 @@ async def run_compliance_check(
     autonomously calls retrieve_regulation() for any parameter where
     the provided context is insufficient — looping until all parameters
     are evaluated or a maximum turn limit is reached.
+
+    reviewer_feedback: historical discard data from the same zone, injected
+    into the prompt so Claude calibrates its verdicts based on past reviewer decisions.
     """
-    user_message = build_analysis_prompt(parsed, chunks)
+    user_message = build_analysis_prompt(parsed, chunks, reviewer_feedback)
     messages: list[dict] = [{"role": "user", "content": user_message}]
 
     max_turns = 8  # safety cap on the tool-use loop
