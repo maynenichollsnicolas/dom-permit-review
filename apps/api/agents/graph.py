@@ -41,6 +41,60 @@ from rag.retriever import retrieve_for_compliance_check
 supabase = create_client(settings.supabase_url, settings.supabase_service_key)
 
 
+# ─── Reviewer feedback loader ────────────────────────────────────────────────
+
+def _fetch_reviewer_feedback(zone: str) -> list[dict]:
+    """
+    Query the observations table for cases where a human reviewer discarded
+    an AI-generated observation in a previous expedient of the same PRC zone.
+
+    Groups results by parameter so the prompt shows: for each parameter,
+    how many discards happened and for what reasons.
+    Returns [] if no feedback exists yet (e.g., first ever expedient in zone).
+    """
+    from collections import defaultdict
+
+    # 1. Get all expedient IDs in this zone
+    zone_result = supabase.table("expedients") \
+        .select("id").eq("zone", zone).execute()
+    zone_ids = [e["id"] for e in (zone_result.data or [])]
+    if not zone_ids:
+        return []
+
+    # 2. Get discarded observations for those expedients
+    obs_result = supabase.table("observations") \
+        .select("parameter, reviewer_discard_reason, reviewer_notes") \
+        .in_("expedient_id", zone_ids) \
+        .eq("reviewer_action", "discarded") \
+        .execute()
+    if not obs_result.data:
+        return []
+
+    # 3. Group by parameter → reason → notes
+    grouped: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    for obs in obs_result.data:
+        param = obs.get("parameter", "")
+        reason = obs.get("reviewer_discard_reason") or "Sin motivo especificado"
+        note = obs.get("reviewer_notes") or ""
+        if param:
+            grouped[param][reason].append(note)
+
+    return [
+        {
+            "parameter": param,
+            "discards": [
+                {
+                    "reason": reason,
+                    "count": len(notes),
+                    "notes": [n for n in notes if n][:2],  # max 2 notes per reason
+                }
+                for reason, notes in reasons.items()
+            ],
+        }
+        for param, reasons in grouped.items()
+    ]
+
+
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def _flatten_chunks(chunks_by_param: dict) -> list[dict]:
@@ -209,12 +263,17 @@ async def reason_node(state: PipelineState) -> dict:
     Autonomously calls retrieve_regulation() for any parameter where
     the provided chunks are insufficient — a genuine ReAct agent loop.
     Produces structured VIOLATION / COMPLIANT / NEEDS_REVIEW / SIN_DATOS verdicts.
+
+    Also loads historical reviewer feedback (discarded observations from previous
+    expedients in the same zone) so Claude can calibrate its verdicts accordingly.
     """
     parsed = _deserialize_parsed(state)
     flat_chunks = state.get("flat_chunks", [])
     zone = state["zone"]
 
-    compliance_results = await run_compliance_check(parsed, flat_chunks, zone)
+    reviewer_feedback = await asyncio.to_thread(_fetch_reviewer_feedback, zone)
+
+    compliance_results = await run_compliance_check(parsed, flat_chunks, zone, reviewer_feedback)
 
     # Track which parameters got no normative data (to trigger graph-level retry)
     sin_datos = [

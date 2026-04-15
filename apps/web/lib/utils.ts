@@ -27,6 +27,7 @@ export function projectTypeLabel(type: string): string {
 
 export function statusLabel(status: string): string {
   const labels: Record<string, string> = {
+    pendiente_admision: "Pendiente Admisión",
     admitido: "Admitido",
     en_revision: "En Revisión",
     observado: "Observado",
@@ -38,6 +39,7 @@ export function statusLabel(status: string): string {
 
 export function statusColor(status: string): string {
   const colors: Record<string, string> = {
+    pendiente_admision: "bg-gray-100 text-gray-600",
     admitido: "bg-blue-100 text-blue-800",
     en_revision: "bg-yellow-100 text-yellow-800",
     observado: "bg-orange-100 text-orange-800",
