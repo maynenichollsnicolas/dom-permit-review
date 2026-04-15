@@ -1,0 +1,93 @@
+apps/api/api/routes/intake.py
+  187e8b321ff1f820 1-543
+apps/web/components/permit-checklist.tsx
+  187e8b321ff1f820 1-265
+apps/web/app/expedients/[id]/page.tsx
+  187e8b321ff1f820 3,7-9,13-17,19-117,121-122,126,128,130-134,137,141,146,150-159,164,166-176,178-179,183,185-186,189,191,195,201,209,211,214,217-227,231-238,242-246,251-272,275,277-280,283-296,299-306,311-322,324-327,330-332,334-339,347-361,363-370,374-376,378,382-386,389-397,401,406,411-412,415,417-419,426-428,430-445,448-450,454-467,469-510,512-518,525-531,533-574,582-583,586-588,593-594,596,599-602,606-607,610-613
+apps/web/app/architect/login/page.tsx
+  187e8b321ff1f820 1-107
+apps/web/app/login/page.tsx
+  187e8b321ff1f820 1-107
+apps/api/agents/graph.py
+  187e8b321ff1f820 44-97,266-268,274,276
+apps/web/middleware.ts
+  187e8b321ff1f820 1-50
+apps/web/lib/supabase/server.ts
+  187e8b321ff1f820 1-22
+apps/web/app/globals.css
+  187e8b321ff1f820 7,12,52,54-79,81-112,115,120-125,128-131,133-161,163-202,204-254
+apps/web/lib/useUser.ts
+  187e8b321ff1f820 1-32
+apps/api/api/routes/geo.py
+  187e8b321ff1f820 1-225
+apps/web/types/google-maps.d.ts
+  187e8b321ff1f820 1-43
+apps/web/app/architect/expedients/[id]/page.tsx
+  187e8b321ff1f820 1-896
+apps/web/app/providers.tsx
+  187e8b321ff1f820 1-7
+apps/web/components/acta-panel.tsx
+  187e8b321ff1f820 4,7-8,13-14,18-20,31,37-48,50-53,60-61,63-67,69-71,73-78,81,83-94,99-131,133-145,147-187,189-200
+apps/api/api/routes/expedients.py
+  187e8b321ff1f820 3-4,15,20-26,50,63-73,80,82-83,106,158,201,217-226,229,241,246,253,256-322,324-325,329,335-340,349-495
+apps/web/lib/checklist.ts
+  187e8b321ff1f820 1-54
+apps/api/agents/report_generator.py
+  187e8b321ff1f820 37,40,42,45,49-50,132-136
+apps/web/package.json
+  187e8b321ff1f820 13-14,23
+apps/web/lib/i18n.tsx
+  187e8b321ff1f820 1-1197
+apps/web/app/page.tsx
+  187e8b321ff1f820 6-13,18-19,29,32-59,64-65,67-95,98-109,111-199,204-264
+apps/api/main.py
+  187e8b321ff1f820 5-6,23-24
+apps/web/app/auth/callback/route.ts
+  187e8b321ff1f820 1-50
+apps/web/app/admisibilidad/page.tsx
+  187e8b321ff1f820 1-178
+apps/api/db/migrations/002_phase4_intake.sql
+  187e8b321ff1f820 1-101
+apps/api/agents/compliance_reasoner.py
+  187e8b321ff1f820 98-134,163-164,175,235,244-246,248
+apps/web/components/observation-card.tsx
+  187e8b321ff1f820 5-38,41-53,61-70,72-76,78-80,84-86,89,96,100,104-105,107-108,110,114-130,132-143,146-213,217-219,221-229,231,233-238,241-242,244-289,292-298,303-317,319-339,343-371,374-392,394-408,410-424,428-544
+apps/web/lib/api.ts
+  187e8b321ff1f820 31-37,39-80,87,190-262
+apps/web/app/layout.tsx
+  187e8b321ff1f820 2,4,6-7,9,12-13,15,19-20,30-31,33
+data/demo/demo-projects.md
+  187e8b321ff1f820 1-384
+apps/web/app/admisibilidad/[id]/page.tsx
+  187e8b321ff1f820 1-377
+apps/web/app/architect/page.tsx
+  187e8b321ff1f820 1-196
+apps/web/app/architect/submit/page.tsx
+  187e8b321ff1f820 1-952
+apps/web/lib/utils.ts
+  187e8b321ff1f820 30,42
+apps/web/components/lang-toggle.tsx
+  187e8b321ff1f820 1-31
+apps/web/lib/supabase/client.ts
+  187e8b321ff1f820 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "35851bdcd91e234beaa7211885ac9c863a509d55",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 169668,
+      "total_deletions": 13476,
+      "accepted_lines": 161477,
+      "overriden_lines": 0
+    }
+  }
+}
