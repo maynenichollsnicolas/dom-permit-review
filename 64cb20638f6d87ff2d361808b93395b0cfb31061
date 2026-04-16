@@ -1,0 +1,29 @@
+apps/web/app/architect/expedients/[id]/page.tsx
+  187e8b321ff1f820 7,326
+apps/web/app/architect/page.tsx
+  187e8b321ff1f820 8,20
+apps/web/lib/api.ts
+  187e8b321ff1f820 3
+apps/web/app/architect/submit/page.tsx
+  187e8b321ff1f820 9,296,339
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "64cb20638f6d87ff2d361808b93395b0cfb31061",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 8,
+      "accepted_lines": 772,
+      "overriden_lines": 0
+    }
+  }
+}
