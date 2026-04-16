@@ -15,13 +15,14 @@ from config import settings
 
 client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
 
-# Load few-shot examples
-_EXAMPLES_PATH = Path(__file__).parent.parent.parent.parent / "data" / "examples" / "actas-examples.json"
-with open(_EXAMPLES_PATH) as f:
-    _EXAMPLES_DATA = json.load(f)
-
-# Use first 2 examples as few-shot
-_FEW_SHOT_EXAMPLES = _EXAMPLES_DATA["examples"][:2]
+# Load few-shot examples (bundled inside apps/api/data/ for Docker deploys)
+_EXAMPLES_PATH = Path(__file__).parent.parent / "data" / "actas-examples.json"
+try:
+    with open(_EXAMPLES_PATH) as f:
+        _EXAMPLES_DATA = json.load(f)
+    _FEW_SHOT_EXAMPLES = _EXAMPLES_DATA["examples"][:2]
+except FileNotFoundError:
+    _FEW_SHOT_EXAMPLES = []
 
 
 def _build_few_shot_context() -> str:
