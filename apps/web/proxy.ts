@@ -16,36 +16,41 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  let response = NextResponse.next({ request });
+  try {
+    let response = NextResponse.next({ request });
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() { return request.cookies.getAll(); },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) =>
-            request.cookies.set(name, value)
-          );
-          response = NextResponse.next({ request });
-          cookiesToSet.forEach(({ name, value, options }) =>
-            response.cookies.set(name, value, options)
-          );
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() { return request.cookies.getAll(); },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value }) =>
+              request.cookies.set(name, value)
+            );
+            response = NextResponse.next({ request });
+            cookiesToSet.forEach(({ name, value, options }) =>
+              response.cookies.set(name, value, options)
+            );
+          },
         },
-      },
+      }
+    );
+
+    const { data: { user } } = await supabase.auth.getUser();
+
+    // Not logged in → redirect to appropriate login
+    if (!user) {
+      const loginPath = pathname.startsWith("/architect") ? "/architect/login" : "/login";
+      return NextResponse.redirect(new URL(loginPath, request.url));
     }
-  );
 
-  const { data: { user } } = await supabase.auth.getUser();
-
-  // Not logged in → redirect to appropriate login
-  if (!user) {
-    const loginPath = pathname.startsWith("/architect") ? "/architect/login" : "/login";
-    return NextResponse.redirect(new URL(loginPath, request.url));
+    return response;
+  } catch {
+    // On any error, fail open so the app stays accessible
+    return NextResponse.next();
   }
-
-  return response;
 }
 
 export const config = {
