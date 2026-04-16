@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useUser } from "@/lib/useUser";
-import { api, Expedient, Acta, ResubmitRequest, ComplianceResult } from "@/lib/api";
+import { api, API_URL, Expedient, Acta, ResubmitRequest, ComplianceResult } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
 import { Button } from "@/components/ui/button";
@@ -323,7 +323,7 @@ function SupplementalDocUpload({
     const fd = new FormData();
     fd.append("document_type", docType);
     fd.append("file", file);
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/intake/${expedientId}/documents`, {
+    await fetch(`${API_URL}/api/v1/intake/${expedientId}/documents`, {
       method: "POST", body: fd,
     });
     onUploaded(docType, file.name);

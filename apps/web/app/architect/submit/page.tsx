@@ -6,7 +6,7 @@ import Script from "next/script";
 import { useUser } from "@/lib/useUser";
 import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
-import { api, ExtractedParams } from "@/lib/api";
+import { api, API_URL, ExtractedParams } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -293,7 +293,7 @@ export default function SubmitApplicationPage() {
       const pf = (k: keyof ParamsState) => parseFloat(params[k]) || 0;
       const pi = (k: keyof ParamsState) => parseInt(params[k]) || 1;
 
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/intake/submit`, {
+      const res = await fetch(`${API_URL}/api/v1/intake/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -336,7 +336,7 @@ export default function SubmitApplicationPage() {
           const fd = new FormData();
           fd.append("document_type", docType);
           fd.append("file", file);
-          await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/intake/${expedientId}/documents`, {
+          await fetch(`${API_URL}/api/v1/intake/${expedientId}/documents`, {
             method: "POST", body: fd,
           });
         })

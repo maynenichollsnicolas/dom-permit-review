@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useUser } from "@/lib/useUser";
 import { daysRemaining } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
+import { api } from "@/lib/api";
 import { LangToggle } from "@/components/lang-toggle";
 import { Building2, Plus, LogOut, FileText, AlertTriangle, CheckCircle, Clock, ChevronRight } from "lucide-react";
 
@@ -16,8 +17,7 @@ export default function ArchitectPortal() {
 
   useEffect(() => {
     if (!user?.email) return;
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/intake/architect/${encodeURIComponent(user.email)}/expedients`)
-      .then((r) => r.json())
+    api.intake.architectExpedients(user.email)
       .then((data) => setExpedients(Array.isArray(data) ? data : []))
       .catch(() => setExpedients([]))
       .finally(() => setLoading(false));
