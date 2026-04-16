@@ -1,56 +1,9 @@
-import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PUBLIC_PATHS = ["/login", "/architect/login", "/auth/callback"];
-
-export async function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Allow public paths through
-  if (PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
-    return NextResponse.next();
-  }
-
-  // If Supabase is not configured yet, pass through (pages handle their own auth)
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    return NextResponse.next();
-  }
-
-  try {
-    let response = NextResponse.next({ request });
-
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() { return request.cookies.getAll(); },
-          setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value }) =>
-              request.cookies.set(name, value)
-            );
-            response = NextResponse.next({ request });
-            cookiesToSet.forEach(({ name, value, options }) =>
-              response.cookies.set(name, value, options)
-            );
-          },
-        },
-      }
-    );
-
-    const { data: { user } } = await supabase.auth.getUser();
-
-    // Not logged in → redirect to appropriate login
-    if (!user) {
-      const loginPath = pathname.startsWith("/architect") ? "/architect/login" : "/login";
-      return NextResponse.redirect(new URL(loginPath, request.url));
-    }
-
-    return response;
-  } catch {
-    // On any error, fail open so the app stays accessible
-    return NextResponse.next();
-  }
+// Auth is handled per-page via useUser hook.
+// This proxy only passes requests through.
+export function proxy(request: NextRequest) {
+  return NextResponse.next();
 }
 
 export const config = {
