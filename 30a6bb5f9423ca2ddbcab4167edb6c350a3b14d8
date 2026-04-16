@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "30a6bb5f9423ca2ddbcab4167edb6c350a3b14d8",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 3,
+      "accepted_lines": 764,
+      "overriden_lines": 0
+    }
+  }
+}
