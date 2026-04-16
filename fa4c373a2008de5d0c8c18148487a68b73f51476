@@ -1,0 +1,23 @@
+apps/web/vercel.json
+  187e8b321ff1f820 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "fa4c373a2008de5d0c8c18148487a68b73f51476",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 0,
+      "accepted_lines": 390,
+      "overriden_lines": 0
+    }
+  }
+}
