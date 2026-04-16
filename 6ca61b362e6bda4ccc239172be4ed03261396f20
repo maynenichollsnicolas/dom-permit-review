@@ -1,0 +1,23 @@
+apps/api/main.py
+  187e8b321ff1f820 1-4,16-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "6ca61b362e6bda4ccc239172be4ed03261396f20",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 41,
+      "total_deletions": 13,
+      "accepted_lines": 805,
+      "overriden_lines": 0
+    }
+  }
+}
