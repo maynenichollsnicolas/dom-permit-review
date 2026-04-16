@@ -1,0 +1,23 @@
+apps/web/proxy.ts
+  187e8b321ff1f820 3-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "a8e9f2eaa92aff42af0e1d6c1c0749e856dacc7c",
+  "prompts": {
+    "187e8b321ff1f820": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2eea665b-8b02-49fb-b2b4-ae2a609fbb69",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 51,
+      "accepted_lines": 768,
+      "overriden_lines": 0
+    }
+  }
+}
