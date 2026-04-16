@@ -1,11 +1,9 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-export const runtime = "nodejs";
+const PUBLIC_PATHS = ["/login", "/architect/login", "/auth/callback"];
 
-const PUBLIC_PATHS = ["/login", "/auth/callback"];
-
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Allow public paths through
@@ -36,14 +34,12 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  // Not logged in → redirect to login
+  // Not logged in → redirect to appropriate login
   if (!user) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    const loginPath = pathname.startsWith("/architect") ? "/architect/login" : "/login";
+    return NextResponse.redirect(new URL(loginPath, request.url));
   }
 
-  // Architect routes: /architect/*
-  // DOM routes: everything else
-  // We don't block here — role enforcement happens per-page
   return response;
 }
 
