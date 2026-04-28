@@ -31,13 +31,13 @@ export default function ArchitectPortal() {
   return (
     <div className="min-h-screen bg-grid flex flex-col">
       {/* ── Topbar ── */}
-      <header className="bg-dom-header text-white px-6 sticky top-0 z-20 shadow-lg shadow-[oklch(0.225_0.095_252/0.25)]">
+      <header className="bg-arch-header text-white px-6 sticky top-0 z-20 shadow-lg shadow-[oklch(0.22_0.09_170/0.25)]">
         <div className="max-w-5xl mx-auto flex items-center justify-between h-14">
           <div className="flex items-center gap-2.5">
             <Building2 className="h-4 w-4 text-white/70" />
             <span className="font-semibold text-sm tracking-tight">{t.dom.appName}</span>
             <ChevronRight className="h-3 w-3 text-white/30" />
-            <span className="text-sm text-white/60 font-medium">{t.arch.portal}</span>
+            <span className="text-sm text-white/90 font-semibold">{t.arch.portal}</span>
           </div>
           <div className="flex items-center gap-4">
             <LangToggle />

@@ -18,7 +18,7 @@ export default function ArchitectLoginPage() {
   return (
     <div className="min-h-screen bg-grid flex">
       {/* Left — branding panel */}
-      <div className="hidden lg:flex flex-col justify-between w-[420px] bg-dom-header text-white p-12 flex-shrink-0">
+      <div className="hidden lg:flex flex-col justify-between w-[420px] bg-arch-header text-white p-12 flex-shrink-0">
         <div>
           <div className="flex items-center gap-2.5 mb-16">
             <Building2 className="h-5 w-5 text-white/70" />

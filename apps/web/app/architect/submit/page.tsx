@@ -393,7 +393,7 @@ export default function SubmitApplicationPage() {
 
       <div className="min-h-screen bg-grid flex flex-col">
         {/* Header */}
-        <header className="bg-dom-header text-white px-6 sticky top-0 z-20 shadow-lg">
+        <header className="bg-arch-header text-white px-6 sticky top-0 z-20 shadow-lg shadow-[oklch(0.22_0.09_170/0.25)]">
           <div className="max-w-3xl mx-auto flex items-center gap-4 h-14">
             <Link href="/architect" className="text-white/50 hover:text-white/90 transition-colors">
               <ArrowLeft className="h-4 w-4" />

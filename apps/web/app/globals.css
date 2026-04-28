@@ -178,13 +178,23 @@
     background-size: 24px 24px;
   }
 
-  /* Navy gradient header */
+  /* Navy gradient header — DOM portal */
   .bg-dom-header {
     background: linear-gradient(
       135deg,
       oklch(0.195 0.10 253) 0%,
       oklch(0.225 0.095 252) 40%,
       oklch(0.24 0.085 248) 100%
+    );
+  }
+
+  /* Teal gradient header — Architect portal */
+  .bg-arch-header {
+    background: linear-gradient(
+      135deg,
+      oklch(0.20 0.095 172) 0%,
+      oklch(0.24 0.09 170) 40%,
+      oklch(0.26 0.08 167) 100%
     );
   }
 
