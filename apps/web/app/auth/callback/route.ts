@@ -23,12 +23,12 @@ export async function GET(request: Request) {
         if (domUser) {
           // DOM staff — route based on role
           const roleRoutes: Record<string, string> = {
-            admisibilidad: "/admisibilidad",
-            revisor_tecnico: "/",
-            jefe_departamento: "/",
-            director_dom: "/",
+            admisibilidad: "/dom/admisibilidad",
+            revisor_tecnico: "/dom",
+            jefe_departamento: "/dom",
+            director_dom: "/dom",
           };
-          const destination = roleRoutes[domUser.role] ?? "/";
+          const destination = roleRoutes[domUser.role] ?? "/dom";
           return NextResponse.redirect(new URL(destination, origin));
         } else {
           // Architect — ensure profile exists then go to architect portal
@@ -46,5 +46,5 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.redirect(new URL("/login?error=auth_failed", origin));
+  return NextResponse.redirect(new URL("/dom/login?error=auth_failed", origin));
 }
