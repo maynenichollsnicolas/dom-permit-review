@@ -1,0 +1,29 @@
+apps/web/app/architect/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 706
+apps/web/components/permit-checklist.tsx
+  72b3ee3c9655d95d 53,67,118-122
+apps/web/lib/i18n.tsx
+  72b3ee3c9655d95d 154,730
+apps/web/app/architect/submit/page.tsx
+  72b3ee3c9655d95d 465-467
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "51733ad5fc60871ff952181cb5146d9dc7820da9",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 3481,
+      "total_deletions": 3468,
+      "accepted_lines": 13,
+      "overriden_lines": 0
+    }
+  }
+}
