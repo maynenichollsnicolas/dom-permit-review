@@ -50,6 +50,7 @@ interface PermitChecklistProps {
   acta?: Acta | null;
   variant: "dom" | "architect";
   onOpenDoc?: (docType: string) => void;
+  onGoToDocs?: () => void;
   onGoToAnalysis?: () => void;
   onGoToActa?: () => void;
 }
@@ -63,6 +64,7 @@ export function PermitChecklist({
   acta,
   variant,
   onOpenDoc,
+  onGoToDocs,
   onGoToAnalysis,
   onGoToActa,
 }: PermitChecklistProps) {
@@ -113,6 +115,11 @@ export function PermitChecklist({
       detail: allMandatoryUploaded
         ? cl.stages.documentos.detailDone
         : cl.stages.documentos.detailMissing(mandatoryDocs.length - uploadedMandatory.length),
+      action: !allMandatoryUploaded && onGoToDocs && variant === "architect" ? (
+        <button onClick={onGoToDocs} className="text-xs text-primary hover:underline font-medium">
+          {cl.stages.documentos.uploadDocs}
+        </button>
+      ) : undefined,
       sub: (
         <div className="mt-2 grid grid-cols-2 gap-1">
           {mandatoryDocs.map((doc) => {

@@ -703,6 +703,7 @@ export default function ArchitectExpedientPage() {
           documents={Object.entries(docMap).map(([document_type, file_name]) => ({ document_type, file_name }))}
           acta={acta}
           variant="architect"
+          onGoToDocs={() => setActiveSection("docs")}
         />
 
         {/* ── Section tabs ── */}

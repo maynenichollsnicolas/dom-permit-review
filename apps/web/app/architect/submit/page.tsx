@@ -462,6 +462,9 @@ export default function SubmitApplicationPage() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <SelectField label={su.info.zoneLabel} value={info.zone} onChange={fi("zone")}>
+                    {detectedZone && !ZONES.includes(detectedZone) && (
+                      <option key={detectedZone} value={detectedZone}>{detectedZone}</option>
+                    )}
                     {ZONES.map((z) => <option key={z} value={z}>{z}</option>)}
                   </SelectField>
                   <SelectField label={su.info.projectType} value={info.project_type} onChange={fi("project_type")}>

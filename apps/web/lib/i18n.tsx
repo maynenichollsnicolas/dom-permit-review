@@ -151,6 +151,7 @@ const en = {
         progress: (u: number, t: number) => `${u}/${t} uploaded`,
         detailDone: "All mandatory documents received.",
         detailMissing: (n: number) => `${n} mandatory document${n !== 1 ? "s" : ""} missing.`,
+        uploadDocs: "Upload documents →",
       },
       admisibilidad: {
         label: "2. Admissibility",
@@ -726,6 +727,7 @@ const es: typeof en = {
         progress: (u: number, t: number) => `${u}/${t} subidos`,
         detailDone: "Todos los documentos obligatorios fueron recibidos.",
         detailMissing: (n: number) => `Faltan ${n} documento${n !== 1 ? "s" : ""} obligatorio${n !== 1 ? "s" : ""}.`,
+        uploadDocs: "Subir documentos →",
       },
       admisibilidad: {
         label: "2. Admisibilidad",
