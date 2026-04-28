@@ -369,7 +369,7 @@ export default function ExpedientPage() {
             {(expedient?.current_round ?? 1) >= 2 && (
               <TabsTrigger value="comparacion">
                 Comparación
-                {roundComparison?.summary?.persists > 0 && (
+                {(roundComparison?.summary?.persists ?? 0) > 0 && (
                   <span className="ml-2 bg-red-100 text-red-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                     {roundComparison.summary.persists}
                   </span>
