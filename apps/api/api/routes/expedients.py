@@ -393,6 +393,94 @@ async def approve_expedient(expedient_id: str):
     return {"status": "aprobado", "expedient_id": expedient_id}
 
 
+@router.get("/{expedient_id}/rounds/comparison")
+async def get_rounds_comparison(expedient_id: str):
+    """
+    Compare Round 1 vs Round 2+ observations per parameter.
+    Returns FIXED | PERSISTS | NEW | STILL_COMPLIANT for each parameter.
+    Only meaningful when current_round >= 2.
+    """
+    from collections import defaultdict
+
+    expedient_id = _resolve_expedient_id(expedient_id)
+
+    exp = supabase.table("expedients").select("current_round").eq("id", expedient_id).single().execute()
+    if not exp.data:
+        raise HTTPException(status_code=404, detail="Expedient not found")
+
+    current_round = exp.data["current_round"]
+    if current_round < 2:
+        return {"available": False, "reason": "Only one round completed", "parameters": [], "summary": {}}
+
+    all_obs = (
+        supabase.table("observations")
+        .select("*")
+        .eq("expedient_id", expedient_id)
+        .order("round_introduced")
+        .execute()
+    )
+
+    history = (
+        supabase.table("parameter_history")
+        .select("round_number, snapshot")
+        .eq("expedient_id", expedient_id)
+        .order("round_number")
+        .execute()
+    )
+
+    # Group observations by (parameter, round_introduced) — keep latest per group
+    param_round: dict[str, dict[int, dict]] = defaultdict(dict)
+    for obs in (all_obs.data or []):
+        param = obs["parameter"]
+        rnd = obs["round_introduced"]
+        # Later rows overwrite earlier (same parameter can appear multiple times if re-run)
+        param_round[param][rnd] = obs
+
+    VIOLATION_VERDICTS = {"VIOLATION", "NEEDS_REVIEW", "SIN_DATOS"}
+
+    parameters = []
+    for param in sorted(param_round.keys()):
+        rounds = param_round[param]
+        r1_obs = rounds.get(1)
+        r2_obs = rounds.get(current_round) or rounds.get(max(rounds.keys()))
+
+        r1_violation = r1_obs is not None and r1_obs["ai_verdict"] in VIOLATION_VERDICTS
+        r2_violation = r2_obs is not None and r2_obs["ai_verdict"] in VIOLATION_VERDICTS
+
+        if r1_obs is None:
+            comparison_status = "NEW" if r2_violation else "STILL_COMPLIANT"
+        elif r2_obs is None or not r2_violation:
+            comparison_status = "FIXED" if r1_violation else "STILL_COMPLIANT"
+        elif r1_violation and r2_violation:
+            comparison_status = "PERSISTS"
+        elif not r1_violation and r2_violation:
+            comparison_status = "NEW"
+        else:
+            comparison_status = "STILL_COMPLIANT"
+
+        parameters.append({
+            "parameter": param,
+            "comparison_status": comparison_status,
+            "r1_obs": r1_obs,
+            "r2_obs": r2_obs,
+        })
+
+    summary = {
+        "fixed": sum(1 for p in parameters if p["comparison_status"] == "FIXED"),
+        "persists": sum(1 for p in parameters if p["comparison_status"] == "PERSISTS"),
+        "new_issues": sum(1 for p in parameters if p["comparison_status"] == "NEW"),
+        "still_compliant": sum(1 for p in parameters if p["comparison_status"] == "STILL_COMPLIANT"),
+    }
+
+    return {
+        "available": True,
+        "current_round": current_round,
+        "parameter_history": history.data or [],
+        "parameters": parameters,
+        "summary": summary,
+    }
+
+
 @router.post("/{expedient_id}/chat")
 async def chat_with_ai(expedient_id: str, body: ChatRequest):
     """

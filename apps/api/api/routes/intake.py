@@ -390,6 +390,19 @@ async def resubmit_corrections(expedient_id: str, body: ResubmitRequest, backgro
     if exp.data["status"] != "observado":
         raise HTTPException(status_code=400, detail="Expedient must be in 'observado' state to resubmit")
 
+    # Snapshot current parameters before applying corrections
+    current_params = supabase.table("project_parameters") \
+        .select("*") \
+        .eq("expedient_id", expedient_id) \
+        .maybe_single().execute()
+    if current_params.data:
+        supabase.table("parameter_history").upsert({
+            "expedient_id": expedient_id,
+            "round_number": exp.data["current_round"],
+            "snapshot": current_params.data,
+            "snapshotted_at": datetime.now(timezone.utc).isoformat(),
+        }, on_conflict="expedient_id,round_number").execute()
+
     # Build update dict with only provided values
     updates = {k: v for k, v in body.model_dump(exclude={"correction_notes"}).items() if v is not None}
 

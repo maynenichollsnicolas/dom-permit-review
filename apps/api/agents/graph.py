@@ -331,11 +331,14 @@ async def save_node(state: PipelineState) -> dict:
     - compliance_checks (status → completed)
     - expedients (status → en_revision)
     """
+    from datetime import datetime, timezone as tz
+
     expedient_id = state["expedient_id"]
     expedient = state["expedient"]
     check_id = state["check_id"]
     compliance_results = state["compliance_results"]
     acta_draft = state["acta_draft"]
+    current_round = expedient.get("current_round", 1)
 
     # Save per-parameter observations
     observation_records = []
@@ -343,7 +346,7 @@ async def save_node(state: PipelineState) -> dict:
         observation_records.append({
             "expedient_id": expedient_id,
             "compliance_check_id": check_id,
-            "round_introduced": expedient["current_round"],
+            "round_introduced": current_round,
             "parameter": result["parameter"],
             "ai_verdict": result["verdict"],
             "ai_confidence": result.get("confidence"),
@@ -359,6 +362,33 @@ async def save_node(state: PipelineState) -> dict:
 
     if observation_records:
         supabase.table("observations").insert(observation_records).execute()
+
+    # For round 2+, update prior-round violation observations as SUBSANADA or REABIERTA
+    if current_round > 1:
+        current_verdicts = {r["parameter"]: r["verdict"] for r in compliance_results.get("results", [])}
+        prior_obs = (
+            supabase.table("observations")
+            .select("id, parameter")
+            .eq("expedient_id", expedient_id)
+            .lt("round_introduced", current_round)
+            .in_("ai_verdict", ["VIOLATION", "NEEDS_REVIEW"])
+            .in_("round_status", ["NUEVA", "PENDIENTE", "REABIERTA"])
+            .execute()
+        )
+        now_iso = datetime.now(tz.utc).isoformat()
+        for obs in (prior_obs.data or []):
+            param = obs["parameter"]
+            verdict = current_verdicts.get(param, "VIOLATION")
+            if verdict == "COMPLIANT":
+                supabase.table("observations").update({
+                    "round_status": "SUBSANADA",
+                    "resolved_in_round": current_round,
+                    "resolved_at": now_iso,
+                }).eq("id", obs["id"]).execute()
+            else:
+                supabase.table("observations").update({
+                    "round_status": "REABIERTA",
+                }).eq("id", obs["id"]).execute()
 
     # Save draft Acta
     supabase.table("actas").insert({

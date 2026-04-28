@@ -37,6 +37,8 @@ export const api = {
         method: "POST",
         body: JSON.stringify({ message, history }),
       }),
+    getRoundComparison: (id: string) =>
+      apiFetch<RoundComparison>(`/expedients/${id}/rounds/comparison`),
   },
   intake: {
     queue: () => apiFetch<any[]>("/intake/queue"),
@@ -274,6 +276,28 @@ export interface Escalation {
   answered_at: string | null;
   // joined when fetched from DOM inbox
   expedients?: { exp_number: string; address: string; zone: string; architect_name: string };
+}
+
+export type ComparisonStatus = "FIXED" | "PERSISTS" | "NEW" | "STILL_COMPLIANT";
+
+export interface RoundComparisonParameter {
+  parameter: string;
+  comparison_status: ComparisonStatus;
+  r1_obs: Observation | null;
+  r2_obs: Observation | null;
+}
+
+export interface RoundComparison {
+  available: boolean;
+  reason?: string;
+  current_round: number;
+  parameters: RoundComparisonParameter[];
+  summary: {
+    fixed: number;
+    persists: number;
+    new_issues: number;
+    still_compliant: number;
+  };
 }
 
 export interface ResubmitRequest {

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { api, Expedient, ComplianceResult, Acta, Observation, Escalation } from "@/lib/api";
+import { api, Expedient, ComplianceResult, Acta, Observation, Escalation, RoundComparison } from "@/lib/api";
 import { daysRemaining } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
@@ -18,6 +18,7 @@ import {
 import { ChecklistItem } from "@/components/observation-card";
 import { ActaPanel } from "@/components/acta-panel";
 import { PermitChecklist } from "@/components/permit-checklist";
+import { RoundComparisonPanel } from "@/components/round-comparison-panel";
 import { getChecklist } from "@/lib/checklist";
 
 // ─── Analysis stages ─────────────────────────────────────────────────────────
@@ -126,6 +127,7 @@ export default function ExpedientPage() {
   const [acta, setActa] = useState<Acta | null>(null);
   const [documents, setDocuments] = useState<{ document_type: string; file_name: string; [key: string]: string }[]>([]);
   const [escalations, setEscalations] = useState<Escalation[]>([]);
+  const [roundComparison, setRoundComparison] = useState<RoundComparison | null>(null);
   const [loading, setLoading] = useState(true);
   const [openingDoc, setOpeningDoc] = useState<Record<string, boolean>>({});
   const [analyzing, setAnalyzing] = useState(false);
@@ -138,18 +140,20 @@ export default function ExpedientPage() {
   const autoTriggered = useRef(false);
 
   const load = async () => {
-    const [exp, comp, actaData, docs, escs] = await Promise.allSettled([
+    const [exp, comp, actaData, docs, escs, comparison] = await Promise.allSettled([
       api.expedients.get(id),
       api.expedients.getCompliance(id),
       api.expedients.getActa(id),
       api.intake.getDocuments(id),
       api.escalations.forExpedient(id),
+      api.expedients.getRoundComparison(id),
     ]);
     if (exp.status === "fulfilled") setExpedient(exp.value);
     if (comp.status === "fulfilled") setCompliance(comp.value);
     if (actaData.status === "fulfilled") setActa(actaData.value);
     if (docs.status === "fulfilled") setDocuments(docs.value);
     if (escs.status === "fulfilled") setEscalations(escs.value);
+    if (comparison.status === "fulfilled") setRoundComparison(comparison.value);
     setLoading(false);
   };
 
@@ -362,6 +366,16 @@ export default function ExpedientPage() {
                 </span>
               )}
             </TabsTrigger>
+            {(expedient?.current_round ?? 1) >= 2 && (
+              <TabsTrigger value="comparacion">
+                Comparación
+                {roundComparison?.summary?.persists > 0 && (
+                  <span className="ml-2 bg-red-100 text-red-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                    {roundComparison.summary.persists}
+                  </span>
+                )}
+              </TabsTrigger>
+            )}
             <TabsTrigger value="documentos">
               {dd.tabs.documents}
               {documents.length > 0 && (
@@ -652,7 +666,21 @@ export default function ExpedientPage() {
             </div>
           </TabsContent>
 
-          {/* ── TAB 5: Documentos ── */}
+          {/* ── TAB 5: Comparación R1↔R2 ── */}
+          <TabsContent value="comparacion">
+            {roundComparison ? (
+              <RoundComparisonPanel comparison={roundComparison} />
+            ) : (
+              <Card className="shadow-sm">
+                <CardContent className="py-12 text-center">
+                  <Loader2 className="h-6 w-6 animate-spin text-muted-foreground/30 mx-auto mb-3" />
+                  <p className="text-sm text-muted-foreground">Cargando comparación…</p>
+                </CardContent>
+              </Card>
+            )}
+          </TabsContent>
+
+          {/* ── TAB 6: Documentos ── */}
           <TabsContent value="documentos">
             <Card className="shadow-sm">
               <CardHeader className="border-b border-border pb-3">
