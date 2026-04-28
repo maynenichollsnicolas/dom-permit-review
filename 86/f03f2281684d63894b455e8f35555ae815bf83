@@ -1,0 +1,31 @@
+apps/web/app/architect/login/page.tsx
+  72b3ee3c9655d95d 21
+apps/web/app/architect/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 635
+apps/web/app/architect/page.tsx
+  72b3ee3c9655d95d 34,40
+apps/web/app/globals.css
+  72b3ee3c9655d95d 181,191-197
+apps/web/app/architect/submit/page.tsx
+  72b3ee3c9655d95d 396
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "86f03f2281684d63894b455e8f35555ae815bf83",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 16,
+      "total_deletions": 6,
+      "accepted_lines": 16,
+      "overriden_lines": 0
+    }
+  }
+}
