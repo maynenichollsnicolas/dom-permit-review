@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { api, Expedient } from "@/lib/api";
 import { daysRemaining } from "@/lib/utils";
@@ -9,7 +9,7 @@ import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
 import {
   AlertTriangle, Clock, FileText, CheckCircle,
-  LogOut, Building2, ChevronRight, CircleDot,
+  LogOut, Building2, ChevronRight, CircleDot, RefreshCw,
 } from "lucide-react";
 
 export default function QueuePage() {
@@ -48,6 +48,8 @@ export default function QueuePage() {
             >
               {t.dom.admisibilidad}
             </Link>
+            <div className="h-4 w-px bg-white/20" />
+            <EscalacionesNavLink />
             <div className="h-4 w-px bg-white/20" />
             <LangToggle />
             <div className="h-4 w-px bg-white/20" />
@@ -182,7 +184,20 @@ export default function QueuePage() {
                         </span>
                       </td>
                       <td className="px-4 py-3.5">
-                        <StatusPill status={exp.status} label={t.dom.statusPill[exp.status] ?? exp.status} />
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <StatusPill status={exp.status} label={t.dom.statusPill[exp.status] ?? exp.status} />
+                          {exp.current_round > 1 && exp.status === "admitido" && (
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
+                              <RefreshCw className="h-2.5 w-2.5 animate-spin" />
+                              Correcciones R{exp.current_round}
+                            </span>
+                          )}
+                          {exp.current_round > 1 && exp.status === "observado" && (
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full">
+                              Nueva obs. R{exp.current_round}
+                            </span>
+                          )}
+                        </div>
                       </td>
                       <td className="px-4 py-3.5 text-xs text-muted-foreground font-medium">
                         R{exp.current_round}
@@ -263,5 +278,36 @@ function DeadlineCell({ days, deadline, t }: { days: number; deadline: string; t
       <p className={`text-sm tabular-nums ${colorCls}`}>{days} {t.common.days}</p>
       <p className="text-[10px] text-muted-foreground">{dateStr}</p>
     </div>
+  );
+}
+
+function EscalacionesNavLink() {
+  const [count, setCount] = useState(0);
+  const pollRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const refresh = async () => {
+      try {
+        const data = await api.escalations.domPending();
+        setCount(data.length);
+      } catch {}
+    };
+    refresh();
+    pollRef.current = setInterval(refresh, 15_000);
+    return () => clearInterval(pollRef.current!);
+  }, []);
+
+  return (
+    <Link
+      href="/escalaciones"
+      className="relative text-xs text-white/60 hover:text-white/90 transition-colors font-medium tracking-wide uppercase"
+    >
+      Consultas
+      {count > 0 && (
+        <span className="absolute -top-1.5 -right-3.5 bg-amber-400 text-amber-900 text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none">
+          {count > 9 ? "9+" : count}
+        </span>
+      )}
+    </Link>
   );
 }

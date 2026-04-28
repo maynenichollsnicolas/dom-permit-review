@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useUser } from "@/lib/useUser";
-import { api, API_URL, Expedient, Acta, ResubmitRequest, ComplianceResult } from "@/lib/api";
+import { api, API_URL, Expedient, Acta, ResubmitRequest, ComplianceResult, Escalation } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import {
   ArrowLeft, Building2, LogOut, CheckCircle, AlertTriangle,
   Clock, FileText, Loader2, Send, Upload, ChevronRight,
   MessageCircle, CornerDownLeft, Bot, User, Trash2, ExternalLink,
+  HelpCircle,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { PermitChecklist } from "@/components/permit-checklist";
@@ -100,11 +101,17 @@ function ProgressStepper({ status }: { status: string }) {
 
 // ─── Chat panel ───────────────────────────────────────────────────────────────
 
-interface ChatMsg { role: "user" | "assistant"; content: string; id?: string }
+interface ChatMsg {
+  role: "user" | "assistant";
+  content: string;
+  id?: string;
+  escalated?: boolean;
+  escalation_id?: string | null;
+}
 
 const WELCOME_ID = "welcome";
 
-function ChatPanel({ expedientId }: { expedientId: string }) {
+function ChatPanel({ expedientId, autoSendMessage }: { expedientId: string; autoSendMessage?: string | null }) {
   const { t } = useT();
   const ch = t.archDetail.chat;
   const storageKey = `dom-chat-${expedientId}`;
@@ -128,8 +135,33 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
   });
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [escalations, setEscalations] = useState<Escalation[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const pollRef = useRef<NodeJS.Timeout | null>(null);
+  const autoSentRef = useRef<string | null>(null);
+
+  // Load existing escalations and start polling if any are pending
+  useEffect(() => {
+    const refresh = async () => {
+      try {
+        const data = await api.escalations.forExpedient(expedientId);
+        setEscalations(data);
+      } catch {}
+    };
+    refresh();
+    pollRef.current = setInterval(refresh, 8000);
+    return () => clearInterval(pollRef.current!);
+  }, [expedientId]);
+
+  // Auto-send message when triggered by parent (e.g. after corrections submit)
+  useEffect(() => {
+    if (autoSendMessage && autoSendMessage !== autoSentRef.current && !loading) {
+      autoSentRef.current = autoSendMessage;
+      send(autoSendMessage);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSendMessage]);
 
   // Persist history excluding welcome
   useEffect(() => {
@@ -153,7 +185,20 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
 
     try {
       const res = await api.expedients.chat(expedientId, text, history);
-      setMessages((prev) => [...prev, { role: "assistant", content: res.response }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: res.response,
+          escalated: res.escalated,
+          escalation_id: res.escalation_id,
+        },
+      ]);
+      if (res.escalated) {
+        // refresh escalations immediately
+        const data = await api.escalations.forExpedient(expedientId);
+        setEscalations(data);
+      }
     } catch {
       setMessages((prev) => [...prev, { role: "assistant", content: ch.error }]);
     } finally {
@@ -165,6 +210,9 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
     setMessages([{ ...welcome }]);
     try { localStorage.removeItem(storageKey); } catch {}
   };
+
+  const pendingCount = escalations.filter((e) => e.status === "pending").length;
+  const newlyAnswered = escalations.filter((e) => e.status === "answered");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
@@ -204,6 +252,36 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
         </div>
       </CardHeader>
 
+      {/* Escalation answered banners */}
+      {newlyAnswered.length > 0 && (
+        <div className="px-5 pt-4 space-y-2 flex-shrink-0">
+          {newlyAnswered.map((e) => (
+            <div key={e.id} className="flex items-start gap-2.5 p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs">
+              <CheckCircle className="h-3.5 w-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div className="min-w-0">
+                <p className="font-semibold text-emerald-800 mb-0.5">El DOM respondió tu consulta</p>
+                <p className="text-muted-foreground italic truncate">"{e.architect_question}"</p>
+                <p className="text-emerald-700 mt-1 leading-relaxed">{e.dom_answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Pending escalation notice */}
+      {pendingCount > 0 && (
+        <div className="px-5 pt-3 flex-shrink-0">
+          <div className="flex items-center gap-2 p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-700">
+            <HelpCircle className="h-3.5 w-3.5 flex-shrink-0 animate-pulse" />
+            <span>
+              {pendingCount === 1
+                ? "1 consulta enviada al DOM — esperando respuesta"
+                : `${pendingCount} consultas enviadas al DOM — esperando respuesta`}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-5 space-y-5 bg-secondary/10">
         {messages.map((m, i) => (
@@ -220,7 +298,9 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
               <div className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                 m.role === "user"
                   ? "bg-primary text-primary-foreground rounded-tr-sm"
-                  : "bg-card border border-border text-foreground rounded-tl-sm shadow-sm"
+                  : m.escalated
+                    ? "bg-amber-50 border border-amber-200 text-foreground rounded-tl-sm shadow-sm"
+                    : "bg-card border border-border text-foreground rounded-tl-sm shadow-sm"
               }`}>
                 {m.role === "user" ? (
                   <span className="whitespace-pre-wrap">{m.content}</span>
@@ -230,6 +310,12 @@ function ChatPanel({ expedientId }: { expedientId: string }) {
                   </div>
                 )}
               </div>
+              {m.escalated && (
+                <div className="flex items-center gap-1.5 text-[10px] text-amber-600 px-1">
+                  <HelpCircle className="h-3 w-3" />
+                  <span>Escalado al DOM — esperando respuesta</span>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -419,7 +505,6 @@ export default function ArchitectExpedientPage() {
   const { t } = useT();
   const ad = t.archDetail;
   const locale = t.lang === "en" ? "en-US" : "es-CL";
-  const router = useRouter();
 
   const [expedient, setExpedient] = useState<Expedient | null>(null);
   const [acta, setActa] = useState<Acta | null>(null);
@@ -429,8 +514,11 @@ export default function ArchitectExpedientPage() {
   const [submitting, setSubmitting] = useState(false);
   const [corrections, setCorrections] = useState<Partial<ResubmitRequest>>({});
   const [correctionNotes, setCorrectionNotes] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [resubmittedRound, setResubmittedRound] = useState<number | null>(null);
+  const [roundAnalysisDone, setRoundAnalysisDone] = useState(false);
   const [activeSection, setActiveSection] = useState<"overview" | "docs" | "chat">("overview");
+  const [chatAutoMessage, setChatAutoMessage] = useState<string | null>(null);
+  const analysisPollRef = useRef<NodeJS.Timeout | null>(null);
 
   const load = async () => {
     const [expRes, actaRes, compRes, docsRes] = await Promise.allSettled([
@@ -454,19 +542,59 @@ export default function ArchitectExpedientPage() {
 
   const handleResubmit = async () => {
     setSubmitting(true);
+    // Build the chat message before clearing corrections
+    const correctionLabels: Record<string, string> = {
+      declared_constructibilidad: "constructibilidad",
+      declared_ocupacion_suelo: "ocupación de suelo",
+      declared_altura_m: "altura",
+      declared_densidad_hab_ha: "densidad",
+      declared_estacionamientos: "estacionamientos",
+      declared_distanciamiento_lateral_m: "distanciamiento lateral",
+      declared_distanciamiento_fondo_m: "distanciamiento fondo",
+      declared_antejardin_m: "antejardín",
+      declared_superficie_total_edificada_m2: "superficie edificada",
+    };
+    const correctionSummary = Object.entries(corrections)
+      .map(([k, v]) => `${correctionLabels[k] ?? k}: ${v}`)
+      .join(", ");
+
     try {
-      await api.intake.resubmit(id, {
+      const result: any = await api.intake.resubmit(id, {
         ...corrections,
         correction_notes: correctionNotes || undefined,
       });
-      setSubmitted(true);
-      setTimeout(() => router.push("/architect"), 2500);
+      const round = result.round ?? 2;
+      setCorrections({});
+      setCorrectionNotes("");
+      setRoundAnalysisDone(false);
+      setResubmittedRound(round);
+      // Switch to chat and fire the auto-message
+      setActiveSection("chat");
+      setChatAutoMessage(
+        `Acabo de enviar mis correcciones para Ronda ${round}. Valores actualizados: ${correctionSummary}. ¿Quedan observaciones pendientes con estos nuevos valores?`
+      );
+      await load();
+      // Poll until the pipeline finishes
+      analysisPollRef.current = setInterval(async () => {
+        try {
+          const comp = await api.expedients.getCompliance(id);
+          setCompliance(comp);
+          if (comp.status === "completed" || comp.status === "failed") {
+            clearInterval(analysisPollRef.current!);
+            setRoundAnalysisDone(true);
+            await load();
+          }
+        } catch {}
+      }, 3000);
     } catch (e: any) {
       alert(e.message || ad.errorResubmit);
     } finally {
       setSubmitting(false);
     }
   };
+
+  // Clean up poll on unmount
+  useEffect(() => () => clearInterval(analysisPollRef.current!), []);
 
   const setCorrection = (key: keyof ResubmitRequest, val: string) => {
     const num = parseFloat(val);
@@ -492,18 +620,6 @@ export default function ArchitectExpedientPage() {
     return (
       <div className="min-h-screen bg-grid flex items-center justify-center text-muted-foreground">
         {ad.notFound}
-      </div>
-    );
-  }
-
-  if (submitted) {
-    return (
-      <div className="min-h-screen bg-grid flex items-center justify-center">
-        <div className="text-center bg-card border border-border rounded-2xl p-12 shadow-sm max-w-md">
-          <CheckCircle className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
-          <h2 className="text-xl font-semibold mb-2">{ad.submitted.title}</h2>
-          <p className="text-muted-foreground text-sm">{ad.submitted.detail}</p>
-        </div>
       </div>
     );
   }
@@ -550,6 +666,35 @@ export default function ArchitectExpedientPage() {
 
         {/* ── Progress stepper ── */}
         <ProgressStepper status={expedient.status} />
+
+        {/* ── Round submission banner ── */}
+        {resubmittedRound && !roundAnalysisDone && (
+          <div className="flex items-center gap-3 p-4 rounded-xl border bg-primary/5 border-primary/20">
+            <Loader2 className="h-4 w-4 text-primary animate-spin flex-shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                Correcciones recibidas — Ronda {resubmittedRound} en análisis
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                El sistema está verificando automáticamente tus correcciones. Esto toma ~50 segundos.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {resubmittedRound && roundAnalysisDone && (
+          <div className="flex items-center gap-3 p-4 rounded-xl border bg-emerald-50 border-emerald-200">
+            <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-emerald-800">
+                Análisis de Ronda {resubmittedRound} completado
+              </p>
+              <p className="text-xs text-emerald-700 mt-0.5">
+                El DOM revisará los resultados y emitirá el acta correspondiente.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* ── Permit checklist (central element) ── */}
         <PermitChecklist
@@ -828,7 +973,7 @@ export default function ArchitectExpedientPage() {
         )}
 
         {activeSection === "chat" && (
-          <ChatPanel expedientId={id} />
+          <ChatPanel expedientId={id} autoSendMessage={chatAutoMessage} />
         )}
       </main>
     </div>

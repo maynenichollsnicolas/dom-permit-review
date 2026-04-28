@@ -396,18 +396,25 @@ async def approve_expedient(expedient_id: str):
 @router.post("/{expedient_id}/chat")
 async def chat_with_ai(expedient_id: str, body: ChatRequest):
     """
-    Architect chat — Claude answers questions about the expedient using the
-    project parameters, compliance observations, and published acta as context.
+    Architect chat — agentic Claude with two tools:
+      • escalate_to_dom: creates an escalation record when the agent is uncertain
+      • (implicit) answer: Claude answers directly when confident
+
+    The agent also learns from past DOM answers for the same zone, injected
+    as DOM_GUIDANCE context so it handles recurring questions autonomously.
     """
+    from datetime import datetime, timezone as _tz
+
     exp_id = _resolve_expedient_id(expedient_id)
 
-    # Load context
     exp = supabase.table("expedients").select("*, project_parameters(*)").eq("id", exp_id).single().execute()
     if not exp.data:
         raise HTTPException(status_code=404, detail="Expedient not found")
 
-    # Latest compliance check + observations
-    check = supabase.table("compliance_checks").select("id, round_number, completed_at") \
+    zone = exp.data.get("zone", "")
+
+    # ── Latest compliance observations ────────────────────────────────────────
+    check = supabase.table("compliance_checks").select("id, round_number") \
         .eq("expedient_id", exp_id).eq("status", "completed") \
         .order("created_at", desc=True).limit(1).execute()
 
@@ -422,74 +429,168 @@ async def chat_with_ai(expedient_id: str, body: ChatRequest):
                 f"\n  Normativa: {o['normative_reference']}"
             )
 
-    # Published acta
+    # ── Published Acta ────────────────────────────────────────────────────────
     acta_text = ""
-    acta = supabase.table("actas").select("content, acta_number, round_number") \
+    acta = supabase.table("actas").select("content") \
         .eq("expedient_id", exp_id).eq("status", "published") \
         .order("created_at", desc=True).limit(1).execute()
     if acta.data and acta.data[0].get("content"):
         acta_text = acta.data[0]["content"].get("acta_text", "")
 
+    # ── DOM guidance: past answered escalations for this zone (learning loop) ─
+    past = supabase.table("escalations") \
+        .select("architect_question, ai_attempted_answer, dom_answer, parameter_tags") \
+        .eq("zone", zone).eq("status", "answered") \
+        .order("answered_at", desc=True).limit(20).execute()
+
+    dom_guidance = ""
+    if past.data:
+        lines = [
+            "DOM_GUIDANCE — Preguntas anteriores de esta zona que el revisor DOM ya respondió.",
+            "Úsalas para responder directamente sin escalar consultas similares:\n",
+        ]
+        for e in past.data:
+            lines.append(f"P: {e['architect_question']}")
+            if e.get("ai_attempted_answer"):
+                lines.append(f"  (Intento del agente: {e['ai_attempted_answer'][:200]}...)")
+            lines.append(f"  R (DOM): {e['dom_answer']}\n")
+        dom_guidance = "\n".join(lines)
+
     p = exp.data.get("project_parameters", [{}])[0] if exp.data.get("project_parameters") else {}
 
-    system_prompt = f"""Eres un asistente experto en normativa de edificación chilena, especializado en la DOM Las Condes.
-Ayudas a arquitectos a comprender las observaciones de la DOM, los artículos normativos aplicables (OGUC, LGUC, PRC Las Condes, Ley 21.718), y cómo subsanar observaciones.
+    system_prompt = f"""Eres un asistente experto en normativa de edificación chilena para arquitectos de la DOM Las Condes.
+Tu misión es ayudar al arquitecto a entender las observaciones y cómo subsanarlas.
 
-EXPEDIENTE EN CONTEXTO:
-- N°: {exp.data.get('exp_number')}
-- Dirección: {exp.data.get('address')}
-- Zona PRC: {exp.data.get('zone')}
-- Tipo: {exp.data.get('project_type')}
-- Estado: {exp.data.get('status')}
-- Ronda: {exp.data.get('current_round')}
+HERRAMIENTA DISPONIBLE — escalate_to_dom:
+Úsala ÚNICAMENTE cuando:
+- La pregunta involucra una interpretación normativa ambigua que requiere criterio profesional del DOM
+- La respuesta podría contradecir una decisión previa del revisor en este expediente
+- El arquitecto solicita una excepción, varianza, o acuerdo especial
+- No tienes suficiente certeza para dar una respuesta definitiva con consecuencias legales
+NO la uses para preguntas factuales sobre el expediente, los valores declarados, o los artículos de la normativa.
 
-PARÁMETROS CIP (permitidos por la normativa):
-- Constructibilidad máx.: {p.get('cip_constructibilidad_max')}
-- Ocupación suelo máx.: {p.get('cip_ocupacion_suelo_max')}
-- Altura máx.: {p.get('cip_altura_maxima_m')} m
-- Densidad máx.: {p.get('cip_densidad_max_hab_ha')} hab/há
-- Estacionamientos mín.: {p.get('cip_estacionamientos_min')}
-- Dist. lateral mín.: {p.get('cip_distanciamiento_lateral_m')} m
-- Dist. fondo mín.: {p.get('cip_distanciamiento_fondo_m')} m
-- Antejardín mín.: {p.get('cip_antejardin_m')} m
+EXPEDIENTE:
+- N°: {exp.data.get('exp_number')} | Dirección: {exp.data.get('address')}
+- Zona PRC: {zone} | Tipo: {exp.data.get('project_type')}
+- Estado: {exp.data.get('status')} | Ronda: {exp.data.get('current_round')}
 
-PARÁMETROS DECLARADOS POR EL ARQUITECTO:
-- Constructibilidad: {p.get('declared_constructibilidad')}
-- Ocupación suelo: {p.get('declared_ocupacion_suelo')}
-- Altura: {p.get('declared_altura_m')} m
-- Densidad: {p.get('declared_densidad_hab_ha')} hab/há
-- Estacionamientos: {p.get('declared_estacionamientos')}
-- Dist. lateral: {p.get('declared_distanciamiento_lateral_m')} m
-- Dist. fondo: {p.get('declared_distanciamiento_fondo_m')} m
-- Antejardín: {p.get('declared_antejardin_m')} m
-- Superficie predio: {p.get('declared_superficie_predio_m2')} m²
-- Superficie total edificada: {p.get('declared_superficie_total_edificada_m2')} m²
-- N° unidades: {p.get('declared_num_unidades_vivienda')}
+PARÁMETROS CIP (normativa):
+Constructibilidad máx. {p.get('cip_constructibilidad_max')} | Ocupación suelo máx. {p.get('cip_ocupacion_suelo_max')}
+Altura máx. {p.get('cip_altura_maxima_m')} m | Densidad máx. {p.get('cip_densidad_max_hab_ha')} hab/há
+Estacionamientos mín. {p.get('cip_estacionamientos_min')} | Dist. lateral mín. {p.get('cip_distanciamiento_lateral_m')} m
+Dist. fondo mín. {p.get('cip_distanciamiento_fondo_m')} m | Antejardín mín. {p.get('cip_antejardin_m')} m
+
+PARÁMETROS DECLARADOS:
+Constructibilidad {p.get('declared_constructibilidad')} | Ocupación suelo {p.get('declared_ocupacion_suelo')}
+Altura {p.get('declared_altura_m')} m | Densidad {p.get('declared_densidad_hab_ha')} hab/há
+Estacionamientos {p.get('declared_estacionamientos')} | Dist. lateral {p.get('declared_distanciamiento_lateral_m')} m
+Dist. fondo {p.get('declared_distanciamiento_fondo_m')} m | Antejardín {p.get('declared_antejardin_m')} m
+Superficie predio {p.get('declared_superficie_predio_m2')} m² | Total edificada {p.get('declared_superficie_total_edificada_m2')} m²
+N° unidades: {p.get('declared_num_unidades_vivienda')}
 
 OBSERVACIONES DE CUMPLIMIENTO (Ronda {exp.data.get('current_round')}):
-{observations_text if observations_text else '(Sin observaciones completadas aún)'}
+{observations_text or '(Sin observaciones completadas aún)'}
 
 ACTA PUBLICADA:
-{acta_text if acta_text else '(Sin acta publicada aún)'}
+{acta_text or '(Sin acta publicada aún)'}
 
-INSTRUCCIONES:
+{dom_guidance}
+
+INSTRUCCIONES DE RESPUESTA:
 - Responde en español, de forma directa y profesional.
 - Cita artículos específicos (ej: "Art. 2.6.3 OGUC") cuando sea relevante.
-- Para infracciones, explica exactamente qué valor debe corregirse y por qué.
-- Para subsanación, da orientación práctica concreta.
-- Si no tienes información para responder, indícalo claramente.
-- Sé conciso — máximo 3-4 párrafos por respuesta."""
+- Para cada infracción, explica exactamente qué valor corregir y cuánto.
+- Sé conciso — máximo 3 párrafos por respuesta directa.
+- Si escalas, explica brevemente al arquitecto por qué necesitas confirmación del DOM."""
+
+    escalate_tool = {
+        "name": "escalate_to_dom",
+        "description": (
+            "Escala una pregunta al revisor técnico DOM cuando no puedes responder "
+            "con suficiente certeza. El arquitecto será notificado de que la consulta "
+            "fue enviada al DOM y recibirá la respuesta cuando el revisor conteste."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "description": "La pregunta exacta del arquitecto, reformulada claramente para el DOM",
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Por qué el agente no puede responder directamente",
+                },
+                "ai_attempted_answer": {
+                    "type": "string",
+                    "description": "Lo que el agente sabe o intentaría responder, como contexto para el DOM",
+                },
+                "parameter_tags": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Parámetros urbanísticos relacionados (ej: ['altura_m', 'constructibilidad'])",
+                },
+            },
+            "required": ["question", "reason"],
+        },
+    }
 
     messages = [
         {"role": msg.role, "content": msg.content}
         for msg in body.history
     ] + [{"role": "user", "content": body.message}]
 
-    response = claude.messages.create(
+    escalation_id: str | None = None
+    max_turns = 6
+
+    for _ in range(max_turns):
+        response = claude.messages.create(
+            model=settings.llm_model,
+            max_tokens=1000,
+            system=system_prompt,
+            tools=[escalate_tool],
+            messages=messages,
+        )
+
+        if response.stop_reason == "end_turn":
+            text = next((b.text for b in response.content if hasattr(b, "text")), "")
+            return {"response": text, "escalated": False}
+
+        if response.stop_reason == "tool_use":
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use" and block.name == "escalate_to_dom":
+                    inp = block.input
+                    esc = supabase.table("escalations").insert({
+                        "expedient_id": exp_id,
+                        "zone": zone,
+                        "parameter_tags": inp.get("parameter_tags", []),
+                        "architect_question": inp.get("question", body.message),
+                        "ai_attempted_answer": inp.get("ai_attempted_answer"),
+                        "ai_escalation_reason": inp.get("reason"),
+                        "status": "pending",
+                    }).execute()
+                    escalation_id = esc.data[0]["id"] if esc.data else None
+
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": f"Escalación registrada exitosamente. ID: {escalation_id}. "
+                                   "El revisor DOM recibirá la consulta y responderá a la brevedad.",
+                    })
+
+            messages.append({"role": "assistant", "content": response.content})
+            messages.append({"role": "user", "content": tool_results})
+        else:
+            break
+
+    # Final response after tool use (Claude's message to the architect about the escalation)
+    final_response = claude.messages.create(
         model=settings.llm_model,
-        max_tokens=800,
+        max_tokens=400,
         system=system_prompt,
+        tools=[escalate_tool],
         messages=messages,
     )
-
-    return {"response": response.content[0].text}
+    text = next((b.text for b in final_response.content if hasattr(b, "text")), "")
+    return {"response": text, "escalated": True, "escalation_id": escalation_id}

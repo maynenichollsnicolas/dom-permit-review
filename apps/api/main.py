@@ -6,6 +6,7 @@ from fastapi.responses import Response
 from api.routes.expedients import router as expedients_router
 from api.routes.intake import router as intake_router
 from api.routes.geo import router as geo_router
+from api.routes.escalations import router as escalations_router
 
 app = FastAPI(
     title="DOM Permit Review AI",
@@ -54,6 +55,7 @@ async def cors_middleware(request: Request, call_next):
 app.include_router(expedients_router, prefix="/api/v1")
 app.include_router(intake_router, prefix="/api/v1")
 app.include_router(geo_router, prefix="/api/v1")
+app.include_router(escalations_router, prefix="/api/v1")
 
 
 @app.get("/health")

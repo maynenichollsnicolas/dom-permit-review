@@ -33,7 +33,7 @@ export const api = {
     approve: (id: string) =>
       apiFetch<{ status: string }>(`/expedients/${id}/approve`, { method: "POST" }),
     chat: (id: string, message: string, history: { role: string; content: string }[]) =>
-      apiFetch<{ response: string }>(`/expedients/${id}/chat`, {
+      apiFetch<{ response: string; escalated: boolean; escalation_id: string | null }>(`/expedients/${id}/chat`, {
         method: "POST",
         body: JSON.stringify({ message, history }),
       }),
@@ -71,6 +71,17 @@ export const api = {
       }
       return res.json();
     },
+  },
+  escalations: {
+    forExpedient: (expedientId: string) =>
+      apiFetch<Escalation[]>(`/escalations/expedient/${expedientId}`),
+    domPending: () =>
+      apiFetch<Escalation[]>("/escalations/dom/pending"),
+    domAnswer: (escalationId: string, answer: string) =>
+      apiFetch<Escalation>(`/escalations/dom/${escalationId}/answer`, {
+        method: "POST",
+        body: JSON.stringify({ dom_answer: answer }),
+      }),
   },
   geo: {
     zoneFromCoords: (lat: number, lng: number) =>
@@ -247,6 +258,22 @@ export interface ZoneParamsResult {
     distanciamiento_fondo_m: number;
     antejardin_m: number;
   };
+}
+
+export interface Escalation {
+  id: string;
+  expedient_id: string;
+  zone: string;
+  parameter_tags: string[];
+  architect_question: string;
+  ai_attempted_answer: string | null;
+  ai_escalation_reason: string | null;
+  dom_answer: string | null;
+  status: "pending" | "answered";
+  created_at: string;
+  answered_at: string | null;
+  // joined when fetched from DOM inbox
+  expedients?: { exp_number: string; address: string; zone: string; architect_name: string };
 }
 
 export interface ResubmitRequest {

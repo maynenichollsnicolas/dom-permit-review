@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { api, Expedient, ComplianceResult, Acta, Observation } from "@/lib/api";
+import { api, Expedient, ComplianceResult, Acta, Observation, Escalation } from "@/lib/api";
 import { daysRemaining } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
 import { LangToggle } from "@/components/lang-toggle";
@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   ArrowLeft, AlertTriangle, CheckCircle, ChevronRight, Loader2, FileText, ExternalLink,
+  HelpCircle, Send,
 } from "lucide-react";
 import { ChecklistItem } from "@/components/observation-card";
 import { ActaPanel } from "@/components/acta-panel";
@@ -124,26 +125,31 @@ export default function ExpedientPage() {
   const [compliance, setCompliance] = useState<ComplianceResult | null>(null);
   const [acta, setActa] = useState<Acta | null>(null);
   const [documents, setDocuments] = useState<{ document_type: string; file_name: string; [key: string]: string }[]>([]);
+  const [escalations, setEscalations] = useState<Escalation[]>([]);
   const [loading, setLoading] = useState(true);
   const [openingDoc, setOpeningDoc] = useState<Record<string, boolean>>({});
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisStartedAt, setAnalysisStartedAt] = useState<number | null>(null);
   const [approving, setApproving] = useState(false);
   const [activeTab, setActiveTab] = useState("resumen");
+  const [answerDraft, setAnswerDraft] = useState<Record<string, string>>({});
+  const [answering, setAnswering] = useState<Record<string, boolean>>({});
   const pollRef = useRef<NodeJS.Timeout | null>(null);
   const autoTriggered = useRef(false);
 
   const load = async () => {
-    const [exp, comp, actaData, docs] = await Promise.allSettled([
+    const [exp, comp, actaData, docs, escs] = await Promise.allSettled([
       api.expedients.get(id),
       api.expedients.getCompliance(id),
       api.expedients.getActa(id),
       api.intake.getDocuments(id),
+      api.escalations.forExpedient(id),
     ]);
     if (exp.status === "fulfilled") setExpedient(exp.value);
     if (comp.status === "fulfilled") setCompliance(comp.value);
     if (actaData.status === "fulfilled") setActa(actaData.value);
     if (docs.status === "fulfilled") setDocuments(docs.value);
+    if (escs.status === "fulfilled") setEscalations(escs.value);
     setLoading(false);
   };
 
@@ -212,6 +218,22 @@ export default function ExpedientPage() {
     ]);
     setCompliance(comp);
     if (actaResult) setActa(actaResult);
+  };
+
+  const handleAnswerEscalation = async (escalationId: string) => {
+    const answer = answerDraft[escalationId]?.trim();
+    if (!answer) return;
+    setAnswering((prev) => ({ ...prev, [escalationId]: true }));
+    try {
+      await api.escalations.domAnswer(escalationId, answer);
+      setAnswerDraft((prev) => { const n = { ...prev }; delete n[escalationId]; return n; });
+      const data = await api.escalations.forExpedient(id);
+      setEscalations(data);
+    } catch (e: any) {
+      alert(e?.message ?? "Error al guardar la respuesta.");
+    } finally {
+      setAnswering((prev) => ({ ...prev, [escalationId]: false }));
+    }
   };
 
   const handleApprove = async () => {
@@ -332,6 +354,14 @@ export default function ExpedientPage() {
               )}
             </TabsTrigger>
             <TabsTrigger value="acta">{dd.tabs.acta}</TabsTrigger>
+            <TabsTrigger value="consultas">
+              Consultas
+              {escalations.filter((e) => e.status === "pending").length > 0 && (
+                <span className="ml-2 bg-amber-100 text-amber-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                  {escalations.filter((e) => e.status === "pending").length}
+                </span>
+              )}
+            </TabsTrigger>
             <TabsTrigger value="documentos">
               {dd.tabs.documents}
               {documents.length > 0 && (
@@ -531,7 +561,98 @@ export default function ExpedientPage() {
             />
           </TabsContent>
 
-          {/* ── TAB 4: Documentos ── */}
+          {/* ── TAB 4: Consultas (escalations) ── */}
+          <TabsContent value="consultas">
+            <div className="space-y-4">
+              {escalations.length === 0 ? (
+                <Card className="shadow-sm">
+                  <CardContent className="py-12 text-center">
+                    <HelpCircle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
+                    <p className="text-sm text-muted-foreground">Sin consultas del arquitecto aún.</p>
+                    <p className="text-xs text-muted-foreground/60 mt-1">
+                      Cuando el agente de IA no pueda responder con certeza, escalará la pregunta aquí.
+                    </p>
+                  </CardContent>
+                </Card>
+              ) : (
+                escalations.map((esc) => (
+                  <Card key={esc.id} className={`shadow-sm ${esc.status === "answered" ? "opacity-70" : ""}`}>
+                    <CardHeader className={`border-b pb-3 ${esc.status === "pending" ? "bg-amber-50/60 border-amber-100" : "border-border"}`}>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-start gap-2 min-w-0">
+                          <HelpCircle className={`h-4 w-4 flex-shrink-0 mt-0.5 ${esc.status === "pending" ? "text-amber-500" : "text-emerald-500"}`} />
+                          <div className="min-w-0">
+                            <CardTitle className="text-sm leading-snug">{esc.architect_question}</CardTitle>
+                            <p className="text-[11px] text-muted-foreground mt-0.5">
+                              {new Date(esc.created_at).toLocaleString("es-CL")}
+                              {esc.parameter_tags?.length > 0 && (
+                                <span className="ml-2">
+                                  {esc.parameter_tags.map((tag) => (
+                                    <span key={tag} className="inline-block mr-1 bg-secondary border border-border px-1.5 py-0.5 rounded text-[10px]">{tag}</span>
+                                  ))}
+                                </span>
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                        <span className={`flex-shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border ${
+                          esc.status === "pending"
+                            ? "bg-amber-100 text-amber-700 border-amber-200"
+                            : "bg-emerald-100 text-emerald-700 border-emerald-200"
+                        }`}>
+                          {esc.status === "pending" ? "Pendiente" : "Respondida"}
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-4 space-y-3">
+                      {esc.ai_attempted_answer && (
+                        <div className="p-3 bg-secondary/40 rounded-lg border border-border">
+                          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">Intento del agente</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{esc.ai_attempted_answer}</p>
+                        </div>
+                      )}
+                      {esc.ai_escalation_reason && (
+                        <p className="text-xs text-amber-700 italic">
+                          Motivo de escalación: {esc.ai_escalation_reason}
+                        </p>
+                      )}
+                      {esc.status === "answered" && esc.dom_answer ? (
+                        <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                          <p className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wide mb-1">Tu respuesta</p>
+                          <p className="text-sm text-emerald-800 leading-relaxed">{esc.dom_answer}</p>
+                        </div>
+                      ) : esc.status === "pending" && (
+                        <div className="space-y-2">
+                          <label className="text-xs font-medium text-muted-foreground block">
+                            Tu respuesta autoritativa
+                          </label>
+                          <textarea
+                            value={answerDraft[esc.id] ?? ""}
+                            onChange={(e) => setAnswerDraft((prev) => ({ ...prev, [esc.id]: e.target.value }))}
+                            rows={3}
+                            placeholder="Escribe tu respuesta técnica aquí..."
+                            className="w-full border border-border rounded-lg px-3 py-2 text-sm bg-card focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                          />
+                          <Button
+                            size="sm"
+                            disabled={!answerDraft[esc.id]?.trim() || answering[esc.id]}
+                            onClick={() => handleAnswerEscalation(esc.id)}
+                          >
+                            {answering[esc.id]
+                              ? <><Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />Guardando</>
+                              : <><Send className="h-3.5 w-3.5 mr-1.5" />Responder</>
+                            }
+                          </Button>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))
+              )}
+            </div>
+          </TabsContent>
+
+          {/* ── TAB 5: Documentos ── */}
           <TabsContent value="documentos">
             <Card className="shadow-sm">
               <CardHeader className="border-b border-border pb-3">
