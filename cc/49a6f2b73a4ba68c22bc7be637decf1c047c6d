@@ -1,0 +1,23 @@
+apps/web/app/dom/page.tsx
+  ab4590a4c849c113 301
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "cc49a6f2b73a4ba68c22bc7be637decf1c047c6d",
+  "prompts": {
+    "ab4590a4c849c113": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dfe358f6-6377-4ff6-b122-5e1a11eac258",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
