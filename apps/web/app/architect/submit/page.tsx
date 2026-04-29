@@ -580,6 +580,12 @@ export default function SubmitApplicationPage() {
                   {cuadroUploaded && (
                     <ExtractionBadge docKey="cuadro_superficies" loading={!!extracting["cuadro_superficies"]} error={extractErr["cuadro_superficies"]} />
                   )}
+                  {detectedZone && !extracting["cip_vigente"] && (
+                    <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-700">
+                      <Sparkles className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span>{su.info.zoneDetected(detectedZone)}</span>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -637,6 +643,17 @@ export default function SubmitApplicationPage() {
               )}
 
               <FormSection title={su.review.cipTitle} subtitle={su.review.cipSubtitle}>
+                <div className="flex items-center justify-between px-3 py-2.5 bg-secondary/50 rounded-lg border border-border">
+                  <span className="text-xs font-medium text-muted-foreground">{su.info.zoneLabel}</span>
+                  <div className="flex items-center gap-2">
+                    {detectedZone && (
+                      <span className="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                        <Sparkles className="h-2.5 w-2.5" />{su.review.extractedAi}
+                      </span>
+                    )}
+                    <span className="text-sm font-semibold">{info.zone}</span>
+                  </div>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   <ParamField label={su.fields.cip.number}  paramKey="cip_number" params={params} aiFields={aiFields} onChange={fp("cip_number")} readOnly />
                   <ParamField label={su.fields.cip.date}    paramKey="cip_date"   params={params} aiFields={aiFields} onChange={fp("cip_date")} type="date" readOnly />

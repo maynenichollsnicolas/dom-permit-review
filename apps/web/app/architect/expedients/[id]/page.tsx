@@ -438,17 +438,29 @@ function SupplementalDocUpload({
           const filename = uploaded[doc.key];
           const isUploaded = !!filename;
           const label = t.checklist.docs[doc.key] ?? doc.key;
+          const isMissingMandatory = doc.mandatory && !isUploaded;
           return (
             <div key={doc.key} className={`flex items-center justify-between p-3 rounded-lg border transition-colors ${
-              isUploaded ? "border-emerald-200 bg-emerald-50/40" : "border-border"
+              isUploaded ? "border-emerald-200 bg-emerald-50/40" :
+              isMissingMandatory ? "border-amber-200 bg-amber-50/30" :
+              "border-border"
             }`}>
               <div className="flex items-center gap-2.5 min-w-0 flex-1">
                 {isUploaded
                   ? <CheckCircle className="h-3.5 w-3.5 text-emerald-600 flex-shrink-0" />
+                  : isMissingMandatory
+                  ? <AlertTriangle className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
                   : <Upload className="h-3.5 w-3.5 text-muted-foreground/50 flex-shrink-0" />
                 }
                 <div className="min-w-0">
-                  <p className="text-sm">{label}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm">{label}</p>
+                    {isMissingMandatory && (
+                      <span className="text-[10px] font-bold text-amber-700 bg-amber-100 border border-amber-200 px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0">
+                        {t.lang === "en" ? "Required" : "Obligatorio"}
+                      </span>
+                    )}
+                  </div>
                   {isUploaded && (
                     <p className="text-xs text-emerald-700 font-mono truncate mt-0.5">{filename}</p>
                   )}
