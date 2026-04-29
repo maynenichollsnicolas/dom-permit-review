@@ -8,12 +8,11 @@ const nextConfig: NextConfig = {
       railwayUrl = `https://${railwayUrl}`;
     }
     railwayUrl = railwayUrl.replace(/\/$/, "");
-    return [
-      {
-        source: "/api/v1/:path*",
-        destination: `${railwayUrl}/api/v1/:path*`,
-      },
-    ];
+    const rule = {
+      source: "/api/v1/:path*",
+      destination: `${railwayUrl}/api/v1/:path*`,
+    };
+    return { beforeFiles: [rule], afterFiles: [], fallback: [] };
   },
 };
 
