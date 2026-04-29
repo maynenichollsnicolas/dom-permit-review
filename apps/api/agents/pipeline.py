@@ -6,6 +6,7 @@ This module exists so the FastAPI route doesn't need to know about LangGraph int
 """
 from __future__ import annotations
 
+import uuid
 from supabase import create_client
 
 from config import settings
@@ -24,7 +25,7 @@ async def run_pipeline(expedient_id: str, language: str = "es") -> dict:
     Returns summary counts for the API response.
     Raises RuntimeError on pipeline failure (compliance_check is marked failed).
     """
-    config = {"configurable": {"thread_id": expedient_id}}
+    config = {"configurable": {"thread_id": str(uuid.uuid4())}}
 
     try:
         final_state = await pipeline_graph.ainvoke(
