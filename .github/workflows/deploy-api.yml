@@ -1,0 +1,98 @@
+name: Deploy API to Railway
+
+# Bypasses Railway's GitHub webhook (which has been unreliable).
+# Uses the Railway CLI directly so we control the deploy from GitHub Actions.
+#
+# Required GitHub secrets:
+#   RAILWAY_TOKEN    - A project token from Railway (Project Settings -> Tokens).
+#                      A project token does NOT need RAILWAY_SERVICE if the project
+#                      has only one service. If you have multiple services, also set:
+#   RAILWAY_SERVICE  - (optional) The exact service name in Railway, e.g. "api".
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/api/**'
+      - '.github/workflows/deploy-api.yml'
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-api
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Railway up (apps/api)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (for Railway CLI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli@latest
+
+      - name: Print Railway CLI version
+        run: railway --version
+
+      - name: Show service info (sanity check)
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        working-directory: apps/api
+        run: |
+          echo "Listing Railway project status from apps/api/ ..."
+          railway status || echo "(railway status failed — continuing; 'railway up' will still attempt deploy)"
+
+      - name: Deploy apps/api to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE: ${{ secrets.RAILWAY_SERVICE }}
+        working-directory: apps/api
+        run: |
+          set -euo pipefail
+          if [ -n "${RAILWAY_SERVICE:-}" ]; then
+            echo "Deploying to Railway service: $RAILWAY_SERVICE"
+            railway up --service "$RAILWAY_SERVICE" --ci
+          else
+            echo "Deploying to Railway (single-service project)"
+            railway up --ci
+          fi
+
+      - name: Post-deploy health check
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        working-directory: apps/api
+        run: |
+          set -euo pipefail
+          # Give Railway a few seconds to swap the container.
+          sleep 15
+          # Try to discover the public domain via the CLI; fall back to env var if you set one.
+          DOMAIN="$(railway domain 2>/dev/null | tr -d '[:space:]' || true)"
+          if [ -z "$DOMAIN" ]; then
+            echo "Could not auto-detect domain via 'railway domain'. Skipping health check."
+            exit 0
+          fi
+          # Strip protocol if present.
+          DOMAIN="${DOMAIN#https://}"
+          DOMAIN="${DOMAIN#http://}"
+          URL="https://${DOMAIN}/api/v1/health"
+          echo "Health check: $URL"
+          for i in 1 2 3 4 5 6; do
+            if curl -fsS "$URL" >/tmp/health.json; then
+              echo "Health OK:"
+              cat /tmp/health.json
+              exit 0
+            fi
+            echo "Attempt $i failed; retrying in 10s..."
+            sleep 10
+          done
+          echo "Health check did not return 200 after retries."
+          exit 1
