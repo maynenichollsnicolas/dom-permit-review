@@ -428,7 +428,7 @@ export default function ExpedientPage() {
             </TabsTrigger>
             <TabsTrigger value="acta">{dd.tabs.acta}</TabsTrigger>
             <TabsTrigger value="consultas">
-              Consultas
+              {dd.tabs.consultas}
               {escalations.filter((e) => e.status === "pending").length > 0 && (
                 <span className="ml-2 bg-amber-100 text-amber-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                   {escalations.filter((e) => e.status === "pending").length}
@@ -437,7 +437,7 @@ export default function ExpedientPage() {
             </TabsTrigger>
             {(expedient?.current_round ?? 1) >= 2 && (
               <TabsTrigger value="comparacion">
-                Comparación
+                {dd.tabs.comparacion}
                 {(roundComparison?.summary?.persists ?? 0) > 0 && (
                   <span className="ml-2 bg-red-100 text-red-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                     {roundComparison?.summary?.persists ?? 0}
@@ -555,7 +555,7 @@ export default function ExpedientPage() {
                   {confirmedCount > 0 && (
                     <span className="flex items-center gap-1.5 text-red-600 font-medium">
                       <AlertTriangle className="h-3.5 w-3.5" />
-                      {confirmedCount} observación{confirmedCount !== 1 ? "es" : ""}
+                      {dd.analysis.summary.observations(confirmedCount)}
                     </span>
                   )}
                   <span className="flex items-center gap-1.5 text-muted-foreground">

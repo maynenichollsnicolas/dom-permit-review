@@ -219,6 +219,8 @@ const en = {
       resumen: "Summary",
       analisis: "Compliance Analysis",
       acta: "Observations Report",
+      consultas: "Queries",
+      comparacion: "Comparison",
       documents: "Documents",
     },
     summary: {
@@ -806,6 +808,8 @@ const es: typeof en = {
       resumen: "Resumen",
       analisis: "Análisis de Cumplimiento",
       acta: "Acta de Observaciones",
+      consultas: "Consultas",
+      comparacion: "Comparación",
       documents: "Documentos",
     },
     summary: {
