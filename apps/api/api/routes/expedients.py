@@ -420,13 +420,17 @@ async def get_rounds_comparison(expedient_id: str):
         .execute()
     )
 
-    history = (
-        supabase.table("parameter_history")
-        .select("round_number, snapshot")
-        .eq("expedient_id", expedient_id)
-        .order("round_number")
-        .execute()
-    )
+    try:
+        history = (
+            supabase.table("parameter_history")
+            .select("round_number, snapshot")
+            .eq("expedient_id", expedient_id)
+            .order("round_number")
+            .execute()
+        )
+        history_data = history.data or []
+    except Exception:
+        history_data = []
 
     # Group observations by (parameter, round_introduced) — keep latest per group
     param_round: dict[str, dict[int, dict]] = defaultdict(dict)
@@ -475,7 +479,7 @@ async def get_rounds_comparison(expedient_id: str):
     return {
         "available": True,
         "current_round": current_round,
-        "parameter_history": history.data or [],
+        "parameter_history": history_data,
         "parameters": parameters,
         "summary": summary,
     }
