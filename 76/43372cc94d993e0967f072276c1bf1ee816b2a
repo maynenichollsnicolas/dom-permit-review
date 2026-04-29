@@ -1,0 +1,25 @@
+apps/web/app/dom/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 119-183,196,223,740,743-747,750-751
+apps/api/api/routes/expedients.py
+  72b3ee3c9655d95d 423-433,482
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "7643372cc94d993e0967f072276c1bf1ee816b2a",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 87,
+      "total_deletions": 11,
+      "accepted_lines": 87,
+      "overriden_lines": 0
+    }
+  }
+}
