@@ -34,7 +34,27 @@ def _build_few_shot_context() -> str:
     return "\n".join(lines)
 
 
-SYSTEM_PROMPT = f"""Eres un asistente de redacción de la Dirección de Obras Municipales de Las Condes, Chile.
+_FEW_SHOT_CONTEXT = _build_few_shot_context()
+
+
+def _get_system_prompt(lang: str = "es") -> str:
+    if lang == "en":
+        return f"""You are a technical writing assistant for the Municipal Works Department (DOM) of Las Condes, Chile.
+Your task is to generate observation text for a draft Observations Report in the official DOM format.
+
+WRITING RULES:
+1. Include ONLY observations with verdict VIOLATION or NEEDS_REVIEW.
+2. Each observation has: sequential number, title in UPPERCASE, objective descriptive text, and normative citation.
+3. Text must be formal, technical and direct. No evaluative or emotional language.
+4. Each observation ends indicating what the architect must do to remediate.
+5. Always cite the exact article or normative table at the end of each observation.
+6. Close with the 60 business-day deadline for remediation.
+
+{_FEW_SHOT_CONTEXT}
+
+Respond ONLY with the numbered observation text, in plain text format as shown in the examples.
+Do not include JSON blocks, code markers, or any other additional formatting."""
+    return f"""Eres un asistente de redacción de la Dirección de Obras Municipales de Las Condes, Chile.
 Tu función es generar el texto de las observaciones para un borrador de Acta de Observaciones en formato oficial DOM.
 
 REGLAS DE REDACCIÓN:
@@ -45,7 +65,7 @@ REGLAS DE REDACCIÓN:
 5. Cita siempre el artículo o tabla normativa al final de cada observación.
 6. Cierra con el plazo de 60 días para subsanar.
 
-{_build_few_shot_context()}
+{_FEW_SHOT_CONTEXT}
 
 Responde ÚNICAMENTE con el texto de las observaciones numeradas, en formato de texto plano tal como aparece
 en los ejemplos. No incluyas bloques JSON, marcadores de código ni ningún otro formato adicional."""
@@ -103,6 +123,7 @@ Genera el Acta completa y el JSON estructurado."""
 async def generate_acta(
     expedient: dict,
     compliance_results: dict[str, Any],
+    lang: str = "es",
 ) -> dict[str, Any]:
     """
     Generate a draft Acta de Observaciones from compliance results.
@@ -110,23 +131,23 @@ async def generate_acta(
     """
     prompt = build_report_prompt(expedient, compliance_results)
 
-    # Check if there are any violations
     flagged = [
         r for r in compliance_results.get("results", [])
         if r["verdict"] in ("VIOLATION", "NEEDS_REVIEW")
     ]
 
     if not flagged:
-        return {
-            "acta_text": "El proyecto cumple con todos los parámetros urbanísticos revisados. No se emiten observaciones.",
-            "observations": [],
-            "has_observations": False,
-        }
+        no_obs = (
+            "The project complies with all reviewed urban parameters. No observations issued."
+            if lang == "en" else
+            "El proyecto cumple con todos los parámetros urbanísticos revisados. No se emiten observaciones."
+        )
+        return {"acta_text": no_obs, "observations": [], "has_observations": False}
 
     response = client.messages.create(
         model=settings.llm_model,
         max_tokens=4096,
-        system=SYSTEM_PROMPT,
+        system=_get_system_prompt(lang),
         messages=[{"role": "user", "content": prompt}],
     )
 

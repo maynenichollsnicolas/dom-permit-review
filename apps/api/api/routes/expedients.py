@@ -24,6 +24,7 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     history: list[ChatMessage] = []
+    language: str = "es"
 
 class ObservationActionRequest(BaseModel):
     action: str  # "accepted" | "edited" | "discarded"
@@ -72,12 +73,13 @@ def _resolve_expedient_id(expedient_id: str) -> str:
 
 
 @router.post("/{expedient_id}/analyze")
-async def trigger_analysis(expedient_id: str, background_tasks: BackgroundTasks):
+async def trigger_analysis(expedient_id: str, background_tasks: BackgroundTasks, language: str = "es"):
     """
     Trigger the AI compliance pipeline for an expedient.
     Runs asynchronously in the background.
     Auto-triggered when expedient is admitted.
     Accepts either a UUID or an exp_number (e.g. 2024-0847).
+    language: "es" | "en" — controls the language of AI-generated observation text.
     """
     expedient_id = _resolve_expedient_id(expedient_id)
 
@@ -97,7 +99,7 @@ async def trigger_analysis(expedient_id: str, background_tasks: BackgroundTasks)
     if running.data:
         raise HTTPException(status_code=409, detail="Analysis already running for this expedient")
 
-    background_tasks.add_task(run_pipeline, expedient_id)
+    background_tasks.add_task(run_pipeline, expedient_id, language)
     return {"message": "Analysis started", "expedient_id": expedient_id}
 
 
@@ -256,9 +258,10 @@ async def publish_acta(expedient_id: str):
     # Load confirmed observations to build the published snapshot
     confirmed = (
         supabase.table("observations")
-        .select("parameter, ai_verdict, declared_value, allowed_value, normative_reference, ai_draft_text, reviewer_final_text, reviewer_action")
+        .select("parameter, ai_verdict, declared_value, allowed_value, normative_reference, ai_draft_text, reviewer_final_text, reviewer_action, round_introduced")
         .eq("expedient_id", expedient_id)
         .in_("reviewer_action", ["accepted", "edited"])
+        .order("round_introduced")
         .order("parameter")
         .execute()
     )
@@ -270,7 +273,7 @@ async def publish_acta(expedient_id: str):
     from datetime import date as _date
     today_str = _date.today().strftime("%d de %B de %Y")
 
-    # Build structured observations list
+    # Build structured observations list (with round_introduced for display)
     structured_obs = []
     for i, obs in enumerate(confirmed.data or [], 1):
         text = obs.get("reviewer_final_text") or obs.get("ai_draft_text") or ""
@@ -282,7 +285,15 @@ async def publish_acta(expedient_id: str):
             "allowed_value": obs.get("allowed_value"),
             "text": text,
             "normative_reference": obs.get("normative_reference") or "",
+            "round_introduced": obs.get("round_introduced") or 1,
         })
+
+    # Group by round for plain-text output
+    from collections import defaultdict
+    obs_by_round: dict = defaultdict(list)
+    for obs in structured_obs:
+        obs_by_round[obs["round_introduced"]].append(obs)
+    multi_round = len(obs_by_round) > 1
 
     # Build plain-text Acta for archiving
     lines = [
@@ -302,15 +313,19 @@ async def publish_acta(expedient_id: str):
         "OBSERVACIONES:",
         "",
     ]
-    for obs in structured_obs:
-        lines.append(f"{obs['number']}. {obs['title']}")
-        if obs.get("declared_value") and obs.get("allowed_value"):
-            lines.append(f"   Declarado: {obs['declared_value']} / Permitido: {obs['allowed_value']}")
-        if obs["text"]:
-            lines.append(f"   {obs['text']}")
-        if obs["normative_reference"]:
-            lines.append(f"   Norma: {obs['normative_reference']}")
-        lines.append("")
+    for rnd in sorted(obs_by_round.keys()):
+        if multi_round:
+            lines.append(f"--- RONDA {rnd} ---")
+            lines.append("")
+        for obs in obs_by_round[rnd]:
+            lines.append(f"{obs['number']}. {obs['title']}")
+            if obs.get("declared_value") and obs.get("allowed_value"):
+                lines.append(f"   Declarado: {obs['declared_value']} / Permitido: {obs['allowed_value']}")
+            if obs["text"]:
+                lines.append(f"   {obs['text']}")
+            if obs["normative_reference"]:
+                lines.append(f"   Norma: {obs['normative_reference']}")
+            lines.append("")
 
     if structured_obs:
         lines += [
@@ -591,12 +606,12 @@ ACTA PUBLICADA:
 
 {dom_guidance}
 
-INSTRUCCIONES DE RESPUESTA:
-- Responde en español, de forma directa y profesional.
-- Cita artículos específicos (ej: "Art. 2.6.3 OGUC") cuando sea relevante.
-- Para cada infracción, explica exactamente qué valor corregir y cuánto.
-- Sé conciso — máximo 3 párrafos por respuesta directa.
-- Si escalas, explica brevemente al arquitecto por qué necesitas confirmación del DOM."""
+RESPONSE INSTRUCTIONS:
+- {"Respond in English, directly and professionally." if body.language == "en" else "Responde en español, de forma directa y profesional."}
+- Cite specific articles (e.g. "Art. 2.6.3 OGUC") when relevant.
+- For each violation, explain exactly which value to correct and by how much.
+- Be concise — maximum 3 paragraphs per direct response.
+- If you escalate, briefly explain to the architect why you need DOM confirmation."""
 
     escalate_tool = {
         "name": "escalate_to_dom",

@@ -273,7 +273,8 @@ async def reason_node(state: PipelineState) -> dict:
 
     reviewer_feedback = await asyncio.to_thread(_fetch_reviewer_feedback, zone)
 
-    compliance_results = await run_compliance_check(parsed, flat_chunks, zone, reviewer_feedback)
+    lang = state.get("language", "es")
+    compliance_results = await run_compliance_check(parsed, flat_chunks, zone, reviewer_feedback, lang=lang)
 
     # Track which parameters got no normative data (to trigger graph-level retry)
     sin_datos = [
@@ -317,7 +318,7 @@ async def generate_node(state: PipelineState) -> dict:
     Report Generator: Claude drafts a full Acta de Observaciones
     in official DOM format using few-shot examples from real Actas.
     """
-    acta_draft = await generate_acta(state["expedient"], state["compliance_results"])
+    acta_draft = await generate_acta(state["expedient"], state["compliance_results"], lang=state.get("language", "es"))
     return {"acta_draft": acta_draft}
 
 

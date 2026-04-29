@@ -14,7 +14,7 @@ from agents.graph import pipeline_graph
 supabase = create_client(settings.supabase_url, settings.supabase_service_key)
 
 
-async def run_pipeline(expedient_id: str) -> dict:
+async def run_pipeline(expedient_id: str, language: str = "es") -> dict:
     """
     Invoke the LangGraph pipeline for a single expedient.
 
@@ -28,7 +28,7 @@ async def run_pipeline(expedient_id: str) -> dict:
 
     try:
         final_state = await pipeline_graph.ainvoke(
-            {"expedient_id": expedient_id},
+            {"expedient_id": expedient_id, "language": language},
             config=config,
         )
     except Exception as e:

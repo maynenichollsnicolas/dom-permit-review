@@ -11,6 +11,7 @@ from typing_extensions import TypedDict
 class PipelineState(TypedDict, total=False):
     # ── Input ──────────────────────────────────────────────────────────────────
     expedient_id: str
+    language: str  # "es" | "en" — controls AI-generated text language
 
     # ── Loaded from DB (load_and_parse node) ───────────────────────────────────
     expedient: dict

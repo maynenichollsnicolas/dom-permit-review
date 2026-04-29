@@ -18,8 +18,8 @@ export const api = {
   expedients: {
     list: () => apiFetch<Expedient[]>("/expedients"),
     get: (id: string) => apiFetch<Expedient>(`/expedients/${id}`),
-    analyze: (id: string) =>
-      apiFetch(`/expedients/${id}/analyze`, { method: "POST" }),
+    analyze: (id: string, language = "es") =>
+      apiFetch(`/expedients/${id}/analyze?language=${language}`, { method: "POST" }),
     getCompliance: (id: string) =>
       apiFetch<ComplianceResult>(`/expedients/${id}/compliance`),
     updateObservation: (expedientId: string, obsId: string, body: ObservationAction) =>
@@ -32,13 +32,19 @@ export const api = {
       apiFetch(`/expedients/${id}/acta/publish`, { method: "POST" }),
     approve: (id: string) =>
       apiFetch<{ status: string }>(`/expedients/${id}/approve`, { method: "POST" }),
-    chat: (id: string, message: string, history: { role: string; content: string }[]) =>
+    chat: (id: string, message: string, history: { role: string; content: string }[], language = "es") =>
       apiFetch<{ response: string; escalated: boolean; escalation_id: string | null }>(`/expedients/${id}/chat`, {
         method: "POST",
-        body: JSON.stringify({ message, history }),
+        body: JSON.stringify({ message, history, language }),
       }),
     getRoundComparison: (id: string) =>
-      apiFetch<RoundComparison>(`/expedients/${id}/rounds/comparison`),
+      fetch(`/api/expedients/${id}/comparison`).then(async (res) => {
+        if (!res.ok) {
+          const error = await res.json().catch(() => ({ detail: res.statusText }));
+          throw new Error(error.detail || "API error");
+        }
+        return res.json() as Promise<RoundComparison>;
+      }),
   },
   intake: {
     queue: () => apiFetch<any[]>("/intake/queue"),
@@ -194,6 +200,7 @@ export interface ActaObservation {
   title: string;
   text: string;
   normative_reference: string;
+  round_introduced?: number;
 }
 
 export interface ObservationAction {

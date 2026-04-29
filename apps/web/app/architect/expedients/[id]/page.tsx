@@ -184,7 +184,7 @@ function ChatPanel({ expedientId, autoSendMessage }: { expedientId: string; auto
     setLoading(true);
 
     try {
-      const res = await api.expedients.chat(expedientId, text, history);
+      const res = await api.expedients.chat(expedientId, text, history, t.lang);
       setMessages((prev) => [
         ...prev,
         {

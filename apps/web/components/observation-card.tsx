@@ -434,7 +434,8 @@ export function ChecklistItem({ parameter, label, observation: obs, onAction, do
                 disabled={saving}
                 className="flex-1 flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors disabled:opacity-50"
               >
-                <Check className="h-3.5 w-3.5" />{o.accept}
+                <Check className="h-3.5 w-3.5" />
+                {isNeedsReview ? o.acceptNeedsReview : o.accept}
               </button>
               <button
                 onClick={() => { setEditText(obs?.ai_draft_text ?? ""); setMode("edit"); }}
@@ -446,7 +447,8 @@ export function ChecklistItem({ parameter, label, observation: obs, onAction, do
                 onClick={() => setMode("discard")}
                 className="flex items-center gap-1.5 border border-border hover:border-red-200 hover:bg-red-50/40 text-muted-foreground hover:text-red-600 text-xs font-medium px-3 py-2 rounded-lg transition-colors"
               >
-                <X className="h-3.5 w-3.5" />{o.discard}
+                <X className="h-3.5 w-3.5" />
+                {isNeedsReview ? o.discardNeedsReview : o.discard}
               </button>
             </>
           )}

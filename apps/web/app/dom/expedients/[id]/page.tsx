@@ -31,7 +31,7 @@ const STAGE_IDS = [
   { id: "acta",     seconds: 8  },
 ];
 
-function AnalysisProgress({ startedAt }: { startedAt: number }) {
+function AnalysisProgress({ startedAt, round }: { startedAt: number; round?: number }) {
   const { t } = useT();
   const p = t.domDetail.analysis.progress;
   const [elapsed, setElapsed] = useState(0);
@@ -64,7 +64,9 @@ function AnalysisProgress({ startedAt }: { startedAt: number }) {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Loader2 className="h-4 w-4 text-primary animate-spin" />
-            <span className="text-sm font-semibold text-foreground">{p.title}</span>
+            <span className="text-sm font-semibold text-foreground">
+              {round && round > 1 ? `Ronda ${round} — ${p.title}` : p.title}
+            </span>
           </div>
           <span className="text-xs font-mono text-muted-foreground">{Math.round(overallPct)}%</span>
         </div>
@@ -116,70 +118,6 @@ function AnalysisProgress({ startedAt }: { startedAt: number }) {
   );
 }
 
-// ─── Comparison loading progress ─────────────────────────────────────────────
-
-const COMPARISON_STAGES = [
-  { label: "Recuperando observaciones Ronda 1…", seconds: 1.5 },
-  { label: "Recuperando observaciones Ronda 2…", seconds: 1.5 },
-  { label: "Comparando parámetros…",             seconds: 1.5 },
-  { label: "Construyendo resumen…",              seconds: 1.0 },
-];
-
-function ComparisonProgress() {
-  const [elapsed, setElapsed] = useState(0);
-  const startedAt = useRef(Date.now());
-
-  useEffect(() => {
-    const iv = setInterval(() => setElapsed((Date.now() - startedAt.current) / 1000), 200);
-    return () => clearInterval(iv);
-  }, []);
-
-  let cumulative = 0;
-  const stages = COMPARISON_STAGES.map((s) => {
-    const start = cumulative;
-    cumulative += s.seconds;
-    const end = cumulative;
-    const status =
-      elapsed >= end   ? "done" :
-      elapsed >= start ? "running" :
-      "pending";
-    const pct = status === "running" ? Math.min(100, ((elapsed - start) / s.seconds) * 100) : 0;
-    return { ...s, status, pct };
-  });
-
-  return (
-    <div className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-      <div className="px-5 py-4 border-b border-border bg-secondary/30">
-        <div className="flex items-center gap-2">
-          <Loader2 className="h-4 w-4 text-primary animate-spin" />
-          <span className="text-sm font-semibold">Generando comparación R1 → R2</span>
-        </div>
-      </div>
-      <div className="divide-y divide-border/50">
-        {stages.map((s) => (
-          <div key={s.label} className={`px-5 py-3.5 flex items-center gap-3 ${s.status === "running" ? "bg-primary/[0.02]" : ""}`}>
-            {s.status === "done"    ? <CheckCircle className="h-4 w-4 text-emerald-500 flex-shrink-0" /> :
-             s.status === "running" ? <Loader2 className="h-4 w-4 text-primary animate-spin flex-shrink-0" /> :
-             <div className="h-4 w-4 rounded-full border-2 border-border flex-shrink-0" />}
-            <div className="flex-1 min-w-0">
-              <p className={`text-sm ${s.status === "pending" ? "text-muted-foreground/40" : "text-foreground"}`}>
-                {s.label}
-              </p>
-              {s.status === "running" && (
-                <div className="mt-1 h-1 bg-secondary rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary/60 rounded-full transition-all duration-200"
-                    style={{ width: `${s.pct}%` }}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 
@@ -204,17 +142,17 @@ export default function ExpedientPage() {
   const [answering, setAnswering] = useState<Record<string, boolean>>({});
   const pollRef = useRef<NodeJS.Timeout | null>(null);
   const autoTriggered = useRef(false);
+  const comparisonFetching = useRef(false);
 
   const [comparisonError, setComparisonError] = useState<string | null>(null);
 
   const loadComparison = async () => {
+    if (comparisonFetching.current) return;
+    comparisonFetching.current = true;
     setComparisonLoaded(false);
     setComparisonError(null);
-    const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error("timeout")), 30000)
-    );
     try {
-      const data = await Promise.race([api.expedients.getRoundComparison(id), timeout]);
+      const data = await api.expedients.getRoundComparison(id);
       setRoundComparison(data);
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -222,6 +160,7 @@ export default function ExpedientPage() {
       console.error("[comparison]", msg);
     } finally {
       setComparisonLoaded(true);
+      comparisonFetching.current = false;
     }
   };
 
@@ -239,8 +178,6 @@ export default function ExpedientPage() {
     if (docs.status === "fulfilled") setDocuments(docs.value);
     if (escs.status === "fulfilled") setEscalations(escs.value);
     setLoading(false);
-    // Fetch comparison independently so it never blocks the main page
-    loadComparison();
   };
 
   const openDoc = async (docType: string) => {
@@ -279,6 +216,10 @@ export default function ExpedientPage() {
           clearInterval(pollRef.current!);
           setAnalyzing(false);
           setAnalysisStartedAt(null);
+          // Reset comparison so it reloads when the tab is opened
+          setRoundComparison(null);
+          setComparisonLoaded(false);
+          comparisonFetching.current = false;
           load();
         }
       }, 3000);
@@ -289,7 +230,7 @@ export default function ExpedientPage() {
   const handleAnalyze = async () => {
     setAnalyzing(true);
     setAnalysisStartedAt(Date.now());
-    await api.expedients.analyze(id);
+    await api.expedients.analyze(id, t.lang);
     setCompliance({ status: "running", observations: [] });
   };
 
@@ -429,7 +370,49 @@ export default function ExpedientPage() {
           </p>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
+        {/* Round status banner (round 2+) */}
+        {(expedient.current_round ?? 1) > 1 && (() => {
+          const rb = dd.roundBanner;
+          const round = expedient.current_round;
+          if (isRunning) {
+            return (
+              <div className="flex items-start gap-3 px-4 py-3 mb-5 bg-primary/5 border border-primary/20 rounded-xl">
+                <Loader2 className="h-4 w-4 text-primary animate-spin flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{rb.analyzing(round)}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{rb.analyzingDetail}</p>
+                </div>
+              </div>
+            );
+          }
+          if (compliance?.status === "completed") {
+            return (
+              <div className="flex items-start gap-3 px-4 py-3 mb-5 bg-emerald-50 border border-emerald-200 rounded-xl">
+                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-emerald-800">{rb.completed(round)}</p>
+                  <p className="text-xs text-emerald-700/70 mt-0.5">{rb.completedDetail}</p>
+                </div>
+              </div>
+            );
+          }
+          return (
+            <div className="flex items-start gap-3 px-4 py-3 mb-5 bg-amber-50 border border-amber-200 rounded-xl">
+              <AlertTriangle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-semibold text-amber-800">{rb.correctionsReceived(round)}</p>
+                <p className="text-xs text-amber-700/70 mt-0.5">{rb.correctionsDetail}</p>
+              </div>
+            </div>
+          );
+        })()}
+
+        <Tabs value={activeTab} onValueChange={(tab) => {
+          setActiveTab(tab);
+          if (tab === "comparacion" && !comparisonLoaded && !comparisonFetching.current) {
+            loadComparison();
+          }
+        }}>
           <TabsList className="mb-5">
             <TabsTrigger value="resumen">{dd.tabs.resumen}</TabsTrigger>
             <TabsTrigger value="analisis">
@@ -539,7 +522,7 @@ export default function ExpedientPage() {
           {/* ── TAB 2: Análisis ── */}
           <TabsContent value="analisis">
             {isRunning && analysisStartedAt && (
-              <AnalysisProgress startedAt={analysisStartedAt} />
+              <AnalysisProgress startedAt={analysisStartedAt} round={expedient.current_round} />
             )}
 
             {isRunning && !analysisStartedAt && (
@@ -752,32 +735,38 @@ export default function ExpedientPage() {
             </div>
           </TabsContent>
 
-          {/* ── TAB 5: Comparación R1↔R2 ── */}
+          {/* ── TAB 5: Comparación R1↔Rn ── */}
           <TabsContent value="comparacion">
-            {roundComparison?.available ? (
-              <RoundComparisonPanel comparison={roundComparison} />
-            ) : roundComparison && !roundComparison.available ? (
+            {!comparisonLoaded ? (
+              <div className="flex items-center justify-center py-16 gap-2 text-muted-foreground text-sm">
+                <Loader2 className="h-5 w-5 animate-spin" />
+                Cargando comparación…
+              </div>
+            ) : comparisonError ? (
               <Card className="shadow-sm">
                 <CardContent className="py-12 text-center">
                   <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground">Solo se ha completado una ronda de revisión.</p>
+                  <p className="text-sm text-muted-foreground">No se pudo cargar la comparación.</p>
+                  <p className="text-xs font-mono text-red-500 mt-2 px-4 break-all">{comparisonError}</p>
+                  <Button variant="outline" size="sm" className="mt-4" onClick={loadComparison}>
+                    Reintentar
+                  </Button>
+                </CardContent>
+              </Card>
+            ) : roundComparison?.available ? (
+              <RoundComparisonPanel comparison={roundComparison} />
+            ) : (
+              <Card className="shadow-sm">
+                <CardContent className="py-12 text-center">
+                  <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
+                  <p className="text-sm text-muted-foreground">
+                    {roundComparison?.reason ?? "Solo se ha completado una ronda de revisión."}
+                  </p>
                   <p className="text-xs text-muted-foreground/60 mt-1">
                     La comparación estará disponible después de que el arquitecto presente una corrección.
                   </p>
                 </CardContent>
               </Card>
-            ) : comparisonLoaded ? (
-              <Card className="shadow-sm">
-                <CardContent className="py-12 text-center">
-                  <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground">No se pudo cargar la comparación.</p>
-                  {comparisonError && (
-                    <p className="text-xs font-mono text-red-500 mt-2 px-4 break-all">{comparisonError}</p>
-                  )}
-                </CardContent>
-              </Card>
-            ) : (
-              <ComparisonProgress />
             )}
           </TabsContent>
 

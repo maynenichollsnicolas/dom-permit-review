@@ -53,7 +53,18 @@ RETRIEVE_TOOL = {
 
 # ─── System prompt ────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = """Eres un revisor técnico especializado de la Dirección de Obras Municipales (DOM) de Las Condes, Chile.
+def _get_system_prompt(lang: str = "es") -> str:
+    if lang == "en":
+        observation_language_rule = (
+            "4. Write the draft_observation text in formal, technical English — "
+            "objective and without evaluative language."
+        )
+    else:
+        observation_language_rule = (
+            "4. Redacta las observaciones en español formal, objetivo, sin juicios de valor."
+        )
+
+    return f"""Eres un revisor técnico especializado de la Dirección de Obras Municipales (DOM) de Las Condes, Chile.
 Tu función es analizar si los parámetros declarados de un proyecto de edificación cumplen con la normativa urbanística (OGUC, PRC Las Condes, Ley 21.718).
 
 HERRAMIENTA DISPONIBLE:
@@ -71,13 +82,13 @@ Reglas estrictas:
 1. NUNCA emitas VIOLATION sin citar el artículo o tabla normativa exacta.
 2. NUNCA emitas COMPLIANT si el valor declarado supera el límite máximo o no alcanza el mínimo.
 3. Si un fragmento normativo tiene baja relevancia o no cubre el caso exacto, usa NEEDS_REVIEW.
-4. Redacta las observaciones en español formal, objetivo, sin juicios de valor.
+{observation_language_rule}
 5. El texto de la observación debe incluir: valor declarado, valor permitido, exceso/déficit, qué debe corregirse.
 
 Responde SIEMPRE en JSON con esta estructura exacta (después de usar todas las herramientas necesarias):
-{
+{{
   "results": [
-    {
+    {{
       "parameter": "nombre_del_parametro",
       "verdict": "VIOLATION|COMPLIANT|NEEDS_REVIEW|SIN_DATOS",
       "confidence": "HIGH|MEDIUM|LOW",
@@ -88,9 +99,9 @@ Responde SIEMPRE en JSON con esta estructura exacta (después de usar todas las 
       "chunk_ids_used": ["id1", "id2"],
       "draft_observation": "texto de la observación para el Acta, o null si COMPLIANT",
       "reasoning": "explicación interna breve de tu razonamiento"
-    }
+    }}
   ]
-}"""
+}}"""
 
 
 # ─── Prompt builder ───────────────────────────────────────────────────────────
@@ -233,6 +244,7 @@ async def run_compliance_check(
     chunks: list[dict],
     zone: str,
     reviewer_feedback: list[dict] | None = None,
+    lang: str = "es",
 ) -> dict[str, Any]:
     """
     Run the Compliance Reasoner as a true ReAct agent.
@@ -249,13 +261,14 @@ async def run_compliance_check(
     messages: list[dict] = [{"role": "user", "content": user_message}]
 
     max_turns = 8  # safety cap on the tool-use loop
+    system_prompt = _get_system_prompt(lang)
 
     for turn in range(max_turns):
         response = await asyncio.to_thread(
             client.messages.create,
             model=settings.llm_model,
             max_tokens=8000,
-            system=SYSTEM_PROMPT,
+            system=system_prompt,
             tools=[RETRIEVE_TOOL],
             messages=messages,
         )

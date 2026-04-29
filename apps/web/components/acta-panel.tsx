@@ -38,6 +38,16 @@ export function ActaPanel({ acta, expedientId, expedient, observations, onPublis
     (o) => o.reviewer_action === "accepted" || o.reviewer_action === "edited"
   );
 
+  // Group by round_introduced; assign global sequential numbers
+  const numbered = confirmed.map((obs, i) => ({ obs, num: i + 1 }));
+  const byRound = numbered.reduce<Record<number, typeof numbered>>((acc, item) => {
+    const r = item.obs.round_introduced ?? 1;
+    (acc[r] ??= []).push(item);
+    return acc;
+  }, {});
+  const rounds = Object.keys(byRound).map(Number).sort((a, b) => a - b);
+  const multiRound = rounds.length > 1;
+
   const isPublished = acta?.status === "published";
 
   const locale = t.lang === "en" ? "en-US" : "es-CL";
@@ -145,41 +155,54 @@ export function ActaPanel({ acta, expedientId, expedient, observations, onPublis
               }
             </div>
           ) : (
-            <ol className="space-y-6">
-              {confirmed.map((obs, i) => {
-                const text = obs.reviewer_final_text || obs.ai_draft_text;
-                // Use t.param for translated parameter name
-                const paramName = t.param[obs.parameter] ?? obs.parameter.replace(/_/g, " ");
-                return (
-                  <li key={obs.id} className="space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-bold tabular-nums">{i + 1}.</span>
-                      <div>
-                        <span className="font-bold uppercase tracking-wide">{paramName}</span>
-                        {obs.declared_value && obs.allowed_value && (
-                          <span className="text-xs text-muted-foreground font-normal normal-case ml-1.5">
-                            ({t.lang === "en" ? "Declared" : "Declarado"}: {obs.declared_value} — {t.lang === "en" ? "Allowed" : "Permitido"}: {obs.allowed_value})
-                          </span>
-                        )}
-                        {!isPublished && obs.reviewer_action === "edited" && (
-                          <span className="ml-2 text-[10px] font-semibold text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded align-middle">
-                            {a.editedBadge}
-                          </span>
-                        )}
-                      </div>
+            <div className="space-y-8">
+              {rounds.map((round) => (
+                <div key={round}>
+                  {multiRound && (
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground px-2.5 py-1 bg-secondary border border-border rounded-full">
+                        {t.lang === "en" ? `Round ${round}` : `Ronda ${round}`}
+                      </span>
+                      <div className="flex-1 h-px bg-border" />
                     </div>
-                    {text && (
-                      <p className="pl-5 text-foreground/80 leading-relaxed">{text}</p>
-                    )}
-                    {obs.normative_reference && (
-                      <p className="pl-5 text-[11px] font-mono text-muted-foreground/60">
-                        {t.lang === "en" ? "Applicable regulation:" : "Norma aplicable:"} {obs.normative_reference}
-                      </p>
-                    )}
-                  </li>
-                );
-              })}
-            </ol>
+                  )}
+                  <ol className="space-y-6">
+                    {byRound[round].map(({ obs, num }) => {
+                      const text = obs.reviewer_final_text || obs.ai_draft_text;
+                      const paramName = t.param[obs.parameter] ?? obs.parameter.replace(/_/g, " ");
+                      return (
+                        <li key={obs.id} className="space-y-2">
+                          <div className="flex items-baseline gap-2">
+                            <span className="font-bold tabular-nums">{num}.</span>
+                            <div>
+                              <span className="font-bold uppercase tracking-wide">{paramName}</span>
+                              {obs.declared_value && obs.allowed_value && (
+                                <span className="text-xs text-muted-foreground font-normal normal-case ml-1.5">
+                                  ({t.lang === "en" ? "Declared" : "Declarado"}: {obs.declared_value} — {t.lang === "en" ? "Allowed" : "Permitido"}: {obs.allowed_value})
+                                </span>
+                              )}
+                              {!isPublished && obs.reviewer_action === "edited" && (
+                                <span className="ml-2 text-[10px] font-semibold text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded align-middle">
+                                  {a.editedBadge}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          {text && (
+                            <p className="pl-5 text-foreground/80 leading-relaxed">{text}</p>
+                          )}
+                          {obs.normative_reference && (
+                            <p className="pl-5 text-[11px] font-mono text-muted-foreground/60">
+                              {t.lang === "en" ? "Applicable regulation:" : "Norma aplicable:"} {obs.normative_reference}
+                            </p>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              ))}
+            </div>
           )}
 
           {confirmed.length > 0 && (
