@@ -1,0 +1,47 @@
+apps/web/components/acta-panel.tsx
+  72b3ee3c9655d95d 41-50,158-166,168-205
+apps/api/agents/pipeline.py
+  72b3ee3c9655d95d 17,31
+apps/web/app/dom/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 34,67-69,145,150-151,155,163,219-222,233,373-415,525,738,740-745,749-753,756-758,762-767
+apps/api/agents/state.py
+  72b3ee3c9655d95d 14
+apps/api/agents/compliance_reasoner.py
+  72b3ee3c9655d95d 56-67,85,89,91,102,104,247,264,271
+apps/api/api/routes/expedients.py
+  72b3ee3c9655d95d 27,76,82,102,261,264,276,288,291-297,316-328,609-614
+apps/web/app/architect/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 187
+apps/web/components/observation-card.tsx
+  72b3ee3c9655d95d 437-438,450-451
+apps/api/agents/graph.py
+  72b3ee3c9655d95d 276-277,321
+apps/web/lib/i18n.tsx
+  72b3ee3c9655d95d 210-217,326-327,797-804,911-912
+apps/web/app/api/expedients/[id]/comparison/route.ts
+  72b3ee3c9655d95d 1-19
+apps/web/lib/api.ts
+  72b3ee3c9655d95d 21-22,35,38,41-47,203
+apps/api/agents/report_generator.py
+  72b3ee3c9655d95d 37-57,68,126,140-145,150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "9ddd5b170d40ec31d53ccdc202e842c89677cdf8",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 2084,
+      "total_deletions": 6206,
+      "accepted_lines": 282,
+      "overriden_lines": 0
+    }
+  }
+}
