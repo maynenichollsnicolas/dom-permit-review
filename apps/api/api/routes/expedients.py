@@ -414,7 +414,7 @@ async def get_rounds_comparison(expedient_id: str):
 
     all_obs = (
         supabase.table("observations")
-        .select("*")
+        .select("id,parameter,round_introduced,ai_verdict,ai_draft_text,declared_value,allowed_value,delta,normative_reference,reviewer_action,reviewer_final_text,round_status")
         .eq("expedient_id", expedient_id)
         .order("round_introduced")
         .execute()
@@ -451,8 +451,8 @@ async def get_rounds_comparison(expedient_id: str):
         if r2_obs is None and rounds:
             r2_obs = rounds[max(rounds.keys())]
 
-        r1_violation = r1_obs is not None and r1_obs["ai_verdict"] in VIOLATION_VERDICTS
-        r2_violation = r2_obs is not None and r2_obs["ai_verdict"] in VIOLATION_VERDICTS
+        r1_violation = r1_obs is not None and r1_obs.get("ai_verdict") in VIOLATION_VERDICTS
+        r2_violation = r2_obs is not None and r2_obs.get("ai_verdict") in VIOLATION_VERDICTS
 
         if r1_obs is None:
             comparison_status = "NEW" if r2_violation else "STILL_COMPLIANT"

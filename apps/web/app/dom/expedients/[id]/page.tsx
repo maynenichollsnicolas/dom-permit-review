@@ -205,16 +205,21 @@ export default function ExpedientPage() {
   const pollRef = useRef<NodeJS.Timeout | null>(null);
   const autoTriggered = useRef(false);
 
+  const [comparisonError, setComparisonError] = useState<string | null>(null);
+
   const loadComparison = async () => {
     setComparisonLoaded(false);
+    setComparisonError(null);
     const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error("timeout")), 20000)
+      setTimeout(() => reject(new Error("timeout")), 30000)
     );
     try {
       const data = await Promise.race([api.expedients.getRoundComparison(id), timeout]);
       setRoundComparison(data);
-    } catch {
-      // leave roundComparison null — error state shown by comparisonLoaded=true
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      setComparisonError(msg);
+      console.error("[comparison]", msg);
     } finally {
       setComparisonLoaded(true);
     }
@@ -749,16 +754,26 @@ export default function ExpedientPage() {
 
           {/* ── TAB 5: Comparación R1↔R2 ── */}
           <TabsContent value="comparacion">
-            {roundComparison ? (
+            {roundComparison?.available ? (
               <RoundComparisonPanel comparison={roundComparison} />
+            ) : roundComparison && !roundComparison.available ? (
+              <Card className="shadow-sm">
+                <CardContent className="py-12 text-center">
+                  <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
+                  <p className="text-sm text-muted-foreground">Solo se ha completado una ronda de revisión.</p>
+                  <p className="text-xs text-muted-foreground/60 mt-1">
+                    La comparación estará disponible después de que el arquitecto presente una corrección.
+                  </p>
+                </CardContent>
+              </Card>
             ) : comparisonLoaded ? (
               <Card className="shadow-sm">
                 <CardContent className="py-12 text-center">
                   <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
                   <p className="text-sm text-muted-foreground">No se pudo cargar la comparación.</p>
-                  <p className="text-xs text-muted-foreground/60 mt-1">
-                    Asegúrate de haber aplicado la migración 004 en Supabase.
-                  </p>
+                  {comparisonError && (
+                    <p className="text-xs font-mono text-red-500 mt-2 px-4 break-all">{comparisonError}</p>
+                  )}
                 </CardContent>
               </Card>
             ) : (
