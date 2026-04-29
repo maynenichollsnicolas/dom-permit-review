@@ -1,0 +1,25 @@
+apps/web/lib/i18n.tsx
+  72b3ee3c9655d95d 222-223,811-812
+apps/web/app/dom/expedients/[id]/page.tsx
+  72b3ee3c9655d95d 431,440,558
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "0f8c4123606c747a477dd0eb1816f8f16f167383",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 2087,
+      "total_deletions": 2083,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
