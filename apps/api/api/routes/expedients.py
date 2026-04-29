@@ -88,7 +88,7 @@ async def trigger_analysis(expedient_id: str, background_tasks: BackgroundTasks,
     if not result.data:
         raise HTTPException(status_code=404, detail="Expedient not found")
 
-    # Check no analysis already running
+    # If a previous run is stuck in "running", mark it failed so we can restart
     running = (
         supabase.table("compliance_checks")
         .select("id")
@@ -97,7 +97,8 @@ async def trigger_analysis(expedient_id: str, background_tasks: BackgroundTasks,
         .execute()
     )
     if running.data:
-        raise HTTPException(status_code=409, detail="Analysis already running for this expedient")
+        for stuck in running.data:
+            supabase.table("compliance_checks").update({"status": "failed"}).eq("id", stuck["id"]).execute()
 
     background_tasks.add_task(run_pipeline, expedient_id, language)
     return {"message": "Analysis started", "expedient_id": expedient_id}

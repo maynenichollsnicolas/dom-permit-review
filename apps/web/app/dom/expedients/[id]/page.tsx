@@ -230,8 +230,14 @@ export default function ExpedientPage() {
   const handleAnalyze = async () => {
     setAnalyzing(true);
     setAnalysisStartedAt(Date.now());
-    await api.expedients.analyze(id, t.lang);
-    setCompliance({ status: "running", observations: [] });
+    try {
+      await api.expedients.analyze(id, t.lang);
+      setCompliance({ status: "running", observations: [] });
+    } catch (err: any) {
+      setAnalyzing(false);
+      setAnalysisStartedAt(null);
+      alert(err.message || "Error starting analysis");
+    }
   };
 
   const handleObservationUpdate = async (
