@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   ArrowLeft, AlertTriangle, CheckCircle, ChevronRight, Loader2, FileText, ExternalLink,
-  HelpCircle, Send,
+  HelpCircle, Send, RefreshCw,
 } from "lucide-react";
 import { ChecklistItem } from "@/components/observation-card";
 import { ActaPanel } from "@/components/acta-panel";
@@ -562,6 +562,14 @@ export default function ExpedientPage() {
                     <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
                     {dd.analysis.summary.approved(approvedCount)}
                   </span>
+                  <button
+                    onClick={handleAnalyze}
+                    disabled={analyzing}
+                    className="ml-auto text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 disabled:opacity-40"
+                  >
+                    <RefreshCw className="h-3 w-3" />
+                    {dd.analysis.retry}
+                  </button>
                 </div>
 
                 {/* Checklist — one row per parameter */}
