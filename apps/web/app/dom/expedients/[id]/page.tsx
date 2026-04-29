@@ -231,7 +231,7 @@ export default function ExpedientPage() {
     setAnalyzing(true);
     setAnalysisStartedAt(Date.now());
     try {
-      await api.expedients.analyze(id, t.lang);
+      await api.expedients.analyze(id, "es");
       setCompliance({ status: "running", observations: [] });
     } catch (err: any) {
       setAnalyzing(false);
