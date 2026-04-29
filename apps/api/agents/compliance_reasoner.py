@@ -19,9 +19,9 @@ from rag.retriever import retrieve_semantic, retrieve_prc_direct, format_chunks_
 
 client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
 
-# ─── Tool definition ──────────────────────────────────────────────────────────
+# ─── Tool definitions ─────────────────────────────────────────────────────────
 
-RETRIEVE_TOOL = {
+RETRIEVE_TOOL_ES = {
     "name": "retrieve_regulation",
     "description": (
         "Busca fragmentos normativos adicionales en la base de datos reglamentaria "
@@ -51,20 +51,85 @@ RETRIEVE_TOOL = {
     },
 }
 
+RETRIEVE_TOOL_EN = {
+    "name": "retrieve_regulation",
+    "description": (
+        "Search for additional normative fragments in the regulatory database "
+        "(OGUC, LGUC, PRC Las Condes) when the provided fragments are insufficient "
+        "to determine compliance for a given urban planning parameter. "
+        "Use this ONLY when you cannot issue a well-founded verdict with the current context."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "parameter": {
+                "type": "string",
+                "description": (
+                    "Name of the urban planning parameter to search for "
+                    "(e.g.: constructibilidad, altura_m, estacionamientos, densidad_hab_ha)"
+                ),
+            },
+            "query": {
+                "type": "string",
+                "description": (
+                    "Semantic search query in Spanish "
+                    "(e.g.: 'altura máxima edificación aislada zona residencial Las Condes')"
+                ),
+            },
+        },
+        "required": ["parameter", "query"],
+    },
+}
+
+
+def _get_retrieve_tool(lang: str = "es") -> dict:
+    return RETRIEVE_TOOL_EN if lang == "en" else RETRIEVE_TOOL_ES
+
 # ─── System prompt ────────────────────────────────────────────────────────────
 
 def _get_system_prompt(lang: str = "es") -> str:
     if lang == "en":
-        observation_language_rule = (
-            "4. Write the draft_observation text in formal, technical English — "
-            "objective and without evaluative language."
-        )
-    else:
-        observation_language_rule = (
-            "4. Redacta las observaciones en español formal, objetivo, sin juicios de valor."
-        )
+        return """You are a specialized technical reviewer for the Dirección de Obras Municipales (DOM) of Las Condes, Chile.
+Your role is to analyze whether the declared parameters of a building project comply with urban planning regulations (OGUC, PRC Las Condes, Ley 21.718).
 
-    return f"""Eres un revisor técnico especializado de la Dirección de Obras Municipales (DOM) de Las Condes, Chile.
+AVAILABLE TOOL:
+You have access to retrieve_regulation(parameter, query) to search for additional normative fragments.
+Use it when the provided fragments are insufficient to evaluate a parameter.
+After using the tool, evaluate all parameters and emit your verdict in JSON.
+
+For each parameter, you must emit a verdict using EXACTLY one of these values:
+- VIOLATION: The declared parameter clearly violates the regulation. Cite the exact article.
+- COMPLIANT: The declared parameter complies with the regulation. Briefly state why.
+- NEEDS_REVIEW: You cannot determine compliance with certainty. Explain what is needed.
+- SIN_DATOS: No applicable regulation found, even after searching with the tool.
+
+Strict rules:
+1. NEVER emit VIOLATION without citing the exact normative article or table.
+2. NEVER emit COMPLIANT if the declared value exceeds the maximum limit or falls short of the minimum.
+3. If a normative fragment has low relevance or does not cover the exact case, use NEEDS_REVIEW.
+4. Write the draft_observation text in formal, technical English — objective and without evaluative language.
+5. The observation text must include: declared value, permitted value, excess/deficit, what must be corrected.
+
+Always respond in JSON with this exact structure (after using all necessary tools):
+{
+  "results": [
+    {
+      "parameter": "parameter_name",
+      "verdict": "VIOLATION|COMPLIANT|NEEDS_REVIEW|SIN_DATOS",
+      "confidence": "HIGH|MEDIUM|LOW",
+      "declared_value": "declared value with units",
+      "allowed_value": "regulatory limit with units",
+      "excess_or_deficit": "difference with sign and units",
+      "normative_reference": "exact article or table",
+      "chunk_ids_used": ["id1", "id2"],
+      "draft_observation": "observation text for the report, or null if COMPLIANT",
+      "reasoning": "brief internal explanation of your reasoning"
+    }
+  ]
+}"""
+
+    return """\
+Eres un revisor técnico especializado de la Dirección de Obras Municipales (DOM) de Las Condes, Chile.
 Tu función es analizar si los parámetros declarados de un proyecto de edificación cumplen con la normativa urbanística (OGUC, PRC Las Condes, Ley 21.718).
 
 HERRAMIENTA DISPONIBLE:
@@ -82,13 +147,13 @@ Reglas estrictas:
 1. NUNCA emitas VIOLATION sin citar el artículo o tabla normativa exacta.
 2. NUNCA emitas COMPLIANT si el valor declarado supera el límite máximo o no alcanza el mínimo.
 3. Si un fragmento normativo tiene baja relevancia o no cubre el caso exacto, usa NEEDS_REVIEW.
-{observation_language_rule}
+4. Redacta las observaciones en español formal, objetivo, sin juicios de valor.
 5. El texto de la observación debe incluir: valor declarado, valor permitido, exceso/déficit, qué debe corregirse.
 
 Responde SIEMPRE en JSON con esta estructura exacta (después de usar todas las herramientas necesarias):
-{{
+{
   "results": [
-    {{
+    {
       "parameter": "nombre_del_parametro",
       "verdict": "VIOLATION|COMPLIANT|NEEDS_REVIEW|SIN_DATOS",
       "confidence": "HIGH|MEDIUM|LOW",
@@ -99,14 +164,14 @@ Responde SIEMPRE en JSON con esta estructura exacta (después de usar todas las 
       "chunk_ids_used": ["id1", "id2"],
       "draft_observation": "texto de la observación para el Acta, o null si COMPLIANT",
       "reasoning": "explicación interna breve de tu razonamiento"
-    }}
+    }
   ]
-}}"""
+}"""
 
 
 # ─── Prompt builder ───────────────────────────────────────────────────────────
 
-def _format_reviewer_feedback(feedback: list[dict], zone: str) -> str:
+def _format_reviewer_feedback(feedback: list[dict], zone: str, lang: str = "es") -> str:
     """
     Format historical reviewer discard data into a prompt section.
     Returns an empty string if there is no feedback to show.
@@ -114,27 +179,49 @@ def _format_reviewer_feedback(feedback: list[dict], zone: str) -> str:
     if not feedback:
         return ""
 
-    lines = [
-        "HISTORIAL DE CORRECCIONES DEL REVISOR:",
-        f"En expedientes anteriores de zona {zone}, el revisor humano descartó las siguientes",
-        "observaciones generadas por IA. Considera esto antes de emitir un veredicto:\n",
-    ]
-    for fb in feedback:
-        param = fb["parameter"]
-        lines.append(f"Parámetro '{param}':")
-        for d in fb["discards"]:
-            count_label = f"×{d['count']}"
-            notes_str = ""
-            if d.get("notes"):
-                notes_str = f" — Notas del revisor: \"{'; '.join(d['notes'])}\""
-            lines.append(f"  • Motivo: \"{d['reason']}\" ({count_label}){notes_str}")
-        lines.append("")
+    if lang == "en":
+        lines = [
+            "REVIEWER CORRECTION HISTORY:",
+            f"In previous expedients for zone {zone}, the human reviewer discarded the following",
+            "AI-generated observations. Consider this before issuing a verdict:\n",
+        ]
+        for fb in feedback:
+            param = fb["parameter"]
+            lines.append(f"Parameter '{param}':")
+            for d in fb["discards"]:
+                count_label = f"×{d['count']}"
+                notes_str = ""
+                if d.get("notes"):
+                    notes_str = f" — Reviewer notes: \"{'; '.join(d['notes'])}\""
+                lines.append(f"  • Reason: \"{d['reason']}\" ({count_label}){notes_str}")
+            lines.append("")
+        lines.append(
+            "INSTRUCTION: If the current parameter situation is similar to those discarded above, "
+            "evaluate more carefully before issuing VIOLATION — consider using NEEDS_REVIEW if "
+            "there is reasonable doubt. If the normative situation is clearly different, proceed normally."
+        )
+    else:
+        lines = [
+            "HISTORIAL DE CORRECCIONES DEL REVISOR:",
+            f"En expedientes anteriores de zona {zone}, el revisor humano descartó las siguientes",
+            "observaciones generadas por IA. Considera esto antes de emitir un veredicto:\n",
+        ]
+        for fb in feedback:
+            param = fb["parameter"]
+            lines.append(f"Parámetro '{param}':")
+            for d in fb["discards"]:
+                count_label = f"×{d['count']}"
+                notes_str = ""
+                if d.get("notes"):
+                    notes_str = f" — Notas del revisor: \"{'; '.join(d['notes'])}\""
+                lines.append(f"  • Motivo: \"{d['reason']}\" ({count_label}){notes_str}")
+            lines.append("")
+        lines.append(
+            "INSTRUCCIÓN: Si el caso actual de un parámetro es similar a los descartados arriba, "
+            "evalúa con mayor cuidado antes de emitir VIOLATION — considera usar NEEDS_REVIEW si "
+            "hay duda razonable. Si la situación normativa es claramente distinta, procede normalmente."
+        )
 
-    lines.append(
-        "INSTRUCCIÓN: Si el caso actual de un parámetro es similar a los descartados arriba, "
-        "evalúa con mayor cuidado antes de emitir VIOLATION — considera usar NEEDS_REVIEW si "
-        "hay duda razonable. Si la situación normativa es claramente distinta, procede normalmente."
-    )
     return "\n".join(lines)
 
 
@@ -142,6 +229,7 @@ def build_analysis_prompt(
     parsed: ParsedProject,
     chunks: list[dict],
     reviewer_feedback: list[dict] | None = None,
+    lang: str = "es",
 ) -> str:
     param_lines = []
     for d in parsed.deltas:
@@ -171,7 +259,27 @@ def build_analysis_prompt(
             f"{content_preview}\n"
         )
 
-    feedback_section = _format_reviewer_feedback(reviewer_feedback or [], parsed.zone)
+    feedback_section = _format_reviewer_feedback(reviewer_feedback or [], parsed.zone, lang)
+
+    if lang == "en":
+        no_chunks_msg = "No fragments retrieved. Use retrieve_regulation() to search for applicable regulations."
+        closing = (
+            "Analyze each parameter. If you lack sufficient normative context for any parameter,\n"
+            "call retrieve_regulation() before issuing your verdict.\n"
+            "Once you have evaluated all parameters, respond in the specified JSON format."
+        )
+        return f"""PROJECT UNDER REVIEW:
+Expedient: {parsed.expedient_id}
+Zone: {parsed.zone}
+Project type: {parsed.project_type}
+
+PARAMETERS (CIP vs. declared comparison):
+{chr(10).join(param_lines)}
+
+RETRIEVED NORMATIVE FRAGMENTS:
+{chr(10).join(chunk_lines) if chunk_lines else no_chunks_msg}
+{(chr(10) + feedback_section + chr(10)) if feedback_section else ""}
+{closing}"""
 
     return f"""PROYECTO A REVISAR:
 Expediente: {parsed.expedient_id}
@@ -257,11 +365,12 @@ async def run_compliance_check(
     reviewer_feedback: historical discard data from the same zone, injected
     into the prompt so Claude calibrates its verdicts based on past reviewer decisions.
     """
-    user_message = build_analysis_prompt(parsed, chunks, reviewer_feedback)
+    user_message = build_analysis_prompt(parsed, chunks, reviewer_feedback, lang)
     messages: list[dict] = [{"role": "user", "content": user_message}]
 
     max_turns = 8  # safety cap on the tool-use loop
     system_prompt = _get_system_prompt(lang)
+    retrieve_tool = _get_retrieve_tool(lang)
 
     for turn in range(max_turns):
         response = await asyncio.to_thread(
@@ -269,7 +378,7 @@ async def run_compliance_check(
             model=settings.llm_model,
             max_tokens=8000,
             system=system_prompt,
-            tools=[RETRIEVE_TOOL],
+            tools=[retrieve_tool],
             messages=messages,
         )
 
