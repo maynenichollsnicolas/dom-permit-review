@@ -259,7 +259,7 @@ function ChatPanel({ expedientId, autoSendMessage }: { expedientId: string; auto
             <div key={e.id} className="flex items-start gap-2.5 p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs">
               <CheckCircle className="h-3.5 w-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
-                <p className="font-semibold text-emerald-800 mb-0.5">El DOM respondió tu consulta</p>
+                <p className="font-semibold text-emerald-800 mb-0.5">{t.archDetail.escalation.domAnswered}</p>
                 <p className="text-muted-foreground italic truncate">"{e.architect_question}"</p>
                 <p className="text-emerald-700 mt-1 leading-relaxed">{e.dom_answer}</p>
               </div>
@@ -275,8 +275,8 @@ function ChatPanel({ expedientId, autoSendMessage }: { expedientId: string; auto
             <HelpCircle className="h-3.5 w-3.5 flex-shrink-0 animate-pulse" />
             <span>
               {pendingCount === 1
-                ? "1 consulta enviada al DOM — esperando respuesta"
-                : `${pendingCount} consultas enviadas al DOM — esperando respuesta`}
+                ? t.archDetail.escalation.pendingOne
+                : t.archDetail.escalation.pendingMany(pendingCount)}
             </span>
           </div>
         </div>
@@ -313,7 +313,7 @@ function ChatPanel({ expedientId, autoSendMessage }: { expedientId: string; auto
               {m.escalated && (
                 <div className="flex items-center gap-1.5 text-[10px] text-amber-600 px-1">
                   <HelpCircle className="h-3 w-3" />
-                  <span>Escalado al DOM — esperando respuesta</span>
+                  <span>{t.archDetail.escalation.escalatedToDom}</span>
                 </div>
               )}
             </div>
@@ -555,19 +555,8 @@ export default function ArchitectExpedientPage() {
   const handleResubmit = async () => {
     setSubmitting(true);
     // Build the chat message before clearing corrections
-    const correctionLabels: Record<string, string> = {
-      declared_constructibilidad: "constructibilidad",
-      declared_ocupacion_suelo: "ocupación de suelo",
-      declared_altura_m: "altura",
-      declared_densidad_hab_ha: "densidad",
-      declared_estacionamientos: "estacionamientos",
-      declared_distanciamiento_lateral_m: "distanciamiento lateral",
-      declared_distanciamiento_fondo_m: "distanciamiento fondo",
-      declared_antejardin_m: "antejardín",
-      declared_superficie_total_edificada_m2: "superficie edificada",
-    };
     const correctionSummary = Object.entries(corrections)
-      .map(([k, v]) => `${correctionLabels[k] ?? k}: ${v}`)
+      .map(([k, v]) => `${t.archDetail.correctionLabels[k] ?? k}: ${v}`)
       .join(", ");
 
     try {
@@ -686,10 +675,10 @@ export default function ArchitectExpedientPage() {
             <Loader2 className="h-4 w-4 text-primary animate-spin flex-shrink-0" />
             <div>
               <p className="text-sm font-semibold text-foreground">
-                Correcciones recibidas — Ronda {resubmittedRound} en análisis
+                {t.archDetail.resubmitBanner.analyzing(resubmittedRound)}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                El sistema está verificando automáticamente tus correcciones. Esto toma ~50 segundos.
+                {t.archDetail.resubmitBanner.analyzingDetail}
               </p>
             </div>
           </div>
@@ -700,10 +689,10 @@ export default function ArchitectExpedientPage() {
             <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
             <div>
               <p className="text-sm font-semibold text-emerald-800">
-                Análisis de Ronda {resubmittedRound} completado
+                {t.archDetail.resubmitBanner.completed(resubmittedRound)}
               </p>
               <p className="text-xs text-emerald-700 mt-0.5">
-                El DOM revisará los resultados y emitirá el acta correspondiente.
+                {t.archDetail.resubmitBanner.completedDetail}
               </p>
             </div>
           </div>

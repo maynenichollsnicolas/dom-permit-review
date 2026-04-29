@@ -499,7 +499,7 @@ export default function ExpedientPage() {
                     <table className="w-full text-xs">
                       <thead>
                         <tr className="text-muted-foreground border-b border-border">
-                          <th className="text-left pb-2 font-medium">{t.lang === "en" ? "Parameter" : "Parámetro"}</th>
+                          <th className="text-left pb-2 font-medium">{dd.analysis.parameterHeader}</th>
                           <th className="text-right pb-2 font-medium">{dd.summary.cip}</th>
                           <th className="text-right pb-2 font-medium">{dd.summary.declared}</th>
                           <th className="text-right pb-2 font-medium">{dd.summary.delta}</th>
@@ -665,9 +665,9 @@ export default function ExpedientPage() {
                 <Card className="shadow-sm">
                   <CardContent className="py-12 text-center">
                     <HelpCircle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
-                    <p className="text-sm text-muted-foreground">Sin consultas del arquitecto aún.</p>
+                    <p className="text-sm text-muted-foreground">{dd.escalations.empty}</p>
                     <p className="text-xs text-muted-foreground/60 mt-1">
-                      Cuando el agente de IA no pueda responder con certeza, escalará la pregunta aquí.
+                      {dd.escalations.emptyDetail}
                     </p>
                   </CardContent>
                 </Card>
@@ -697,37 +697,37 @@ export default function ExpedientPage() {
                             ? "bg-amber-100 text-amber-700 border-amber-200"
                             : "bg-emerald-100 text-emerald-700 border-emerald-200"
                         }`}>
-                          {esc.status === "pending" ? "Pendiente" : "Respondida"}
+                          {esc.status === "pending" ? dd.escalations.pending : dd.escalations.answered}
                         </span>
                       </div>
                     </CardHeader>
                     <CardContent className="pt-4 space-y-3">
                       {esc.ai_attempted_answer && (
                         <div className="p-3 bg-secondary/40 rounded-lg border border-border">
-                          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">Intento del agente</p>
+                          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">{dd.escalations.agentAttempt}</p>
                           <p className="text-sm text-muted-foreground leading-relaxed">{esc.ai_attempted_answer}</p>
                         </div>
                       )}
                       {esc.ai_escalation_reason && (
                         <p className="text-xs text-amber-700 italic">
-                          Motivo de escalación: {esc.ai_escalation_reason}
+                          {dd.escalations.escalationReason} {esc.ai_escalation_reason}
                         </p>
                       )}
                       {esc.status === "answered" && esc.dom_answer ? (
                         <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
-                          <p className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wide mb-1">Tu respuesta</p>
+                          <p className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wide mb-1">{dd.escalations.yourAnswer}</p>
                           <p className="text-sm text-emerald-800 leading-relaxed">{esc.dom_answer}</p>
                         </div>
                       ) : esc.status === "pending" && (
                         <div className="space-y-2">
                           <label className="text-xs font-medium text-muted-foreground block">
-                            Tu respuesta autoritativa
+                            {dd.escalations.yourAnswerLabel}
                           </label>
                           <textarea
                             value={answerDraft[esc.id] ?? ""}
                             onChange={(e) => setAnswerDraft((prev) => ({ ...prev, [esc.id]: e.target.value }))}
                             rows={3}
-                            placeholder="Escribe tu respuesta técnica aquí..."
+                            placeholder={dd.escalations.answerPlaceholder}
                             className="w-full border border-border rounded-lg px-3 py-2 text-sm bg-card focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                           />
                           <Button
@@ -736,8 +736,8 @@ export default function ExpedientPage() {
                             onClick={() => handleAnswerEscalation(esc.id)}
                           >
                             {answering[esc.id]
-                              ? <><Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />Guardando</>
-                              : <><Send className="h-3.5 w-3.5 mr-1.5" />Responder</>
+                              ? <><Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />{dd.escalations.saving}</>
+                              : <><Send className="h-3.5 w-3.5 mr-1.5" />{dd.escalations.reply}</>
                             }
                           </Button>
                         </div>
@@ -754,16 +754,16 @@ export default function ExpedientPage() {
             {!comparisonLoaded ? (
               <div className="flex items-center justify-center py-16 gap-2 text-muted-foreground text-sm">
                 <Loader2 className="h-5 w-5 animate-spin" />
-                Cargando comparación…
+                {dd.comparison.loading}
               </div>
             ) : comparisonError ? (
               <Card className="shadow-sm">
                 <CardContent className="py-12 text-center">
                   <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground">No se pudo cargar la comparación.</p>
+                  <p className="text-sm text-muted-foreground">{dd.comparison.error}</p>
                   <p className="text-xs font-mono text-red-500 mt-2 px-4 break-all">{comparisonError}</p>
                   <Button variant="outline" size="sm" className="mt-4" onClick={loadComparison}>
-                    Reintentar
+                    {dd.comparison.retry}
                   </Button>
                 </CardContent>
               </Card>
@@ -774,10 +774,10 @@ export default function ExpedientPage() {
                 <CardContent className="py-12 text-center">
                   <AlertTriangle className="h-8 w-8 text-muted-foreground/30 mx-auto mb-3" />
                   <p className="text-sm text-muted-foreground">
-                    {roundComparison?.reason ?? "Solo se ha completado una ronda de revisión."}
+                    {roundComparison?.reason ?? dd.comparison.oneRound}
                   </p>
                   <p className="text-xs text-muted-foreground/60 mt-1">
-                    La comparación estará disponible después de que el arquitecto presente una corrección.
+                    {dd.comparison.oneRoundDetail}
                   </p>
                 </CardContent>
               </Card>

@@ -14,16 +14,6 @@ import {
   Loader2, FileText, Scan, ThumbsUp, ThumbsDown,
 } from "lucide-react";
 
-const REQUIREMENT_LABELS: Record<string, string> = {
-  solicitud_firmada: "Solicitud firmada (propietario + arquitecto)",
-  cip_vigente: "CIP vigente",
-  fue: "FUE (Formulario Único de Estadísticas)",
-  planos_arquitectonicos: "Planos arquitectónicos",
-  cuadro_superficies: "Cuadro de superficies y cabida normativa",
-  memoria_calculo: "Memoria de cálculo estructural",
-  factibilidad_sanitaria: "Certificado de factibilidad sanitaria",
-  informe_ri: "Informe Revisor Independiente (si aplica)",
-};
 
 export default function AdmisibilidadDetail() {
   const { id } = useParams<{ id: string }>();
@@ -50,7 +40,7 @@ export default function AdmisibilidadDetail() {
       setChecklist(clRes.checklist);
       setDocuments(clRes.documents);
     } catch (e) {
-      setError("Error al cargar el expediente.");
+      setError(t.admisibilidad.detail.loadError);
     } finally {
       setLoading(false);
     }
@@ -65,7 +55,7 @@ export default function AdmisibilidadDetail() {
       await api.intake.analyzeDocuments(id);
       await load();
     } catch (e: any) {
-      setError(e.message || "Error al analizar documentos.");
+      setError(e.message || t.admisibilidad.detail.analyzeError);
     } finally {
       setAnalyzing(false);
     }
@@ -78,7 +68,7 @@ export default function AdmisibilidadDetail() {
       await api.intake.admit(id, t.lang);
       router.push("/dom/admisibilidad");
     } catch (e: any) {
-      setError(e.message || "Error al admitir expediente.");
+      setError(e.message || t.admisibilidad.detail.admitError);
       setAdmitting(false);
     }
   };
@@ -110,7 +100,7 @@ export default function AdmisibilidadDetail() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-gray-500">Cargando...</p>
+        <p className="text-gray-500">{t.admisibilidad.detail.loading}</p>
       </div>
     );
   }
@@ -149,7 +139,7 @@ export default function AdmisibilidadDetail() {
                   </span>
                   {expedient && (
                     <Badge className={statusColor(expedient.status)}>
-                      {statusLabel(expedient.status)}
+                      {t.dom.statusPill[expedient.status] ?? expedient.status}
                     </Badge>
                   )}
                 </div>
@@ -170,20 +160,20 @@ export default function AdmisibilidadDetail() {
         {/* Project summary */}
         <div className="grid grid-cols-2 gap-4">
           <Card>
-            <CardHeader><CardTitle className="text-sm">Datos del proyecto</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-sm">{t.admisibilidad.detail.projectData}</CardTitle></CardHeader>
             <CardContent className="text-sm space-y-2">
-              <Row label="Propietario" value={expedient?.owner_name ?? "—"} />
-              <Row label="Arquitecto" value={expedient?.architect_name ?? "—"} />
-              <Row label="Zona" value={expedient?.zone ?? "—"} />
-              <Row label="Ingresado" value={
+              <Row label={t.archDetail.params.owner} value={expedient?.owner_name ?? "—"} />
+              <Row label={t.archDetail.params.architect} value={expedient?.architect_name ?? "—"} />
+              <Row label={t.archDetail.params.zone} value={expedient?.zone ?? "—"} />
+              <Row label={t.domDetail.summary.submitted} value={
                 expedient?.submitted_at
-                  ? new Date(expedient.submitted_at).toLocaleDateString("es-CL")
+                  ? new Date(expedient.submitted_at).toLocaleDateString(t.lang === "en" ? "en-US" : "es-CL")
                   : "—"
               } />
               {params && (
                 <>
-                  <Row label="CIP N°" value={params.cip_number ?? "—"} />
-                  <Row label="Revisor Independiente" value={expedient?.has_revisor_independiente ? "Sí" : "No"} />
+                  <Row label={t.domDetail.summary.cipNumber} value={params.cip_number ?? "—"} />
+                  <Row label={t.domDetail.summary.ri} value={expedient?.has_revisor_independiente ? t.domDetail.summary.riYes : t.domDetail.summary.riNo} />
                 </>
               )}
             </CardContent>
@@ -193,19 +183,19 @@ export default function AdmisibilidadDetail() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-sm">Documentos subidos</CardTitle>
-                <span className="text-xs text-gray-400">{documents.length} archivo{documents.length !== 1 ? "s" : ""}</span>
+                <CardTitle className="text-sm">{t.admisibilidad.detail.docsUploaded}</CardTitle>
+                <span className="text-xs text-gray-400">{t.admisibilidad.detail.files(documents.length)}</span>
               </div>
             </CardHeader>
             <CardContent>
               {documents.length === 0 ? (
-                <p className="text-sm text-gray-400">Sin documentos adjuntos aún.</p>
+                <p className="text-sm text-gray-400">{t.admisibilidad.detail.noDocuments}</p>
               ) : (
                 <ul className="space-y-1.5">
                   {documents.map((doc) => (
                     <li key={doc.id} className="flex items-center gap-2 text-xs text-gray-600">
                       <FileText className="h-3 w-3 text-gray-400 flex-shrink-0" />
-                      <span className="font-medium">{REQUIREMENT_LABELS[doc.document_type] ?? doc.document_type}</span>
+                      <span className="font-medium">{t.checklist.docs[doc.document_type] ?? doc.document_type}</span>
                       <span className="text-gray-400 truncate">— {doc.file_name}</span>
                     </li>
                   ))}
@@ -220,13 +210,13 @@ export default function AdmisibilidadDetail() {
           <CardHeader className="border-b">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-sm">Checklist Art. 5.1.6 OGUC</CardTitle>
+                <CardTitle className="text-sm">{t.admisibilidad.detail.checklistTitle}</CardTitle>
                 <p className="text-xs text-gray-500 mt-1">
                   {hasAiResults
-                    ? "Resultados del análisis de IA. Puedes aprobar o rechazar manualmente."
+                    ? (t.lang === "en" ? "AI analysis results. You can approve or reject manually." : "Resultados del análisis de IA. Puedes aprobar o rechazar manualmente.")
                     : hasDocuments
-                    ? "Documentos subidos. Ejecuta el análisis de IA para verificar automáticamente."
-                    : "Sin documentos. El arquitecto no ha subido archivos aún."}
+                    ? (t.lang === "en" ? "Documents uploaded. Run AI analysis to verify automatically." : "Documentos subidos. Ejecuta el análisis de IA para verificar automáticamente.")
+                    : (t.lang === "en" ? "No documents. The architect has not uploaded files yet." : "Sin documentos. El arquitecto no ha subido archivos aún.")}
                 </p>
               </div>
               {hasDocuments && (
@@ -237,8 +227,8 @@ export default function AdmisibilidadDetail() {
                   disabled={analyzing}
                 >
                   {analyzing
-                    ? <><Loader2 className="h-3 w-3 animate-spin mr-2" />Analizando...</>
-                    : <><Scan className="h-3 w-3 mr-2" />{hasAiResults ? "Re-analizar" : "Analizar con IA"}</>
+                    ? <><Loader2 className="h-3 w-3 animate-spin mr-2" />{t.admisibilidad.detail.analyzing}</>
+                    : <><Scan className="h-3 w-3 mr-2" />{hasAiResults ? t.admisibilidad.detail.reanalyze : t.admisibilidad.detail.analyze}</>
                   }
                 </Button>
               )}
@@ -261,19 +251,19 @@ export default function AdmisibilidadDetail() {
                   <StatusIcon status={status} />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-800">
-                      {REQUIREMENT_LABELS[item.requirement] ?? item.requirement}
+                      {t.checklist.docs[item.requirement] ?? item.requirement}
                     </p>
                     {item.ai_notes && (
                       <p className="text-xs text-gray-500 mt-0.5">{item.ai_notes}</p>
                     )}
                     {item.ai_confidence && (
                       <span className="text-xs text-gray-400">
-                        Confianza IA: {item.ai_confidence}
-                        {overrideSet && " · Anulado por revisor"}
+                        {t.admisibilidad.detail.aiConfidence} {item.ai_confidence}
+                        {overrideSet && ` · ${t.admisibilidad.detail.overriddenByReviewer}`}
                       </span>
                     )}
                     {!hasAiResults && (
-                      <p className="text-xs text-gray-400">Pendiente de análisis</p>
+                      <p className="text-xs text-gray-400">{t.admisibilidad.detail.pendingAnalysis}</p>
                     )}
                   </div>
                   {/* Manual override buttons */}
@@ -314,23 +304,23 @@ export default function AdmisibilidadDetail() {
               <div>
                 {anyUnmet ? (
                   <div>
-                    <p className="font-medium text-red-800">Documentación incompleta</p>
+                    <p className="font-medium text-red-800">{t.admisibilidad.detail.incompleteTitle}</p>
                     <p className="text-sm text-red-600">
-                      Faltan documentos requeridos. Debes devolver el expediente al arquitecto.
+                      {t.lang === "en" ? "Missing required documents. You must return the application to the architect." : "Faltan documentos requeridos. Debes devolver el expediente al arquitecto."}
                     </p>
                   </div>
                 ) : allMet ? (
                   <div>
-                    <p className="font-medium text-green-800">Documentación completa</p>
+                    <p className="font-medium text-green-800">{t.admisibilidad.detail.completeTitle}</p>
                     <p className="text-sm text-green-700">
-                      Todos los requisitos están cubiertos. Puedes admitir el expediente.
+                      {t.lang === "en" ? "All requirements are met. You can admit the application." : "Todos los requisitos están cubiertos. Puedes admitir el expediente."}
                     </p>
                   </div>
                 ) : (
                   <div>
-                    <p className="font-medium text-gray-700">Pendiente de verificación</p>
+                    <p className="font-medium text-gray-700">{t.admisibilidad.detail.pendingVerification}</p>
                     <p className="text-sm text-gray-500">
-                      Analiza los documentos con IA o marca manualmente cada requisito.
+                      {t.lang === "en" ? "Analyze documents with AI or manually mark each requirement." : "Analiza los documentos con IA o marca manualmente cada requisito."}
                     </p>
                   </div>
                 )}
@@ -341,7 +331,7 @@ export default function AdmisibilidadDetail() {
                   onClick={() => router.push("/dom/admisibilidad")}
                   className="text-gray-600"
                 >
-                  Volver
+                  {t.admisibilidad.detail.back}
                 </Button>
                 <Button
                   onClick={handleAdmit}
@@ -349,8 +339,8 @@ export default function AdmisibilidadDetail() {
                   className="bg-green-600 hover:bg-green-700 text-white"
                 >
                   {admitting
-                    ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Admitiendo...</>
-                    : <><CheckCircle className="h-4 w-4 mr-2" />Admitir expediente</>
+                    ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />{t.admisibilidad.detail.admitting}</>
+                    : <><CheckCircle className="h-4 w-4 mr-2" />{t.admisibilidad.detail.admit}</>
                   }
                 </Button>
               </div>

@@ -2,9 +2,12 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { Building2, ArrowRight } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 export default function ArchitectLoginPage() {
   const supabase = createClient();
+  const { t } = useT();
+  const l = t.login.architect;
 
   const handleGoogleLogin = async () => {
     await supabase.auth.signInWithOAuth({
@@ -22,23 +25,19 @@ export default function ArchitectLoginPage() {
         <div>
           <div className="flex items-center gap-2.5 mb-16">
             <Building2 className="h-5 w-5 text-white/70" />
-            <span className="text-sm font-semibold tracking-tight">Portal del Arquitecto</span>
+            <span className="text-sm font-semibold tracking-tight">{l.branding}</span>
           </div>
 
           <h1 className="text-3xl font-bold leading-tight tracking-tight mb-4">
-            Ingresa tu permiso de edificación en línea
+            {l.heading}
           </h1>
           <p className="text-sm text-white/60 leading-relaxed">
-            Plataforma digital de ingreso y seguimiento de permisos ante la DOM de Las Condes.
+            {l.description}
           </p>
         </div>
 
         <div className="space-y-4">
-          {[
-            { label: "Ingreso digital de expedientes", desc: "Sube tus documentos y la IA extrae los parámetros del CIP automáticamente" },
-            { label: "Seguimiento en tiempo real", desc: "Consulta el estado de tu solicitud y recibe las Actas de Observaciones" },
-            { label: "Asistente IA", desc: "Resuelve dudas sobre observaciones, normativa OGUC y subsanación" },
-          ].map((feat) => (
+          {l.features.map((feat) => (
             <div key={feat.label} className="flex gap-3">
               <div className="h-1.5 w-1.5 rounded-full bg-white/40 mt-1.5 flex-shrink-0" />
               <div>
@@ -49,9 +48,7 @@ export default function ArchitectLoginPage() {
           ))}
         </div>
 
-        <p className="text-[11px] text-white/30">
-          Municipalidad de Las Condes · Dirección de Obras Municipales
-        </p>
+        <p className="text-[11px] text-white/30">{l.footer}</p>
       </div>
 
       {/* Right — login form */}
@@ -60,15 +57,15 @@ export default function ArchitectLoginPage() {
           {/* Mobile logo */}
           <div className="flex items-center gap-2.5 mb-10 lg:hidden">
             <Building2 className="h-5 w-5 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Portal del Arquitecto</span>
+            <span className="text-sm font-semibold text-foreground">{l.branding}</span>
           </div>
 
           <div className="mb-8">
             <h2 className="text-2xl font-bold tracking-tight text-foreground mb-2">
-              Acceder al portal
+              {l.signInHeading}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Usa tu cuenta personal de Google para continuar.
+              {l.signInSubtitle}
             </p>
           </div>
 
@@ -83,20 +80,20 @@ export default function ArchitectLoginPage() {
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
-              <span>Continuar con Google</span>
+              <span>{l.googleBtn}</span>
             </div>
             <ArrowRight className="h-3.5 w-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
           </button>
 
           <p className="text-xs text-muted-foreground mt-6 text-center">
-            Disponible para arquitectos y propietarios con expedientes activos.
+            {l.restricted}
           </p>
 
           <div className="mt-8 pt-6 border-t border-border text-center">
             <p className="text-xs text-muted-foreground">
-              ¿Eres funcionario DOM?{" "}
+              {l.domPrompt}{" "}
               <a href="/login" className="text-primary hover:underline font-medium">
-                Accede al sistema institucional
+                {l.domLink}
               </a>
             </p>
           </div>

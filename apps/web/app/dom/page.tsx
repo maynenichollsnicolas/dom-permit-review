@@ -129,7 +129,7 @@ export default function QueuePage() {
                 <p className="text-xs text-muted-foreground/60">
                   {t.lang === "en"
                     ? "The server is waking up — this takes about 30 seconds on first load."
-                    : "El servidor está iniciando — esto toma ~30 segundos en la primera carga."}
+                    : t.dom.serverWaking}
                 </p>
               )}
             </div>
@@ -203,12 +203,12 @@ export default function QueuePage() {
                           {exp.current_round > 1 && exp.status === "admitido" && (
                             <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
                               <RefreshCw className="h-2.5 w-2.5 animate-spin" />
-                              Correcciones R{exp.current_round}
+                              {t.dom.correctionsRound(exp.current_round)}
                             </span>
                           )}
                           {exp.current_round > 1 && exp.status === "observado" && (
                             <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full">
-                              Nueva obs. R{exp.current_round}
+                              {t.dom.newObsRound(exp.current_round)}
                             </span>
                           )}
                         </div>
@@ -316,7 +316,7 @@ function EscalacionesNavLink() {
       href="/dom/escalaciones"
       className="relative text-xs text-white/60 hover:text-white/90 transition-colors font-medium tracking-wide uppercase"
     >
-      Consultas
+      {t.dom.queries}
       {count > 0 && (
         <span className="absolute -top-1.5 -right-3.5 bg-amber-400 text-amber-900 text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none">
           {count > 9 ? "9+" : count}
