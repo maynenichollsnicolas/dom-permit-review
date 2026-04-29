@@ -38,13 +38,7 @@ export const api = {
         body: JSON.stringify({ message, history, language }),
       }),
     getRoundComparison: (id: string) =>
-      fetch(`/api/expedients/${id}/comparison`).then(async (res) => {
-        if (!res.ok) {
-          const error = await res.json().catch(() => ({ detail: res.statusText }));
-          throw new Error(error.detail || "API error");
-        }
-        return res.json() as Promise<RoundComparison>;
-      }),
+      apiFetch<RoundComparison>(`/expedients/${id}/rounds/comparison`),
   },
   intake: {
     queue: () => apiFetch<any[]>("/intake/queue"),
