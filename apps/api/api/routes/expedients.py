@@ -432,12 +432,13 @@ async def get_rounds_comparison(expedient_id: str):
     except Exception:
         history_data = []
 
-    # Group observations by (parameter, round_introduced) — keep latest per group
+    # Group observations by (parameter, round_introduced) — skip rows with NULL keys
     param_round: dict[str, dict[int, dict]] = defaultdict(dict)
     for obs in (all_obs.data or []):
-        param = obs["parameter"]
-        rnd = obs["round_introduced"]
-        # Later rows overwrite earlier (same parameter can appear multiple times if re-run)
+        param = obs.get("parameter")
+        rnd = obs.get("round_introduced")
+        if param is None or rnd is None:
+            continue
         param_round[param][rnd] = obs
 
     VIOLATION_VERDICTS = {"VIOLATION", "NEEDS_REVIEW", "SIN_DATOS"}
@@ -446,7 +447,9 @@ async def get_rounds_comparison(expedient_id: str):
     for param in sorted(param_round.keys()):
         rounds = param_round[param]
         r1_obs = rounds.get(1)
-        r2_obs = rounds.get(current_round) or rounds.get(max(rounds.keys()))
+        r2_obs = rounds.get(current_round)
+        if r2_obs is None and rounds:
+            r2_obs = rounds[max(rounds.keys())]
 
         r1_violation = r1_obs is not None and r1_obs["ai_verdict"] in VIOLATION_VERDICTS
         r2_violation = r2_obs is not None and r2_obs["ai_verdict"] in VIOLATION_VERDICTS

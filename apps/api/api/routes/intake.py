@@ -394,12 +394,13 @@ async def resubmit_corrections(expedient_id: str, body: ResubmitRequest, backgro
     current_params = supabase.table("project_parameters") \
         .select("*") \
         .eq("expedient_id", expedient_id) \
-        .maybe_single().execute()
+        .limit(1) \
+        .execute()
     if current_params.data:
         supabase.table("parameter_history").upsert({
             "expedient_id": expedient_id,
             "round_number": exp.data["current_round"],
-            "snapshot": current_params.data,
+            "snapshot": current_params.data[0],
             "snapshotted_at": datetime.now(timezone.utc).isoformat(),
         }, on_conflict="expedient_id,round_number").execute()
 
