@@ -15,11 +15,18 @@ import {
 export default function QueuePage() {
   const [expedients, setExpedients] = useState<Expedient[]>([]);
   const [loading, setLoading] = useState(true);
+  const [slowLoad, setSlowLoad] = useState(false);
   const { user, signOut } = useUser({ redirectTo: "/dom/login" });
   const { t } = useT();
 
   useEffect(() => {
-    api.expedients.list().then(setExpedients).finally(() => setLoading(false));
+    const slowTimer = setTimeout(() => setSlowLoad(true), 6000);
+    api.expedients.list().then(setExpedients).finally(() => {
+      clearTimeout(slowTimer);
+      setLoading(false);
+      setSlowLoad(false);
+    });
+    return () => clearTimeout(slowTimer);
   }, []);
 
   const critical = expedients.filter((e) => daysRemaining(e.legal_deadline_at) <= 3);
@@ -113,11 +120,18 @@ export default function QueuePage() {
           </div>
 
           {loading ? (
-            <div className="py-16 text-center">
+            <div className="py-16 text-center space-y-2">
               <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
                 <span className="h-4 w-4 rounded-full border-2 border-primary/30 border-t-primary animate-spin inline-block" />
                 {t.dom.queue.loading}
               </div>
+              {slowLoad && (
+                <p className="text-xs text-muted-foreground/60">
+                  {t.lang === "en"
+                    ? "The server is waking up — this takes about 30 seconds on first load."
+                    : "El servidor está iniciando — esto toma ~30 segundos en la primera carga."}
+                </p>
+              )}
             </div>
           ) : expedients.length === 0 ? (
             <div className="py-16 text-center">
