@@ -58,6 +58,15 @@ app.include_router(geo_router, prefix="/api/v1")
 app.include_router(escalations_router, prefix="/api/v1")
 
 
+@app.get("/debug-request")
+async def debug_request(request: Request):
+    return {
+        "path": request.url.path,
+        "raw_url": str(request.url),
+        "headers": dict(request.headers),
+    }
+
+
 @app.get("/health")
 @app.get("/api/v1/health")
 async def health():
