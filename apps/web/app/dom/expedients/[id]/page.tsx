@@ -371,7 +371,7 @@ export default function ExpedientPage() {
                 Comparación
                 {(roundComparison?.summary?.persists ?? 0) > 0 && (
                   <span className="ml-2 bg-red-100 text-red-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-                    {roundComparison.summary.persists}
+                    {roundComparison?.summary?.persists ?? 0}
                   </span>
                 )}
               </TabsTrigger>
