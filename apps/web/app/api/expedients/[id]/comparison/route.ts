@@ -10,10 +10,17 @@ export async function GET(
   if (!railwayUrl.startsWith("http")) railwayUrl = `https://${railwayUrl}`;
   railwayUrl = railwayUrl.replace(/\/$/, "");
 
-  const upstream = await fetch(
-    `${railwayUrl}/api/v1/expedients/${id}/rounds/comparison`,
-    { headers: { "Content-Type": "application/json" } }
-  );
-  const data = await upstream.json();
-  return NextResponse.json(data, { status: upstream.status });
+  try {
+    const upstream = await fetch(
+      `${railwayUrl}/api/v1/expedients/${id}/rounds/comparison`,
+      { headers: { "Content-Type": "application/json" } }
+    );
+    const data = await upstream.json();
+    return NextResponse.json(data, { status: upstream.status });
+  } catch (err) {
+    return NextResponse.json(
+      { detail: `Upstream error: ${String(err)}`, railwayUrl },
+      { status: 502 }
+    );
+  }
 }

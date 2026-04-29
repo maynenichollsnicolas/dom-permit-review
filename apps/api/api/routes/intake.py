@@ -91,6 +91,7 @@ class ResubmitRequest(BaseModel):
     declared_superficie_total_edificada_m2: Optional[float] = None
     declared_num_unidades_vivienda: Optional[int] = None
     correction_notes: Optional[str] = None
+    language: str = "es"
 
 
 # ─── Routes ───────────────────────────────────────────────────────────────────
@@ -420,7 +421,7 @@ async def resubmit_corrections(expedient_id: str, body: ResubmitRequest, backgro
     }).eq("id", expedient_id).execute()
 
     # Trigger Round 2 pipeline
-    background_tasks.add_task(run_pipeline, expedient_id)
+    background_tasks.add_task(run_pipeline, expedient_id, body.language)
 
     return {
         "message": f"Correcciones recibidas. Ronda {new_round} de revisión iniciada.",

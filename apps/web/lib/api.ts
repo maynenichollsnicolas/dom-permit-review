@@ -319,4 +319,5 @@ export interface ResubmitRequest {
   declared_superficie_total_edificada_m2?: number;
   declared_num_unidades_vivienda?: number;
   correction_notes?: string;
+  language?: string;
 }
