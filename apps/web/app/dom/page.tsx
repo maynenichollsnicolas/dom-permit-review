@@ -298,6 +298,7 @@ function DeadlineCell({ days, deadline, t }: { days: number; deadline: string; t
 function EscalacionesNavLink() {
   const [count, setCount] = useState(0);
   const pollRef = useRef<NodeJS.Timeout | null>(null);
+  const { t } = useT();
 
   useEffect(() => {
     const refresh = async () => {
