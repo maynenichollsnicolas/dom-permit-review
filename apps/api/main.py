@@ -59,5 +59,10 @@ app.include_router(escalations_router, prefix="/api/v1")
 
 
 @app.get("/health")
+@app.get("/api/v1/health")
 async def health():
-    return {"status": "ok", "version": "0.2.0", "routes": [r.path for r in app.routes]}
+    return {
+        "status": "ok",
+        "version": "0.2.0",
+        "routes": sorted([r.path for r in app.routes if hasattr(r, "path")]),
+    }
