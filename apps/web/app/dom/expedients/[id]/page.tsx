@@ -205,23 +205,37 @@ export default function ExpedientPage() {
   const pollRef = useRef<NodeJS.Timeout | null>(null);
   const autoTriggered = useRef(false);
 
+  const loadComparison = async () => {
+    setComparisonLoaded(false);
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("timeout")), 10000)
+    );
+    try {
+      const data = await Promise.race([api.expedients.getRoundComparison(id), timeout]);
+      setRoundComparison(data);
+    } catch {
+      // leave roundComparison null — error state shown by comparisonLoaded=true
+    } finally {
+      setComparisonLoaded(true);
+    }
+  };
+
   const load = async () => {
-    const [exp, comp, actaData, docs, escs, comparison] = await Promise.allSettled([
+    const [exp, comp, actaData, docs, escs] = await Promise.allSettled([
       api.expedients.get(id),
       api.expedients.getCompliance(id),
       api.expedients.getActa(id),
       api.intake.getDocuments(id),
       api.escalations.forExpedient(id),
-      api.expedients.getRoundComparison(id),
     ]);
     if (exp.status === "fulfilled") setExpedient(exp.value);
     if (comp.status === "fulfilled") setCompliance(comp.value);
     if (actaData.status === "fulfilled") setActa(actaData.value);
     if (docs.status === "fulfilled") setDocuments(docs.value);
     if (escs.status === "fulfilled") setEscalations(escs.value);
-    if (comparison.status === "fulfilled") setRoundComparison(comparison.value);
-    setComparisonLoaded(true);
     setLoading(false);
+    // Fetch comparison independently so it never blocks the main page
+    loadComparison();
   };
 
   const openDoc = async (docType: string) => {
