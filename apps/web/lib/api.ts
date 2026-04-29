@@ -1,5 +1,6 @@
-// In production, API calls go to /api/v1/... (relative) which Vercel rewrites
-// to Railway server-side — no CORS. In local dev, NEXT_PUBLIC_API_URL=http://localhost:8000.
+// In production, NEXT_PUBLIC_API_URL points to the Render backend (direct browser calls, CORS required).
+// Alternatively, leave NEXT_PUBLIC_API_URL unset and set RENDER_API_URL (server-only) so Vercel
+// rewrites /api/v1/* → Render server-side with no CORS. In local dev, NEXT_PUBLIC_API_URL=http://localhost:8000.
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {

@@ -2,15 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    let railwayUrl = process.env.RAILWAY_API_URL || "http://localhost:8000";
+    let renderUrl = process.env.RENDER_API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
     // Ensure protocol prefix and strip trailing slash
-    if (railwayUrl && !railwayUrl.startsWith("http")) {
-      railwayUrl = `https://${railwayUrl}`;
+    if (renderUrl && !renderUrl.startsWith("http")) {
+      renderUrl = `https://${renderUrl}`;
     }
-    railwayUrl = railwayUrl.replace(/\/$/, "");
+    renderUrl = renderUrl.replace(/\/$/, "");
     const rule = {
       source: "/api/v1/:path*",
-      destination: `${railwayUrl}/api/v1/:path*`,
+      destination: `${renderUrl}/api/v1/:path*`,
     };
     return { beforeFiles: [rule], afterFiles: [], fallback: [] };
   },
