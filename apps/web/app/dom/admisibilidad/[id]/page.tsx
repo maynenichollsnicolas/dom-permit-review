@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { api, ChecklistItem } from "@/lib/api";
+import { useT } from "@/lib/i18n";
 import { statusLabel, statusColor } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,7 @@ const REQUIREMENT_LABELS: Record<string, string> = {
 export default function AdmisibilidadDetail() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
+  const { t } = useT();
 
   const [expedient, setExpedient] = useState<any | null>(null);
   const [checklist, setChecklist] = useState<ChecklistItem[]>([]);
@@ -73,7 +75,7 @@ export default function AdmisibilidadDetail() {
     setAdmitting(true);
     setError(null);
     try {
-      await api.intake.admit(id);
+      await api.intake.admit(id, t.lang);
       router.push("/dom/admisibilidad");
     } catch (e: any) {
       setError(e.message || "Error al admitir expediente.");

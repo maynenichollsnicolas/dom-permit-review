@@ -347,7 +347,7 @@ async def get_checklist(expedient_id: str):
 
 
 @router.post("/{expedient_id}/admit")
-async def admit_expedient(expedient_id: str, background_tasks: BackgroundTasks):
+async def admit_expedient(expedient_id: str, background_tasks: BackgroundTasks, language: str = "es"):
     """
     Admisibilidad officer stamps the expedient as admitted.
     Starts the Ley 21.718 deadline clock and queues compliance review.
@@ -372,7 +372,7 @@ async def admit_expedient(expedient_id: str, background_tasks: BackgroundTasks):
     }).eq("id", expedient_id).execute()
 
     # Trigger compliance pipeline in background
-    background_tasks.add_task(run_pipeline, expedient_id)
+    background_tasks.add_task(run_pipeline, expedient_id, language)
 
     return {"message": "Expediente admitido. Análisis de cumplimiento iniciado.", "expedient_id": expedient_id}
 

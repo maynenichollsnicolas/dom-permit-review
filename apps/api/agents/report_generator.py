@@ -75,6 +75,7 @@ def build_report_prompt(
     expedient: dict,
     compliance_results: dict[str, Any],
     review_date: date | None = None,
+    lang: str = "es",
 ) -> str:
     if review_date is None:
         review_date = date.today()
@@ -84,6 +85,41 @@ def build_report_prompt(
         r for r in compliance_results.get("results", [])
         if r["verdict"] in ("VIOLATION", "NEEDS_REVIEW")
     ]
+
+    if lang == "en":
+        if not flagged:
+            return "No observations found. The project complies with all reviewed parameters."
+
+        observations_text = []
+        for i, r in enumerate(flagged, 1):
+            observations_text.append(
+                f"Observation {i}:\n"
+                f"  Parameter: {r['parameter']}\n"
+                f"  Verdict: {r['verdict']}\n"
+                f"  Declared value: {r['declared_value']}\n"
+                f"  Permitted value: {r['allowed_value']}\n"
+                f"  Excess/deficit: {r.get('excess_or_deficit', 'N/A')}\n"
+                f"  Normative reference: {r['normative_reference']}\n"
+                f"  AI draft: {r.get('draft_observation', '')}\n"
+            )
+
+        return f"""Generate the Observations Report for the following permit application:
+
+APPLICATION DATA:
+Number: {expedient.get('exp_number')}
+Address: {expedient.get('address')}
+Permit type: {expedient.get('project_type', '').replace('_', ' ').title()}
+Zone: {expedient.get('zone')}
+Owner: {expedient.get('owner_name')}
+Architect: {expedient.get('architect_name')}
+Review date: {review_date.strftime('%B %d, %Y')}
+Submission date: {expedient.get('admitted_at', 'N/A')}
+Round: {expedient.get('current_round', 1)}
+
+DETECTED OBSERVATIONS:
+{chr(10).join(observations_text)}
+
+Generate the full report and structured JSON."""
 
     if not flagged:
         return "No se encontraron observaciones. El proyecto cumple con todos los parámetros revisados."
@@ -129,7 +165,7 @@ async def generate_acta(
     Generate a draft Acta de Observaciones from compliance results.
     Returns both the full text and a structured list of observations.
     """
-    prompt = build_report_prompt(expedient, compliance_results)
+    prompt = build_report_prompt(expedient, compliance_results, lang=lang)
 
     flagged = [
         r for r in compliance_results.get("results", [])

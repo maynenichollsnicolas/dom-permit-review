@@ -54,7 +54,8 @@ export const api = {
       apiFetch<{ document_type: string; file_name: string; ai_status: string; [key: string]: string }[]>(`/intake/${id}/documents`),
     getDocumentUrl: (id: string, docType: string) =>
       apiFetch<{ url: string; file_name: string }>(`/intake/${id}/documents/${encodeURIComponent(docType)}/url`),
-    admit: (id: string) => apiFetch(`/intake/${id}/admit`, { method: "POST" }),
+    admit: (id: string, language = "es") =>
+      apiFetch(`/intake/${id}/admit?language=${language}`, { method: "POST" }),
     resubmit: (id: string, body: ResubmitRequest) =>
       apiFetch(`/intake/${id}/resubmit`, {
         method: "POST",
