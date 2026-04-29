@@ -17,9 +17,8 @@ app = FastAPI(
 _ALLOWED_ORIGINS = {
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://dom-permit-review-a3km.vercel.app",
 }
-_ORIGIN_RE = re.compile(r"https://dom-permit-review-.*\.vercel\.app")
+_ORIGIN_RE = re.compile(r"https://[^.]+\.vercel\.app")
 
 
 def _cors_headers(origin: str) -> dict:
