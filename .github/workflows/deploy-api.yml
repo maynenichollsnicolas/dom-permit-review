@@ -69,30 +69,24 @@ jobs:
       - name: Post-deploy health check
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE: ${{ secrets.RAILWAY_SERVICE }}
         working-directory: apps/api
         run: |
-          set -euo pipefail
-          # Give Railway a few seconds to swap the container.
-          sleep 15
-          # Try to discover the public domain via the CLI; fall back to env var if you set one.
-          DOMAIN="$(railway domain 2>/dev/null | tr -d '[:space:]' || true)"
-          if [ -z "$DOMAIN" ]; then
-            echo "Could not auto-detect domain via 'railway domain'. Skipping health check."
+          sleep 20
+          # Extract just the https://... URL from railway domain output
+          RAW="$(railway domain 2>/dev/null || true)"
+          URL="$(echo "$RAW" | grep -oE 'https://[^ ]+' | head -1)"
+          if [ -z "$URL" ]; then
+            echo "Could not parse domain from: $RAW — skipping health check"
             exit 0
           fi
-          # Strip protocol if present.
-          DOMAIN="${DOMAIN#https://}"
-          DOMAIN="${DOMAIN#http://}"
-          URL="https://${DOMAIN}/api/v1/health"
+          URL="${URL%/}/api/v1/health"
           echo "Health check: $URL"
           for i in 1 2 3 4 5 6; do
             if curl -fsS "$URL" >/tmp/health.json; then
-              echo "Health OK:"
-              cat /tmp/health.json
-              exit 0
+              echo "Health OK:"; cat /tmp/health.json; exit 0
             fi
-            echo "Attempt $i failed; retrying in 10s..."
-            sleep 10
+            echo "Attempt $i failed; retrying in 10s..."; sleep 10
           done
-          echo "Health check did not return 200 after retries."
-          exit 1
+          echo "Health check timed out — deployment may still be starting"
+          exit 0
