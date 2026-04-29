@@ -60,10 +60,10 @@ jobs:
           set -euo pipefail
           if [ -n "${RAILWAY_SERVICE:-}" ]; then
             echo "Deploying to Railway service: $RAILWAY_SERVICE"
-            railway up --service "$RAILWAY_SERVICE" --ci
+            railway up --service "$RAILWAY_SERVICE" --detach
           else
             echo "Deploying to Railway (single-service project)"
-            railway up --ci
+            railway up --detach
           fi
 
       - name: Post-deploy health check
