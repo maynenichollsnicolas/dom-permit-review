@@ -1,0 +1,23 @@
+apps/api/main.py
+  72b3ee3c9655d95d 61-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "4d975f54e1b2ac87bcde3a2577845f85b13161ca",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 9,
+      "total_deletions": 0,
+      "accepted_lines": 9,
+      "overriden_lines": 0
+    }
+  }
+}
