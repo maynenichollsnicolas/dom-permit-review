@@ -574,7 +574,7 @@ export default function ArchitectExpedientPage() {
       const result: any = await api.intake.resubmit(id, {
         ...corrections,
         correction_notes: correctionNotes || undefined,
-        language: "es",
+        language: t.lang,
       });
       const round = result.round ?? 2;
       setCorrections({});
