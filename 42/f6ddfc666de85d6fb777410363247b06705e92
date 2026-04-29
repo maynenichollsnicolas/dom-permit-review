@@ -1,0 +1,23 @@
+apps/api/agents/compliance_reasoner.py
+  72b3ee3c9655d95d 22,24,54-87,92-129,131-132,150,154,156,167,169,174,182-224,232,262-282,368,373,381
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "42f6ddfc666de85d6fb777410363247b06705e92",
+  "prompts": {
+    "72b3ee3c9655d95d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc785235-3c1e-44f1-ae5e-ae76cb4d4894",
+        "model": "<synthetic>"
+      },
+      "human_author": "Nico Mayne-Nicholls",
+      "messages": [],
+      "total_additions": 150,
+      "total_deletions": 41,
+      "accepted_lines": 150,
+      "overriden_lines": 0
+    }
+  }
+}
